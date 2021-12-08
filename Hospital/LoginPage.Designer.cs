@@ -29,23 +29,13 @@ namespace Hospital
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.password = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.TextBox();
             this.label = new System.Windows.Forms.Label();
+            this.logIn = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(501, 420);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(222, 32);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Log in";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // password
             // 
@@ -92,17 +82,27 @@ namespace Hospital
             this.label.TabIndex = 5;
             this.label.Text = "Welcome to El Salam Hospital ";
             // 
+            // logIn
+            // 
+            this.logIn.Location = new System.Drawing.Point(501, 423);
+            this.logIn.Name = "logIn";
+            this.logIn.Size = new System.Drawing.Size(222, 33);
+            this.logIn.TabIndex = 6;
+            this.logIn.Text = "Log in";
+            this.logIn.UseVisualStyleBackColor = true;
+            this.logIn.Click += new System.EventHandler(this.logIn_Click);
+            // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1314, 635);
+            this.Controls.Add(this.logIn);
             this.Controls.Add(this.label);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.id);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.password);
-            this.Controls.Add(this.button1);
             this.Name = "LoginPage";
             this.Text = "Log in";
             this.ResumeLayout(false);
@@ -111,13 +111,12 @@ namespace Hospital
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox id;
         private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Button logIn;
     }
 }
 

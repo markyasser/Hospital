@@ -17,9 +17,13 @@ namespace Hospital
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void logIn_Click(object sender, EventArgs e)
         {
+            // check if the id is valid
 
+            // check if the password is valid
+
+            //check the first 2 chars in the id to go to the corresponding interface
         }
     }
 }
