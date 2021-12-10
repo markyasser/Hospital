@@ -17,6 +17,11 @@ namespace Hospital
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginPage());
+            //Application.Run(new Admin());
+            //Application.Run(new Receptionist());
+            //Application.Run(new Doctor());
+            //Application.Run(new Pharmacist());
+            //Application.Run(new Nurse());
         }
     }
 }
