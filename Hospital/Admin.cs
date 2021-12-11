@@ -22,15 +22,26 @@ namespace Hospital
             if (fname.Text == "")
                 label6.Text = "*"; 
             else label6.Text = "";
+
             if (minit.Text == "")
                 label8.Text = "*";
             else label8.Text = "";
+
             if (lname.Text == "")
                 label7.Text = "*";
             else label7.Text = "";
+
             if (address.Text == "")
                 label12.Text = "*";
             else label12.Text = "";
+
+            if (id.Text == "")
+                label9.Text = "*";
+            else label9.Text = "";
+
+            if (password.Text == "")
+                label10.Text = "*";
+            else label10.Text = "";
             int Phone;
             bool flag = Int32.TryParse(pnumber.Text, out Phone);
             if (!flag)
@@ -54,7 +65,34 @@ namespace Hospital
             //}
         }
 
+       
+
+        private void SearchList_Click(object sender, EventArgs e)
+        {
+            string pos = position.Text;
+        }
+
+        private void SearchGet_Click(object sender, EventArgs e)
+        {
+            if (id1.Text == "")
+                label26.Text = "*";
+            else label26.Text = "";
+
+        }
+
+        private void DeleteEmployee_Click(object sender, EventArgs e)
+        {
+            if (id2.Text == "")
+                label27.Text = "*";
+            else label27.Text = "";
+        }
+        /// ---------------------------------------------------------------------------///
         private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }

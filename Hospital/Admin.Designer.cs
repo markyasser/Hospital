@@ -31,6 +31,17 @@ namespace Hospital
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pnumber = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.password = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dep = new System.Windows.Forms.ComboBox();
@@ -51,40 +62,31 @@ namespace Hospital
             this.address = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.SearchList = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label16 = new System.Windows.Forms.Label();
+            this.position = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.SearchGet = new System.Windows.Forms.Button();
+            this.id1 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label21 = new System.Windows.Forms.Label();
+            this.id2 = new System.Windows.Forms.TextBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pnumber = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label22 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
+            this.DeleteEmployee = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -100,6 +102,7 @@ namespace Hospital
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1324, 639);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -144,6 +147,117 @@ namespace Hospital
             this.tabPage1.Text = "Add new employee";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(739, 289);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(0, 24);
+            this.label14.TabIndex = 94;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(645, 202);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(18, 24);
+            this.label13.TabIndex = 93;
+            this.label13.Text = "*";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(657, 123);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(0, 24);
+            this.label12.TabIndex = 92;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(692, 39);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(18, 24);
+            this.label11.TabIndex = 91;
+            this.label11.Text = "*";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(176, 366);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(0, 24);
+            this.label10.TabIndex = 90;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(92, 289);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(0, 24);
+            this.label9.TabIndex = 89;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(124, 123);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 24);
+            this.label8.TabIndex = 88;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(191, 203);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 24);
+            this.label7.TabIndex = 87;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(191, 41);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 24);
+            this.label6.TabIndex = 86;
+            // 
+            // pnumber
+            // 
+            this.pnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnumber.Location = new System.Drawing.Point(562, 321);
+            this.pnumber.Name = "pnumber";
+            this.pnumber.Size = new System.Drawing.Size(289, 34);
+            this.pnumber.TabIndex = 85;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(557, 284);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(176, 29);
+            this.label5.TabIndex = 84;
+            this.label5.Text = "Phone Number";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // password
             // 
@@ -324,10 +438,10 @@ namespace Hospital
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.SearchList);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.label16);
-            this.tabPage2.Controls.Add(this.comboBox1);
+            this.tabPage2.Controls.Add(this.position);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Name = "tabPage2";
@@ -337,10 +451,53 @@ namespace Hospital
             this.tabPage2.Text = "List employees";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // SearchList
+            // 
+            this.SearchList.Location = new System.Drawing.Point(624, 23);
+            this.SearchList.Name = "SearchList";
+            this.SearchList.Size = new System.Drawing.Size(143, 39);
+            this.SearchList.TabIndex = 3;
+            this.SearchList.Text = "Search";
+            this.SearchList.UseVisualStyleBackColor = true;
+            this.SearchList.Click += new System.EventHandler(this.SearchList_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(21, 92);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(583, 503);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(12, 26);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(249, 32);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "Employee position";
+            // 
+            // position
+            // 
+            this.position.FormattingEnabled = true;
+            this.position.Items.AddRange(new object[] {
+            "Doctor",
+            "Pharmacist",
+            "Nurse",
+            "Receptionist"});
+            this.position.Location = new System.Drawing.Point(267, 23);
+            this.position.Name = "position";
+            this.position.Size = new System.Drawing.Size(337, 39);
+            this.position.TabIndex = 0;
+            // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.button3);
-            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.label26);
+            this.tabPage3.Controls.Add(this.SearchGet);
+            this.tabPage3.Controls.Add(this.id1);
             this.tabPage3.Controls.Add(this.label22);
             this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage3.Location = new System.Drawing.Point(4, 32);
@@ -351,11 +508,41 @@ namespace Hospital
             this.tabPage3.Text = "Get employee info";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // SearchGet
+            // 
+            this.SearchGet.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchGet.Location = new System.Drawing.Point(454, 34);
+            this.SearchGet.Name = "SearchGet";
+            this.SearchGet.Size = new System.Drawing.Size(140, 37);
+            this.SearchGet.TabIndex = 4;
+            this.SearchGet.Text = "Search";
+            this.SearchGet.UseVisualStyleBackColor = true;
+            this.SearchGet.Click += new System.EventHandler(this.SearchGet_Click);
+            // 
+            // id1
+            // 
+            this.id1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.id1.Location = new System.Drawing.Point(151, 37);
+            this.id1.Name = "id1";
+            this.id1.Size = new System.Drawing.Size(279, 34);
+            this.id1.TabIndex = 3;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(89, 40);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(36, 29);
+            this.label22.TabIndex = 2;
+            this.label22.Text = "ID";
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.label21);
-            this.tabPage4.Controls.Add(this.textBox2);
-            this.tabPage4.Controls.Add(this.button4);
+            this.tabPage4.Controls.Add(this.DeleteEmployee);
+            this.tabPage4.Controls.Add(this.id2);
+            this.tabPage4.Controls.Add(this.label27);
             this.tabPage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage4.Location = new System.Drawing.Point(4, 32);
             this.tabPage4.Name = "tabPage4";
@@ -364,6 +551,33 @@ namespace Hospital
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Delete employee";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(89, 40);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(36, 29);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "ID";
+            // 
+            // id2
+            // 
+            this.id2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.id2.Location = new System.Drawing.Point(156, 35);
+            this.id2.Name = "id2";
+            this.id2.Size = new System.Drawing.Size(280, 34);
+            this.id2.TabIndex = 1;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 32);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(1316, 603);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Earnings";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -407,222 +621,34 @@ namespace Hospital
             this.button1.Text = "Log out";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // DeleteEmployee
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(557, 289);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(176, 29);
-            this.label5.TabIndex = 84;
-            this.label5.Text = "Phone Number";
+            this.DeleteEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteEmployee.Location = new System.Drawing.Point(462, 34);
+            this.DeleteEmployee.Name = "DeleteEmployee";
+            this.DeleteEmployee.Size = new System.Drawing.Size(138, 37);
+            this.DeleteEmployee.TabIndex = 3;
+            this.DeleteEmployee.Text = "Search";
+            this.DeleteEmployee.UseVisualStyleBackColor = true;
+            this.DeleteEmployee.Click += new System.EventHandler(this.DeleteEmployee_Click);
             // 
-            // pnumber
+            // label26
             // 
-            this.pnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnumber.Location = new System.Drawing.Point(562, 321);
-            this.pnumber.Name = "pnumber";
-            this.pnumber.Size = new System.Drawing.Size(289, 34);
-            this.pnumber.TabIndex = 85;
+            this.label26.AutoSize = true;
+            this.label26.ForeColor = System.Drawing.Color.Red;
+            this.label26.Location = new System.Drawing.Point(119, 39);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(0, 32);
+            this.label26.TabIndex = 5;
             // 
-            // label6
+            // label27
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(191, 41);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 24);
-            this.label6.TabIndex = 86;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(191, 203);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(0, 24);
-            this.label7.TabIndex = 87;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(124, 123);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 24);
-            this.label8.TabIndex = 88;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(92, 289);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 24);
-            this.label9.TabIndex = 89;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(176, 366);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(18, 24);
-            this.label10.TabIndex = 90;
-            this.label10.Text = "*";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(692, 39);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(18, 24);
-            this.label11.TabIndex = 91;
-            this.label11.Text = "*";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(657, 123);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(18, 24);
-            this.label12.TabIndex = 92;
-            this.label12.Text = "*";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(645, 202);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(18, 24);
-            this.label13.TabIndex = 93;
-            this.label13.Text = "*";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(726, 289);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(0, 24);
-            this.label14.TabIndex = 94;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Doctor",
-            "Pharmacist",
-            "Nurse",
-            "Receptionist"});
-            this.comboBox1.Location = new System.Drawing.Point(267, 23);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(337, 39);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(12, 26);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(249, 32);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "Employee position";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 92);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(583, 503);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 32);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1316, 603);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Earnings";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(89, 35);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(36, 29);
-            this.label22.TabIndex = 2;
-            this.label22.Text = "ID";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(147, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(279, 34);
-            this.textBox1.TabIndex = 3;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(624, 23);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 39);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Search";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(450, 29);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 37);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Search";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(445, 33);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(146, 38);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Search";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(140, 33);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(280, 34);
-            this.textBox2.TabIndex = 1;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(83, 35);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(42, 32);
-            this.label21.TabIndex = 2;
-            this.label21.Text = "ID";
+            this.label27.AutoSize = true;
+            this.label27.ForeColor = System.Drawing.Color.Red;
+            this.label27.Location = new System.Drawing.Point(124, 36);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(0, 32);
+            this.label27.TabIndex = 4;
             // 
             // Admin
             // 
@@ -641,11 +667,11 @@ namespace Hospital
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -692,16 +718,18 @@ namespace Hospital
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button SearchList;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox position;
+        private System.Windows.Forms.TextBox id1;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button SearchGet;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox id2;
+        private System.Windows.Forms.Button DeleteEmployee;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
     }
 }
