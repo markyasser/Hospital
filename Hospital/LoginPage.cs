@@ -24,6 +24,9 @@ namespace Hospital
             // check if the password is valid
 
             //check the first 2 chars in the id to go to the corresponding interface
+            Admin admin = new Admin();
+            admin.Show();
+            //this.Close();
         }
     }
 }
