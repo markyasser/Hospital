@@ -57,7 +57,7 @@ namespace Hospital
             int result;
             if (id.Text.Contains("DR"))
             {
-                result = controllerObj.InsertDoctor(fname.Text, minit.Text, lname.Text, ID, bdate, address.Text, SEX, Phone, dep.SelectedIndex);
+                //result = controllerObj.InsertDoctor(fname.Text, minit.Text, lname.Text, ID, bdate, address.Text, SEX, Phone, dep.SelectedIndex);
             }
             
 
