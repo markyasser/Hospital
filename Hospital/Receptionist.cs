@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using FontAwesome.Sharp;
 namespace Hospital
 {
     public partial class Receptionist : Form
@@ -15,6 +15,11 @@ namespace Hospital
         public Receptionist()
         {
             InitializeComponent();
+        }
+
+        private void Receptionist_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
