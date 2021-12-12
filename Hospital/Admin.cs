@@ -12,6 +12,7 @@ namespace Hospital
 {
     public partial class Admin : Form
     {
+        Controller controllerObj;
         public Admin()
         {
             InitializeComponent();
@@ -52,12 +53,17 @@ namespace Hospital
             if (Gender == "Male") SEX = 'M';
             else SEX = 'F';
             string birthdate = bdate.Value.ToString();
-           // int result = controllerObj.InsertEmployee(fname.Text, minit.Text, lname.Text, ID, bdate, address.Text, SEX,
-                //Salary, superSSN, DNO);
+
+            int result;
+            if (id.Text.Contains("DR"))
+            {
+                result = controllerObj.InsertDoctor(fname.Text, minit.Text, lname.Text, ID, bdate, address.Text, SEX, Phone, dep.SelectedIndex);
+            }
+            
 
             //if (result == 0)
             //{
-            //    MessageBox.Show("The insertion of a new employee failed");
+            //    MessageBox.Show("The insertion of a new Doctor failed");
             //}
             //else
             //{
@@ -65,7 +71,7 @@ namespace Hospital
             //}
         }
 
-       
+
 
         private void SearchList_Click(object sender, EventArgs e)
         {
@@ -86,6 +92,10 @@ namespace Hospital
                 label27.Text = "*";
             else label27.Text = "";
         }
+        private void LogOut_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
         /// ---------------------------------------------------------------------------///
         private void tabPage1_Click(object sender, EventArgs e)
         {
@@ -96,5 +106,12 @@ namespace Hospital
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

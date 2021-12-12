@@ -40,51 +40,58 @@ namespace Hospital
             // password
             // 
             this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password.Location = new System.Drawing.Point(501, 378);
+            this.password.Location = new System.Drawing.Point(568, 364);
             this.password.Name = "password";
             this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(222, 28);
             this.password.TabIndex = 1;
+            this.password.TextChanged += new System.EventHandler(this.password_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(419, 383);
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(426, 368);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 17);
+            this.label1.Size = new System.Drawing.Size(104, 21);
             this.label1.TabIndex = 2;
             this.label1.Text = "Password";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(419, 349);
+            this.label2.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(426, 334);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 17);
+            this.label2.Size = new System.Drawing.Size(33, 21);
             this.label2.TabIndex = 4;
             this.label2.Text = "ID";
             // 
             // id
             // 
             this.id.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.id.Location = new System.Drawing.Point(501, 344);
+            this.id.Location = new System.Drawing.Point(568, 330);
             this.id.Name = "id";
             this.id.Size = new System.Drawing.Size(222, 28);
             this.id.TabIndex = 3;
+            this.id.TextChanged += new System.EventHandler(this.id_TextChanged);
             // 
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(49, 125);
+            this.label.Font = new System.Drawing.Font("Cooper Black", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label.Location = new System.Drawing.Point(68, 168);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(1152, 91);
+            this.label.Size = new System.Drawing.Size(1263, 69);
             this.label.TabIndex = 5;
-            this.label.Text = "Welcome to El Salam Hospital ";
+            this.label.Text = "Welcome to Hospital Managment System";
             // 
             // logIn
             // 
-            this.logIn.Location = new System.Drawing.Point(501, 423);
+            this.logIn.Location = new System.Drawing.Point(568, 398);
             this.logIn.Name = "logIn";
             this.logIn.Size = new System.Drawing.Size(222, 33);
             this.logIn.TabIndex = 6;
@@ -96,13 +103,15 @@ namespace Hospital
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1314, 635);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.ClientSize = new System.Drawing.Size(1424, 521);
             this.Controls.Add(this.logIn);
             this.Controls.Add(this.label);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.id);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.password);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "LoginPage";
             this.Text = "Log in";
             this.ResumeLayout(false);

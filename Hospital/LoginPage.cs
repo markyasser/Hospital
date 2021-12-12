@@ -22,11 +22,29 @@ namespace Hospital
             // check if the id is valid
 
             // check if the password is valid
-
+            if (id.Text =="admin" && password.Text =="admin")
+            {
+                Admin admin = new Admin();
+                admin.Show();
+            }
+            else
+            {
+                Doctor dr = new Doctor();
+                dr.Show();
+            }
             //check the first 2 chars in the id to go to the corresponding interface
-            Admin admin = new Admin();
-            admin.Show();
+            
             //this.Close();
+        }
+
+        private void id_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void password_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

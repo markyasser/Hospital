@@ -80,7 +80,7 @@ namespace Hospital
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.LogOut = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -97,7 +97,7 @@ namespace Hospital
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 118);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -137,12 +137,12 @@ namespace Hospital
             this.tabPage1.Controls.Add(this.label24);
             this.tabPage1.Controls.Add(this.address);
             this.tabPage1.Controls.Add(this.label25);
-            this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            this.tabPage1.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1316, 603);
+            this.tabPage1.Size = new System.Drawing.Size(1316, 605);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add new employee";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -163,7 +163,7 @@ namespace Hospital
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(645, 202);
+            this.label13.Location = new System.Drawing.Point(657, 202);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(18, 24);
             this.label13.TabIndex = 93;
@@ -281,6 +281,17 @@ namespace Hospital
             // 
             this.dep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dep.FormattingEnabled = true;
+            this.dep.Items.AddRange(new object[] {
+            "Cardiology",
+            "Oncology",
+            "Psychiatry ",
+            "Dermatology ",
+            "Ophthalmology ",
+            "Geriatrics ",
+            "Paediatrics ",
+            "Gynaecology ",
+            "Epidemiology",
+            "Haematology"});
             this.dep.Location = new System.Drawing.Point(561, 73);
             this.dep.Name = "dep";
             this.dep.Size = new System.Drawing.Size(290, 33);
@@ -314,6 +325,7 @@ namespace Hospital
             // 
             // SignUp
             // 
+            this.SignUp.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUp.Location = new System.Drawing.Point(440, 481);
             this.SignUp.Name = "SignUp";
             this.SignUp.Size = new System.Drawing.Size(148, 42);
@@ -442,11 +454,12 @@ namespace Hospital
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.position);
-            this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 32);
+            this.tabPage2.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1316, 603);
+            this.tabPage2.Size = new System.Drawing.Size(1316, 605);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "List employees";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -474,9 +487,10 @@ namespace Hospital
             // label16
             // 
             this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(12, 26);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(249, 32);
+            this.label16.Size = new System.Drawing.Size(213, 29);
             this.label16.TabIndex = 1;
             this.label16.Text = "Employee position";
             // 
@@ -500,10 +514,10 @@ namespace Hospital
             this.tabPage3.Controls.Add(this.id1);
             this.tabPage3.Controls.Add(this.label22);
             this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage3.Location = new System.Drawing.Point(4, 32);
+            this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1316, 603);
+            this.tabPage3.Size = new System.Drawing.Size(1316, 605);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Get employee info";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -519,7 +533,8 @@ namespace Hospital
             // 
             // SearchGet
             // 
-            this.SearchGet.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchGet.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchGet.ForeColor = System.Drawing.SystemColors.Highlight;
             this.SearchGet.Location = new System.Drawing.Point(454, 34);
             this.SearchGet.Name = "SearchGet";
             this.SearchGet.Size = new System.Drawing.Size(140, 37);
@@ -540,6 +555,7 @@ namespace Hospital
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label22.Location = new System.Drawing.Point(89, 40);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(36, 29);
@@ -553,10 +569,10 @@ namespace Hospital
             this.tabPage4.Controls.Add(this.id2);
             this.tabPage4.Controls.Add(this.label27);
             this.tabPage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage4.Location = new System.Drawing.Point(4, 32);
+            this.tabPage4.Location = new System.Drawing.Point(4, 30);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1316, 603);
+            this.tabPage4.Size = new System.Drawing.Size(1316, 605);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Delete employee";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -565,6 +581,7 @@ namespace Hospital
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label21.Location = new System.Drawing.Point(89, 40);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(36, 29);
@@ -573,10 +590,11 @@ namespace Hospital
             // 
             // DeleteEmployee
             // 
-            this.DeleteEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteEmployee.Location = new System.Drawing.Point(462, 34);
+            this.DeleteEmployee.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteEmployee.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.DeleteEmployee.Location = new System.Drawing.Point(457, 36);
             this.DeleteEmployee.Name = "DeleteEmployee";
-            this.DeleteEmployee.Size = new System.Drawing.Size(138, 37);
+            this.DeleteEmployee.Size = new System.Drawing.Size(138, 35);
             this.DeleteEmployee.TabIndex = 3;
             this.DeleteEmployee.Text = "Search";
             this.DeleteEmployee.UseVisualStyleBackColor = true;
@@ -585,7 +603,7 @@ namespace Hospital
             // id2
             // 
             this.id2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.id2.Location = new System.Drawing.Point(156, 35);
+            this.id2.Location = new System.Drawing.Point(153, 37);
             this.id2.Name = "id2";
             this.id2.Size = new System.Drawing.Size(280, 34);
             this.id2.TabIndex = 1;
@@ -601,9 +619,9 @@ namespace Hospital
             // 
             // tabPage5
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 32);
+            this.tabPage5.Location = new System.Drawing.Point(4, 30);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1316, 603);
+            this.tabPage5.Size = new System.Drawing.Size(1316, 605);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Earnings";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -612,21 +630,22 @@ namespace Hospital
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(0, 39);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.label1.Size = new System.Drawing.Size(817, 79);
+            this.label1.Size = new System.Drawing.Size(895, 79);
             this.label1.TabIndex = 1;
             this.label1.Text = "Hospital Managment System";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(1029, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 24);
+            this.label3.Size = new System.Drawing.Size(101, 21);
             this.label3.TabIndex = 3;
             this.label3.Text = "Welcome ";
             // 
@@ -634,28 +653,33 @@ namespace Hospital
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 14);
+            this.label2.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(0, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 25);
+            this.label2.Size = new System.Drawing.Size(132, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "Admin Page";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // button1
+            // LogOut
             // 
-            this.button1.Location = new System.Drawing.Point(1237, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 30);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Log out";
-            this.button1.UseVisualStyleBackColor = true;
+            this.LogOut.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOut.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.LogOut.Location = new System.Drawing.Point(1215, 24);
+            this.LogOut.Name = "LogOut";
+            this.LogOut.Size = new System.Drawing.Size(97, 30);
+            this.LogOut.TabIndex = 4;
+            this.LogOut.Text = "Log out";
+            this.LogOut.UseVisualStyleBackColor = true;
+            this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
             // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(1324, 757);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.LogOut);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -687,7 +711,7 @@ namespace Hospital
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button LogOut;
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox dep;
