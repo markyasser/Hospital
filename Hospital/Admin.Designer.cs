@@ -67,20 +67,20 @@ namespace Hospital
             this.label16 = new System.Windows.Forms.Label();
             this.position = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label26 = new System.Windows.Forms.Label();
             this.SearchGet = new System.Windows.Forms.Button();
             this.id1 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label21 = new System.Windows.Forms.Label();
+            this.DeleteEmployee = new System.Windows.Forms.Button();
             this.id2 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.DeleteEmployee = new System.Windows.Forms.Button();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -508,6 +508,15 @@ namespace Hospital
             this.tabPage3.Text = "Get employee info";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.ForeColor = System.Drawing.Color.Red;
+            this.label26.Location = new System.Drawing.Point(119, 39);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(0, 32);
+            this.label26.TabIndex = 5;
+            // 
             // SearchGet
             // 
             this.SearchGet.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -562,6 +571,17 @@ namespace Hospital
             this.label21.TabIndex = 2;
             this.label21.Text = "ID";
             // 
+            // DeleteEmployee
+            // 
+            this.DeleteEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteEmployee.Location = new System.Drawing.Point(462, 34);
+            this.DeleteEmployee.Name = "DeleteEmployee";
+            this.DeleteEmployee.Size = new System.Drawing.Size(138, 37);
+            this.DeleteEmployee.TabIndex = 3;
+            this.DeleteEmployee.Text = "Search";
+            this.DeleteEmployee.UseVisualStyleBackColor = true;
+            this.DeleteEmployee.Click += new System.EventHandler(this.DeleteEmployee_Click);
+            // 
             // id2
             // 
             this.id2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -569,6 +589,15 @@ namespace Hospital
             this.id2.Name = "id2";
             this.id2.Size = new System.Drawing.Size(280, 34);
             this.id2.TabIndex = 1;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.ForeColor = System.Drawing.Color.Red;
+            this.label27.Location = new System.Drawing.Point(124, 36);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(0, 32);
+            this.label27.TabIndex = 4;
             // 
             // tabPage5
             // 
@@ -620,35 +649,6 @@ namespace Hospital
             this.button1.TabIndex = 4;
             this.button1.Text = "Log out";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // DeleteEmployee
-            // 
-            this.DeleteEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteEmployee.Location = new System.Drawing.Point(462, 34);
-            this.DeleteEmployee.Name = "DeleteEmployee";
-            this.DeleteEmployee.Size = new System.Drawing.Size(138, 37);
-            this.DeleteEmployee.TabIndex = 3;
-            this.DeleteEmployee.Text = "Search";
-            this.DeleteEmployee.UseVisualStyleBackColor = true;
-            this.DeleteEmployee.Click += new System.EventHandler(this.DeleteEmployee_Click);
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.ForeColor = System.Drawing.Color.Red;
-            this.label26.Location = new System.Drawing.Point(119, 39);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(0, 32);
-            this.label26.TabIndex = 5;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.ForeColor = System.Drawing.Color.Red;
-            this.label27.Location = new System.Drawing.Point(124, 36);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(0, 32);
-            this.label27.TabIndex = 4;
             // 
             // Admin
             // 
