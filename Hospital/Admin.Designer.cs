@@ -82,6 +82,8 @@ namespace Hospital
             this.label2 = new System.Windows.Forms.Label();
             this.LogOut = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.show_hide = new System.Windows.Forms.Label();
+            this.hide = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -109,6 +111,8 @@ namespace Hospital
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.hide);
+            this.tabPage1.Controls.Add(this.show_hide);
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.label12);
@@ -167,9 +171,8 @@ namespace Hospital
             this.label13.ForeColor = System.Drawing.Color.Red;
             this.label13.Location = new System.Drawing.Point(657, 202);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(18, 24);
+            this.label13.Size = new System.Drawing.Size(0, 24);
             this.label13.TabIndex = 93;
-            this.label13.Text = "*";
             // 
             // label12
             // 
@@ -266,8 +269,10 @@ namespace Hospital
             this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.Location = new System.Drawing.Point(68, 399);
             this.password.Name = "password";
+            this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(258, 34);
             this.password.TabIndex = 82;
+            this.password.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -461,7 +466,7 @@ namespace Hospital
             this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1316, 605);
+            this.tabPage2.Size = new System.Drawing.Size(1316, 585);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "List employees";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -519,7 +524,7 @@ namespace Hospital
             this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1316, 605);
+            this.tabPage3.Size = new System.Drawing.Size(1316, 585);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Get employee info";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -574,7 +579,7 @@ namespace Hospital
             this.tabPage4.Location = new System.Drawing.Point(4, 30);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1316, 605);
+            this.tabPage4.Size = new System.Drawing.Size(1316, 585);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Delete employee";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -623,7 +628,7 @@ namespace Hospital
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 30);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1316, 605);
+            this.tabPage5.Size = new System.Drawing.Size(1316, 585);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Earnings";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -686,6 +691,30 @@ namespace Hospital
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1324, 138);
             this.panel1.TabIndex = 5;
+            // 
+            // show_hide
+            // 
+            this.show_hide.AutoSize = true;
+            this.show_hide.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.show_hide.Image = global::Hospital.Properties.Resources.showpass;
+            this.show_hide.Location = new System.Drawing.Point(342, 404);
+            this.show_hide.Name = "show_hide";
+            this.show_hide.Size = new System.Drawing.Size(42, 27);
+            this.show_hide.TabIndex = 95;
+            this.show_hide.Text = "     ";
+            this.show_hide.Click += new System.EventHandler(this.show_hide_Click);
+            // 
+            // hide
+            // 
+            this.hide.AutoSize = true;
+            this.hide.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hide.Image = global::Hospital.Properties.Resources.hide;
+            this.hide.Location = new System.Drawing.Point(342, 404);
+            this.hide.Name = "hide";
+            this.hide.Size = new System.Drawing.Size(42, 27);
+            this.hide.TabIndex = 96;
+            this.hide.Text = "     ";
+            this.hide.Click += new System.EventHandler(this.hide_Click);
             // 
             // Admin
             // 
@@ -768,5 +797,7 @@ namespace Hospital
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label show_hide;
+        private System.Windows.Forms.Label hide;
     }
 }
