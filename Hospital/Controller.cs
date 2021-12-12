@@ -16,7 +16,7 @@ namespace Hospital
         }
         public int InsertDoctor(string Fname, string Minit, string Lname, int id, string Bdate, string address, char sex, int phoneNumber, int DNO)
         {
-            string query = "INSERT INTO Doctor (Fname, Minit, Lname, id,Bdate,Address,sex,Phone_Number,DNO) " +
+            string query = "INSERT INTO Doctor (Fname, Minit, Lname, id,Bdate,Address,sex,Phone_Number,DNO)" +
                             "Values ('" + Fname + "','" + Minit + "','" + Lname + "'," +
                             id + ",'" + Bdate + "','" + address + "','" + sex + "','" + phoneNumber + "','" +
                             DNO + "');";
@@ -24,7 +24,7 @@ namespace Hospital
         }
         public int InsertNurse(string Fname, string Minit, string Lname, int id, string Bdate, string address, char sex, int phoneNumber, int DNO)
         {
-            string query = "INSERT INTO Doctor (Fname, Minit, Lname, id,Bdate,Address,sex,Phone_Number,DNO) " +
+            string query = "INSERT INTO Nurse (Fname, Minit, Lname, id,Bdate,Address,sex,Phone_Number,DNO) " +
                             "Values ('" + Fname + "','" + Minit + "','" + Lname + "'," +
                             id + ",'" + Bdate + "','" + address + "','" + sex + "','" + phoneNumber + "','" +
                             DNO + "');";

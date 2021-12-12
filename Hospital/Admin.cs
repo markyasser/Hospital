@@ -16,8 +16,21 @@ namespace Hospital
         public Admin()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
+            hide.Visible = false;
         }
-
+        private void show_hide_Click(object sender, EventArgs e)
+        {
+            show_hide.Visible = false;
+            hide.Visible = true;
+            password.UseSystemPasswordChar = false;
+        }
+        private void hide_Click(object sender, EventArgs e)
+        {
+            show_hide.Visible = true;
+            hide.Visible = false;
+            password.UseSystemPasswordChar = true;
+        }
         private void SignUp_Click(object sender, EventArgs e)
         {
             if (fname.Text == "")
@@ -49,6 +62,9 @@ namespace Hospital
                 label14.Text = "*";
             else label14.Text = "";
             string Gender = gender.Text;
+            if (Gender == "")
+                label13.Text = "*";
+            else label13.Text = "";
             char SEX;
             if (Gender == "Male") SEX = 'M';
             else SEX = 'F';
