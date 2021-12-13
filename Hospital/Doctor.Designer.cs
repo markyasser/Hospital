@@ -30,9 +30,11 @@ namespace Hospital
         private void InitializeComponent()
         {
             this.SideMenu_panel = new System.Windows.Forms.Panel();
+            this.Settings_button = new System.Windows.Forms.Button();
+            this.LogOut_button = new System.Windows.Forms.Button();
             this.WorkHours_button = new System.Windows.Forms.Button();
-            this.Patient_panel = new System.Windows.Forms.Panel();
             this.Nurse_button = new System.Windows.Forms.Button();
+            this.Patient_panel = new System.Windows.Forms.Panel();
             this.Surgery_button = new System.Windows.Forms.Button();
             this.MedTests_button = new System.Windows.Forms.Button();
             this.Medicines_button = new System.Windows.Forms.Button();
@@ -40,9 +42,12 @@ namespace Hospital
             this.MedData_button = new System.Windows.Forms.Button();
             this.Patient_button = new System.Windows.Forms.Button();
             this.Logo_panel = new System.Windows.Forms.Panel();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
             this.Dashboard_panel = new System.Windows.Forms.Panel();
             this.Welcome_label = new System.Windows.Forms.Label();
             this.SelectPatient_panel = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -57,6 +62,7 @@ namespace Hospital
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.WorkingHours_panel = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.SunEndTime = new System.Windows.Forms.DateTimePicker();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.SunStrtTime = new System.Windows.Forms.DateTimePicker();
@@ -80,19 +86,18 @@ namespace Hospital
             this.MonEndTime = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.MonStrtTime = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.Medicines_panel = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.CurrentMedicines_dataGridView = new System.Windows.Forms.DataGridView();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.MedName_Add_textBox = new System.Windows.Forms.TextBox();
+            this.Refresh_Medicines_button = new System.Windows.Forms.Button();
+            this.DelMed_button = new System.Windows.Forms.Button();
+            this.AddMed_button = new System.Windows.Forms.Button();
+            this.MedName_Del_comboBox = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.MedName_Del_comboBox = new System.Windows.Forms.ComboBox();
-            this.AddMed_button = new System.Windows.Forms.Button();
-            this.DelMed_button = new System.Windows.Forms.Button();
+            this.MedName_Add_textBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.CurrentMedicines_dataGridView = new System.Windows.Forms.DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
             this.MedTest_panel = new System.Windows.Forms.Panel();
             this.Refresh_MedTest_button = new System.Windows.Forms.Button();
             this.AddMedTest_button = new System.Windows.Forms.Button();
@@ -101,8 +106,9 @@ namespace Hospital
             this.label20 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label21 = new System.Windows.Forms.Label();
-            this.Refresh_Medicines_button = new System.Windows.Forms.Button();
             this.Surgery_panel = new System.Windows.Forms.Panel();
+            this.SurgDate_dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label25 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.DeleteSurg_button = new System.Windows.Forms.Button();
             this.ReserveSurg_button = new System.Windows.Forms.Button();
@@ -114,9 +120,18 @@ namespace Hospital
             this.label23 = new System.Windows.Forms.Label();
             this.Surgery_dataGridView = new System.Windows.Forms.DataGridView();
             this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.SurgDate_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Nurses_panel = new System.Windows.Forms.Panel();
+            this.RoomNo_Delete_textBox = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.NurseID_Delete_textBox = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.DeleteNurse_button = new System.Windows.Forms.Button();
+            this.label35 = new System.Windows.Forms.Label();
+            this.RoomNo_Change_textBox = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.NurseID_Change_textBox = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.RoomNo_Assign_textBox = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.ChangeNurse_button = new System.Windows.Forms.Button();
@@ -127,21 +142,6 @@ namespace Hospital
             this.label30 = new System.Windows.Forms.Label();
             this.Rooms_Nurses_dataGridView = new System.Windows.Forms.DataGridView();
             this.label31 = new System.Windows.Forms.Label();
-            this.RoomNo_Assign_textBox = new System.Windows.Forms.TextBox();
-            this.RoomNo_Change_textBox = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.NurseID_Change_textBox = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.RoomNo_Delete_textBox = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.NurseID_Delete_textBox = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.DeleteNurse_button = new System.Windows.Forms.Button();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.LogOut_button = new System.Windows.Forms.Button();
-            this.Settings_button = new System.Windows.Forms.Button();
             this.SideMenu_panel.SuspendLayout();
             this.Patient_panel.SuspendLayout();
             this.Logo_panel.SuspendLayout();
@@ -175,6 +175,38 @@ namespace Hospital
             this.SideMenu_panel.Size = new System.Drawing.Size(297, 757);
             this.SideMenu_panel.TabIndex = 0;
             // 
+            // Settings_button
+            // 
+            this.Settings_button.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Settings_button.FlatAppearance.BorderSize = 0;
+            this.Settings_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Settings_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Settings_button.ForeColor = System.Drawing.Color.White;
+            this.Settings_button.Location = new System.Drawing.Point(0, 637);
+            this.Settings_button.Name = "Settings_button";
+            this.Settings_button.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Settings_button.Size = new System.Drawing.Size(297, 60);
+            this.Settings_button.TabIndex = 7;
+            this.Settings_button.Text = "Settings";
+            this.Settings_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Settings_button.UseVisualStyleBackColor = true;
+            // 
+            // LogOut_button
+            // 
+            this.LogOut_button.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.LogOut_button.FlatAppearance.BorderSize = 0;
+            this.LogOut_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogOut_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOut_button.ForeColor = System.Drawing.Color.White;
+            this.LogOut_button.Location = new System.Drawing.Point(0, 697);
+            this.LogOut_button.Name = "LogOut_button";
+            this.LogOut_button.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.LogOut_button.Size = new System.Drawing.Size(297, 60);
+            this.LogOut_button.TabIndex = 6;
+            this.LogOut_button.Text = "Log Out";
+            this.LogOut_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LogOut_button.UseVisualStyleBackColor = true;
+            // 
             // WorkHours_button
             // 
             this.WorkHours_button.Dock = System.Windows.Forms.DockStyle.Top;
@@ -192,21 +224,6 @@ namespace Hospital
             this.WorkHours_button.UseVisualStyleBackColor = true;
             this.WorkHours_button.Click += new System.EventHandler(this.WorkHours_button_Click);
             // 
-            // Patient_panel
-            // 
-            this.Patient_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.Patient_panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Patient_panel.Controls.Add(this.Surgery_button);
-            this.Patient_panel.Controls.Add(this.MedTests_button);
-            this.Patient_panel.Controls.Add(this.Medicines_button);
-            this.Patient_panel.Controls.Add(this.SelectPatient_button);
-            this.Patient_panel.Controls.Add(this.MedData_button);
-            this.Patient_panel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Patient_panel.Location = new System.Drawing.Point(0, 160);
-            this.Patient_panel.Name = "Patient_panel";
-            this.Patient_panel.Size = new System.Drawing.Size(297, 266);
-            this.Patient_panel.TabIndex = 1;
-            // 
             // Nurse_button
             // 
             this.Nurse_button.Dock = System.Windows.Forms.DockStyle.Top;
@@ -223,6 +240,21 @@ namespace Hospital
             this.Nurse_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Nurse_button.UseVisualStyleBackColor = true;
             this.Nurse_button.Click += new System.EventHandler(this.Nurse_button_Click);
+            // 
+            // Patient_panel
+            // 
+            this.Patient_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.Patient_panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Patient_panel.Controls.Add(this.Surgery_button);
+            this.Patient_panel.Controls.Add(this.MedTests_button);
+            this.Patient_panel.Controls.Add(this.Medicines_button);
+            this.Patient_panel.Controls.Add(this.SelectPatient_button);
+            this.Patient_panel.Controls.Add(this.MedData_button);
+            this.Patient_panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Patient_panel.Location = new System.Drawing.Point(0, 160);
+            this.Patient_panel.Name = "Patient_panel";
+            this.Patient_panel.Size = new System.Drawing.Size(297, 266);
+            this.Patient_panel.TabIndex = 1;
             // 
             // Surgery_button
             // 
@@ -335,6 +367,28 @@ namespace Hospital
             this.Logo_panel.Size = new System.Drawing.Size(297, 100);
             this.Logo_panel.TabIndex = 2;
             // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.White;
+            this.label37.Location = new System.Drawing.Point(3, 54);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(271, 29);
+            this.label37.TabIndex = 1;
+            this.label37.Text = "Management System";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Cooper Black", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.White;
+            this.label36.Location = new System.Drawing.Point(38, 9);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(202, 49);
+            this.label36.TabIndex = 0;
+            this.label36.Text = "Hospital";
+            // 
             // Dashboard_panel
             // 
             this.Dashboard_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
@@ -379,6 +433,16 @@ namespace Hospital
             this.SelectPatient_panel.Name = "SelectPatient_panel";
             this.SelectPatient_panel.Size = new System.Drawing.Size(346, 81);
             this.SelectPatient_panel.TabIndex = 2;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(59, 21);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(257, 39);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Select Patient";
             // 
             // textBox6
             // 
@@ -536,6 +600,16 @@ namespace Hospital
             this.WorkingHours_panel.Name = "WorkingHours_panel";
             this.WorkingHours_panel.Size = new System.Drawing.Size(402, 81);
             this.WorkingHours_panel.TabIndex = 3;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(59, 21);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(283, 39);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Working Hours";
             // 
             // SunEndTime
             // 
@@ -774,26 +848,6 @@ namespace Hospital
             this.MonStrtTime.Size = new System.Drawing.Size(193, 36);
             this.MonStrtTime.TabIndex = 1;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(59, 21);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(257, 39);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Select Patient";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(59, 21);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(283, 39);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "Working Hours";
-            // 
             // Medicines_panel
             // 
             this.Medicines_panel.AutoScroll = true;
@@ -814,54 +868,57 @@ namespace Hospital
             this.Medicines_panel.Size = new System.Drawing.Size(365, 102);
             this.Medicines_panel.TabIndex = 16;
             // 
-            // label12
+            // Refresh_Medicines_button
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(59, 21);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(251, 39);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "Add Medicine";
+            this.Refresh_Medicines_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Refresh_Medicines_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.Refresh_Medicines_button.FlatAppearance.BorderSize = 0;
+            this.Refresh_Medicines_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Refresh_Medicines_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Refresh_Medicines_button.ForeColor = System.Drawing.Color.White;
+            this.Refresh_Medicines_button.Location = new System.Drawing.Point(953, 1116);
+            this.Refresh_Medicines_button.Name = "Refresh_Medicines_button";
+            this.Refresh_Medicines_button.Size = new System.Drawing.Size(138, 40);
+            this.Refresh_Medicines_button.TabIndex = 26;
+            this.Refresh_Medicines_button.Text = "Refresh";
+            this.Refresh_Medicines_button.UseVisualStyleBackColor = false;
             // 
-            // CurrentMedicines_dataGridView
+            // DelMed_button
             // 
-            this.CurrentMedicines_dataGridView.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.CurrentMedicines_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CurrentMedicines_dataGridView.Location = new System.Drawing.Point(66, 325);
-            this.CurrentMedicines_dataGridView.Name = "CurrentMedicines_dataGridView";
-            this.CurrentMedicines_dataGridView.RowHeadersWidth = 51;
-            this.CurrentMedicines_dataGridView.RowTemplate.Height = 24;
-            this.CurrentMedicines_dataGridView.Size = new System.Drawing.Size(472, 310);
-            this.CurrentMedicines_dataGridView.TabIndex = 16;
+            this.DelMed_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.DelMed_button.FlatAppearance.BorderSize = 0;
+            this.DelMed_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DelMed_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DelMed_button.ForeColor = System.Drawing.Color.White;
+            this.DelMed_button.Location = new System.Drawing.Point(601, 196);
+            this.DelMed_button.Name = "DelMed_button";
+            this.DelMed_button.Size = new System.Drawing.Size(133, 36);
+            this.DelMed_button.TabIndex = 25;
+            this.DelMed_button.Text = "Delete";
+            this.DelMed_button.UseVisualStyleBackColor = false;
             // 
-            // label13
+            // AddMed_button
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(59, 270);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(335, 39);
-            this.label13.TabIndex = 17;
-            this.label13.Text = "Current Medicines";
+            this.AddMed_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.AddMed_button.FlatAppearance.BorderSize = 0;
+            this.AddMed_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddMed_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddMed_button.ForeColor = System.Drawing.Color.White;
+            this.AddMed_button.Location = new System.Drawing.Point(601, 80);
+            this.AddMed_button.Name = "AddMed_button";
+            this.AddMed_button.Size = new System.Drawing.Size(133, 36);
+            this.AddMed_button.TabIndex = 24;
+            this.AddMed_button.Text = "Add";
+            this.AddMed_button.UseVisualStyleBackColor = false;
             // 
-            // label14
+            // MedName_Del_comboBox
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(61, 83);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(190, 29);
-            this.label14.TabIndex = 18;
-            this.label14.Text = "Medicine Name";
-            // 
-            // MedName_Add_textBox
-            // 
-            this.MedName_Add_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MedName_Add_textBox.Location = new System.Drawing.Point(314, 80);
-            this.MedName_Add_textBox.Name = "MedName_Add_textBox";
-            this.MedName_Add_textBox.Size = new System.Drawing.Size(224, 36);
-            this.MedName_Add_textBox.TabIndex = 19;
+            this.MedName_Del_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MedName_Del_comboBox.FormattingEnabled = true;
+            this.MedName_Del_comboBox.Location = new System.Drawing.Point(314, 195);
+            this.MedName_Del_comboBox.Name = "MedName_Del_comboBox";
+            this.MedName_Del_comboBox.Size = new System.Drawing.Size(224, 37);
+            this.MedName_Del_comboBox.TabIndex = 23;
             // 
             // label15
             // 
@@ -883,42 +940,54 @@ namespace Hospital
             this.label16.TabIndex = 20;
             this.label16.Text = "Delete Medicine";
             // 
-            // MedName_Del_comboBox
+            // MedName_Add_textBox
             // 
-            this.MedName_Del_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MedName_Del_comboBox.FormattingEnabled = true;
-            this.MedName_Del_comboBox.Location = new System.Drawing.Point(314, 195);
-            this.MedName_Del_comboBox.Name = "MedName_Del_comboBox";
-            this.MedName_Del_comboBox.Size = new System.Drawing.Size(224, 37);
-            this.MedName_Del_comboBox.TabIndex = 23;
+            this.MedName_Add_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MedName_Add_textBox.Location = new System.Drawing.Point(314, 80);
+            this.MedName_Add_textBox.Name = "MedName_Add_textBox";
+            this.MedName_Add_textBox.Size = new System.Drawing.Size(224, 36);
+            this.MedName_Add_textBox.TabIndex = 19;
             // 
-            // AddMed_button
+            // label14
             // 
-            this.AddMed_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.AddMed_button.FlatAppearance.BorderSize = 0;
-            this.AddMed_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddMed_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddMed_button.ForeColor = System.Drawing.Color.White;
-            this.AddMed_button.Location = new System.Drawing.Point(601, 80);
-            this.AddMed_button.Name = "AddMed_button";
-            this.AddMed_button.Size = new System.Drawing.Size(133, 36);
-            this.AddMed_button.TabIndex = 24;
-            this.AddMed_button.Text = "Add";
-            this.AddMed_button.UseVisualStyleBackColor = false;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(61, 83);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(190, 29);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "Medicine Name";
             // 
-            // DelMed_button
+            // label13
             // 
-            this.DelMed_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.DelMed_button.FlatAppearance.BorderSize = 0;
-            this.DelMed_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DelMed_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DelMed_button.ForeColor = System.Drawing.Color.White;
-            this.DelMed_button.Location = new System.Drawing.Point(601, 196);
-            this.DelMed_button.Name = "DelMed_button";
-            this.DelMed_button.Size = new System.Drawing.Size(133, 36);
-            this.DelMed_button.TabIndex = 25;
-            this.DelMed_button.Text = "Delete";
-            this.DelMed_button.UseVisualStyleBackColor = false;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(59, 270);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(335, 39);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "Current Medicines";
+            // 
+            // CurrentMedicines_dataGridView
+            // 
+            this.CurrentMedicines_dataGridView.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.CurrentMedicines_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CurrentMedicines_dataGridView.Location = new System.Drawing.Point(66, 325);
+            this.CurrentMedicines_dataGridView.Name = "CurrentMedicines_dataGridView";
+            this.CurrentMedicines_dataGridView.RowHeadersWidth = 51;
+            this.CurrentMedicines_dataGridView.RowTemplate.Height = 24;
+            this.CurrentMedicines_dataGridView.Size = new System.Drawing.Size(472, 310);
+            this.CurrentMedicines_dataGridView.TabIndex = 16;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(59, 21);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(251, 39);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Add Medicine";
             // 
             // MedTest_panel
             // 
@@ -944,7 +1013,7 @@ namespace Hospital
             this.Refresh_MedTest_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_MedTest_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Refresh_MedTest_button.ForeColor = System.Drawing.Color.White;
-            this.Refresh_MedTest_button.Location = new System.Drawing.Point(549, 453);
+            this.Refresh_MedTest_button.Location = new System.Drawing.Point(889, 862);
             this.Refresh_MedTest_button.Name = "Refresh_MedTest_button";
             this.Refresh_MedTest_button.Size = new System.Drawing.Size(144, 46);
             this.Refresh_MedTest_button.TabIndex = 25;
@@ -1015,21 +1084,6 @@ namespace Hospital
             this.label21.TabIndex = 15;
             this.label21.Text = "Add Medical Test";
             // 
-            // Refresh_Medicines_button
-            // 
-            this.Refresh_Medicines_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Refresh_Medicines_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.Refresh_Medicines_button.FlatAppearance.BorderSize = 0;
-            this.Refresh_Medicines_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Refresh_Medicines_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Refresh_Medicines_button.ForeColor = System.Drawing.Color.White;
-            this.Refresh_Medicines_button.Location = new System.Drawing.Point(584, 583);
-            this.Refresh_Medicines_button.Name = "Refresh_Medicines_button";
-            this.Refresh_Medicines_button.Size = new System.Drawing.Size(138, 40);
-            this.Refresh_Medicines_button.TabIndex = 26;
-            this.Refresh_Medicines_button.Text = "Refresh";
-            this.Refresh_Medicines_button.UseVisualStyleBackColor = false;
-            // 
             // Surgery_panel
             // 
             this.Surgery_panel.AutoScroll = true;
@@ -1052,6 +1106,25 @@ namespace Hospital
             this.Surgery_panel.Size = new System.Drawing.Size(365, 102);
             this.Surgery_panel.TabIndex = 27;
             // 
+            // SurgDate_dateTimePicker
+            // 
+            this.SurgDate_dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SurgDate_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.SurgDate_dateTimePicker.Location = new System.Drawing.Point(369, 120);
+            this.SurgDate_dateTimePicker.Name = "SurgDate_dateTimePicker";
+            this.SurgDate_dateTimePicker.Size = new System.Drawing.Size(212, 36);
+            this.SurgDate_dateTimePicker.TabIndex = 29;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(364, 86);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(161, 29);
+            this.label25.TabIndex = 28;
+            this.label25.Text = "Surgery Date";
+            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -1060,7 +1133,7 @@ namespace Hospital
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1202, 1169);
+            this.button1.Location = new System.Drawing.Point(1820, 1755);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 40);
             this.button1.TabIndex = 26;
@@ -1173,25 +1246,6 @@ namespace Hospital
             this.label24.TabIndex = 15;
             this.label24.Text = "Reserve Surgery";
             // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(364, 86);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(161, 29);
-            this.label25.TabIndex = 28;
-            this.label25.Text = "Surgery Date";
-            // 
-            // SurgDate_dateTimePicker
-            // 
-            this.SurgDate_dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SurgDate_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.SurgDate_dateTimePicker.Location = new System.Drawing.Point(369, 120);
-            this.SurgDate_dateTimePicker.Name = "SurgDate_dateTimePicker";
-            this.SurgDate_dateTimePicker.Size = new System.Drawing.Size(212, 36);
-            this.SurgDate_dateTimePicker.TabIndex = 29;
-            // 
             // Nurses_panel
             // 
             this.Nurses_panel.AutoScroll = true;
@@ -1222,6 +1276,110 @@ namespace Hospital
             this.Nurses_panel.Size = new System.Drawing.Size(365, 102);
             this.Nurses_panel.TabIndex = 30;
             // 
+            // RoomNo_Delete_textBox
+            // 
+            this.RoomNo_Delete_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RoomNo_Delete_textBox.Location = new System.Drawing.Point(369, 453);
+            this.RoomNo_Delete_textBox.Name = "RoomNo_Delete_textBox";
+            this.RoomNo_Delete_textBox.Size = new System.Drawing.Size(224, 36);
+            this.RoomNo_Delete_textBox.TabIndex = 39;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(364, 419);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(178, 29);
+            this.label33.TabIndex = 38;
+            this.label33.Text = "Room Number";
+            // 
+            // NurseID_Delete_textBox
+            // 
+            this.NurseID_Delete_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NurseID_Delete_textBox.Location = new System.Drawing.Point(66, 453);
+            this.NurseID_Delete_textBox.Name = "NurseID_Delete_textBox";
+            this.NurseID_Delete_textBox.Size = new System.Drawing.Size(224, 36);
+            this.NurseID_Delete_textBox.TabIndex = 37;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(61, 416);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(111, 29);
+            this.label34.TabIndex = 36;
+            this.label34.Text = "Nurse ID";
+            // 
+            // DeleteNurse_button
+            // 
+            this.DeleteNurse_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.DeleteNurse_button.FlatAppearance.BorderSize = 0;
+            this.DeleteNurse_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteNurse_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteNurse_button.ForeColor = System.Drawing.Color.White;
+            this.DeleteNurse_button.Location = new System.Drawing.Point(879, 455);
+            this.DeleteNurse_button.Name = "DeleteNurse_button";
+            this.DeleteNurse_button.Size = new System.Drawing.Size(133, 36);
+            this.DeleteNurse_button.TabIndex = 35;
+            this.DeleteNurse_button.Text = "Delete";
+            this.DeleteNurse_button.UseVisualStyleBackColor = false;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(59, 360);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(238, 39);
+            this.label35.TabIndex = 34;
+            this.label35.Text = "Delete Nurse";
+            // 
+            // RoomNo_Change_textBox
+            // 
+            this.RoomNo_Change_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RoomNo_Change_textBox.Location = new System.Drawing.Point(369, 285);
+            this.RoomNo_Change_textBox.Name = "RoomNo_Change_textBox";
+            this.RoomNo_Change_textBox.Size = new System.Drawing.Size(224, 36);
+            this.RoomNo_Change_textBox.TabIndex = 33;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(364, 251);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(178, 29);
+            this.label27.TabIndex = 32;
+            this.label27.Text = "Room Number";
+            // 
+            // NurseID_Change_textBox
+            // 
+            this.NurseID_Change_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NurseID_Change_textBox.Location = new System.Drawing.Point(66, 285);
+            this.NurseID_Change_textBox.Name = "NurseID_Change_textBox";
+            this.NurseID_Change_textBox.Size = new System.Drawing.Size(224, 36);
+            this.NurseID_Change_textBox.TabIndex = 31;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(61, 248);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(111, 29);
+            this.label32.TabIndex = 30;
+            this.label32.Text = "Nurse ID";
+            // 
+            // RoomNo_Assign_textBox
+            // 
+            this.RoomNo_Assign_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RoomNo_Assign_textBox.Location = new System.Drawing.Point(369, 112);
+            this.RoomNo_Assign_textBox.Name = "RoomNo_Assign_textBox";
+            this.RoomNo_Assign_textBox.Size = new System.Drawing.Size(224, 36);
+            this.RoomNo_Assign_textBox.TabIndex = 29;
+            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -1240,7 +1398,7 @@ namespace Hospital
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1878, 1960);
+            this.button2.Location = new System.Drawing.Point(2525, 2751);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 40);
             this.button2.TabIndex = 26;
@@ -1333,164 +1491,6 @@ namespace Hospital
             this.label31.Size = new System.Drawing.Size(244, 39);
             this.label31.TabIndex = 15;
             this.label31.Text = "Assign Nurse";
-            // 
-            // RoomNo_Assign_textBox
-            // 
-            this.RoomNo_Assign_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RoomNo_Assign_textBox.Location = new System.Drawing.Point(369, 112);
-            this.RoomNo_Assign_textBox.Name = "RoomNo_Assign_textBox";
-            this.RoomNo_Assign_textBox.Size = new System.Drawing.Size(224, 36);
-            this.RoomNo_Assign_textBox.TabIndex = 29;
-            // 
-            // RoomNo_Change_textBox
-            // 
-            this.RoomNo_Change_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RoomNo_Change_textBox.Location = new System.Drawing.Point(369, 285);
-            this.RoomNo_Change_textBox.Name = "RoomNo_Change_textBox";
-            this.RoomNo_Change_textBox.Size = new System.Drawing.Size(224, 36);
-            this.RoomNo_Change_textBox.TabIndex = 33;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(364, 251);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(178, 29);
-            this.label27.TabIndex = 32;
-            this.label27.Text = "Room Number";
-            // 
-            // NurseID_Change_textBox
-            // 
-            this.NurseID_Change_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NurseID_Change_textBox.Location = new System.Drawing.Point(66, 285);
-            this.NurseID_Change_textBox.Name = "NurseID_Change_textBox";
-            this.NurseID_Change_textBox.Size = new System.Drawing.Size(224, 36);
-            this.NurseID_Change_textBox.TabIndex = 31;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(61, 248);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(111, 29);
-            this.label32.TabIndex = 30;
-            this.label32.Text = "Nurse ID";
-            // 
-            // RoomNo_Delete_textBox
-            // 
-            this.RoomNo_Delete_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RoomNo_Delete_textBox.Location = new System.Drawing.Point(369, 453);
-            this.RoomNo_Delete_textBox.Name = "RoomNo_Delete_textBox";
-            this.RoomNo_Delete_textBox.Size = new System.Drawing.Size(224, 36);
-            this.RoomNo_Delete_textBox.TabIndex = 39;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(364, 419);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(178, 29);
-            this.label33.TabIndex = 38;
-            this.label33.Text = "Room Number";
-            // 
-            // NurseID_Delete_textBox
-            // 
-            this.NurseID_Delete_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NurseID_Delete_textBox.Location = new System.Drawing.Point(66, 453);
-            this.NurseID_Delete_textBox.Name = "NurseID_Delete_textBox";
-            this.NurseID_Delete_textBox.Size = new System.Drawing.Size(224, 36);
-            this.NurseID_Delete_textBox.TabIndex = 37;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(61, 416);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(111, 29);
-            this.label34.TabIndex = 36;
-            this.label34.Text = "Nurse ID";
-            // 
-            // DeleteNurse_button
-            // 
-            this.DeleteNurse_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.DeleteNurse_button.FlatAppearance.BorderSize = 0;
-            this.DeleteNurse_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteNurse_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteNurse_button.ForeColor = System.Drawing.Color.White;
-            this.DeleteNurse_button.Location = new System.Drawing.Point(879, 455);
-            this.DeleteNurse_button.Name = "DeleteNurse_button";
-            this.DeleteNurse_button.Size = new System.Drawing.Size(133, 36);
-            this.DeleteNurse_button.TabIndex = 35;
-            this.DeleteNurse_button.Text = "Delete";
-            this.DeleteNurse_button.UseVisualStyleBackColor = false;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(59, 360);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(238, 39);
-            this.label35.TabIndex = 34;
-            this.label35.Text = "Delete Nurse";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Cooper Black", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.White;
-            this.label36.Location = new System.Drawing.Point(38, 9);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(202, 49);
-            this.label36.TabIndex = 0;
-            this.label36.Text = "Hospital";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.Color.White;
-            this.label37.Location = new System.Drawing.Point(3, 54);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(271, 29);
-            this.label37.TabIndex = 1;
-            this.label37.Text = "Management System";
-            // 
-            // LogOut_button
-            // 
-            this.LogOut_button.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LogOut_button.FlatAppearance.BorderSize = 0;
-            this.LogOut_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogOut_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogOut_button.ForeColor = System.Drawing.Color.White;
-            this.LogOut_button.Location = new System.Drawing.Point(0, 697);
-            this.LogOut_button.Name = "LogOut_button";
-            this.LogOut_button.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.LogOut_button.Size = new System.Drawing.Size(297, 60);
-            this.LogOut_button.TabIndex = 6;
-            this.LogOut_button.Text = "Log Out";
-            this.LogOut_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LogOut_button.UseVisualStyleBackColor = true;
-            // 
-            // Settings_button
-            // 
-            this.Settings_button.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Settings_button.FlatAppearance.BorderSize = 0;
-            this.Settings_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Settings_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Settings_button.ForeColor = System.Drawing.Color.White;
-            this.Settings_button.Location = new System.Drawing.Point(0, 637);
-            this.Settings_button.Name = "Settings_button";
-            this.Settings_button.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Settings_button.Size = new System.Drawing.Size(297, 60);
-            this.Settings_button.TabIndex = 7;
-            this.Settings_button.Text = "Settings";
-            this.Settings_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Settings_button.UseVisualStyleBackColor = true;
             // 
             // Doctor
             // 
