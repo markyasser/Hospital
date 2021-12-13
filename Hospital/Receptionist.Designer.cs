@@ -30,16 +30,16 @@ namespace Hospital
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
-            this.panelDesktop = new System.Windows.Forms.Panel();
-            this.menu_btn = new FontAwesome.Sharp.IconButton();
-            this.Logo_panel = new System.Windows.Forms.Panel();
-            this.MS_lbl = new System.Windows.Forms.Label();
-            this.HP_lbl = new System.Windows.Forms.Label();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.Logo_panel = new System.Windows.Forms.Panel();
+            this.MS_lbl = new System.Windows.Forms.Label();
+            this.menu_btn = new FontAwesome.Sharp.IconButton();
+            this.HP_lbl = new System.Windows.Forms.Label();
+            this.iconButton7 = new FontAwesome.Sharp.IconButton();
+            this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.Logo_panel.SuspendLayout();
             this.SuspendLayout();
@@ -58,89 +58,6 @@ namespace Hospital
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(338, 589);
             this.panelMenu.TabIndex = 0;
-            // 
-            // iconButton7
-            // 
-            this.iconButton7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.iconButton7.FlatAppearance.BorderSize = 0;
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton7.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton7.ForeColor = System.Drawing.Color.White;
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.iconButton7.IconColor = System.Drawing.Color.White;
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.IconSize = 35;
-            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.Location = new System.Drawing.Point(0, 522);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.iconButton7.Size = new System.Drawing.Size(338, 67);
-            this.iconButton7.TabIndex = 9;
-            this.iconButton7.Tag = "Log Out";
-            this.iconButton7.Text = "  Log Out";
-            this.iconButton7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton7.UseVisualStyleBackColor = true;
-            // 
-            // panelDesktop
-            // 
-            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(338, 0);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(903, 589);
-            this.panelDesktop.TabIndex = 2;
-            // 
-            // menu_btn
-            // 
-            this.menu_btn.FlatAppearance.BorderSize = 0;
-            this.menu_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menu_btn.IconChar = FontAwesome.Sharp.IconChar.Bars;
-            this.menu_btn.IconColor = System.Drawing.Color.White;
-            this.menu_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menu_btn.IconSize = 30;
-            this.menu_btn.Location = new System.Drawing.Point(276, 0);
-            this.menu_btn.Name = "menu_btn";
-            this.menu_btn.Size = new System.Drawing.Size(60, 60);
-            this.menu_btn.TabIndex = 14;
-            this.menu_btn.UseVisualStyleBackColor = true;
-            this.menu_btn.Click += new System.EventHandler(this.menu_btn_Click);
-            // 
-            // Logo_panel
-            // 
-            this.Logo_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.Logo_panel.Controls.Add(this.MS_lbl);
-            this.Logo_panel.Controls.Add(this.menu_btn);
-            this.Logo_panel.Controls.Add(this.HP_lbl);
-            this.Logo_panel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Logo_panel.Location = new System.Drawing.Point(0, 0);
-            this.Logo_panel.Name = "Logo_panel";
-            this.Logo_panel.Size = new System.Drawing.Size(338, 95);
-            this.Logo_panel.TabIndex = 15;
-            // 
-            // MS_lbl
-            // 
-            this.MS_lbl.AutoSize = true;
-            this.MS_lbl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MS_lbl.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MS_lbl.ForeColor = System.Drawing.Color.White;
-            this.MS_lbl.Location = new System.Drawing.Point(0, 49);
-            this.MS_lbl.Name = "MS_lbl";
-            this.MS_lbl.Size = new System.Drawing.Size(271, 29);
-            this.MS_lbl.TabIndex = 1;
-            this.MS_lbl.Text = "Management System";
-            // 
-            // HP_lbl
-            // 
-            this.HP_lbl.AutoSize = true;
-            this.HP_lbl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.HP_lbl.Font = new System.Drawing.Font("Cooper Black", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HP_lbl.ForeColor = System.Drawing.Color.White;
-            this.HP_lbl.Location = new System.Drawing.Point(0, 0);
-            this.HP_lbl.Name = "HP_lbl";
-            this.HP_lbl.Size = new System.Drawing.Size(202, 49);
-            this.HP_lbl.TabIndex = 0;
-            this.HP_lbl.Text = "Hospital";
             // 
             // iconButton2
             // 
@@ -233,6 +150,89 @@ namespace Hospital
             this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton3.UseVisualStyleBackColor = true;
+            // 
+            // Logo_panel
+            // 
+            this.Logo_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.Logo_panel.Controls.Add(this.MS_lbl);
+            this.Logo_panel.Controls.Add(this.menu_btn);
+            this.Logo_panel.Controls.Add(this.HP_lbl);
+            this.Logo_panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Logo_panel.Location = new System.Drawing.Point(0, 0);
+            this.Logo_panel.Name = "Logo_panel";
+            this.Logo_panel.Size = new System.Drawing.Size(338, 95);
+            this.Logo_panel.TabIndex = 15;
+            // 
+            // MS_lbl
+            // 
+            this.MS_lbl.AutoSize = true;
+            this.MS_lbl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MS_lbl.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MS_lbl.ForeColor = System.Drawing.Color.White;
+            this.MS_lbl.Location = new System.Drawing.Point(0, 49);
+            this.MS_lbl.Name = "MS_lbl";
+            this.MS_lbl.Size = new System.Drawing.Size(271, 29);
+            this.MS_lbl.TabIndex = 1;
+            this.MS_lbl.Text = "Management System";
+            // 
+            // menu_btn
+            // 
+            this.menu_btn.FlatAppearance.BorderSize = 0;
+            this.menu_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.menu_btn.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            this.menu_btn.IconColor = System.Drawing.Color.White;
+            this.menu_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menu_btn.IconSize = 30;
+            this.menu_btn.Location = new System.Drawing.Point(276, 0);
+            this.menu_btn.Name = "menu_btn";
+            this.menu_btn.Size = new System.Drawing.Size(60, 60);
+            this.menu_btn.TabIndex = 14;
+            this.menu_btn.UseVisualStyleBackColor = true;
+            this.menu_btn.Click += new System.EventHandler(this.menu_btn_Click);
+            // 
+            // HP_lbl
+            // 
+            this.HP_lbl.AutoSize = true;
+            this.HP_lbl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HP_lbl.Font = new System.Drawing.Font("Cooper Black", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HP_lbl.ForeColor = System.Drawing.Color.White;
+            this.HP_lbl.Location = new System.Drawing.Point(0, 0);
+            this.HP_lbl.Name = "HP_lbl";
+            this.HP_lbl.Size = new System.Drawing.Size(202, 49);
+            this.HP_lbl.TabIndex = 0;
+            this.HP_lbl.Text = "Hospital";
+            // 
+            // iconButton7
+            // 
+            this.iconButton7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.iconButton7.FlatAppearance.BorderSize = 0;
+            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton7.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton7.ForeColor = System.Drawing.Color.White;
+            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.iconButton7.IconColor = System.Drawing.Color.White;
+            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton7.IconSize = 35;
+            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton7.Location = new System.Drawing.Point(0, 522);
+            this.iconButton7.Name = "iconButton7";
+            this.iconButton7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
+            this.iconButton7.Size = new System.Drawing.Size(338, 67);
+            this.iconButton7.TabIndex = 9;
+            this.iconButton7.Tag = "Log Out";
+            this.iconButton7.Text = "  Log Out";
+            this.iconButton7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton7.UseVisualStyleBackColor = true;
+            // 
+            // panelDesktop
+            // 
+            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(338, 0);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(903, 589);
+            this.panelDesktop.TabIndex = 2;
             // 
             // Receptionist
             // 
