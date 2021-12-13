@@ -31,6 +31,8 @@ namespace Hospital
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.hide = new System.Windows.Forms.Label();
+            this.show_hide = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -82,8 +84,6 @@ namespace Hospital
             this.label2 = new System.Windows.Forms.Label();
             this.LogOut = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.show_hide = new System.Windows.Forms.Label();
-            this.hide = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -153,6 +153,30 @@ namespace Hospital
             this.tabPage1.Text = "Add new employee";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // hide
+            // 
+            this.hide.AutoSize = true;
+            this.hide.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hide.Image = global::Hospital.Properties.Resources.hide;
+            this.hide.Location = new System.Drawing.Point(342, 404);
+            this.hide.Name = "hide";
+            this.hide.Size = new System.Drawing.Size(42, 27);
+            this.hide.TabIndex = 96;
+            this.hide.Text = "     ";
+            this.hide.Click += new System.EventHandler(this.hide_Click);
+            // 
+            // show_hide
+            // 
+            this.show_hide.AutoSize = true;
+            this.show_hide.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.show_hide.Image = global::Hospital.Properties.Resources.showpass;
+            this.show_hide.Location = new System.Drawing.Point(342, 404);
+            this.show_hide.Name = "show_hide";
+            this.show_hide.Size = new System.Drawing.Size(42, 27);
+            this.show_hide.TabIndex = 95;
+            this.show_hide.Text = "     ";
+            this.show_hide.Click += new System.EventHandler(this.show_hide_Click);
             // 
             // label14
             // 
@@ -269,7 +293,6 @@ namespace Hospital
             this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.Location = new System.Drawing.Point(68, 399);
             this.password.Name = "password";
-            this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(258, 34);
             this.password.TabIndex = 82;
             this.password.UseSystemPasswordChar = true;
@@ -691,30 +714,6 @@ namespace Hospital
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1324, 138);
             this.panel1.TabIndex = 5;
-            // 
-            // show_hide
-            // 
-            this.show_hide.AutoSize = true;
-            this.show_hide.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.show_hide.Image = global::Hospital.Properties.Resources.showpass;
-            this.show_hide.Location = new System.Drawing.Point(342, 404);
-            this.show_hide.Name = "show_hide";
-            this.show_hide.Size = new System.Drawing.Size(42, 27);
-            this.show_hide.TabIndex = 95;
-            this.show_hide.Text = "     ";
-            this.show_hide.Click += new System.EventHandler(this.show_hide_Click);
-            // 
-            // hide
-            // 
-            this.hide.AutoSize = true;
-            this.hide.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hide.Image = global::Hospital.Properties.Resources.hide;
-            this.hide.Location = new System.Drawing.Point(342, 404);
-            this.hide.Name = "hide";
-            this.hide.Size = new System.Drawing.Size(42, 27);
-            this.hide.TabIndex = 96;
-            this.hide.Text = "     ";
-            this.hide.Click += new System.EventHandler(this.hide_Click);
             // 
             // Admin
             // 

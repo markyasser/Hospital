@@ -20,8 +20,8 @@ namespace Hospital
             //Application.Run(new Admin());
             //Application.Run(new LoginPage());
             //Application.Run(new Admin());
-            Application.Run(new Receptionist());
-            //Application.Run(new Doctor());
+            //Application.Run(new Receptionist());
+            Application.Run(new Doctor());
             //Application.Run(new Pharmacist());
             //Application.Run(new Nurse());
         }
