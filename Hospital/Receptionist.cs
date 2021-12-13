@@ -14,7 +14,7 @@ namespace Hospital
     public partial class Receptionist : Form
     {
         private int borderSize = 2;
-        private Size formSize;
+        private Form currentChildForm;
         public Receptionist()
         {
             InitializeComponent();
@@ -67,6 +67,24 @@ namespace Hospital
         private void menu_btn_Click(object sender, EventArgs e)
         {
             CollapseMenu();
+        }
+        private void OpenChildForm(Form childForm)
+        {
+            //open only form
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            //End
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(childForm);
+            panelDesktop.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+           
         }
     }
 }
