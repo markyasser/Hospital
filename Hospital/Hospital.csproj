@@ -128,18 +128,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\viewPassword.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Picture1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Picture2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\show.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\showpass.png" />
   </ItemGroup>
   <ItemGroup>
