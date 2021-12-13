@@ -4,20 +4,37 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FontAwesome.Sharp;
 
 namespace Hospital
 {
     public partial class Admin : Form
     {
         Controller controllerObj;
+        private int borderSize = 2;
+        private Size formSize;
         public Admin()
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
+            CollapseMenu();
             hide.Visible = false;
+            this.Padding = new Padding(borderSize);
+            this.BackColor = Color.FromArgb(98, 102, 244);
+        }
+        //Drag Form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         private void show_hide_Click(object sender, EventArgs e)
         {
@@ -89,25 +106,25 @@ namespace Hospital
 
 
 
-        private void SearchList_Click(object sender, EventArgs e)
-        {
-            string pos = position.Text;
-        }
+        //private void SearchList_Click(object sender, EventArgs e)
+        //{
+        //    string pos = position.Text;
+        //}
 
-        private void SearchGet_Click(object sender, EventArgs e)
-        {
-            if (id1.Text == "")
-                label26.Text = "*";
-            else label26.Text = "";
+        //private void SearchGet_Click(object sender, EventArgs e)
+        //{
+        //    if (id1.Text == "")
+        //        label26.Text = "*";
+        //    else label26.Text = "";
 
-        }
+        //}
 
-        private void DeleteEmployee_Click(object sender, EventArgs e)
-        {
-            if (id2.Text == "")
-                label27.Text = "*";
-            else label27.Text = "";
-        }
+        //private void DeleteEmployee_Click(object sender, EventArgs e)
+        //{
+        //    if (id2.Text == "")
+        //        label27.Text = "*";
+        //    else label27.Text = "";
+        //}
         private void LogOut_Click(object sender, EventArgs e)
         {
             Close();
@@ -127,7 +144,38 @@ namespace Hospital
         {
 
         }
-
-        
+        private void CollapseMenu()
+        {
+            if (this.panelMenu.Width > 200) //Collapse menu
+            {
+                panelMenu.Width = 100;
+                HP_lbl.Visible = false;
+                MS_lbl.Visible = false;
+                menu_btn.Dock = DockStyle.Top;
+                foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "";
+                    menuButton.ImageAlign = ContentAlignment.MiddleCenter;
+                    menuButton.Padding = new Padding(0);
+                }
+            }
+            else
+            { //Expand menu
+                panelMenu.Width = 333;
+                HP_lbl.Visible = true;
+                MS_lbl.Visible = true;
+                menu_btn.Dock = DockStyle.None;
+                foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "   " + menuButton.Tag.ToString();
+                    menuButton.ImageAlign = ContentAlignment.MiddleLeft;
+                    menuButton.Padding = new Padding(10, 0, 0, 0);
+                }
+            }
+        }
+        private void menu_btn_Click(object sender, EventArgs e)
+        {
+            CollapseMenu();
+        }
     }
 }
