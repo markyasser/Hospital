@@ -17,6 +17,7 @@ namespace Hospital
         Controller controllerObj;
         private IconButton activeButton;
         private Panel leftBtnBorder;
+        private Color PrevColorOfActiveButton;
         public Admin()
         {
             InitializeComponent();
@@ -124,7 +125,31 @@ namespace Hospital
                 }
             }
         }
-
+        //to highlight color when pressed
+        private void ActivateButton(object senderBtn)
+        {
+            if (senderBtn != null)
+            {
+                //remove highlight from previously selected button
+                DisableButton(PrevColorOfActiveButton);
+                //Button
+                activeButton = (IconButton)senderBtn;
+                PrevColorOfActiveButton = activeButton.BackColor;
+                activeButton.BackColor = Color.FromArgb(98, 102, 210);
+                activeButton.ForeColor = Color.Black;
+                activeButton.IconColor = Color.Black;
+            }
+        }
+        //to remove highlight from the previous selected button
+        private void DisableButton(Color prevColor)
+        {
+            if (activeButton != null)
+            {
+                activeButton.BackColor = prevColor;
+                activeButton.ForeColor = Color.White;
+                activeButton.IconColor = Color.White;
+            }
+        }
         private void ActivateButton(object senderBtn, Color color)
         {
             if (senderBtn != null)
@@ -160,21 +185,7 @@ namespace Hospital
                 activeButton.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
-        private void show_hide_Click(object sender, EventArgs e)
-        {
-            show_hide.Visible = false;
-            hide.Visible = true;
-            password.UseSystemPasswordChar = false;
-        }
-        private void hide_Click(object sender, EventArgs e)
-        {
-            show_hide.Visible = true;
-            hide.Visible = false;
-            password.UseSystemPasswordChar = true;
-        }
         
-
-       
         private void LogOut_Click(object sender, EventArgs e)
         {
             Close();
@@ -193,28 +204,32 @@ namespace Hospital
 
         private void Earnings_iconButton_Click(object sender, EventArgs e)
         {
-
             ShowPanel(Earnings_panel);
+            ActivateButton(Earnings_iconButton);
         }
 
         private void List_iconButton_Click(object sender, EventArgs e)
         {
             ShowPanel(List_panel);
+            ActivateButton(List_iconButton);
         }
 
         private void Search_iconButton_Click(object sender, EventArgs e)
         {
             ShowPanel(Search_panel);
+            ActivateButton(Search_iconButton);
         }
 
         private void Delete_iconButton_Click(object sender, EventArgs e)
         {
             ShowPanel(Delete_panel);
+            ActivateButton(Delete_iconButton);
         }
 
         private void Create_Account_iconButton_Click(object sender, EventArgs e)
         {
             ShowPanel(CreateAccount_panel);
+            ActivateButton(Create_Account_iconButton);
         }
         private void Logout_iconButton_Click(object sender, EventArgs e)
         {
