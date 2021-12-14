@@ -29,6 +29,7 @@ namespace Hospital
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SideMenu_panel = new System.Windows.Forms.Panel();
             this.WorkHours_iconButton = new FontAwesome.Sharp.IconButton();
             this.Settings_iconButton = new FontAwesome.Sharp.IconButton();
@@ -142,6 +143,7 @@ namespace Hospital
             this.label30 = new System.Windows.Forms.Label();
             this.Rooms_Nurses_dataGridView = new System.Windows.Forms.DataGridView();
             this.label31 = new System.Windows.Forms.Label();
+            this.SidePanel_timer = new System.Windows.Forms.Timer(this.components);
             this.SideMenu_panel.SuspendLayout();
             this.Patient_panel.SuspendLayout();
             this.Logo_panel.SuspendLayout();
@@ -172,11 +174,12 @@ namespace Hospital
             this.SideMenu_panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.SideMenu_panel.Location = new System.Drawing.Point(0, 0);
             this.SideMenu_panel.Name = "SideMenu_panel";
-            this.SideMenu_panel.Size = new System.Drawing.Size(333, 757);
+            this.SideMenu_panel.Size = new System.Drawing.Size(330, 757);
             this.SideMenu_panel.TabIndex = 0;
             // 
             // WorkHours_iconButton
             // 
+            this.WorkHours_iconButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.WorkHours_iconButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.WorkHours_iconButton.FlatAppearance.BorderSize = 0;
             this.WorkHours_iconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -189,13 +192,13 @@ namespace Hospital
             this.WorkHours_iconButton.Location = new System.Drawing.Point(0, 486);
             this.WorkHours_iconButton.Name = "WorkHours_iconButton";
             this.WorkHours_iconButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.WorkHours_iconButton.Size = new System.Drawing.Size(333, 60);
+            this.WorkHours_iconButton.Size = new System.Drawing.Size(330, 60);
             this.WorkHours_iconButton.TabIndex = 35;
             this.WorkHours_iconButton.Tag = "Working Hours";
             this.WorkHours_iconButton.Text = "Working Hours";
             this.WorkHours_iconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.WorkHours_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.WorkHours_iconButton.UseVisualStyleBackColor = true;
+            this.WorkHours_iconButton.UseVisualStyleBackColor = false;
             this.WorkHours_iconButton.Click += new System.EventHandler(this.WorkHours_iconButton_Click);
             // 
             // Settings_iconButton
@@ -212,7 +215,7 @@ namespace Hospital
             this.Settings_iconButton.Location = new System.Drawing.Point(0, 637);
             this.Settings_iconButton.Name = "Settings_iconButton";
             this.Settings_iconButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Settings_iconButton.Size = new System.Drawing.Size(333, 60);
+            this.Settings_iconButton.Size = new System.Drawing.Size(330, 60);
             this.Settings_iconButton.TabIndex = 34;
             this.Settings_iconButton.Tag = "Settings";
             this.Settings_iconButton.Text = "Settings";
@@ -234,7 +237,7 @@ namespace Hospital
             this.Logout_iconButton.Location = new System.Drawing.Point(0, 697);
             this.Logout_iconButton.Name = "Logout_iconButton";
             this.Logout_iconButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Logout_iconButton.Size = new System.Drawing.Size(333, 60);
+            this.Logout_iconButton.Size = new System.Drawing.Size(330, 60);
             this.Logout_iconButton.TabIndex = 33;
             this.Logout_iconButton.Tag = "Log Out";
             this.Logout_iconButton.Text = "Log Out";
@@ -256,7 +259,7 @@ namespace Hospital
             this.Nurses_iconButton.Location = new System.Drawing.Point(0, 426);
             this.Nurses_iconButton.Name = "Nurses_iconButton";
             this.Nurses_iconButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Nurses_iconButton.Size = new System.Drawing.Size(333, 60);
+            this.Nurses_iconButton.Size = new System.Drawing.Size(330, 60);
             this.Nurses_iconButton.TabIndex = 32;
             this.Nurses_iconButton.Tag = "Nurses";
             this.Nurses_iconButton.Text = "Nurses";
@@ -276,7 +279,7 @@ namespace Hospital
             this.Patient_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.Patient_panel.Location = new System.Drawing.Point(0, 160);
             this.Patient_panel.Name = "Patient_panel";
-            this.Patient_panel.Size = new System.Drawing.Size(333, 266);
+            this.Patient_panel.Size = new System.Drawing.Size(330, 266);
             this.Patient_panel.TabIndex = 1;
             // 
             // Surgery_iconButton
@@ -293,7 +296,7 @@ namespace Hospital
             this.Surgery_iconButton.Location = new System.Drawing.Point(0, 180);
             this.Surgery_iconButton.Name = "Surgery_iconButton";
             this.Surgery_iconButton.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.Surgery_iconButton.Size = new System.Drawing.Size(333, 60);
+            this.Surgery_iconButton.Size = new System.Drawing.Size(330, 60);
             this.Surgery_iconButton.TabIndex = 35;
             this.Surgery_iconButton.Tag = "Surgery";
             this.Surgery_iconButton.Text = "Surgery";
@@ -316,7 +319,7 @@ namespace Hospital
             this.MedicalTests_iconButton.Location = new System.Drawing.Point(0, 120);
             this.MedicalTests_iconButton.Name = "MedicalTests_iconButton";
             this.MedicalTests_iconButton.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.MedicalTests_iconButton.Size = new System.Drawing.Size(333, 60);
+            this.MedicalTests_iconButton.Size = new System.Drawing.Size(330, 60);
             this.MedicalTests_iconButton.TabIndex = 34;
             this.MedicalTests_iconButton.Tag = "Medical Tests";
             this.MedicalTests_iconButton.Text = "Medical Tests";
@@ -339,7 +342,7 @@ namespace Hospital
             this.Medicines_iconButton.Location = new System.Drawing.Point(0, 60);
             this.Medicines_iconButton.Name = "Medicines_iconButton";
             this.Medicines_iconButton.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.Medicines_iconButton.Size = new System.Drawing.Size(333, 60);
+            this.Medicines_iconButton.Size = new System.Drawing.Size(330, 60);
             this.Medicines_iconButton.TabIndex = 33;
             this.Medicines_iconButton.Tag = "Medicines";
             this.Medicines_iconButton.Text = "Medicines";
@@ -362,7 +365,7 @@ namespace Hospital
             this.SelectPatient_iconButton.Location = new System.Drawing.Point(0, 0);
             this.SelectPatient_iconButton.Name = "SelectPatient_iconButton";
             this.SelectPatient_iconButton.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.SelectPatient_iconButton.Size = new System.Drawing.Size(333, 60);
+            this.SelectPatient_iconButton.Size = new System.Drawing.Size(330, 60);
             this.SelectPatient_iconButton.TabIndex = 32;
             this.SelectPatient_iconButton.Tag = "Select Patient";
             this.SelectPatient_iconButton.Text = "Select Patient";
@@ -385,7 +388,7 @@ namespace Hospital
             this.Patient_iconButton.Location = new System.Drawing.Point(0, 100);
             this.Patient_iconButton.Name = "Patient_iconButton";
             this.Patient_iconButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Patient_iconButton.Size = new System.Drawing.Size(333, 60);
+            this.Patient_iconButton.Size = new System.Drawing.Size(330, 60);
             this.Patient_iconButton.TabIndex = 31;
             this.Patient_iconButton.Tag = "Patient";
             this.Patient_iconButton.Text = "Patient";
@@ -403,7 +406,7 @@ namespace Hospital
             this.Logo_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.Logo_panel.Location = new System.Drawing.Point(0, 0);
             this.Logo_panel.Name = "Logo_panel";
-            this.Logo_panel.Size = new System.Drawing.Size(333, 100);
+            this.Logo_panel.Size = new System.Drawing.Size(330, 100);
             this.Logo_panel.TabIndex = 2;
             // 
             // SideBar_iconButton
@@ -454,9 +457,9 @@ namespace Hospital
             this.Dashboard_panel.Controls.Add(this.Welcome_label);
             this.Dashboard_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.Dashboard_panel.ForeColor = System.Drawing.Color.White;
-            this.Dashboard_panel.Location = new System.Drawing.Point(333, 0);
+            this.Dashboard_panel.Location = new System.Drawing.Point(330, 0);
             this.Dashboard_panel.Name = "Dashboard_panel";
-            this.Dashboard_panel.Size = new System.Drawing.Size(991, 100);
+            this.Dashboard_panel.Size = new System.Drawing.Size(994, 100);
             this.Dashboard_panel.TabIndex = 1;
             // 
             // Welcome_label
@@ -464,7 +467,7 @@ namespace Hospital
             this.Welcome_label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Welcome_label.AutoSize = true;
             this.Welcome_label.Font = new System.Drawing.Font("Cooper Black", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Welcome_label.Location = new System.Drawing.Point(233, 25);
+            this.Welcome_label.Location = new System.Drawing.Point(235, 25);
             this.Welcome_label.Name = "Welcome_label";
             this.Welcome_label.Size = new System.Drawing.Size(535, 57);
             this.Welcome_label.TabIndex = 0;
@@ -935,7 +938,7 @@ namespace Hospital
             this.Refresh_Medicines_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_Medicines_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Refresh_Medicines_button.ForeColor = System.Drawing.Color.White;
-            this.Refresh_Medicines_button.Location = new System.Drawing.Point(2060, 2715);
+            this.Refresh_Medicines_button.Location = new System.Drawing.Point(2798, 3781);
             this.Refresh_Medicines_button.Name = "Refresh_Medicines_button";
             this.Refresh_Medicines_button.Size = new System.Drawing.Size(138, 40);
             this.Refresh_Medicines_button.TabIndex = 26;
@@ -1072,7 +1075,7 @@ namespace Hospital
             this.Refresh_MedTest_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_MedTest_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Refresh_MedTest_button.ForeColor = System.Drawing.Color.White;
-            this.Refresh_MedTest_button.Location = new System.Drawing.Point(1909, 2089);
+            this.Refresh_MedTest_button.Location = new System.Drawing.Point(2589, 2907);
             this.Refresh_MedTest_button.Name = "Refresh_MedTest_button";
             this.Refresh_MedTest_button.Size = new System.Drawing.Size(144, 46);
             this.Refresh_MedTest_button.TabIndex = 25;
@@ -1192,7 +1195,7 @@ namespace Hospital
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3674, 3513);
+            this.button1.Location = new System.Drawing.Point(4910, 4685);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 40);
             this.button1.TabIndex = 26;
@@ -1457,7 +1460,7 @@ namespace Hospital
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(4466, 5124);
+            this.button2.Location = new System.Drawing.Point(5760, 6706);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 40);
             this.button2.TabIndex = 26;
@@ -1550,6 +1553,11 @@ namespace Hospital
             this.label31.Size = new System.Drawing.Size(244, 39);
             this.label31.TabIndex = 15;
             this.label31.Text = "Assign Nurse";
+            // 
+            // SidePanel_timer
+            // 
+            this.SidePanel_timer.Interval = 15;
+            this.SidePanel_timer.Tick += new System.EventHandler(this.SidePanel_timer_Tick);
             // 
             // Doctor
             // 
@@ -1709,5 +1717,6 @@ namespace Hospital
         private FontAwesome.Sharp.IconButton Settings_iconButton;
         private FontAwesome.Sharp.IconButton WorkHours_iconButton;
         private FontAwesome.Sharp.IconButton SideBar_iconButton;
+        private System.Windows.Forms.Timer SidePanel_timer;
     }
 }

@@ -12,16 +12,19 @@ namespace Hospital
 {
     public partial class Doctor : Form
     {
-        private IconButton activeButton;
-        private Panel leftBtnBorder;
+        private IconButton activeButton; //holds the currently selected (highlighted) button
+        private Color PrevColorOfActiveButton;
+        private bool SidePanel_IsOpen;
+        private const int OpenSideMenuWidth = 330;
+        private const int ClosedSideMenuWidth = 100;
         public Doctor()
         {
             InitializeComponent();
             HideSubmenus();  
             HidePanels();    
             InitializePanels();
-            Open_Close_SideBar();
-            CreateLeftButtonBorder();
+            SidePanel_IsOpen = true;
+            Open_Close_SideMenu();
         }
         //hide submenus at the beginning
         void HideSubmenus()
@@ -48,14 +51,6 @@ namespace Hospital
             Surgery_panel.Dock = DockStyle.Fill;
             Nurses_panel.Dock = DockStyle.Fill;
         }
-        //create border for the activate button feature
-        void CreateLeftButtonBorder()
-        {
-            leftBtnBorder = new Panel();
-            leftBtnBorder.Size = new Size(7, 60);
-            SideMenu_panel.Controls.Add(leftBtnBorder);
-            Patient_panel.Controls.Add(leftBtnBorder);
-        }
         //show submenu if you click a button
         void ShowSubmenu(Panel menu)
         {
@@ -80,11 +75,11 @@ namespace Hospital
             }
         }
         //opens left sidebar if its closed and vice versa
-        private void Open_Close_SideBar()
+        private void Open_Close_SideMenu()
         {
-            if (SideMenu_panel.Width > 200) //Collapse menu
+            if (SidePanel_IsOpen) //Collapse menu
             {
-                SideMenu_panel.Width = 100; //closed width
+                SideMenu_panel.Width = ClosedSideMenuWidth; //closed width
                 label36.Visible = false;    //hide logo
                 label37.Visible = false;
                 //for each button in the side panel
@@ -101,10 +96,11 @@ namespace Hospital
                     menuButton.ImageAlign = ContentAlignment.MiddleCenter;
                     menuButton.Padding = new Padding(0);
                 }
+                SidePanel_IsOpen = false;
             }
             else
             { //Expand menu
-                SideMenu_panel.Width = 333;
+                SideMenu_panel.Width = OpenSideMenuWidth;
                 label36.Visible = true;
                 label37.Visible = true;
                 foreach (Button menuButton in SideMenu_panel.Controls.OfType<Button>())
@@ -119,42 +115,33 @@ namespace Hospital
                     menuButton.ImageAlign = ContentAlignment.MiddleLeft;
                     menuButton.Padding = new Padding(30, 0, 0, 0);
                 }
+                SidePanel_IsOpen = true;
             }
         }
         
-        private void ActivateButton(object senderBtn, Color color)
+        //to highlight color when pressed
+        private void ActivateButton(object senderBtn)
         {
             if (senderBtn != null)
             {
-                DisableButton();
+                //remove highlight from previously selected button
+                DisableButton(PrevColorOfActiveButton);
                 //Button
                 activeButton = (IconButton)senderBtn;
-                activeButton.BackColor = Color.FromArgb(37, 36, 81);
-                activeButton.ForeColor = color;
-                activeButton.TextAlign = ContentAlignment.MiddleCenter;
-                activeButton.IconColor = color;
-                activeButton.TextImageRelation = TextImageRelation.TextBeforeImage;
-                activeButton.ImageAlign = ContentAlignment.MiddleRight;
-                //Left border button
-                leftBtnBorder.BackColor = color;
-                leftBtnBorder.Location = new Point(0, activeButton.Location.Y);
-                leftBtnBorder.Visible = true;
-                leftBtnBorder.BringToFront();
-                //Current Child Form Icon
-                //iconCurrentChildForm.IconChar = currentBtn.IconChar;
-                //iconCurrentChildForm.IconColor = color;
+                PrevColorOfActiveButton = activeButton.BackColor;
+                activeButton.BackColor = Color.FromArgb(98, 102, 210);
+                activeButton.ForeColor = Color.Black;
+                activeButton.IconColor = Color.Black;
             }
         }
-        private void DisableButton()
+        //to remove highlight from the previous selected button
+        private void DisableButton(Color prevColor)
         {
             if (activeButton != null)
             {
-                activeButton.BackColor = Color.FromArgb(31, 30, 68);
-                activeButton.ForeColor = Color.Gainsboro;
-                activeButton.TextAlign = ContentAlignment.MiddleLeft;
-                activeButton.IconColor = Color.Gainsboro;
-                activeButton.TextImageRelation = TextImageRelation.ImageBeforeText;
-                activeButton.ImageAlign = ContentAlignment.MiddleLeft;
+                activeButton.BackColor = prevColor;
+                activeButton.ForeColor = Color.White;
+                activeButton.IconColor = Color.White;
             }
         }
         private void Patient_iconButton_Click(object sender, EventArgs e)
@@ -165,36 +152,71 @@ namespace Hospital
         private void SelectPatient_iconButton_Click(object sender, EventArgs e)
         {
             ShowPanel(SelectPatient_panel);
+            ActivateButton(SelectPatient_iconButton);
         }
 
         private void Medicines_iconButton_Click(object sender, EventArgs e)
         {
             ShowPanel(Medicines_panel);
+            ActivateButton(Medicines_iconButton);
         }
 
         private void MedicalTests_iconButton_Click(object sender, EventArgs e)
         {
             ShowPanel(MedTest_panel);
+            ActivateButton(MedicalTests_iconButton);
         }
 
         private void Surgery_iconButton_Click(object sender, EventArgs e)
         {
             ShowPanel(Surgery_panel);
+            ActivateButton(Surgery_iconButton);
         }
 
         private void Nurses_iconButton_Click(object sender, EventArgs e)
         {
             ShowPanel(Nurses_panel);
+            ActivateButton(Nurses_iconButton);
         }
 
         private void WorkHours_iconButton_Click(object sender, EventArgs e)
         {
             ShowPanel(WorkingHours_panel);
+            ActivateButton(WorkHours_iconButton);
         }
 
         private void SideBar_iconButton_Click(object sender, EventArgs e)
         {
-            Open_Close_SideBar();
+            Open_Close_SideMenu();
+            //SidePanel_timer.Start();
+        }
+
+        //sliding bar, not used yet
+        private void SidePanel_timer_Tick(object sender, EventArgs e)
+        {
+            if (!SidePanel_IsOpen)
+            {
+                SideMenu_panel.Width = SideMenu_panel.Width + 10;
+                if (SideMenu_panel.Width >= 330)
+                {
+                    SidePanel_timer.Stop();
+                    Open_Close_SideMenu();
+
+                    SidePanel_IsOpen = true;
+                    //Refresh();
+                }
+            }
+            else
+            {
+                SideMenu_panel.Width = SideMenu_panel.Width - 10;
+                if (SideMenu_panel.Width <= 100)
+                {
+                    SidePanel_timer.Stop();
+                    Open_Close_SideMenu();
+                    SidePanel_IsOpen = false;
+                    //Refresh();
+                }
+            }
         }
     }
 }
