@@ -14,11 +14,12 @@ namespace Hospital
     public partial class Receptionist : Form
     {
         private int borderSize = 2;
-        private Form currentChildForm;
+
         public Receptionist()
         {
             InitializeComponent();
             CollapseMenu();
+            HideSubmenus();
             this.Padding = new Padding(borderSize);
             this.BackColor = Color.FromArgb(98, 102, 244);
 
@@ -48,6 +49,12 @@ namespace Hospital
                     menuButton.ImageAlign = ContentAlignment.MiddleCenter;
                     menuButton.Padding = new Padding(0);
                 }
+                foreach (Button menuButton in App_panel.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "";
+                    menuButton.ImageAlign = ContentAlignment.MiddleCenter;
+                    menuButton.Padding = new Padding(0);
+                }
             }
             else
             { //Expand menu
@@ -61,6 +68,12 @@ namespace Hospital
                     menuButton.ImageAlign = ContentAlignment.MiddleLeft;
                     menuButton.Padding = new Padding(10, 0, 0, 0);
                 }
+                foreach (Button menuButton in App_panel.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "   " + menuButton.Tag.ToString();
+                    menuButton.ImageAlign = ContentAlignment.MiddleLeft;
+                    menuButton.Padding = new Padding(30, 0, 0, 0);
+                }
             }
         }
 
@@ -68,23 +81,30 @@ namespace Hospital
         {
             CollapseMenu();
         }
-        private void OpenChildForm(Form childForm)
+
+
+        //hide submenus at the beginning
+        void HideSubmenus()
         {
-            //open only form
-            if (currentChildForm != null)
+            App_panel.Visible = false;
+        }
+        //show submenu if you click a button
+        void ShowSubmenu(Panel menu)
+        {
+            if (menu.Visible)
             {
-                currentChildForm.Close();
+                menu.Visible = false;
             }
-            currentChildForm = childForm;
-            //End
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelDesktop.Controls.Add(childForm);
-            panelDesktop.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-           
+            else
+            {
+                HideSubmenus();
+                menu.Visible = true;
+            }
+        }
+
+        private void IconButton4_Click(object sender, EventArgs e)
+        {
+            ShowSubmenu(App_panel);
         }
     }
 }
