@@ -33,7 +33,7 @@ namespace Hospital
             this.label22 = new System.Windows.Forms.Label();
             this.Search_panel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.ReserveSurg_button = new System.Windows.Forms.Button();
+            this.Search_By_ID_button = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.Delete_panel = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
@@ -43,12 +43,8 @@ namespace Hospital
             this.AddMedTest_button = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.RoomNo_Assign_textBox = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.AssignNurse_button = new System.Windows.Forms.Button();
-            this.NurseID_Assign_textBox = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
+            this.Get_Earnings_button = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.Earnings_panel = new System.Windows.Forms.Panel();
             this.Employee_panel = new System.Windows.Forms.Panel();
@@ -101,7 +97,7 @@ namespace Hospital
             this.Earnings_iconButton = new FontAwesome.Sharp.IconButton();
             this.Employee_Button = new FontAwesome.Sharp.IconButton();
             this.Refresh_Medicines_button = new System.Windows.Forms.Button();
-            this.AddMed_button = new System.Windows.Forms.Button();
+            this.ShowList_button = new System.Windows.Forms.Button();
             this.List_panel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label16 = new System.Windows.Forms.Label();
@@ -120,20 +116,20 @@ namespace Hospital
             // 
             // SurgName_Reserve_textBox
             // 
-            this.SurgName_Reserve_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SurgName_Reserve_textBox.Location = new System.Drawing.Point(131, 79);
+            this.SurgName_Reserve_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SurgName_Reserve_textBox.Location = new System.Drawing.Point(230, 102);
             this.SurgName_Reserve_textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SurgName_Reserve_textBox.Name = "SurgName_Reserve_textBox";
-            this.SurgName_Reserve_textBox.Size = new System.Drawing.Size(224, 36);
+            this.SurgName_Reserve_textBox.Size = new System.Drawing.Size(289, 45);
             this.SurgName_Reserve_textBox.TabIndex = 19;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(61, 82);
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(160, 107);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(37, 29);
+            this.label22.Size = new System.Drawing.Size(44, 36);
             this.label22.TabIndex = 18;
             this.label22.Text = "ID";
             // 
@@ -142,7 +138,7 @@ namespace Hospital
             this.Search_panel.AutoScroll = true;
             this.Search_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.Search_panel.Controls.Add(this.button1);
-            this.Search_panel.Controls.Add(this.ReserveSurg_button);
+            this.Search_panel.Controls.Add(this.Search_By_ID_button);
             this.Search_panel.Controls.Add(this.SurgName_Reserve_textBox);
             this.Search_panel.Controls.Add(this.label22);
             this.Search_panel.Controls.Add(this.label24);
@@ -160,7 +156,7 @@ namespace Hospital
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(5142, 4165);
+            this.button1.Location = new System.Drawing.Point(5486, 4210);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 39);
@@ -168,20 +164,20 @@ namespace Hospital
             this.button1.Text = "Refresh";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // ReserveSurg_button
+            // Search_By_ID_button
             // 
-            this.ReserveSurg_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.ReserveSurg_button.FlatAppearance.BorderSize = 0;
-            this.ReserveSurg_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ReserveSurg_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReserveSurg_button.ForeColor = System.Drawing.Color.White;
-            this.ReserveSurg_button.Location = new System.Drawing.Point(401, 80);
-            this.ReserveSurg_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ReserveSurg_button.Name = "ReserveSurg_button";
-            this.ReserveSurg_button.Size = new System.Drawing.Size(143, 36);
-            this.ReserveSurg_button.TabIndex = 24;
-            this.ReserveSurg_button.Text = "Search";
-            this.ReserveSurg_button.UseVisualStyleBackColor = false;
+            this.Search_By_ID_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.Search_By_ID_button.FlatAppearance.BorderSize = 0;
+            this.Search_By_ID_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Search_By_ID_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Search_By_ID_button.ForeColor = System.Drawing.Color.White;
+            this.Search_By_ID_button.Location = new System.Drawing.Point(550, 102);
+            this.Search_By_ID_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Search_By_ID_button.Name = "Search_By_ID_button";
+            this.Search_By_ID_button.Size = new System.Drawing.Size(159, 45);
+            this.Search_By_ID_button.TabIndex = 24;
+            this.Search_By_ID_button.Text = "Search";
+            this.Search_By_ID_button.UseVisualStyleBackColor = false;
             // 
             // label24
             // 
@@ -212,28 +208,28 @@ namespace Hospital
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label20.Location = new System.Drawing.Point(109, 89);
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label20.Location = new System.Drawing.Point(119, 107);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(36, 29);
+            this.label20.Size = new System.Drawing.Size(44, 36);
             this.label20.TabIndex = 27;
             this.label20.Text = "ID";
             // 
             // id2
             // 
-            this.id2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.id2.Location = new System.Drawing.Point(173, 86);
+            this.id2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.id2.Location = new System.Drawing.Point(201, 102);
             this.id2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.id2.Name = "id2";
-            this.id2.Size = new System.Drawing.Size(280, 34);
+            this.id2.Size = new System.Drawing.Size(280, 45);
             this.id2.TabIndex = 26;
             // 
             // label47
             // 
             this.label47.AutoSize = true;
             this.label47.ForeColor = System.Drawing.Color.Red;
-            this.label47.Location = new System.Drawing.Point(145, 85);
+            this.label47.Location = new System.Drawing.Point(173, 101);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(0, 17);
             this.label47.TabIndex = 28;
@@ -246,7 +242,7 @@ namespace Hospital
             this.Refresh_MedTest_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_MedTest_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Refresh_MedTest_button.ForeColor = System.Drawing.Color.White;
-            this.Refresh_MedTest_button.Location = new System.Drawing.Point(3891, 2585);
+            this.Refresh_MedTest_button.Location = new System.Drawing.Point(4230, 2630);
             this.Refresh_MedTest_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Refresh_MedTest_button.Name = "Refresh_MedTest_button";
             this.Refresh_MedTest_button.Size = new System.Drawing.Size(144, 46);
@@ -261,10 +257,10 @@ namespace Hospital
             this.AddMedTest_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddMedTest_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddMedTest_button.ForeColor = System.Drawing.Color.White;
-            this.AddMedTest_button.Location = new System.Drawing.Point(601, 80);
+            this.AddMedTest_button.Location = new System.Drawing.Point(527, 101);
             this.AddMedTest_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddMedTest_button.Name = "AddMedTest_button";
-            this.AddMedTest_button.Size = new System.Drawing.Size(104, 36);
+            this.AddMedTest_button.Size = new System.Drawing.Size(177, 46);
             this.AddMedTest_button.TabIndex = 24;
             this.AddMedTest_button.Text = "Delete";
             this.AddMedTest_button.UseVisualStyleBackColor = false;
@@ -289,25 +285,6 @@ namespace Hospital
             this.label12.TabIndex = 15;
             this.label12.Text = "List Employees";
             // 
-            // RoomNo_Assign_textBox
-            // 
-            this.RoomNo_Assign_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RoomNo_Assign_textBox.Location = new System.Drawing.Point(369, 112);
-            this.RoomNo_Assign_textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RoomNo_Assign_textBox.Name = "RoomNo_Assign_textBox";
-            this.RoomNo_Assign_textBox.Size = new System.Drawing.Size(224, 36);
-            this.RoomNo_Assign_textBox.TabIndex = 29;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(364, 78);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(178, 29);
-            this.label26.TabIndex = 28;
-            this.label26.Text = "Room Number";
-            // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -316,7 +293,7 @@ namespace Hospital
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(8263, 6141);
+            this.button2.Location = new System.Drawing.Point(8358, 6193);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(139, 39);
@@ -324,39 +301,20 @@ namespace Hospital
             this.button2.Text = "Refresh";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // AssignNurse_button
+            // Get_Earnings_button
             // 
-            this.AssignNurse_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.AssignNurse_button.FlatAppearance.BorderSize = 0;
-            this.AssignNurse_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AssignNurse_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AssignNurse_button.ForeColor = System.Drawing.Color.White;
-            this.AssignNurse_button.Location = new System.Drawing.Point(879, 112);
-            this.AssignNurse_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AssignNurse_button.Name = "AssignNurse_button";
-            this.AssignNurse_button.Size = new System.Drawing.Size(133, 36);
-            this.AssignNurse_button.TabIndex = 24;
-            this.AssignNurse_button.Text = "Assign";
-            this.AssignNurse_button.UseVisualStyleBackColor = false;
-            // 
-            // NurseID_Assign_textBox
-            // 
-            this.NurseID_Assign_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NurseID_Assign_textBox.Location = new System.Drawing.Point(67, 112);
-            this.NurseID_Assign_textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.NurseID_Assign_textBox.Name = "NurseID_Assign_textBox";
-            this.NurseID_Assign_textBox.Size = new System.Drawing.Size(224, 36);
-            this.NurseID_Assign_textBox.TabIndex = 19;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(61, 75);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(111, 29);
-            this.label29.TabIndex = 18;
-            this.label29.Text = "Nurse ID";
+            this.Get_Earnings_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.Get_Earnings_button.FlatAppearance.BorderSize = 0;
+            this.Get_Earnings_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Get_Earnings_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Get_Earnings_button.ForeColor = System.Drawing.Color.White;
+            this.Get_Earnings_button.Location = new System.Drawing.Point(116, 105);
+            this.Get_Earnings_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Get_Earnings_button.Name = "Get_Earnings_button";
+            this.Get_Earnings_button.Size = new System.Drawing.Size(344, 49);
+            this.Get_Earnings_button.TabIndex = 24;
+            this.Get_Earnings_button.Text = "Get Earnings";
+            this.Get_Earnings_button.UseVisualStyleBackColor = false;
             // 
             // label31
             // 
@@ -372,12 +330,8 @@ namespace Hospital
             // 
             this.Earnings_panel.AutoScroll = true;
             this.Earnings_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.Earnings_panel.Controls.Add(this.RoomNo_Assign_textBox);
-            this.Earnings_panel.Controls.Add(this.label26);
             this.Earnings_panel.Controls.Add(this.button2);
-            this.Earnings_panel.Controls.Add(this.AssignNurse_button);
-            this.Earnings_panel.Controls.Add(this.NurseID_Assign_textBox);
-            this.Earnings_panel.Controls.Add(this.label29);
+            this.Earnings_panel.Controls.Add(this.Get_Earnings_button);
             this.Earnings_panel.Controls.Add(this.label31);
             this.Earnings_panel.Location = new System.Drawing.Point(835, 450);
             this.Earnings_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -394,7 +348,7 @@ namespace Hospital
             this.Employee_panel.Controls.Add(this.List_iconButton);
             this.Employee_panel.Controls.Add(this.Create_Account_iconButton);
             this.Employee_panel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Employee_panel.Location = new System.Drawing.Point(0, 194);
+            this.Employee_panel.Location = new System.Drawing.Point(0, 180);
             this.Employee_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Employee_panel.Name = "Employee_panel";
             this.Employee_panel.Size = new System.Drawing.Size(429, 266);
@@ -412,11 +366,11 @@ namespace Hospital
             this.Delete_iconButton.IconColor = System.Drawing.Color.White;
             this.Delete_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Delete_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Delete_iconButton.Location = new System.Drawing.Point(0, 199);
+            this.Delete_iconButton.Location = new System.Drawing.Point(0, 200);
             this.Delete_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Delete_iconButton.Name = "Delete_iconButton";
             this.Delete_iconButton.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.Delete_iconButton.Size = new System.Drawing.Size(429, 71);
+            this.Delete_iconButton.Size = new System.Drawing.Size(429, 70);
             this.Delete_iconButton.TabIndex = 35;
             this.Delete_iconButton.Tag = "Delete Employee";
             this.Delete_iconButton.Text = "Delete Employee";
@@ -437,11 +391,11 @@ namespace Hospital
             this.Search_iconButton.IconColor = System.Drawing.Color.White;
             this.Search_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Search_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Search_iconButton.Location = new System.Drawing.Point(0, 137);
+            this.Search_iconButton.Location = new System.Drawing.Point(0, 135);
             this.Search_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Search_iconButton.Name = "Search_iconButton";
             this.Search_iconButton.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.Search_iconButton.Size = new System.Drawing.Size(429, 62);
+            this.Search_iconButton.Size = new System.Drawing.Size(429, 65);
             this.Search_iconButton.TabIndex = 34;
             this.Search_iconButton.Tag = "Search";
             this.Search_iconButton.Text = "Search";
@@ -462,11 +416,11 @@ namespace Hospital
             this.List_iconButton.IconColor = System.Drawing.Color.White;
             this.List_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.List_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.List_iconButton.Location = new System.Drawing.Point(0, 68);
+            this.List_iconButton.Location = new System.Drawing.Point(0, 69);
             this.List_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.List_iconButton.Name = "List_iconButton";
             this.List_iconButton.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.List_iconButton.Size = new System.Drawing.Size(429, 69);
+            this.List_iconButton.Size = new System.Drawing.Size(429, 66);
             this.List_iconButton.TabIndex = 33;
             this.List_iconButton.Tag = "List Employees";
             this.List_iconButton.Text = "List Employees";
@@ -491,7 +445,7 @@ namespace Hospital
             this.Create_Account_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Create_Account_iconButton.Name = "Create_Account_iconButton";
             this.Create_Account_iconButton.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.Create_Account_iconButton.Size = new System.Drawing.Size(429, 68);
+            this.Create_Account_iconButton.Size = new System.Drawing.Size(429, 69);
             this.Create_Account_iconButton.TabIndex = 32;
             this.Create_Account_iconButton.Tag = "Create Account";
             this.Create_Account_iconButton.Text = "Create Account";
@@ -974,7 +928,7 @@ namespace Hospital
             this.SideMenu_panel.Location = new System.Drawing.Point(0, 0);
             this.SideMenu_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SideMenu_panel.Name = "SideMenu_panel";
-            this.SideMenu_panel.Size = new System.Drawing.Size(429, 703);
+            this.SideMenu_panel.Size = new System.Drawing.Size(429, 966);
             this.SideMenu_panel.TabIndex = 31;
             // 
             // Settings_iconButton
@@ -989,7 +943,7 @@ namespace Hospital
             this.Settings_iconButton.IconColor = System.Drawing.Color.White;
             this.Settings_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Settings_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Settings_iconButton.Location = new System.Drawing.Point(0, 583);
+            this.Settings_iconButton.Location = new System.Drawing.Point(0, 846);
             this.Settings_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Settings_iconButton.Name = "Settings_iconButton";
             this.Settings_iconButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -1013,7 +967,7 @@ namespace Hospital
             this.Logout_iconButton.IconColor = System.Drawing.Color.White;
             this.Logout_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Logout_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Logout_iconButton.Location = new System.Drawing.Point(0, 643);
+            this.Logout_iconButton.Location = new System.Drawing.Point(0, 906);
             this.Logout_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Logout_iconButton.Name = "Logout_iconButton";
             this.Logout_iconButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -1038,11 +992,11 @@ namespace Hospital
             this.Earnings_iconButton.IconColor = System.Drawing.Color.White;
             this.Earnings_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Earnings_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Earnings_iconButton.Location = new System.Drawing.Point(0, 460);
+            this.Earnings_iconButton.Location = new System.Drawing.Point(0, 446);
             this.Earnings_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Earnings_iconButton.Name = "Earnings_iconButton";
             this.Earnings_iconButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.Earnings_iconButton.Size = new System.Drawing.Size(429, 86);
+            this.Earnings_iconButton.Size = new System.Drawing.Size(429, 79);
             this.Earnings_iconButton.TabIndex = 32;
             this.Earnings_iconButton.Tag = "Earnings";
             this.Earnings_iconButton.Text = "Earnings";
@@ -1067,7 +1021,7 @@ namespace Hospital
             this.Employee_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Employee_Button.Name = "Employee_Button";
             this.Employee_Button.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.Employee_Button.Size = new System.Drawing.Size(429, 94);
+            this.Employee_Button.Size = new System.Drawing.Size(429, 80);
             this.Employee_Button.TabIndex = 31;
             this.Employee_Button.Tag = "Employee";
             this.Employee_Button.Text = "Employee";
@@ -1084,7 +1038,7 @@ namespace Hospital
             this.Refresh_Medicines_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_Medicines_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Refresh_Medicines_button.ForeColor = System.Drawing.Color.White;
-            this.Refresh_Medicines_button.Location = new System.Drawing.Point(4272, 5751);
+            this.Refresh_Medicines_button.Location = new System.Drawing.Point(4675, 6502);
             this.Refresh_Medicines_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Refresh_Medicines_button.Name = "Refresh_Medicines_button";
             this.Refresh_Medicines_button.Size = new System.Drawing.Size(139, 39);
@@ -1092,20 +1046,20 @@ namespace Hospital
             this.Refresh_Medicines_button.Text = "Refresh";
             this.Refresh_Medicines_button.UseVisualStyleBackColor = false;
             // 
-            // AddMed_button
+            // ShowList_button
             // 
-            this.AddMed_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.AddMed_button.FlatAppearance.BorderSize = 0;
-            this.AddMed_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddMed_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddMed_button.ForeColor = System.Drawing.Color.White;
-            this.AddMed_button.Location = new System.Drawing.Point(613, 105);
-            this.AddMed_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AddMed_button.Name = "AddMed_button";
-            this.AddMed_button.Size = new System.Drawing.Size(133, 36);
-            this.AddMed_button.TabIndex = 24;
-            this.AddMed_button.Text = "Add";
-            this.AddMed_button.UseVisualStyleBackColor = false;
+            this.ShowList_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.ShowList_button.FlatAppearance.BorderSize = 0;
+            this.ShowList_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowList_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShowList_button.ForeColor = System.Drawing.Color.White;
+            this.ShowList_button.Location = new System.Drawing.Point(601, 117);
+            this.ShowList_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ShowList_button.Name = "ShowList_button";
+            this.ShowList_button.Size = new System.Drawing.Size(167, 43);
+            this.ShowList_button.TabIndex = 24;
+            this.ShowList_button.Text = "Show";
+            this.ShowList_button.UseVisualStyleBackColor = false;
             // 
             // List_panel
             // 
@@ -1115,7 +1069,7 @@ namespace Hospital
             this.List_panel.Controls.Add(this.label16);
             this.List_panel.Controls.Add(this.position);
             this.List_panel.Controls.Add(this.Refresh_Medicines_button);
-            this.List_panel.Controls.Add(this.AddMed_button);
+            this.List_panel.Controls.Add(this.ShowList_button);
             this.List_panel.Controls.Add(this.label12);
             this.List_panel.Location = new System.Drawing.Point(436, 324);
             this.List_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1126,36 +1080,37 @@ namespace Hospital
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 214);
+            this.dataGridView1.Location = new System.Drawing.Point(124, 212);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(583, 394);
+            this.dataGridView1.Size = new System.Drawing.Size(583, 641);
             this.dataGridView1.TabIndex = 29;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(31, 105);
+            this.label16.Location = new System.Drawing.Point(28, 118);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(213, 29);
+            this.label16.Size = new System.Drawing.Size(100, 29);
             this.label16.TabIndex = 28;
-            this.label16.Text = "Employee position";
+            this.label16.Text = "Position";
             // 
             // position
             // 
+            this.position.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.position.FormattingEnabled = true;
             this.position.Items.AddRange(new object[] {
             "Doctor",
             "Pharmacist",
             "Nurse",
             "Receptionist"});
-            this.position.Location = new System.Drawing.Point(261, 112);
+            this.position.Location = new System.Drawing.Point(223, 118);
             this.position.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.position.Name = "position";
-            this.position.Size = new System.Drawing.Size(337, 24);
+            this.position.Size = new System.Drawing.Size(337, 39);
             this.position.TabIndex = 27;
             // 
             // Admin
@@ -1163,14 +1118,14 @@ namespace Hospital
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1586, 703);
-            this.Controls.Add(this.CreateAccount_panel);
+            this.ClientSize = new System.Drawing.Size(1586, 966);
             this.Controls.Add(this.Earnings_panel);
             this.Controls.Add(this.Search_panel);
+            this.Controls.Add(this.Delete_panel);
             this.Controls.Add(this.List_panel);
+            this.Controls.Add(this.CreateAccount_panel);
             this.Controls.Add(this.Dashboard_panel);
             this.Controls.Add(this.SideMenu_panel);
-            this.Controls.Add(this.Delete_panel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Admin";
             this.Text = "Admin";
@@ -1206,12 +1161,8 @@ namespace Hospital
         private System.Windows.Forms.Button AddMedTest_button;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox RoomNo_Assign_textBox;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button AssignNurse_button;
-        private System.Windows.Forms.TextBox NurseID_Assign_textBox;
-        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Button Get_Earnings_button;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Panel Earnings_panel;
         private FontAwesome.Sharp.IconButton Settings_iconButton;
@@ -1232,9 +1183,9 @@ namespace Hospital
         private FontAwesome.Sharp.IconButton SideBar_iconButton;
         private System.Windows.Forms.Panel SideMenu_panel;
         private System.Windows.Forms.Button Refresh_Medicines_button;
-        private System.Windows.Forms.Button AddMed_button;
+        private System.Windows.Forms.Button ShowList_button;
         private System.Windows.Forms.Panel List_panel;
-        private System.Windows.Forms.Button ReserveSurg_button;
+        private System.Windows.Forms.Button Search_By_ID_button;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox id2;
         private System.Windows.Forms.Label label47;
