@@ -724,6 +724,7 @@ namespace Hospital
             // editApp_panel
             // 
             this.editApp_panel.AutoScroll = true;
+            this.editApp_panel.BackColor = System.Drawing.Color.White;
             this.editApp_panel.Controls.Add(this.editApp_btn);
             this.editApp_panel.Controls.Add(this.textBox3);
             this.editApp_panel.Controls.Add(this.textBox2);
@@ -855,6 +856,7 @@ namespace Hospital
             // pay_panel
             // 
             this.pay_panel.AutoScroll = true;
+            this.pay_panel.BackColor = System.Drawing.Color.White;
             this.pay_panel.Controls.Add(this.pay_button);
             this.pay_panel.Controls.Add(this.price_pay_textBox);
             this.pay_panel.Controls.Add(this.label32);
@@ -994,6 +996,7 @@ namespace Hospital
             // 
             // reserve_panel
             // 
+            this.reserve_panel.BackColor = System.Drawing.Color.White;
             this.reserve_panel.Controls.Add(this.button2);
             this.reserve_panel.Controls.Add(this.PID_reserve_comboBox);
             this.reserve_panel.Controls.Add(this.label26);
@@ -1110,6 +1113,7 @@ namespace Hospital
             // 
             // cancelApp_panel
             // 
+            this.cancelApp_panel.BackColor = System.Drawing.Color.White;
             this.cancelApp_panel.Controls.Add(this.button1);
             this.cancelApp_panel.Controls.Add(this.cancelID_comboBox);
             this.cancelApp_panel.Controls.Add(this.label21);
