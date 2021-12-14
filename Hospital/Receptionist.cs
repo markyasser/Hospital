@@ -18,8 +18,10 @@ namespace Hospital
         public Receptionist()
         {
             InitializeComponent();
-            CollapseMenu();
+            //CollapseMenu();
             HideSubmenus();
+            InitializePanels();
+            HidePanels();
             this.Padding = new Padding(borderSize);
             this.BackColor = Color.FromArgb(98, 102, 244);
 
@@ -77,7 +79,7 @@ namespace Hospital
             }
         }
 
-        private void menu_btn_Click(object sender, EventArgs e)
+        private void menu_btn_Click(object sender, EventArgs e)//menu click buttons
         {
             CollapseMenu();
         }
@@ -98,13 +100,86 @@ namespace Hospital
             else
             {
                 HideSubmenus();
+                menu.Visible = true;//to hide if there is any open submenus
+            }
+        }
+        //make the dock: fill for all the pannels
+        void InitializePanels()
+        {
+            addPatient_panel.Dock = DockStyle.Fill;
+            makeApp_panel.Dock = DockStyle.Fill;
+            editApp_panel.Dock = DockStyle.Fill;
+            cancelApp_panel.Dock = DockStyle.Fill;
+            reserve_panel.Dock = DockStyle.Fill;
+            pay_panel.Dock = DockStyle.Fill; ;
+        }
+        //hide the panels
+        void HidePanels()
+        {
+            addPatient_panel.Visible = false;
+            makeApp_panel.Visible = false;
+            addPatient_panel.Visible = false;
+            editApp_panel.Visible = false;
+            cancelApp_panel.Visible = false;
+            reserve_panel.Visible = false;
+            pay_panel.Visible = false;
+        }
+        //show panel when you click its button
+        void ShowPanel(Panel menu)
+        {
+            if (!menu.Visible)
+            {
+                HidePanels();
+                menu.BringToFront();
                 menu.Visible = true;
             }
         }
 
-        private void IconButton4_Click(object sender, EventArgs e)
+        private void addPatiendt_btn_Click(object sender, EventArgs e)
+        {
+            ShowPanel(addPatient_panel);
+            HideSubmenus();
+        }
+
+        private void MakeAPP_iconButton_Click(object sender, EventArgs e)
+        {
+            ShowPanel(makeApp_panel);
+            HideSubmenus();
+        }
+
+        private void EditApp_iconButton_Click(object sender, EventArgs e)
+        {
+            ShowPanel(editApp_panel);
+            HideSubmenus();
+        }
+
+        private void cancelApp_iconButton_Click(object sender, EventArgs e)
+        {
+            ShowPanel(cancelApp_panel);
+            HideSubmenus();
+        }
+
+        private void reserve_btn_Click(object sender, EventArgs e)
+        {
+            ShowPanel(reserve_panel);
+            HideSubmenus();
+        }
+
+        private void Pay_btn_Click(object sender, EventArgs e)
+        {
+            ShowPanel(pay_panel);
+            HideSubmenus();
+        }
+
+        private void logoyt_btn_Click(object sender, EventArgs e)
+        {
+            HideSubmenus();
+        }
+
+        private void app_btn_Click(object sender, EventArgs e)
         {
             ShowSubmenu(App_panel);
         }
+
     }
 }
