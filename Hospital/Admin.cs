@@ -27,6 +27,10 @@ namespace Hospital
             InitializePanels();
             Open_Close_SideBar();
             CreateLeftButtonBorder();
+            //to show the department only if the position is a doctor
+            dep.Visible = false;
+            label43.Visible = false;
+            label11.Visible = false;
         }
         //Drag Form
         //hide submenus at the beginning
@@ -237,60 +241,61 @@ namespace Hospital
         }
         private void SignUp_Click_1(object sender, EventArgs e)
         {
-            {
-                if (fname.Text == "")
-                    label6.Text = "*";
-                else label6.Text = "";
+            
+            if (fname.Text == "")
+                label6.Text = "*";
+            else label6.Text = "";
 
-                if (minit.Text == "")
-                    label8.Text = "*";
-                else label8.Text = "";
+            if (minit.Text == "")
+                label8.Text = "*";
+            else label8.Text = "";
 
-                if (lname.Text == "")
-                    label7.Text = "*";
-                else label7.Text = "";
+            if (lname.Text == "")
+                label7.Text = "*";
+            else label7.Text = "";
 
-                if (address.Text == "")
-                    label12.Text = "*";
-                else label12.Text = "";
+            if (address.Text == "")
+                label12.Text = "*";
+            else label12.Text = "";
 
-                if (id.Text == "")
-                    label9.Text = "*";
-                else label9.Text = "";
+            if (pos.Text == "")
+                label9.Text = "*";
+            else label9.Text = "";
 
-                if (password.Text == "")
-                    label10.Text = "*";
-                else label10.Text = "";
-                int Phone;
-                bool flag = Int32.TryParse(pnumber.Text, out Phone);
-                if (!flag)
-                    label1.Text = "*";
-                else label1.Text = "";
-                string Gender = gender.Text;
-                if (Gender == "")
-                    label2.Text = "*";
-                else label2.Text = "";
-                char SEX;
-                if (Gender == "Male") SEX = 'M';
-                else SEX = 'F';
-                string birthdate = bdate.Value.ToString();
+            if (password.Text == "")
+                label10.Text = "*";
+            else label10.Text = "";
 
-                int result;
-                if (id.Text.Contains("DR"))
-                {
-                    //result = controllerObj.InsertDoctor(fname.Text, minit.Text, lname.Text, ID, bdate, address.Text, SEX, Phone, dep.SelectedIndex);
-                }
+            if (dep.Text == "")
+                label11.Text = "*";
+            else label11.Text = "";
+            int Phone;
+            bool flag = Int32.TryParse(pnumber.Text, out Phone);
+            if (!flag)
+                label1.Text = "*";
+            else label1.Text = "";
+            string Gender = gender.Text;
+            if (Gender == "")
+                label2.Text = "*";
+            else label2.Text = "";
+            char SEX;
+            if (Gender == "Male") SEX = 'M';
+            else SEX = 'F';
+            string birthdate = bdate.Value.ToString();
 
+            int result;
+            
+            //result = controllerObj.InsertDoctor(fname.Text, minit.Text, lname.Text, ID, bdate, address.Text, SEX, Phone, dep.SelectedIndex);
 
-                //if (result == 0)
-                //{
-                //    MessageBox.Show("The insertion of a new Doctor failed");
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Employee '" + fname.Text + " " + minit.Text + " " + lname.Text + "' is inserted successfully!");
-                //}
-            }
+            //if (result == 0)
+            //{
+            //    MessageBox.Show("The insertion of a new Doctor failed");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Employee '" + fname.Text + " " + minit.Text + " " + lname.Text + "' is inserted successfully!");
+            //}
+            
         }
 
         private void Show_Hide_Password_Click(object sender, EventArgs e)
@@ -304,6 +309,22 @@ namespace Hospital
             {
                 Show_Hide_Password.IconChar = IconChar.Eye;
                 password.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void pos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (pos.Text == "Doctor")
+            {
+                dep.Visible = true;
+                label43.Visible = true;
+                label11.Visible = true;
+            }
+            else
+            {
+                dep.Visible = false;
+                label43.Visible = false;
+                label11.Visible = false;
             }
         }
     }
