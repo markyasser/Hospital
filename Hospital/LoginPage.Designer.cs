@@ -56,7 +56,7 @@ namespace Hospital
             // 
             // password
             // 
-            this.password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.password.BackColor = System.Drawing.Color.Silver;
             this.password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
@@ -70,7 +70,7 @@ namespace Hospital
             // 
             // id
             // 
-            this.id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.id.BackColor = System.Drawing.Color.Silver;
             this.id.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.id.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
@@ -195,25 +195,25 @@ namespace Hospital
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.Controls.Add(this.id);
             this.panel2.Controls.Add(this.iconPictureBox2);
             this.panel2.ForeColor = System.Drawing.Color.Gainsboro;
             this.panel2.Location = new System.Drawing.Point(1, 267);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(821, 55);
+            this.panel2.Size = new System.Drawing.Size(757, 55);
             this.panel2.TabIndex = 11;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel3.BackColor = System.Drawing.Color.Silver;
             this.panel3.Controls.Add(this.Show_Hide_Password);
             this.panel3.Controls.Add(this.password);
             this.panel3.Controls.Add(this.iconPictureBox3);
             this.panel3.ForeColor = System.Drawing.Color.Gainsboro;
             this.panel3.Location = new System.Drawing.Point(1, 357);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(821, 55);
+            this.panel3.Size = new System.Drawing.Size(757, 55);
             this.panel3.TabIndex = 12;
             // 
             // Show_Hide_Password
@@ -226,7 +226,7 @@ namespace Hospital
             this.Show_Hide_Password.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
             this.Show_Hide_Password.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Show_Hide_Password.IconSize = 50;
-            this.Show_Hide_Password.Location = new System.Drawing.Point(747, 0);
+            this.Show_Hide_Password.Location = new System.Drawing.Point(683, 0);
             this.Show_Hide_Password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Show_Hide_Password.Name = "Show_Hide_Password";
             this.Show_Hide_Password.Size = new System.Drawing.Size(74, 55);

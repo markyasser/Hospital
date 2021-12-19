@@ -13,7 +13,7 @@ namespace Hospital
     public partial class LoginPage : Form
     {
         Color selected = Color.White;
-        Color unselected = Color.Gainsboro;
+        Color unselected = Color.Silver;
         public LoginPage()
         {
             InitializeComponent();
@@ -41,9 +41,6 @@ namespace Hospital
         }
 
         
-       
-     
-
         private void id_click(object sender, EventArgs e)
         {
             id.BackColor = selected;
