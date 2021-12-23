@@ -14,47 +14,51 @@ namespace Hospital
         {
             dbMan = new DBManager();
         }
-        public int InsertDoctor(string Fname, string Minit, string Lname, int id, string Bdate, string address, char sex, int phoneNumber, int DNO)
-        {
-            string query = "INSERT INTO Doctor (Fname, Minit, Lname, id,Bdate,Address,sex,Phone_Number,DNO)" +
-                            "Values ('" + Fname + "','" + Minit + "','" + Lname + "'," +
-                            id + ",'" + Bdate + "','" + address + "','" + sex + "','" + phoneNumber + "','" +
-                            DNO + "');";
-            return dbMan.ExecuteNonQuery(query);
-        }
-        public int InsertNurse(string Fname, string Minit, string Lname, int id, string Bdate, string address, char sex, int phoneNumber, int DNO)
-        {
-            string query = "INSERT INTO Nurse (Fname, Minit, Lname, id,Bdate,Address,sex,Phone_Number,DNO) " +
-                            "Values ('" + Fname + "','" + Minit + "','" + Lname + "'," +
-                            id + ",'" + Bdate + "','" + address + "','" + sex + "','" + phoneNumber + "','" +
-                            DNO + "');";
-            return dbMan.ExecuteNonQuery(query);
-        }
-        public int InsertPharma(string Fname, string Minit, string Lname, int id, string Bdate, string address, char sex, int phoneNumber, int DNO)
-        {
-            string query = "INSERT INTO Doctor (Fname, Minit, Lname, id,Bdate,Address,sex,Phone_Number,DNO) " +
-                            "Values ('" + Fname + "','" + Minit + "','" + Lname + "'," +
-                            id + ",'" + Bdate + "','" + address + "','" + sex + "','" + phoneNumber + "','" +
-                            DNO + "');";
-            return dbMan.ExecuteNonQuery(query);
-        }
-        public int InsertReceptionit(string Fname, string Minit, string Lname, int id, string Bdate, string address, char sex, int phoneNumber, int DNO)
-        {
-            string query = "INSERT INTO Doctor (Fname, Minit, Lname, id,Bdate,Address,sex,Phone_Number,DNO) " +
-                            "Values ('" + Fname + "','" + Minit + "','" + Lname + "'," +
-                            id + ",'" + Bdate + "','" + address + "','" + sex + "','" + phoneNumber + "','" +
-                            DNO + "');";
-            return dbMan.ExecuteNonQuery(query);
-        }
-        public int AddAccount(string id, string passsword)
-        {
-            string query = "INSERT INTO Accounts (ID , Password) " +
-                            "Values ('" + id + "','" + passsword + "');";
-            return dbMan.ExecuteNonQuery(query);
-        }
+
+
         public void TerminateConnection()
         {
             dbMan.CloseConnection();
+        }
+        public DataTable SelectAllEmp()
+        {
+
+            string StoredProcedureName = StoredProcedures.SelectAllEmployees;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+
+
+        public int InsertProject(string Pname, int pnumber, string Plocation, int Dnum)
+        {
+
+            string StoredProcedureName = StoredProcedures.InsertProject;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Pname", Pname);
+            Parameters.Add("@Pnumber", pnumber);
+            Parameters.Add("@Plocation", Plocation);
+            Parameters.Add("@Dnum", Dnum);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+
+        public DataTable SelectDepNum()
+        {
+            string StoredProcedureName = StoredProcedures.SelectDepartmentNum;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+
+        }
+        public DataTable SelectDepLoc()
+        {
+            String StoredProcedureName = StoredProcedures.SelectDepartmentLocation;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+
+        }
+
+        public DataTable SelectProject(string location)
+        {
+            String StoredProcedureName = StoredProcedures.RetrieveProject;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@location", location);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
     }
 }

@@ -119,6 +119,7 @@
     <Compile Include="ReserveRoom.Designer.cs">
       <DependentUpon>ReserveRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="StoredProcedures.cs" />
     <EmbeddedResource Include="AddPatient.resx">
       <DependentUpon>AddPatient.cs</DependentUpon>
     </EmbeddedResource>
