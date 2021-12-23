@@ -8,50 +8,65 @@ using System.Windows.Forms;
 
 namespace Hospital
 {
-    class DBManager
+    public class DBManager
     {
-        //Don't forget to update to your connection string
-        static string DB_Connection_String = @"Data Source=.\SQLEXPRESS;Initial Catalog=CompanyDBLab4;Integrated Security=True";
+        static string DB_Connection_String = @"Data Source=EMAN-PC\SQLEXPRESS;Initial Catalog=CompanyDBLab6;Integrated Security=True";
         SqlConnection myConnection;
+
         public DBManager()
         {
             myConnection = new SqlConnection(DB_Connection_String);
             try
             {
-                myConnection.Open(); //Open a connection with the DB
-
-                // just for illustration when the database is opened, 
-                // this should NOT be shown in GUI to the user in the final application
-                // but we show it here only to make sure that the database is working
-                MessageBox.Show("Successfully connected to the database!");
+                myConnection.Open();
+                Console.WriteLine("The DB connection is opened successfully");
             }
             catch (Exception e)
             {
-                // this message should not appear to user in the final application
-                MessageBox.Show("An error occurred while connecting to the database!");
+                Console.WriteLine("The DB connection is failed");
+                Console.WriteLine(e.ToString());
             }
         }
 
-        public int ExecuteNonQuery(string query)
+        public int ExecuteNonQuery(string storedProcedureName, Dictionary<string, object> parameters)
         {
             try
             {
-                SqlCommand myCommand = new SqlCommand(query, myConnection);
+                SqlCommand myCommand = new SqlCommand(storedProcedureName, myConnection);
+
+                myCommand.CommandType = CommandType.StoredProcedure;
+
+                foreach (KeyValuePair<string, object> Param in parameters)
+                {
+                    myCommand.Parameters.Add(new SqlParameter(Param.Key, Param.Value));
+                }
+
                 return myCommand.ExecuteNonQuery();
+
             }
             catch (Exception ex)
             {
-                // this message should not appear to user in the final application
-                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex.Message);
                 return 0;
             }
         }
 
-        public DataTable ExecuteReader(string query)
+        public DataTable ExecuteReader(string storedProcedureName, Dictionary<string, object> parameters)
         {
             try
             {
-                SqlCommand myCommand = new SqlCommand(query, myConnection);
+                SqlCommand myCommand = new SqlCommand(storedProcedureName, myConnection);
+
+                myCommand.CommandType = CommandType.StoredProcedure;
+
+                if (parameters != null)
+                {
+                    foreach (KeyValuePair<string, object> Param in parameters)
+                    {
+                        myCommand.Parameters.Add(new SqlParameter(Param.Key, Param.Value));
+                    }
+                }
+
                 SqlDataReader reader = myCommand.ExecuteReader();
                 if (reader.HasRows)
                 {
@@ -65,27 +80,38 @@ namespace Hospital
                     reader.Close();
                     return null;
                 }
+
             }
             catch (Exception ex)
             {
-                // this message should not appear to user in the final application
-                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex.Message);
                 return null;
             }
         }
 
-        public object ExecuteScalar(string query)
+        public object ExecuteScalar(string storedProcedureName, Dictionary<string, object> parameters)
         {
             try
             {
-                SqlCommand myCommand = new SqlCommand(query, myConnection);
+                SqlCommand myCommand = new SqlCommand(storedProcedureName, myConnection);
+
+                myCommand.CommandType = CommandType.StoredProcedure;
+
+                if (parameters != null)
+                {
+                    foreach (KeyValuePair<string, object> Param in parameters)
+                    {
+                        myCommand.Parameters.Add(new SqlParameter(Param.Key, Param.Value));
+                    }
+                }
+
                 return myCommand.ExecuteScalar();
+
             }
             catch (Exception ex)
             {
-                // this message should not appear to user in the final application
-                MessageBox.Show(ex.Message);
-                return 0;
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
 
@@ -97,12 +123,9 @@ namespace Hospital
             }
             catch (Exception e)
             {
-                // this message should not appear to user in the final application
-                MessageBox.Show(e.Message);
+                Console.WriteLine(e.Message);
             }
         }
-
-
     }
 }
 
