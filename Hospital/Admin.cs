@@ -21,6 +21,7 @@ namespace Hospital
         public Admin()
         {
             InitializeComponent();
+            controllerObj = new Controller();
             WindowState = FormWindowState.Maximized;
             HideSubmenus();
             HidePanels();
@@ -46,6 +47,7 @@ namespace Hospital
             Delete_panel.Visible = false;
             Search_panel.Visible = false;
             Earnings_panel.Visible = false;
+            Departments_Panel.Visible = false;
         }
         //make the dock: fill for all the pannels
         void InitializePanels()
@@ -55,6 +57,7 @@ namespace Hospital
             Delete_panel.Dock = DockStyle.Fill;
             Search_panel.Dock = DockStyle.Fill;
             Earnings_panel.Dock = DockStyle.Fill;
+            Departments_Panel.Dock = DockStyle.Fill;
         }
         //create border for the activate button feature
         void CreateLeftButtonBorder()
@@ -189,13 +192,13 @@ namespace Hospital
                 activeButton.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
-        
+
         private void LogOut_Click(object sender, EventArgs e)
         {
             Close();
         }
-        
-       
+
+
         private void SideBar_iconButton_Click(object sender, EventArgs e)
         {
             Open_Close_SideBar();
@@ -211,7 +214,11 @@ namespace Hospital
             ShowPanel(Earnings_panel);
             ActivateButton(Earnings_iconButton);
         }
-
+        private void Departments_Click(object sender, EventArgs e)
+        {
+            ShowPanel(Departments_Panel);
+            ActivateButton(Departments);
+        }
         private void List_iconButton_Click(object sender, EventArgs e)
         {
             ShowPanel(List_panel);
@@ -241,61 +248,97 @@ namespace Hospital
         }
         private void SignUp_Click_1(object sender, EventArgs e)
         {
-            
+            bool flag = true;
             if (fname.Text == "")
+            {
                 label6.Text = "*";
+                flag = false;
+            }
             else label6.Text = "";
 
             if (minit.Text == "")
+            {
                 label8.Text = "*";
+                flag = false;
+            }
             else label8.Text = "";
 
             if (lname.Text == "")
+            {
                 label7.Text = "*";
+                flag = false;
+            }
             else label7.Text = "";
 
+            int ID;
+            bool flag2 = Int32.TryParse(id.Text, out ID);
+            if (!flag2)
+            {
+                label25.Text = "*";
+                flag = false;
+            }
+
             if (address.Text == "")
+            {
                 label12.Text = "*";
+                flag = false;
+            }
+                
             else label12.Text = "";
 
             if (pos.Text == "")
+            {
                 label9.Text = "*";
+                flag = false;
+            }
+                
             else label9.Text = "";
 
             if (password.Text == "")
+            {
                 label10.Text = "*";
+                flag = false;
+            }
+                
             else label10.Text = "";
 
             if (dep.Text == "")
+            {
                 label11.Text = "*";
+                flag = false;
+            }
             else label11.Text = "";
             int Phone;
-            bool flag = Int32.TryParse(pnumber.Text, out Phone);
-            if (!flag)
+            bool flag1 = Int32.TryParse(pnumber.Text, out Phone);
+            if (!flag1)
+            {
                 label1.Text = "*";
+                flag = false;
+            }  
             else label1.Text = "";
             string Gender = gender.Text;
             if (Gender == "")
+            {
                 label2.Text = "*";
+                flag = false;
+            }
             else label2.Text = "";
+
+            if (flag == false) return; //if any input is incorrect return
+
             char SEX;
             if (Gender == "Male") SEX = 'M';
             else SEX = 'F';
             string birthdate = bdate.Value.ToString();
 
-            int result;
-            
-            //result = controllerObj.InsertDoctor(fname.Text, minit.Text, lname.Text, ID, bdate, address.Text, SEX, Phone, dep.SelectedIndex);
+            int result=0;
 
-            //if (result == 0)
-            //{
-            //    MessageBox.Show("The insertion of a new Doctor failed");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Employee '" + fname.Text + " " + minit.Text + " " + lname.Text + "' is inserted successfully!");
-            //}
-            
+            //result = controllerObj.InsertDoctor(id, fname.Text, minit.Text, lname.Text,username.Text, bdate.Value, address.Text, SEX, phone, dep.selectedindex);
+            if (result > 0)
+                MessageBox.Show("Doctor " + special.Text + " is inserted successfully");
+            else
+                MessageBox.Show("Insertion Failed");
+
         }
 
         private void Show_Hide_Password_Click(object sender, EventArgs e)
@@ -326,6 +369,30 @@ namespace Hospital
                 label43.Visible = false;
                 label11.Visible = false;
             }
+        }
+
+        private void Insert_Department_Click(object sender, EventArgs e)
+        {
+            int dno;
+            bool flag = Int32.TryParse(Dnumber.Text, out dno);
+            if (!flag)
+                label17.Text = "*";
+            else label17.Text = "";
+
+            if (special.Text == "")
+            {
+                label18.Text = "*";
+                flag = false;
+            }
+            else label18.Text = "";
+
+            if (!flag) return;
+
+            int result = controllerObj.InsertDepartment(dno, special.Text.ToString());
+            if (result > 0)
+                MessageBox.Show("Department " + special.Text + " is inserted successfully");
+            else
+                MessageBox.Show("Insertion Failed");
         }
     }
 }
