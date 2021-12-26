@@ -21,5 +21,16 @@ namespace Hospital
         public static string SelectDepartmentNum = "selectDepartmentNum";
         public static string SelectDepartmentLocation = "selectDepartmentLocation";
 
+
+        //-----------------------------Doctor--------------------------------
+        public static string SelectPatientWithID = "SelectPatientWithID";
+        public static string SelectPatientsID = "SelectPatientsID";
+        public static string SelectSurgNames = "SelectSurgNames";
+        public static string SurgInOperate = "SurgInOperate";
+        public static string SelectUpcommingSurgDates = "SelectSurgDates";
+        public static string ReserveSurgery = "ReserveSurgery";
+        
+        public static string CancelSurgery = "CancelSurgery";
+
     }
 }
