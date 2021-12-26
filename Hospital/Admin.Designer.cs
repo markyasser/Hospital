@@ -53,6 +53,12 @@ namespace Hospital
             this.List_iconButton = new FontAwesome.Sharp.IconButton();
             this.Create_Account_iconButton = new FontAwesome.Sharp.IconButton();
             this.CreateAccount_panel = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.username = new System.Windows.Forms.TextBox();
             this.pos = new System.Windows.Forms.ComboBox();
             this.Show_Hide_Password = new FontAwesome.Sharp.IconButton();
             this.label46 = new System.Windows.Forms.Label();
@@ -114,12 +120,6 @@ namespace Hospital
             this.Dnumber = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.Insert_Department = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.username = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.TextBox();
             this.Search_panel.SuspendLayout();
             this.Delete_panel.SuspendLayout();
             this.Earnings_panel.SuspendLayout();
@@ -175,7 +175,7 @@ namespace Hospital
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(7206, 4435);
+            this.button1.Location = new System.Drawing.Point(7550, 4480);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 39);
@@ -261,7 +261,7 @@ namespace Hospital
             this.Refresh_MedTest_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_MedTest_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Refresh_MedTest_button.ForeColor = System.Drawing.Color.White;
-            this.Refresh_MedTest_button.Location = new System.Drawing.Point(5925, 2855);
+            this.Refresh_MedTest_button.Location = new System.Drawing.Point(6264, 2900);
             this.Refresh_MedTest_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Refresh_MedTest_button.Name = "Refresh_MedTest_button";
             this.Refresh_MedTest_button.Size = new System.Drawing.Size(144, 46);
@@ -312,7 +312,7 @@ namespace Hospital
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(8833, 6453);
+            this.button2.Location = new System.Drawing.Point(8928, 6505);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(139, 39);
@@ -522,6 +522,64 @@ namespace Hospital
             this.CreateAccount_panel.Size = new System.Drawing.Size(1157, 866);
             this.CreateAccount_panel.TabIndex = 33;
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Red;
+            this.label25.Location = new System.Drawing.Point(729, 260);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(0, 24);
+            this.label25.TabIndex = 137;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label26.Location = new System.Drawing.Point(633, 258);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(37, 29);
+            this.label26.TabIndex = 135;
+            this.label26.Text = "ID";
+            // 
+            // id
+            // 
+            this.id.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.id.Location = new System.Drawing.Point(640, 301);
+            this.id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.id.Name = "id";
+            this.id.Size = new System.Drawing.Size(349, 41);
+            this.id.TabIndex = 136;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Red;
+            this.label19.Location = new System.Drawing.Point(245, 485);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(0, 24);
+            this.label19.TabIndex = 134;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label23.Location = new System.Drawing.Point(69, 479);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(130, 29);
+            this.label23.TabIndex = 132;
+            this.label23.Text = "Username";
+            // 
+            // username
+            // 
+            this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.username.Location = new System.Drawing.Point(76, 522);
+            this.username.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(349, 41);
+            this.username.TabIndex = 133;
+            // 
             // pos
             // 
             this.pos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -531,7 +589,7 @@ namespace Hospital
             "Nurse",
             "Pharmacist",
             "Receptionist"});
-            this.pos.Location = new System.Drawing.Point(641, 729);
+            this.pos.Location = new System.Drawing.Point(77, 727);
             this.pos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pos.Name = "pos";
             this.pos.Size = new System.Drawing.Size(348, 44);
@@ -600,7 +658,7 @@ namespace Hospital
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(261, 693);
+            this.label11.Location = new System.Drawing.Point(829, 690);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(0, 24);
             this.label11.TabIndex = 123;
@@ -620,7 +678,7 @@ namespace Hospital
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(776, 689);
+            this.label9.Location = new System.Drawing.Point(212, 687);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(0, 24);
             this.label9.TabIndex = 121;
@@ -698,18 +756,7 @@ namespace Hospital
             // 
             this.dep.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.dep.FormattingEnabled = true;
-            this.dep.Items.AddRange(new object[] {
-            "Cardiology",
-            "Oncology",
-            "Psychiatry ",
-            "Dermatology ",
-            "Ophthalmology ",
-            "Geriatrics ",
-            "Paediatrics ",
-            "Gynaecology ",
-            "Epidemiology",
-            "Haematology"});
-            this.dep.Location = new System.Drawing.Point(73, 730);
+            this.dep.Location = new System.Drawing.Point(641, 727);
             this.dep.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dep.Name = "dep";
             this.dep.Size = new System.Drawing.Size(349, 44);
@@ -799,7 +846,7 @@ namespace Hospital
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label41.Location = new System.Drawing.Point(636, 688);
+            this.label41.Location = new System.Drawing.Point(72, 686);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(104, 29);
             this.label41.TabIndex = 105;
@@ -819,7 +866,7 @@ namespace Hospital
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label43.Location = new System.Drawing.Point(69, 688);
+            this.label43.Location = new System.Drawing.Point(637, 685);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(152, 29);
             this.label43.TabIndex = 107;
@@ -1096,7 +1143,7 @@ namespace Hospital
             this.Refresh_Medicines_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_Medicines_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Refresh_Medicines_button.ForeColor = System.Drawing.Color.White;
-            this.Refresh_Medicines_button.Location = new System.Drawing.Point(6690, 10257);
+            this.Refresh_Medicines_button.Location = new System.Drawing.Point(7093, 11008);
             this.Refresh_Medicines_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Refresh_Medicines_button.Name = "Refresh_Medicines_button";
             this.Refresh_Medicines_button.Size = new System.Drawing.Size(139, 39);
@@ -1292,64 +1339,6 @@ namespace Hospital
             this.Insert_Department.Text = "Insert Department";
             this.Insert_Department.UseVisualStyleBackColor = false;
             this.Insert_Department.Click += new System.EventHandler(this.Insert_Department_Click);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Red;
-            this.label19.Location = new System.Drawing.Point(245, 485);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(0, 24);
-            this.label19.TabIndex = 134;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label23.Location = new System.Drawing.Point(69, 479);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(130, 29);
-            this.label23.TabIndex = 132;
-            this.label23.Text = "Username";
-            // 
-            // username
-            // 
-            this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.username.Location = new System.Drawing.Point(76, 522);
-            this.username.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(349, 41);
-            this.username.TabIndex = 133;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.Red;
-            this.label25.Location = new System.Drawing.Point(729, 260);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(0, 24);
-            this.label25.TabIndex = 137;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label26.Location = new System.Drawing.Point(633, 258);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(37, 29);
-            this.label26.TabIndex = 135;
-            this.label26.Text = "ID";
-            // 
-            // id
-            // 
-            this.id.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.id.Location = new System.Drawing.Point(640, 301);
-            this.id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.id.Name = "id";
-            this.id.Size = new System.Drawing.Size(349, 41);
-            this.id.TabIndex = 136;
             // 
             // Admin
             // 

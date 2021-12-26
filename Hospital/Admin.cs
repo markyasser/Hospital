@@ -22,6 +22,8 @@ namespace Hospital
         {
             InitializeComponent();
             controllerObj = new Controller();
+            Fill_ComboBox();
+
             WindowState = FormWindowState.Maximized;
             HideSubmenus();
             HidePanels();
@@ -33,6 +35,16 @@ namespace Hospital
             label43.Visible = false;
             label11.Visible = false;
         }
+        private void Fill_ComboBox()
+        {
+            DataTable table = controllerObj.GetAllDepartmentNumber();
+            string[] arrray = table.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
+            for (int i = 0; i < arrray.Length; i++)
+            {
+                dep.Items.Add(arrray[i]);
+            }
+        }
+
         //Drag Form
         //hide submenus at the beginning
         void HideSubmenus()
@@ -302,7 +314,7 @@ namespace Hospital
                 
             else label10.Text = "";
 
-            if (dep.Text == "")
+            if (dep.Text == "" && pos.Text== "Doctor")
             {
                 label11.Text = "*";
                 flag = false;
@@ -329,13 +341,19 @@ namespace Hospital
             char SEX;
             if (Gender == "Male") SEX = 'M';
             else SEX = 'F';
-            string birthdate = bdate.Value.ToString();
+            string birthdate;
+            birthdate = bdate.Value.Year.ToString()+ "-" + bdate.Value.Month.ToString() + "-" + bdate.Value.Day.ToString();
 
-            int result=0;
+            int result1=0, result2 = 0;
 
-            //result = controllerObj.InsertDoctor(id, fname.Text, minit.Text, lname.Text,username.Text, bdate.Value, address.Text, SEX, phone, dep.selectedindex);
-            if (result > 0)
-                MessageBox.Show("Doctor " + special.Text + " is inserted successfully");
+            result2 = controllerObj.CreateAccount(username.Text, password.Text);
+            if (pos.Text =="Doctor")
+                result1 = controllerObj.InsertDoctor(ID, fname.Text, minit.Text, lname.Text, username.Text, birthdate, address.Text, Phone, SEX, dep.SelectedIndex + 1);
+            else
+                result1 = controllerObj.InsertNotDoctor(ID, fname.Text, minit.Text, lname.Text, username.Text, birthdate, address.Text, Phone, SEX, pos.Text);
+            
+            if (result1 > 0 && result2 > 0)
+                MessageBox.Show(pos.Text + " " + fname.Text + " is inserted successfully");
             else
                 MessageBox.Show("Insertion Failed");
 

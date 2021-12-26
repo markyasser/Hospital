@@ -14,26 +14,49 @@ namespace Hospital
     {
         Color selected = Color.White;
         Color unselected = Color.Silver;
+        Controller obj;
         public LoginPage()
         {
             InitializeComponent();
+            obj = new Controller();
         }
 
         private void logIn_Click(object sender, EventArgs e)
         {
             // check if the id is valid
-
+            Object Exsit = obj.ValidateUser(id.Text);
             // check if the password is valid
-            if (id.Text == "admin" && password.Text == "admin")
+
+            if (Exsit != null)
             {
-                Admin admin = new Admin();
-                admin.Show();
+                string user = obj.GetUser(id.Text);
+                if (user == "Doctor")
+                {
+                    Doctor dr = new Doctor();
+                    dr.Show();
+                }
+                else if (user == "Pharmacist")
+                {
+                    Pharmacist p = new Pharmacist();
+                    p.Show();
+                }
+                else if (user == "Receptionist")
+                {
+                    Receptionist r = new Receptionist();
+                    r.Show();
+                }
+                else if (user == "Nurse")
+                {
+                    Nurse n = new Nurse();
+                    n.Show();
+                }
+                else 
+                {
+                    Admin admin = new Admin();
+                    admin.Show();
+                }
             }
-            else if (id.Text == "docotr" && password.Text == "doctor")
-            {
-                Doctor dr = new Doctor();
-                dr.Show();
-            }
+            
             else label1.Text = "* Wrong ID or Password";
             //check the first 2 chars in the id to go to the corresponding interface
             

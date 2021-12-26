@@ -12,11 +12,19 @@ namespace Hospital
         public static string SelectAllEmployees = "getAllEmps";
 
         public static string CreateAccount = "CreateAccount";
-        public static string InsertDoctor = "insertDoctor";
-        public static string InsertReceptionist = "InsertReceptionist";
+        public static string AccountExcist = "AccountExcist";
+        public static string IsDoctor = "IsDoctor";
+        public static string IsNurse = "IsNurse";
+        public static string IsPharma = "IsPharma";
+        public static string IsRecept = "IsRecept";
+
+        public static string InsertDoctor = "InsertDoctor";
+        public static string InsertReceptionist = "InsertRecepiontist";
         public static string InsertNurse = "InsertNurse";
         public static string InsertPharmacist = "InsertPharmacist";
         public static string InsertDepartment = "InsertDepartment";
+        public static string DeleteDepartment = "DeleteDepartment";
+        public static string GetAllDepartmentNumber = "GetAllDepartmentNumber";
 
         public static string SelectDepartmentNum = "selectDepartmentNum";
         public static string SelectDepartmentLocation = "selectDepartmentLocation";

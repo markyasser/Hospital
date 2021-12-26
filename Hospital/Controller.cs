@@ -20,25 +20,55 @@ namespace Hospital
         {
             dbMan.CloseConnection();
         }
-        public DataTable SelectAllEmp()
+        public object ValidateUser(string username)
         {
 
-            string StoredProcedureName = StoredProcedures.SelectAllEmployees;
-            return dbMan.ExecuteReader(StoredProcedureName, null);
+            string StoredProcedureName = StoredProcedures.AccountExcist;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@username", username);
+            return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+        }
+        public string GetUser(string username)
+        {
+            Object retrunValue;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@username", username);
+
+            string StoredProcedureName = StoredProcedures.IsDoctor;
+            retrunValue = dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+            if (retrunValue != null) 
+                return "Doctor";
+
+            StoredProcedureName = StoredProcedures.IsPharma;
+            retrunValue = dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+            if (retrunValue != null) 
+                return "Pharmacist";
+
+            StoredProcedureName = StoredProcedures.IsRecept;
+            retrunValue = dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+            if (retrunValue != null) 
+                return "Receptionist";
+
+
+            StoredProcedureName = StoredProcedures.IsNurse;
+            retrunValue = dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+            if (retrunValue != null)
+                return "Nurse";
+
+            return "admin";
         }
         public int CreateAccount(string username, string passwrod)
         {
             string StoredProcedureName = StoredProcedures.CreateAccount;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@username", username);
-            Parameters.Add("@passwrod", passwrod);
+            Parameters.Add("@password", passwrod);
 
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }   
         public int InsertDoctor(int Doctor_id,string Fname,string Minit,string Lname,
-                                string d_username,DateTime Bdate,string address,int phoneNumber, char Gender,int DNO)
+                                string d_username, string Bdate,string address,int phoneNumber, char Gender,int DNO)
         {
-
             string StoredProcedureName = StoredProcedures.InsertDoctor;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@Doctor_id", Doctor_id);
@@ -51,9 +81,43 @@ namespace Hospital
             Parameters.Add("@phoneNumber", phoneNumber);
             Parameters.Add("@Gender", Gender);
             Parameters.Add("@DNO", DNO);
-            
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
+        public int InsertNotDoctor(int id, string Fname, string Minit, string Lname,
+                                string username, string Bdate, string address, int phoneNumber, char Gender, string position)
+        {
+            string StoredProcedureName="";
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            if (position=="Nurse")
+            {
+                StoredProcedureName = StoredProcedures.InsertNurse;
+                Parameters.Add("@nurse_id", id);
+                Parameters.Add("@n_username", username);
+            }
+            else if (position == "Pharmacist")
+            {
+                StoredProcedureName = StoredProcedures.InsertPharmacist;
+                Parameters.Add("@pharma_id", id);
+                Parameters.Add("@p_username", username);
+            }
+            else if (position == "Receptionist")
+            {
+                StoredProcedureName = StoredProcedures.InsertReceptionist;
+                Parameters.Add("@receptionist_id", id);
+                Parameters.Add("@r_username", username);
+            }
+            
+            Parameters.Add("@Fname", Fname);
+            Parameters.Add("@Minit", Minit);
+            Parameters.Add("@Lname", Lname);
+            Parameters.Add("@Bdate", Bdate);
+            Parameters.Add("@address", address);
+            Parameters.Add("@phoneNumber", phoneNumber);
+            Parameters.Add("@Gender", Gender);
+
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+
         public int InsertDepartment(int Dnumber, string specialization)
         {
 
@@ -63,7 +127,12 @@ namespace Hospital
             Parameters.Add("@specialization", specialization);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
-
+        
+        public DataTable GetAllDepartmentNumber()
+        {
+            string StoredProcedureName = StoredProcedures.GetAllDepartmentNumber;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
         public DataTable SelectDepNum()
         {
             string StoredProcedureName = StoredProcedures.SelectDepartmentNum;
