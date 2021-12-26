@@ -49,18 +49,18 @@ namespace Hospital
             this.Welcome_label = new System.Windows.Forms.Label();
             this.SelectPatient_panel = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.PatBD_textBox = new System.Windows.Forms.TextBox();
+            this.PatGender_textBox = new System.Windows.Forms.TextBox();
+            this.PatAddress_textBox = new System.Windows.Forms.TextBox();
+            this.PatPhoneNo_textBox = new System.Windows.Forms.TextBox();
+            this.PatName_textBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.SelectPatID_comboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.WorkingHours_panel = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
@@ -116,7 +116,6 @@ namespace Hospital
             this.SurgName_Cancel_comboBox = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.SurgName_Reserve_textBox = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.Surgery_dataGridView = new System.Windows.Forms.DataGridView();
@@ -144,6 +143,8 @@ namespace Hospital
             this.Rooms_Nurses_dataGridView = new System.Windows.Forms.DataGridView();
             this.label31 = new System.Windows.Forms.Label();
             this.SidePanel_timer = new System.Windows.Forms.Timer(this.components);
+            this.SurgName_Reserve_comboBox = new System.Windows.Forms.ComboBox();
+            this.SurgDate_Cancel_comboBox = new System.Windows.Forms.ComboBox();
             this.SideMenu_panel.SuspendLayout();
             this.Patient_panel.SuspendLayout();
             this.Logo_panel.SuspendLayout();
@@ -478,18 +479,18 @@ namespace Hospital
             this.SelectPatient_panel.AutoScroll = true;
             this.SelectPatient_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.SelectPatient_panel.Controls.Add(this.label10);
-            this.SelectPatient_panel.Controls.Add(this.textBox6);
-            this.SelectPatient_panel.Controls.Add(this.textBox5);
-            this.SelectPatient_panel.Controls.Add(this.textBox4);
-            this.SelectPatient_panel.Controls.Add(this.textBox3);
-            this.SelectPatient_panel.Controls.Add(this.textBox1);
+            this.SelectPatient_panel.Controls.Add(this.PatBD_textBox);
+            this.SelectPatient_panel.Controls.Add(this.PatGender_textBox);
+            this.SelectPatient_panel.Controls.Add(this.PatAddress_textBox);
+            this.SelectPatient_panel.Controls.Add(this.PatPhoneNo_textBox);
+            this.SelectPatient_panel.Controls.Add(this.PatName_textBox);
             this.SelectPatient_panel.Controls.Add(this.label8);
             this.SelectPatient_panel.Controls.Add(this.label7);
             this.SelectPatient_panel.Controls.Add(this.label6);
             this.SelectPatient_panel.Controls.Add(this.label5);
             this.SelectPatient_panel.Controls.Add(this.label3);
             this.SelectPatient_panel.Controls.Add(this.label2);
-            this.SelectPatient_panel.Controls.Add(this.comboBox1);
+            this.SelectPatient_panel.Controls.Add(this.SelectPatID_comboBox);
             this.SelectPatient_panel.Controls.Add(this.label1);
             this.SelectPatient_panel.Location = new System.Drawing.Point(764, 134);
             this.SelectPatient_panel.Name = "SelectPatient_panel";
@@ -506,50 +507,50 @@ namespace Hospital
             this.label10.TabIndex = 15;
             this.label10.Text = "Select Patient";
             // 
-            // textBox6
+            // PatBD_textBox
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(310, 269);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(181, 36);
-            this.textBox6.TabIndex = 14;
+            this.PatBD_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatBD_textBox.Location = new System.Drawing.Point(310, 269);
+            this.PatBD_textBox.Name = "PatBD_textBox";
+            this.PatBD_textBox.ReadOnly = true;
+            this.PatBD_textBox.Size = new System.Drawing.Size(281, 36);
+            this.PatBD_textBox.TabIndex = 14;
             // 
-            // textBox5
+            // PatGender_textBox
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(310, 329);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(181, 36);
-            this.textBox5.TabIndex = 13;
+            this.PatGender_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatGender_textBox.Location = new System.Drawing.Point(310, 329);
+            this.PatGender_textBox.Name = "PatGender_textBox";
+            this.PatGender_textBox.ReadOnly = true;
+            this.PatGender_textBox.Size = new System.Drawing.Size(281, 36);
+            this.PatGender_textBox.TabIndex = 13;
             // 
-            // textBox4
+            // PatAddress_textBox
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(310, 388);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(181, 36);
-            this.textBox4.TabIndex = 12;
+            this.PatAddress_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatAddress_textBox.Location = new System.Drawing.Point(310, 388);
+            this.PatAddress_textBox.Name = "PatAddress_textBox";
+            this.PatAddress_textBox.ReadOnly = true;
+            this.PatAddress_textBox.Size = new System.Drawing.Size(281, 36);
+            this.PatAddress_textBox.TabIndex = 12;
             // 
-            // textBox3
+            // PatPhoneNo_textBox
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(310, 449);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(181, 36);
-            this.textBox3.TabIndex = 11;
+            this.PatPhoneNo_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatPhoneNo_textBox.Location = new System.Drawing.Point(310, 449);
+            this.PatPhoneNo_textBox.Name = "PatPhoneNo_textBox";
+            this.PatPhoneNo_textBox.ReadOnly = true;
+            this.PatPhoneNo_textBox.Size = new System.Drawing.Size(281, 36);
+            this.PatPhoneNo_textBox.TabIndex = 11;
             // 
-            // textBox1
+            // PatName_textBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(310, 216);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(181, 36);
-            this.textBox1.TabIndex = 9;
+            this.PatName_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatName_textBox.Location = new System.Drawing.Point(310, 216);
+            this.PatName_textBox.Name = "PatName_textBox";
+            this.PatName_textBox.ReadOnly = true;
+            this.PatName_textBox.Size = new System.Drawing.Size(281, 36);
+            this.PatName_textBox.TabIndex = 9;
             // 
             // label8
             // 
@@ -611,14 +612,15 @@ namespace Hospital
             this.label2.TabIndex = 2;
             this.label2.Text = "Info";
             // 
-            // comboBox1
+            // SelectPatID_comboBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(310, 90);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(181, 37);
-            this.comboBox1.TabIndex = 1;
+            this.SelectPatID_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectPatID_comboBox.FormattingEnabled = true;
+            this.SelectPatID_comboBox.Location = new System.Drawing.Point(310, 90);
+            this.SelectPatID_comboBox.Name = "SelectPatID_comboBox";
+            this.SelectPatID_comboBox.Size = new System.Drawing.Size(281, 37);
+            this.SelectPatID_comboBox.TabIndex = 1;
+            this.SelectPatID_comboBox.SelectedIndexChanged += new System.EventHandler(this.SelectPatID_comboBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -938,7 +940,7 @@ namespace Hospital
             this.Refresh_Medicines_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_Medicines_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Refresh_Medicines_button.ForeColor = System.Drawing.Color.White;
-            this.Refresh_Medicines_button.Location = new System.Drawing.Point(2798, 3781);
+            this.Refresh_Medicines_button.Location = new System.Drawing.Point(3536, 4847);
             this.Refresh_Medicines_button.Name = "Refresh_Medicines_button";
             this.Refresh_Medicines_button.Size = new System.Drawing.Size(138, 40);
             this.Refresh_Medicines_button.TabIndex = 26;
@@ -1075,7 +1077,7 @@ namespace Hospital
             this.Refresh_MedTest_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_MedTest_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Refresh_MedTest_button.ForeColor = System.Drawing.Color.White;
-            this.Refresh_MedTest_button.Location = new System.Drawing.Point(2589, 2907);
+            this.Refresh_MedTest_button.Location = new System.Drawing.Point(3269, 3725);
             this.Refresh_MedTest_button.Name = "Refresh_MedTest_button";
             this.Refresh_MedTest_button.Size = new System.Drawing.Size(144, 46);
             this.Refresh_MedTest_button.TabIndex = 25;
@@ -1150,6 +1152,8 @@ namespace Hospital
             // 
             this.Surgery_panel.AutoScroll = true;
             this.Surgery_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.Surgery_panel.Controls.Add(this.SurgDate_Cancel_comboBox);
+            this.Surgery_panel.Controls.Add(this.SurgName_Reserve_comboBox);
             this.Surgery_panel.Controls.Add(this.SurgDate_dateTimePicker);
             this.Surgery_panel.Controls.Add(this.label25);
             this.Surgery_panel.Controls.Add(this.button1);
@@ -1158,24 +1162,27 @@ namespace Hospital
             this.Surgery_panel.Controls.Add(this.SurgName_Cancel_comboBox);
             this.Surgery_panel.Controls.Add(this.label17);
             this.Surgery_panel.Controls.Add(this.label18);
-            this.Surgery_panel.Controls.Add(this.SurgName_Reserve_textBox);
             this.Surgery_panel.Controls.Add(this.label22);
             this.Surgery_panel.Controls.Add(this.label23);
             this.Surgery_panel.Controls.Add(this.Surgery_dataGridView);
             this.Surgery_panel.Controls.Add(this.label24);
-            this.Surgery_panel.Location = new System.Drawing.Point(340, 369);
+            this.Surgery_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Surgery_panel.Location = new System.Drawing.Point(330, 100);
             this.Surgery_panel.Name = "Surgery_panel";
-            this.Surgery_panel.Size = new System.Drawing.Size(365, 102);
+            this.Surgery_panel.Size = new System.Drawing.Size(994, 657);
             this.Surgery_panel.TabIndex = 27;
             // 
             // SurgDate_dateTimePicker
             // 
+            this.SurgDate_dateTimePicker.CustomFormat = "yyyy-MM-dd";
             this.SurgDate_dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SurgDate_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.SurgDate_dateTimePicker.Location = new System.Drawing.Point(369, 120);
+            this.SurgDate_dateTimePicker.MinDate = new System.DateTime(2021, 12, 26, 1, 44, 3, 0);
             this.SurgDate_dateTimePicker.Name = "SurgDate_dateTimePicker";
-            this.SurgDate_dateTimePicker.Size = new System.Drawing.Size(212, 36);
+            this.SurgDate_dateTimePicker.Size = new System.Drawing.Size(272, 36);
             this.SurgDate_dateTimePicker.TabIndex = 29;
+            this.SurgDate_dateTimePicker.Value = new System.DateTime(2021, 12, 26, 1, 44, 3, 0);
             // 
             // label25
             // 
@@ -1195,7 +1202,7 @@ namespace Hospital
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(4910, 4685);
+            this.button1.Location = new System.Drawing.Point(6146, 5857);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 40);
             this.button1.TabIndex = 26;
@@ -1215,6 +1222,7 @@ namespace Hospital
             this.DeleteSurg_button.TabIndex = 25;
             this.DeleteSurg_button.Text = "Delete";
             this.DeleteSurg_button.UseVisualStyleBackColor = false;
+            this.DeleteSurg_button.Click += new System.EventHandler(this.DeleteSurg_button_Click);
             // 
             // ReserveSurg_button
             // 
@@ -1229,15 +1237,18 @@ namespace Hospital
             this.ReserveSurg_button.TabIndex = 24;
             this.ReserveSurg_button.Text = "Reserve";
             this.ReserveSurg_button.UseVisualStyleBackColor = false;
+            this.ReserveSurg_button.Click += new System.EventHandler(this.ReserveSurg_button_Click);
             // 
             // SurgName_Cancel_comboBox
             // 
+            this.SurgName_Cancel_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SurgName_Cancel_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SurgName_Cancel_comboBox.FormattingEnabled = true;
             this.SurgName_Cancel_comboBox.Location = new System.Drawing.Point(314, 247);
             this.SurgName_Cancel_comboBox.Name = "SurgName_Cancel_comboBox";
             this.SurgName_Cancel_comboBox.Size = new System.Drawing.Size(224, 37);
             this.SurgName_Cancel_comboBox.TabIndex = 23;
+            this.SurgName_Cancel_comboBox.SelectedIndexChanged += new System.EventHandler(this.SurgName_Cancel_comboBox_SelectedIndexChanged);
             // 
             // label17
             // 
@@ -1258,14 +1269,6 @@ namespace Hospital
             this.label18.Size = new System.Drawing.Size(339, 39);
             this.label18.TabIndex = 20;
             this.label18.Text = "Cancel reservation";
-            // 
-            // SurgName_Reserve_textBox
-            // 
-            this.SurgName_Reserve_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SurgName_Reserve_textBox.Location = new System.Drawing.Point(66, 120);
-            this.SurgName_Reserve_textBox.Name = "SurgName_Reserve_textBox";
-            this.SurgName_Reserve_textBox.Size = new System.Drawing.Size(224, 36);
-            this.SurgName_Reserve_textBox.TabIndex = 19;
             // 
             // label22
             // 
@@ -1460,7 +1463,7 @@ namespace Hospital
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(5760, 6706);
+            this.button2.Location = new System.Drawing.Point(7054, 8288);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 40);
             this.button2.TabIndex = 26;
@@ -1559,6 +1562,26 @@ namespace Hospital
             this.SidePanel_timer.Interval = 15;
             this.SidePanel_timer.Tick += new System.EventHandler(this.SidePanel_timer_Tick);
             // 
+            // SurgName_Reserve_comboBox
+            // 
+            this.SurgName_Reserve_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SurgName_Reserve_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SurgName_Reserve_comboBox.FormattingEnabled = true;
+            this.SurgName_Reserve_comboBox.Location = new System.Drawing.Point(66, 118);
+            this.SurgName_Reserve_comboBox.Name = "SurgName_Reserve_comboBox";
+            this.SurgName_Reserve_comboBox.Size = new System.Drawing.Size(224, 37);
+            this.SurgName_Reserve_comboBox.TabIndex = 30;
+            // 
+            // SurgDate_Cancel_comboBox
+            // 
+            this.SurgDate_Cancel_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SurgDate_Cancel_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SurgDate_Cancel_comboBox.FormattingEnabled = true;
+            this.SurgDate_Cancel_comboBox.Location = new System.Drawing.Point(582, 247);
+            this.SurgDate_Cancel_comboBox.Name = "SurgDate_Cancel_comboBox";
+            this.SurgDate_Cancel_comboBox.Size = new System.Drawing.Size(224, 37);
+            this.SurgDate_Cancel_comboBox.TabIndex = 31;
+            // 
             // Doctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1566,16 +1589,17 @@ namespace Hospital
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1324, 757);
+            this.Controls.Add(this.Surgery_panel);
+            this.Controls.Add(this.SelectPatient_panel);
             this.Controls.Add(this.Nurses_panel);
             this.Controls.Add(this.WorkingHours_panel);
-            this.Controls.Add(this.SelectPatient_panel);
-            this.Controls.Add(this.Surgery_panel);
             this.Controls.Add(this.Medicines_panel);
             this.Controls.Add(this.MedTest_panel);
             this.Controls.Add(this.Dashboard_panel);
             this.Controls.Add(this.SideMenu_panel);
             this.Name = "Doctor";
             this.Text = "Doctor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Doctor_FormClosing);
             this.SideMenu_panel.ResumeLayout(false);
             this.Patient_panel.ResumeLayout(false);
             this.Logo_panel.ResumeLayout(false);
@@ -1610,18 +1634,18 @@ namespace Hospital
         private System.Windows.Forms.Panel SelectPatient_panel;
         private System.Windows.Forms.Panel Logo_panel;
         private System.Windows.Forms.Label Welcome_label;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox PatBD_textBox;
+        private System.Windows.Forms.TextBox PatGender_textBox;
+        private System.Windows.Forms.TextBox PatAddress_textBox;
+        private System.Windows.Forms.TextBox PatPhoneNo_textBox;
+        private System.Windows.Forms.TextBox PatName_textBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox SelectPatID_comboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel WorkingHours_panel;
         private System.Windows.Forms.DateTimePicker MonStrtTime;
@@ -1678,7 +1702,6 @@ namespace Hospital
         private System.Windows.Forms.ComboBox SurgName_Cancel_comboBox;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox SurgName_Reserve_textBox;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.DataGridView Surgery_dataGridView;
@@ -1718,5 +1741,7 @@ namespace Hospital
         private FontAwesome.Sharp.IconButton WorkHours_iconButton;
         private FontAwesome.Sharp.IconButton SideBar_iconButton;
         private System.Windows.Forms.Timer SidePanel_timer;
+        private System.Windows.Forms.ComboBox SurgName_Reserve_comboBox;
+        private System.Windows.Forms.ComboBox SurgDate_Cancel_comboBox;
     }
 }
