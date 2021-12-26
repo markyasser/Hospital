@@ -34,6 +34,9 @@ namespace Hospital
             dep.Visible = false;
             label43.Visible = false;
             label11.Visible = false;
+
+            depart.Visible = false;
+            label28.Visible = false;
         }
         private void Fill_ComboBox()
         {
@@ -42,6 +45,10 @@ namespace Hospital
             for (int i = 0; i < arrray.Length; i++)
             {
                 dep.Items.Add(arrray[i]);
+            }
+            for (int i = 0; i < arrray.Length; i++)
+            {
+                depart.Items.Add(arrray[i]);
             }
         }
 
@@ -388,7 +395,27 @@ namespace Hospital
                 label11.Visible = false;
             }
         }
-
+        private void position_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (position.Text == "")
+            {
+                label29.Text = "* Please choose an employee position";
+                return;
+            }
+            else label29.Text = "";
+            if (position.Text == "Doctor")
+            {
+                depart.Visible = true;
+                label28.Visible = true;
+                dataGridView1.DataSource = controllerObj.GetAllEmployees(position.Text, depart.Text.ToString());
+            }
+            else
+            {
+                depart.Visible = false;
+                label28.Visible = false;
+                dataGridView1.DataSource = controllerObj.GetAllEmployees(position.Text, depart.Text.ToString());
+            }
+        }
         private void Insert_Department_Click(object sender, EventArgs e)
         {
             int dno;
@@ -411,6 +438,23 @@ namespace Hospital
                 MessageBox.Show("Department " + special.Text + " is inserted successfully");
             else
                 MessageBox.Show("Insertion Failed");
+        }
+
+        private void ShowList_button_Click(object sender, EventArgs e)
+        {
+            if (position.Text == "")
+            {
+                label29.Text = "* Please choose an employee position";
+                return;
+            }
+            else label29.Text = "";
+
+            dataGridView1.DataSource = controllerObj.GetAllEmployees(position.Text,depart.Text.ToString());
+        }
+
+        private void depart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = controllerObj.GetAllEmployees(position.Text, depart.Text.ToString());
         }
     }
 }

@@ -8,9 +8,7 @@ namespace Hospital
 {
     class StoredProcedures
     {
-        public static string RetrieveProject = "selectProjectsofDeptLoc";
-        public static string SelectAllEmployees = "getAllEmps";
-
+        //----------------------------Accounts------------------------------
         public static string CreateAccount = "CreateAccount";
         public static string AccountExcist = "AccountExcist";
         public static string IsDoctor = "IsDoctor";
@@ -18,17 +16,22 @@ namespace Hospital
         public static string IsPharma = "IsPharma";
         public static string IsRecept = "IsRecept";
 
+        //-----------------------------Admin--------------------------------
+        //Sign Up 
         public static string InsertDoctor = "InsertDoctor";
         public static string InsertReceptionist = "InsertRecepiontist";
         public static string InsertNurse = "InsertNurse";
         public static string InsertPharmacist = "InsertPharmacist";
+        //Department
         public static string InsertDepartment = "InsertDepartment";
         public static string DeleteDepartment = "DeleteDepartment";
         public static string GetAllDepartmentNumber = "GetAllDepartmentNumber";
-
-        public static string SelectDepartmentNum = "selectDepartmentNum";
-        public static string SelectDepartmentLocation = "selectDepartmentLocation";
-
+        //Show Employees
+        public static string GetAllDep_Doctors = "GetAllDep_Doctors";
+        public static string GetAllDoctors = "GetAllDoctors";
+        public static string GetAllNurses = "GetAllNurses";
+        public static string GetAllPharma = "GetAllPharma";
+        public static string GetAllRecept = "GetAllRecept";
 
         //-----------------------------Doctor--------------------------------
         public static string SelectPatientWithID = "SelectPatientWithID";

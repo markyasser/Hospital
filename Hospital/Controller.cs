@@ -133,25 +133,35 @@ namespace Hospital
             string StoredProcedureName = StoredProcedures.GetAllDepartmentNumber;
             return dbMan.ExecuteReader(StoredProcedureName, null);
         }
-        public DataTable SelectDepNum()
+        public DataTable GetAllEmployees(string position, string specialization)
         {
-            string StoredProcedureName = StoredProcedures.SelectDepartmentNum;
+            string StoredProcedureName = "";
+            if (position == "Doctor")
+            {  
+                
+                if (specialization != "")
+                {
+                    StoredProcedureName = StoredProcedures.GetAllDep_Doctors;
+                    Dictionary<string, object> Parameters = new Dictionary<string, object>();
+                    Parameters.Add("@specialization", specialization);
+                    return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+                }
+                StoredProcedureName = StoredProcedures.GetAllDoctors;
+            }
+            else if (position == "Nurse")
+            {
+                StoredProcedureName = StoredProcedures.GetAllNurses;
+            }
+            else if (position == "Pharmacist")
+            {
+                StoredProcedureName = StoredProcedures.GetAllPharma;
+            }
+            else if (position == "Receptionist")
+            {
+                StoredProcedureName = StoredProcedures.GetAllRecept;
+            }
             return dbMan.ExecuteReader(StoredProcedureName, null);
 
-        }
-        public DataTable SelectDepLoc()
-        {
-            String StoredProcedureName = StoredProcedures.SelectDepartmentLocation;
-            return dbMan.ExecuteReader(StoredProcedureName, null);
-
-        }
-
-        public DataTable SelectProject(string location)
-        {
-            String StoredProcedureName = StoredProcedures.RetrieveProject;
-            Dictionary<string, object> Parameters = new Dictionary<string, object>();
-            Parameters.Add("@location", location);
-            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
         //---------------------------------Doctor----------------------------
         public DataTable SelectPatientsID()
