@@ -433,12 +433,12 @@ namespace Hospital
             int dno;
             bool flag = Int32.TryParse(Dnumber.Text, out dno);
             if (!flag)
-                label17.Text = "*";
+                label17.Text = "* Please enter a valid Department number";
             else label17.Text = "";
 
             if (special.Text == "")
             {
-                label18.Text = "*";
+                label18.Text = "* Please enter a valid Department Specialization";
                 flag = false;
             }
             else label18.Text = "";
@@ -562,7 +562,21 @@ namespace Hospital
                 label62.Visible = false;
             }
         }
-
+        private void Search_By_ID_button_Click(object sender, EventArgs e)
+        {
+            if (Name_textBox.Text != "")
+            {
+                DialogResult choice = MessageBox.Show("Are you sure you want to delete "+ search_position.Text + " " + Name_textBox.Text, " Delete Employee", MessageBoxButtons.YesNo);
+                if (choice == DialogResult.Yes)
+                {
+                    int result = controllerObj.DeleteEmployee(search_position.Text, Int32.Parse(select_id.Text));
+                    if (result > 0)
+                        MessageBox.Show(search_position.Text + " " + Name_textBox.Text + " is Delete from the database");
+                    else
+                        MessageBox.Show("Deletetion Failed");
+                }
+            }
+        }
         private void search_position_SelectedIndexChanged(object sender, EventArgs e)
         {
             select_id.Text = "";
@@ -578,9 +592,6 @@ namespace Hospital
             }
         }
 
-        private void Search_By_ID_button_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

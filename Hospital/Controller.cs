@@ -215,6 +215,25 @@ namespace Hospital
 
             return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
+        public int DeleteEmployee(string position, int id)
+        {
+
+            string StoredProcedureName = "";
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            if (position == "Doctor")
+                StoredProcedureName = StoredProcedures.DeleteDoctor;
+
+            else if (position == "Nurse")
+                StoredProcedureName = StoredProcedures.DeleteNurse;
+
+            else if (position == "Pharmacist")
+                StoredProcedureName = StoredProcedures.DeletePharma;
+
+            else if (position == "Receptionist")
+                StoredProcedureName = StoredProcedures.DeleteRecept;
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
         //---------------------------------Doctor----------------------------
         public DataTable SelectPatientsID()
         {

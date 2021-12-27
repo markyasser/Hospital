@@ -37,6 +37,12 @@ namespace Hospital
         public static string GetAllPharma = "GetAllPharma";
         public static string GetAllRecept = "GetAllRecept";
 
+        //delete Employees
+        public static string DeleteDoctor = "DeleteDoctor";
+        public static string DeletePharma = "DeletePharma";
+        public static string DeleteNurse = "DeleteNurse";
+        public static string DeleteRecept = "DeleteRecept";
+
         public static string GetDID = "GetDID";
         public static string GetPID = "GetPID";
         public static string GetNID = "GetNID";
