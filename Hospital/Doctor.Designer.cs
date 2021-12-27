@@ -108,6 +108,8 @@ namespace Hospital
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label21 = new System.Windows.Forms.Label();
             this.Surgery_panel = new System.Windows.Forms.Panel();
+            this.SurgDate_Cancel_comboBox = new System.Windows.Forms.ComboBox();
+            this.SurgName_Reserve_comboBox = new System.Windows.Forms.ComboBox();
             this.SurgDate_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label25 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -143,8 +145,6 @@ namespace Hospital
             this.Rooms_Nurses_dataGridView = new System.Windows.Forms.DataGridView();
             this.label31 = new System.Windows.Forms.Label();
             this.SidePanel_timer = new System.Windows.Forms.Timer(this.components);
-            this.SurgName_Reserve_comboBox = new System.Windows.Forms.ComboBox();
-            this.SurgDate_Cancel_comboBox = new System.Windows.Forms.ComboBox();
             this.SideMenu_panel.SuspendLayout();
             this.Patient_panel.SuspendLayout();
             this.Logo_panel.SuspendLayout();
@@ -492,9 +492,10 @@ namespace Hospital
             this.SelectPatient_panel.Controls.Add(this.label2);
             this.SelectPatient_panel.Controls.Add(this.SelectPatID_comboBox);
             this.SelectPatient_panel.Controls.Add(this.label1);
-            this.SelectPatient_panel.Location = new System.Drawing.Point(764, 134);
+            this.SelectPatient_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SelectPatient_panel.Location = new System.Drawing.Point(330, 100);
             this.SelectPatient_panel.Name = "SelectPatient_panel";
-            this.SelectPatient_panel.Size = new System.Drawing.Size(346, 81);
+            this.SelectPatient_panel.Size = new System.Drawing.Size(994, 657);
             this.SelectPatient_panel.TabIndex = 2;
             // 
             // label10
@@ -940,7 +941,7 @@ namespace Hospital
             this.Refresh_Medicines_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_Medicines_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Refresh_Medicines_button.ForeColor = System.Drawing.Color.White;
-            this.Refresh_Medicines_button.Location = new System.Drawing.Point(3536, 4847);
+            this.Refresh_Medicines_button.Location = new System.Drawing.Point(3905, 5380);
             this.Refresh_Medicines_button.Name = "Refresh_Medicines_button";
             this.Refresh_Medicines_button.Size = new System.Drawing.Size(138, 40);
             this.Refresh_Medicines_button.TabIndex = 26;
@@ -1077,7 +1078,7 @@ namespace Hospital
             this.Refresh_MedTest_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_MedTest_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Refresh_MedTest_button.ForeColor = System.Drawing.Color.White;
-            this.Refresh_MedTest_button.Location = new System.Drawing.Point(3269, 3725);
+            this.Refresh_MedTest_button.Location = new System.Drawing.Point(3609, 4134);
             this.Refresh_MedTest_button.Name = "Refresh_MedTest_button";
             this.Refresh_MedTest_button.Size = new System.Drawing.Size(144, 46);
             this.Refresh_MedTest_button.TabIndex = 25;
@@ -1166,11 +1167,30 @@ namespace Hospital
             this.Surgery_panel.Controls.Add(this.label23);
             this.Surgery_panel.Controls.Add(this.Surgery_dataGridView);
             this.Surgery_panel.Controls.Add(this.label24);
-            this.Surgery_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Surgery_panel.Location = new System.Drawing.Point(330, 100);
+            this.Surgery_panel.Location = new System.Drawing.Point(1041, 505);
             this.Surgery_panel.Name = "Surgery_panel";
-            this.Surgery_panel.Size = new System.Drawing.Size(994, 657);
+            this.Surgery_panel.Size = new System.Drawing.Size(283, 252);
             this.Surgery_panel.TabIndex = 27;
+            // 
+            // SurgDate_Cancel_comboBox
+            // 
+            this.SurgDate_Cancel_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SurgDate_Cancel_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SurgDate_Cancel_comboBox.FormattingEnabled = true;
+            this.SurgDate_Cancel_comboBox.Location = new System.Drawing.Point(582, 247);
+            this.SurgDate_Cancel_comboBox.Name = "SurgDate_Cancel_comboBox";
+            this.SurgDate_Cancel_comboBox.Size = new System.Drawing.Size(224, 37);
+            this.SurgDate_Cancel_comboBox.TabIndex = 31;
+            // 
+            // SurgName_Reserve_comboBox
+            // 
+            this.SurgName_Reserve_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SurgName_Reserve_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SurgName_Reserve_comboBox.FormattingEnabled = true;
+            this.SurgName_Reserve_comboBox.Location = new System.Drawing.Point(66, 118);
+            this.SurgName_Reserve_comboBox.Name = "SurgName_Reserve_comboBox";
+            this.SurgName_Reserve_comboBox.Size = new System.Drawing.Size(224, 37);
+            this.SurgName_Reserve_comboBox.TabIndex = 30;
             // 
             // SurgDate_dateTimePicker
             // 
@@ -1202,7 +1222,7 @@ namespace Hospital
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(6146, 5857);
+            this.button1.Location = new System.Drawing.Point(6135, 5888);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 40);
             this.button1.TabIndex = 26;
@@ -1463,7 +1483,7 @@ namespace Hospital
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(7054, 8288);
+            this.button2.Location = new System.Drawing.Point(7701, 9079);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 40);
             this.button2.TabIndex = 26;
@@ -1561,26 +1581,6 @@ namespace Hospital
             // 
             this.SidePanel_timer.Interval = 15;
             this.SidePanel_timer.Tick += new System.EventHandler(this.SidePanel_timer_Tick);
-            // 
-            // SurgName_Reserve_comboBox
-            // 
-            this.SurgName_Reserve_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SurgName_Reserve_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SurgName_Reserve_comboBox.FormattingEnabled = true;
-            this.SurgName_Reserve_comboBox.Location = new System.Drawing.Point(66, 118);
-            this.SurgName_Reserve_comboBox.Name = "SurgName_Reserve_comboBox";
-            this.SurgName_Reserve_comboBox.Size = new System.Drawing.Size(224, 37);
-            this.SurgName_Reserve_comboBox.TabIndex = 30;
-            // 
-            // SurgDate_Cancel_comboBox
-            // 
-            this.SurgDate_Cancel_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SurgDate_Cancel_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SurgDate_Cancel_comboBox.FormattingEnabled = true;
-            this.SurgDate_Cancel_comboBox.Location = new System.Drawing.Point(582, 247);
-            this.SurgDate_Cancel_comboBox.Name = "SurgDate_Cancel_comboBox";
-            this.SurgDate_Cancel_comboBox.Size = new System.Drawing.Size(224, 37);
-            this.SurgDate_Cancel_comboBox.TabIndex = 31;
             // 
             // Doctor
             // 

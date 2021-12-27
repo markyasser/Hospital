@@ -37,6 +37,16 @@ namespace Hospital
         public static string GetAllPharma = "GetAllPharma";
         public static string GetAllRecept = "GetAllRecept";
 
+        public static string GetDID = "GetDID";
+        public static string GetPID = "GetPID";
+        public static string GetNID = "GetNID";
+        public static string GetRID = "GetRID";
+
+        public static string GetDoctorByID = "GetDoctorByID";
+        public static string GetNurseByID = "GetNurseByID";
+        public static string GetReceptionistByID = "GetReceptionistByID";
+        public static string GetPharmaByID = "GetPharmaByID";
+
         //-----------------------------Doctor--------------------------------
         public static string SelectPatientWithID = "SelectPatientWithID";
         public static string SelectPatientsID = "SelectPatientsID";

@@ -37,6 +37,9 @@ namespace Hospital
 
             depart.Visible = false;
             label28.Visible = false;
+
+            Dep_textBox.Visible = false;
+            label62.Visible = false;
         }
         private void Fill_ComboBox()
         {
@@ -50,6 +53,7 @@ namespace Hospital
             {
                 depart.Items.Add(arrray[i]);
             }
+            
         }
 
         //Drag Form
@@ -63,7 +67,6 @@ namespace Hospital
         {
             CreateAccount_panel.Visible = false;
             List_panel.Visible = false;
-            Delete_panel.Visible = false;
             Search_panel.Visible = false;
             Earnings_panel.Visible = false;
             Departments_Panel.Visible = false;
@@ -75,7 +78,6 @@ namespace Hospital
         {
             CreateAccount_panel.Dock = DockStyle.Fill;
             List_panel.Dock = DockStyle.Fill;
-            Delete_panel.Dock = DockStyle.Fill;
             Search_panel.Dock = DockStyle.Fill;
             Earnings_panel.Dock = DockStyle.Fill;
             Departments_Panel.Dock = DockStyle.Fill;
@@ -265,11 +267,6 @@ namespace Hospital
             ActivateButton(Search_iconButton);
         }
 
-        private void Delete_iconButton_Click(object sender, EventArgs e)
-        {
-            ShowPanel(Delete_panel);
-            ActivateButton(Delete_iconButton);
-        }
 
         private void Create_Account_iconButton_Click(object sender, EventArgs e)
         {
@@ -450,7 +447,10 @@ namespace Hospital
 
             int result = controllerObj.InsertDepartment(dno, special.Text.ToString());
             if (result > 0)
+            {
                 MessageBox.Show("Department " + special.Text + " is inserted successfully");
+                depart.Items.Add(special.Text);
+            }
             else
                 MessageBox.Show("Insertion Failed");
         }
@@ -523,6 +523,64 @@ namespace Hospital
                 MessageBox.Show("Medical Test : '" + surgery_name.Text + "' is inserted successfully");
             else
                 MessageBox.Show("Insertion Failed");
+        }
+
+        private void select_id_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool flag = true;
+            if (search_position.Text == "")
+            {
+                label61.Text = "* please select a position";
+                flag = false;
+            }
+            else label61.Text = "";
+
+            int id;
+            bool flag1 = Int32.TryParse(select_id.Text, out id);
+            if (!flag1)
+                label58.Text = "* Please enter a valid price";
+            else label58.Text = "";
+
+            if (!flag) return;
+            DataTable table =  controllerObj.GetEmployeeByID(search_position.Text,id);
+            object[] arrray = table.Rows[0].ItemArray;
+            Name_textBox.Text = arrray[0].ToString() + " " +arrray[1].ToString() + ". "+arrray[2].ToString();
+            BD_textBox.Text = arrray[3].ToString();
+            Gender_textBox.Text = arrray[4].ToString();
+            Address_textBox.Text= arrray[5].ToString();
+            PhoneNo_textBox.Text = "0" + arrray[6].ToString();
+
+            if (search_position.Text=="Doctor")
+            {
+                Dep_textBox.Visible = true;
+                label62.Visible = true;
+                Dep_textBox.Text = arrray[7].ToString();
+            }
+            else
+            {
+                Dep_textBox.Visible = false;
+                label62.Visible = false;
+            }
+        }
+
+        private void search_position_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            select_id.Text = "";
+            select_id.Items.Clear();
+            DataTable table = controllerObj.GetIDs(search_position.Text);
+            if (table !=null)
+            {
+                string[] arrray = table.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
+                for (int i = 0; i < arrray.Length; i++)
+                {
+                    select_id.Items.Add(arrray[i]);
+                }
+            }
+        }
+
+        private void Search_By_ID_button_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
