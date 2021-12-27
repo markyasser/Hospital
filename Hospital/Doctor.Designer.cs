@@ -498,9 +498,10 @@ namespace Hospital
             this.SelectPatient_panel.Controls.Add(this.label2);
             this.SelectPatient_panel.Controls.Add(this.SelectPatID_comboBox);
             this.SelectPatient_panel.Controls.Add(this.label1);
-            this.SelectPatient_panel.Location = new System.Drawing.Point(764, 134);
+            this.SelectPatient_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SelectPatient_panel.Location = new System.Drawing.Point(330, 100);
             this.SelectPatient_panel.Name = "SelectPatient_panel";
-            this.SelectPatient_panel.Size = new System.Drawing.Size(346, 81);
+            this.SelectPatient_panel.Size = new System.Drawing.Size(994, 657);
             this.SelectPatient_panel.TabIndex = 2;
             // 
             // label10

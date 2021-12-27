@@ -178,7 +178,61 @@ namespace Hospital
                 StoredProcedureName = StoredProcedures.GetAllRecept;
             }
             return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetIDs(string position)
+        {
+            string StoredProcedureName = "";
+            if (position == "Doctor")
+                StoredProcedureName = StoredProcedures.GetDID;
 
+            else if (position == "Nurse")
+                StoredProcedureName = StoredProcedures.GetNID;
+
+            else if (position == "Pharmacist")
+                StoredProcedureName = StoredProcedures.GetPID;
+
+            else if (position == "Receptionist")
+                StoredProcedureName = StoredProcedures.GetRID;
+
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetEmployeeByID(string position, int id)
+        {
+            string StoredProcedureName = "";
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            if (position == "Doctor")
+                StoredProcedureName = StoredProcedures.GetDoctorByID;
+
+            else if (position == "Nurse")
+                StoredProcedureName = StoredProcedures.GetNurseByID;
+
+            else if (position == "Pharmacist")
+                StoredProcedureName = StoredProcedures.GetPharmaByID;
+
+            else if (position == "Receptionist")
+                StoredProcedureName = StoredProcedures.GetReceptionistByID;
+
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public int DeleteEmployee(string position, int id)
+        {
+
+            string StoredProcedureName = "";
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            if (position == "Doctor")
+                StoredProcedureName = StoredProcedures.DeleteDoctor;
+
+            else if (position == "Nurse")
+                StoredProcedureName = StoredProcedures.DeleteNurse;
+
+            else if (position == "Pharmacist")
+                StoredProcedureName = StoredProcedures.DeletePharma;
+
+            else if (position == "Receptionist")
+                StoredProcedureName = StoredProcedures.DeleteRecept;
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
 
 
