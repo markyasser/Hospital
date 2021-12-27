@@ -498,10 +498,9 @@ namespace Hospital
             this.SelectPatient_panel.Controls.Add(this.label2);
             this.SelectPatient_panel.Controls.Add(this.SelectPatID_comboBox);
             this.SelectPatient_panel.Controls.Add(this.label1);
-            this.SelectPatient_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SelectPatient_panel.Location = new System.Drawing.Point(330, 100);
+            this.SelectPatient_panel.Location = new System.Drawing.Point(802, 118);
             this.SelectPatient_panel.Name = "SelectPatient_panel";
-            this.SelectPatient_panel.Size = new System.Drawing.Size(994, 657);
+            this.SelectPatient_panel.Size = new System.Drawing.Size(451, 117);
             this.SelectPatient_panel.TabIndex = 2;
             // 
             // label10
@@ -948,7 +947,7 @@ namespace Hospital
             this.Refresh_Medicines_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_Medicines_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Refresh_Medicines_button.ForeColor = System.Drawing.Color.White;
-            this.Refresh_Medicines_button.Location = new System.Drawing.Point(4274, 5913);
+            this.Refresh_Medicines_button.Location = new System.Drawing.Point(4643, 6446);
             this.Refresh_Medicines_button.Name = "Refresh_Medicines_button";
             this.Refresh_Medicines_button.Size = new System.Drawing.Size(138, 40);
             this.Refresh_Medicines_button.TabIndex = 26;
@@ -1085,7 +1084,7 @@ namespace Hospital
             this.Refresh_MedTest_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_MedTest_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Refresh_MedTest_button.ForeColor = System.Drawing.Color.White;
-            this.Refresh_MedTest_button.Location = new System.Drawing.Point(3949, 4543);
+            this.Refresh_MedTest_button.Location = new System.Drawing.Point(4289, 4952);
             this.Refresh_MedTest_button.Name = "Refresh_MedTest_button";
             this.Refresh_MedTest_button.Size = new System.Drawing.Size(144, 46);
             this.Refresh_MedTest_button.TabIndex = 25;
@@ -1274,7 +1273,7 @@ namespace Hospital
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(6755, 6418);
+            this.button1.Location = new System.Drawing.Point(7375, 6976);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 40);
             this.button1.TabIndex = 26;
@@ -1397,10 +1396,9 @@ namespace Hospital
             this.Nurses_panel.Controls.Add(this.label29);
             this.Nurses_panel.Controls.Add(this.label30);
             this.Nurses_panel.Controls.Add(this.label31);
-            this.Nurses_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Nurses_panel.Location = new System.Drawing.Point(330, 100);
+            this.Nurses_panel.Location = new System.Drawing.Point(765, 369);
             this.Nurses_panel.Name = "Nurses_panel";
-            this.Nurses_panel.Size = new System.Drawing.Size(994, 657);
+            this.Nurses_panel.Size = new System.Drawing.Size(383, 126);
             this.Nurses_panel.TabIndex = 30;
             // 
             // RoomNo_Assign_comboBox
@@ -1591,7 +1589,7 @@ namespace Hospital
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(7719, 9273);
+            this.button2.Location = new System.Drawing.Point(7737, 9488);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 40);
             this.button2.TabIndex = 26;
