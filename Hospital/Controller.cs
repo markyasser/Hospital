@@ -127,7 +127,24 @@ namespace Hospital
             Parameters.Add("@specialization", specialization);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
-        
+        public int InsertSurgery( string Surgery_Name, int surg_price)
+        {
+
+            string StoredProcedureName = StoredProcedures.InsertSurgery;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Surgery_Name", Surgery_Name);
+            Parameters.Add("@surg_price", surg_price);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public int InsertMedicalTest(string medical_test_name, int medical_test_price)
+        {
+
+            string StoredProcedureName = StoredProcedures.InsertMedicalTest;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@medical_test_name", medical_test_name);
+            Parameters.Add("@medical_test_price", medical_test_price);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
         public DataTable GetAllDepartmentNumber()
         {
             string StoredProcedureName = StoredProcedures.GetAllDepartmentNumber;
