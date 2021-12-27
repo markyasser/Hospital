@@ -47,5 +47,7 @@ namespace Hospital
         
         public static string CancelSurgery = "CancelSurgery";
 
+        //--------------------------------Receptionist-----------------------------------
+        public static string InsertPatient = "InsertPatient";
     }
 }

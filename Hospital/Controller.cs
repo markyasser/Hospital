@@ -239,6 +239,21 @@ namespace Hospital
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
         //-------------------------- ----Receptionist------------------------
+        public int InsertPatient(int patient_id, string Fname, char Minit, string Lname,
+                                string Bdate, string address, string phone_number, string Gender)
+        {
+            string StoredProcedureName = StoredProcedures.InsertPatient;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@ID", patient_id);
+            Parameters.Add("@fname", Fname);
+            Parameters.Add("@minit", Minit);
+            Parameters.Add("@lname", Lname);
+            Parameters.Add("@Bdate", Bdate);
+            Parameters.Add("@address", address);
+            Parameters.Add("@phone_number", phone_number);
+            Parameters.Add("@gender", Gender);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
         //-------------------------------Pharmacist--------------------------
     }
 
