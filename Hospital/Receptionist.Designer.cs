@@ -74,10 +74,10 @@ namespace Hospital
             this.label9 = new System.Windows.Forms.Label();
             this.docName_comboBox = new System.Windows.Forms.ComboBox();
             this.editApp_panel = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.editApp_btn = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -725,20 +725,30 @@ namespace Hospital
             // 
             this.editApp_panel.AutoScroll = true;
             this.editApp_panel.BackColor = System.Drawing.Color.White;
+            this.editApp_panel.Controls.Add(this.comboBox2);
             this.editApp_panel.Controls.Add(this.editApp_btn);
             this.editApp_panel.Controls.Add(this.textBox3);
             this.editApp_panel.Controls.Add(this.textBox2);
-            this.editApp_panel.Controls.Add(this.textBox1);
             this.editApp_panel.Controls.Add(this.label18);
             this.editApp_panel.Controls.Add(this.label15);
             this.editApp_panel.Controls.Add(this.label16);
             this.editApp_panel.Controls.Add(this.label17);
             this.editApp_panel.Controls.Add(this.comboBox4);
             this.editApp_panel.Controls.Add(this.label14);
-            this.editApp_panel.Location = new System.Drawing.Point(50, 49);
+            this.editApp_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.editApp_panel.Location = new System.Drawing.Point(0, 0);
             this.editApp_panel.Name = "editApp_panel";
-            this.editApp_panel.Size = new System.Drawing.Size(243, 180);
+            this.editApp_panel.Size = new System.Drawing.Size(1125, 712);
             this.editApp_panel.TabIndex = 2;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(447, 259);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(455, 24);
+            this.comboBox2.TabIndex = 38;
             // 
             // editApp_btn
             // 
@@ -768,22 +778,15 @@ namespace Hospital
             this.textBox2.Size = new System.Drawing.Size(455, 22);
             this.textBox2.TabIndex = 35;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(447, 266);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(455, 22);
-            this.textBox1.TabIndex = 34;
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label18.Location = new System.Drawing.Point(23, 143);
+            this.label18.Location = new System.Drawing.Point(23, 145);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(302, 39);
+            this.label18.Size = new System.Drawing.Size(185, 39);
             this.label18.TabIndex = 33;
-            this.label18.Text = "Appointment ID";
+            this.label18.Text = "Edit Type";
             // 
             // label15
             // 
@@ -841,12 +844,12 @@ namespace Hospital
             // 
             this.panelDesktop.AutoScroll = true;
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.panelDesktop.Controls.Add(this.editApp_panel);
             this.panelDesktop.Controls.Add(this.pay_panel);
             this.panelDesktop.Controls.Add(this.addPatient_panel);
             this.panelDesktop.Controls.Add(this.reserve_panel);
             this.panelDesktop.Controls.Add(this.cancelApp_panel);
             this.panelDesktop.Controls.Add(this.makeApp_panel);
-            this.panelDesktop.Controls.Add(this.editApp_panel);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(329, 0);
             this.panelDesktop.Name = "panelDesktop";
@@ -1234,14 +1237,10 @@ namespace Hospital
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel editApp_panel;
         private System.Windows.Forms.Button editApp_btn;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label19;
@@ -1285,5 +1284,9 @@ namespace Hospital
         private System.Windows.Forms.DateTimePicker pay_dateTimePicker;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Button pay_button;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox comboBox4;
     }
 }

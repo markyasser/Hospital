@@ -150,6 +150,7 @@ namespace Hospital
         private void EditApp_iconButton_Click(object sender, EventArgs e)
         {
             ShowPanel(editApp_panel);
+
             HideSubmenus();
         }
 
