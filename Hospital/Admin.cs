@@ -67,6 +67,8 @@ namespace Hospital
             Search_panel.Visible = false;
             Earnings_panel.Visible = false;
             Departments_Panel.Visible = false;
+            surgery_Panel.Visible = false;
+            medtests_Panel.Visible = false;
         }
         //make the dock: fill for all the pannels
         void InitializePanels()
@@ -77,6 +79,8 @@ namespace Hospital
             Search_panel.Dock = DockStyle.Fill;
             Earnings_panel.Dock = DockStyle.Fill;
             Departments_Panel.Dock = DockStyle.Fill;
+            surgery_Panel.Dock = DockStyle.Fill;
+            medtests_Panel.Dock = DockStyle.Fill;
         }
         //create border for the activate button feature
         void CreateLeftButtonBorder()
@@ -237,6 +241,17 @@ namespace Hospital
         {
             ShowPanel(Departments_Panel);
             ActivateButton(Departments);
+        }
+        private void surgeries_Click(object sender, EventArgs e)
+        {
+            ShowPanel(surgery_Panel);
+            ActivateButton(surgeries);
+        }
+
+        private void MedicalTests_Click(object sender, EventArgs e)
+        {
+            ShowPanel(medtests_Panel);
+            ActivateButton(MedicalTests);
         }
         private void List_iconButton_Click(object sender, EventArgs e)
         {
@@ -455,6 +470,59 @@ namespace Hospital
         private void depart_SelectedIndexChanged(object sender, EventArgs e)
         {
             dataGridView1.DataSource = controllerObj.GetAllEmployees(position.Text, depart.Text.ToString());
+        }
+
+        private void Insert_Surgery_Click(object sender, EventArgs e)
+        {
+            int cost;
+            bool flag = Int32.TryParse(price.Text, out cost);
+            if (!flag)
+                label59.Text = "* Please enter a valid price";
+            else label59.Text = "";
+
+            if (surgery_name.Text == "")
+            {
+                label32.Text = "* Please enter a valid name";
+                flag = false;
+            }
+            else label32.Text = "";
+
+            if (!flag) return;
+
+            int result = controllerObj.InsertSurgery( surgery_name.Text.ToString(),cost);
+            if (result > 0)
+                MessageBox.Show("Surgery " + surgery_name.Text + " is inserted successfully");
+            else
+                MessageBox.Show("Insertion Failed");
+        }
+
+        private void surgery_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Insert_MedicalTest_Click(object sender, EventArgs e)
+        {
+            int cost;
+            bool flag = Int32.TryParse(test_price.Text, out cost);
+            if (!flag)
+                label33.Text = "* Please enter a valid price";
+            else label33.Text = "";
+
+            if (surgery_name.Text == "")
+            {
+                label50.Text = "* Please enter a valid name";
+                flag = false;
+            }
+            else label50.Text = "";
+
+            if (!flag) return;
+
+            int result = controllerObj.InsertMedicalTest(test_name.Text.ToString(), cost);
+            if (result > 0)
+                MessageBox.Show("Medical Test : '" + surgery_name.Text + "' is inserted successfully");
+            else
+                MessageBox.Show("Insertion Failed");
         }
     }
 }
