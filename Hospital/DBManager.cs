@@ -10,7 +10,7 @@ namespace Hospital
 {
     public class DBManager
     {
-        static string DB_Connection_String = @"Data Source=.\SQLEXPRESS;Initial Catalog=Hospital;Integrated Security=True";
+        static string DB_Connection_String = @"Data Source=DESKTOP-IVTKPI5;Initial Catalog=Hospital;Integrated Security=True";
         SqlConnection myConnection;
 
         public DBManager()
