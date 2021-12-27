@@ -182,5 +182,23 @@ namespace Hospital
             ShowSubmenu(App_panel);
         }
 
+        private void Addpatient_button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Fname_textBox.Text == "" || Lname_textBox.Text == "" || minit_textBox.Text == "" || Address_textBox.Text == "" || ID_textBox.Text == "" || phno_textBox.Text == "")
+                {
+                    MessageBox.Show("Enter All Required Data");
+                }
+                else
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }

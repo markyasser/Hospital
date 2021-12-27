@@ -52,7 +52,7 @@ namespace Hospital
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.patient_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -411,7 +411,7 @@ namespace Hospital
             this.addPatient_panel.Controls.Add(this.label3);
             this.addPatient_panel.Controls.Add(this.label8);
             this.addPatient_panel.Controls.Add(this.label7);
-            this.addPatient_panel.Controls.Add(this.dateTimePicker1);
+            this.addPatient_panel.Controls.Add(this.patient_dateTimePicker);
             this.addPatient_panel.Controls.Add(this.label6);
             this.addPatient_panel.Controls.Add(this.label5);
             this.addPatient_panel.Controls.Add(this.label2);
@@ -421,9 +421,10 @@ namespace Hospital
             this.addPatient_panel.Controls.Add(this.Lname_textBox);
             this.addPatient_panel.Controls.Add(this.Fname_textBox);
             this.addPatient_panel.Controls.Add(this.label1);
-            this.addPatient_panel.Location = new System.Drawing.Point(64, 457);
+            this.addPatient_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addPatient_panel.Location = new System.Drawing.Point(0, 0);
             this.addPatient_panel.Name = "addPatient_panel";
-            this.addPatient_panel.Size = new System.Drawing.Size(282, 84);
+            this.addPatient_panel.Size = new System.Drawing.Size(1125, 712);
             this.addPatient_panel.TabIndex = 0;
             // 
             // label13
@@ -446,19 +447,20 @@ namespace Hospital
             this.Addpatient_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Addpatient_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Addpatient_button.ForeColor = System.Drawing.Color.White;
-            this.Addpatient_button.Location = new System.Drawing.Point(520, 545);
+            this.Addpatient_button.Location = new System.Drawing.Point(514, 574);
             this.Addpatient_button.Name = "Addpatient_button";
             this.Addpatient_button.Size = new System.Drawing.Size(158, 64);
             this.Addpatient_button.TabIndex = 42;
             this.Addpatient_button.Text = "Add";
             this.Addpatient_button.UseVisualStyleBackColor = false;
+            this.Addpatient_button.Click += new System.EventHandler(this.Addpatient_button_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(654, 471);
+            this.label4.Location = new System.Drawing.Point(583, 471);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 31);
             this.label4.TabIndex = 41;
@@ -470,14 +472,15 @@ namespace Hospital
             this.gender_comboBox.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.gender_comboBox.Location = new System.Drawing.Point(810, 471);
+            this.gender_comboBox.Location = new System.Drawing.Point(810, 476);
             this.gender_comboBox.Name = "gender_comboBox";
             this.gender_comboBox.Size = new System.Drawing.Size(270, 24);
             this.gender_comboBox.TabIndex = 40;
             // 
             // ID_textBox
             // 
-            this.ID_textBox.Location = new System.Drawing.Point(810, 357);
+            this.ID_textBox.Location = new System.Drawing.Point(810, 135);
+            this.ID_textBox.MaxLength = 14;
             this.ID_textBox.Name = "ID_textBox";
             this.ID_textBox.Size = new System.Drawing.Size(270, 22);
             this.ID_textBox.TabIndex = 39;
@@ -487,7 +490,7 @@ namespace Hospital
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(637, 352);
+            this.label3.Location = new System.Drawing.Point(583, 130);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(159, 31);
             this.label3.TabIndex = 38;
@@ -509,25 +512,25 @@ namespace Hospital
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(638, 222);
+            this.label7.Location = new System.Drawing.Point(583, 361);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(155, 31);
             this.label7.TabIndex = 36;
             this.label7.Text = "Phone no.";
             // 
-            // dateTimePicker1
+            // patient_dateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(810, 129);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(270, 22);
-            this.dateTimePicker1.TabIndex = 35;
+            this.patient_dateTimePicker.Location = new System.Drawing.Point(810, 235);
+            this.patient_dateTimePicker.Name = "patient_dateTimePicker";
+            this.patient_dateTimePicker.Size = new System.Drawing.Size(270, 22);
+            this.patient_dateTimePicker.TabIndex = 35;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(637, 129);
+            this.label6.Location = new System.Drawing.Point(583, 235);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(158, 31);
             this.label6.TabIndex = 34;
@@ -557,7 +560,8 @@ namespace Hospital
             // 
             // Address_textBox
             // 
-            this.Address_textBox.Location = new System.Drawing.Point(243, 485);
+            this.Address_textBox.Location = new System.Drawing.Point(243, 476);
+            this.Address_textBox.MaxLength = 50;
             this.Address_textBox.Name = "Address_textBox";
             this.Address_textBox.Size = new System.Drawing.Size(266, 22);
             this.Address_textBox.TabIndex = 31;
@@ -565,13 +569,15 @@ namespace Hospital
             // minit_textBox
             // 
             this.minit_textBox.Location = new System.Drawing.Point(243, 236);
+            this.minit_textBox.MaxLength = 1;
             this.minit_textBox.Name = "minit_textBox";
             this.minit_textBox.Size = new System.Drawing.Size(266, 22);
             this.minit_textBox.TabIndex = 30;
             // 
             // phno_textBox
             // 
-            this.phno_textBox.Location = new System.Drawing.Point(810, 222);
+            this.phno_textBox.Location = new System.Drawing.Point(810, 361);
+            this.phno_textBox.MaxLength = 20;
             this.phno_textBox.Name = "phno_textBox";
             this.phno_textBox.Size = new System.Drawing.Size(270, 22);
             this.phno_textBox.TabIndex = 29;
@@ -579,6 +585,7 @@ namespace Hospital
             // Lname_textBox
             // 
             this.Lname_textBox.Location = new System.Drawing.Point(243, 364);
+            this.Lname_textBox.MaxLength = 50;
             this.Lname_textBox.Name = "Lname_textBox";
             this.Lname_textBox.Size = new System.Drawing.Size(266, 22);
             this.Lname_textBox.TabIndex = 28;
@@ -586,6 +593,7 @@ namespace Hospital
             // Fname_textBox
             // 
             this.Fname_textBox.Location = new System.Drawing.Point(243, 135);
+            this.Fname_textBox.MaxLength = 50;
             this.Fname_textBox.Name = "Fname_textBox";
             this.Fname_textBox.Size = new System.Drawing.Size(266, 22);
             this.Fname_textBox.TabIndex = 27;
@@ -735,10 +743,9 @@ namespace Hospital
             this.editApp_panel.Controls.Add(this.label17);
             this.editApp_panel.Controls.Add(this.comboBox4);
             this.editApp_panel.Controls.Add(this.label14);
-            this.editApp_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.editApp_panel.Location = new System.Drawing.Point(0, 0);
             this.editApp_panel.Name = "editApp_panel";
-            this.editApp_panel.Size = new System.Drawing.Size(1125, 712);
+            this.editApp_panel.Size = new System.Drawing.Size(247, 204);
             this.editApp_panel.TabIndex = 2;
             // 
             // comboBox2
@@ -844,9 +851,9 @@ namespace Hospital
             // 
             this.panelDesktop.AutoScroll = true;
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.panelDesktop.Controls.Add(this.addPatient_panel);
             this.panelDesktop.Controls.Add(this.editApp_panel);
             this.panelDesktop.Controls.Add(this.pay_panel);
-            this.panelDesktop.Controls.Add(this.addPatient_panel);
             this.panelDesktop.Controls.Add(this.reserve_panel);
             this.panelDesktop.Controls.Add(this.cancelApp_panel);
             this.panelDesktop.Controls.Add(this.makeApp_panel);
@@ -1217,7 +1224,7 @@ namespace Hospital
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker patient_dateTimePicker;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
