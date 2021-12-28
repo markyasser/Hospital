@@ -178,8 +178,64 @@ namespace Hospital
                 StoredProcedureName = StoredProcedures.GetAllRecept;
             }
             return dbMan.ExecuteReader(StoredProcedureName, null);
-
         }
+        public DataTable GetIDs(string position)
+        {
+            string StoredProcedureName = "";
+            if (position == "Doctor")
+                StoredProcedureName = StoredProcedures.GetDID;
+
+            else if (position == "Nurse")
+                StoredProcedureName = StoredProcedures.GetNID;
+
+            else if (position == "Pharmacist")
+                StoredProcedureName = StoredProcedures.GetPID;
+
+            else if (position == "Receptionist")
+                StoredProcedureName = StoredProcedures.GetRID;
+
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetEmployeeByID(string position, int id)
+        {
+            string StoredProcedureName = "";
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            if (position == "Doctor")
+                StoredProcedureName = StoredProcedures.GetDoctorByID;
+
+            else if (position == "Nurse")
+                StoredProcedureName = StoredProcedures.GetNurseByID;
+
+            else if (position == "Pharmacist")
+                StoredProcedureName = StoredProcedures.GetPharmaByID;
+
+            else if (position == "Receptionist")
+                StoredProcedureName = StoredProcedures.GetReceptionistByID;
+
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public int DeleteEmployee(string position, int id)
+        {
+
+            string StoredProcedureName = "";
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            if (position == "Doctor")
+                StoredProcedureName = StoredProcedures.DeleteDoctor;
+
+            else if (position == "Nurse")
+                StoredProcedureName = StoredProcedures.DeleteNurse;
+
+            else if (position == "Pharmacist")
+                StoredProcedureName = StoredProcedures.DeletePharma;
+
+            else if (position == "Receptionist")
+                StoredProcedureName = StoredProcedures.DeleteRecept;
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+
+
         //---------------------------------Doctor----------------------------
         public DataTable SelectPatientsID()
         {
@@ -237,6 +293,64 @@ namespace Hospital
             Parameters.Add("@SurgName", SurgID);
             Parameters.Add("@date", date);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+
+        public DataTable SelectNurseIDs()
+        {
+            String StoredProcedureName = StoredProcedures.GetNurseIDs;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetRoomsWithNoNurses()
+        {
+            String StoredProcedureName = StoredProcedures.GetRoomsWithNoNurses;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetNursesWithNoRooms()
+        {
+            String StoredProcedureName = StoredProcedures.GetNursesWithNoRooms;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetNursesWithRooms()
+        {
+            String StoredProcedureName = StoredProcedures.GetNursesWithRooms;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetRoomsWithNurses()
+        {
+            String StoredProcedureName = StoredProcedures.GetRoomsWithNurses;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetAllRooms()
+        {
+            String StoredProcedureName = StoredProcedures.GetAllRooms;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetRoomOfANurse(int Nid)
+        {
+            String StoredProcedureName = StoredProcedures.GetRoomOfANurse;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@nID", Nid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public int AssignNurseToRoom(int Nid, int RID)
+        {
+            String StoredProcedureName = StoredProcedures.AssignNurseToRoom;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@NID", Nid);
+            Parameters.Add("@RID", RID);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public int RemoveNursefromRoom(int Nid)
+        {
+            String StoredProcedureName = StoredProcedures.RemoveNursefromRoom;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@NID", Nid);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public DataTable DisplayNurseRoomsData()
+        {
+            String StoredProcedureName = StoredProcedures.DisplayNurseRoomsData;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
         }
         //-------------------------- ----Receptionist------------------------
         public int InsertPatient(int patient_id, string Fname, char Minit, string Lname,

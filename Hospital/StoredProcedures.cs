@@ -37,6 +37,22 @@ namespace Hospital
         public static string GetAllPharma = "GetAllPharma";
         public static string GetAllRecept = "GetAllRecept";
 
+        //delete Employees
+        public static string DeleteDoctor = "DeleteDoctor";
+        public static string DeletePharma = "DeletePharma";
+        public static string DeleteNurse = "DeleteNurse";
+        public static string DeleteRecept = "DeleteRecept";
+
+        public static string GetDID = "GetDID";
+        public static string GetPID = "GetPID";
+        public static string GetNID = "GetNID";
+        public static string GetRID = "GetRID";
+
+        public static string GetDoctorByID = "GetDoctorByID";
+        public static string GetNurseByID = "GetNurseByID";
+        public static string GetReceptionistByID = "GetReceptionistByID";
+        public static string GetPharmaByID = "GetPharmaByID";
+
         //-----------------------------Doctor--------------------------------
         public static string SelectPatientWithID = "SelectPatientWithID";
         public static string SelectPatientsID = "SelectPatientsID";
@@ -46,6 +62,17 @@ namespace Hospital
         public static string ReserveSurgery = "ReserveSurgery";
         
         public static string CancelSurgery = "CancelSurgery";
+        public static string GetNurseIDs = "GetNurseIDs";
+        public static string GetRoomsWithNoNurses = "GetRoomsWithNoNurses";
+        public static string GetNursesWithNoRooms = "SelectNurseIDsWithNoRooms";
+        public static string GetNursesWithRooms = "SelectNurseIDsWithRooms";
+        public static string GetRoomsWithNurses = "GetRoomsWithNurses";
+        public static string GetRoomOfANurse = "GetRoomOfANurse";
+        public static string AssignNurseToRoom = "AssignNurseToRoom";
+        public static string RemoveNursefromRoom = "RemoveNursefromRoom";
+        public static string GetAllRooms = "GetAllRooms";
+        
+        public static string DisplayNurseRoomsData = "DisplayNurseRoomsData";
 
         //--------------------------------Receptionist-----------------------------------
         public static string InsertPatient = "InsertPatient";
