@@ -15,7 +15,8 @@ namespace Hospital
         public static string IsNurse = "IsNurse";
         public static string IsPharma = "IsPharma";
         public static string IsRecept = "IsRecept";
-
+        public static string ChangePassword = "ChangePassword";
+        public static string GetOldPassword = "GetOldPassword";
         //-----------------------------Admin--------------------------------
         //Sign Up 
         public static string InsertDoctor = "InsertDoctor";
@@ -26,6 +27,7 @@ namespace Hospital
         public static string InsertDepartment = "InsertDepartment";
         public static string DeleteDepartment = "DeleteDepartment";
         public static string GetAllDepartmentNumber = "GetAllDepartmentNumber";
+        public static string DepartmentStatistics = "DepartmentStatistics";
         //surgeries
         public static string InsertSurgery = "InsertSurgery";
         //Medical Tests

@@ -18,8 +18,10 @@ namespace Hospital
         private IconButton activeButton;
         private Panel leftBtnBorder;
         private Color PrevColorOfActiveButton;
-        public Admin()
+        string USERNAME;
+        public Admin(string user) 
         {
+            USERNAME = user;
             InitializeComponent();
             controllerObj = new Controller();
             Fill_ComboBox();
@@ -245,6 +247,7 @@ namespace Hospital
         {
             ShowPanel(Departments_Panel);
             ActivateButton(Departments);
+            FillDepartmentTable();
         }
         private void surgeries_Click(object sender, EventArgs e)
         {
@@ -318,10 +321,9 @@ namespace Hospital
 
             if (address.Text == "")
             {
-                label12.Text = "*";
+                label3.Text = "*";
                 flag = false;
             }
-                
             else label12.Text = "";
 
             if (pos.Text == "")
@@ -339,7 +341,13 @@ namespace Hospital
             }
                 
             else label10.Text = "";
+            if (username.Text == "")
+            {
+                label19.Text = "*";
+                flag = false;
+            }
 
+            else label19.Text = "";
             if (dep.Text == "" && pos.Text== "Doctor")
             {
                 label11.Text = "*";
@@ -373,8 +381,12 @@ namespace Hospital
             int result1=0, result2 = 0;
 
             result2 = controllerObj.CreateAccount(username.Text, password.Text);
-            if (pos.Text =="Doctor")
+            if (pos.Text == "Doctor")
+            {
                 result1 = controllerObj.InsertDoctor(ID, fname.Text, minit.Text, lname.Text, username.Text, birthdate, address.Text, Phone, SEX, dep.SelectedIndex + 1);
+                FillDepartmentTable();
+            }
+            
             else
                 result1 = controllerObj.InsertNotDoctor(ID, fname.Text, minit.Text, lname.Text, username.Text, birthdate, address.Text, Phone, SEX, pos.Text);
             
@@ -457,6 +469,7 @@ namespace Hospital
             {
                 MessageBox.Show("Department " + special.Text + " is inserted successfully");
                 depart.Items.Add(special.Text);
+                FillDepartmentTable();
             }
             else
                 MessageBox.Show("Insertion Failed");
@@ -598,10 +611,45 @@ namespace Hospital
                 }
             }
         }
-
+        private void Change_Passwrod_Click(object sender, EventArgs e)
+        {
+            bool flag = true;
+            if (OldPass.Text == "")
+            {
+                label66.Text = "*This field cannot be empty";
+                flag = false;
+            }
+            else label66.Text = "";
+            if (NewPass.Text == "")
+            {
+                label67.Text = "*This field cannot be empty";
+                flag = false;
+            }
+            else label67.Text = "";
+            if (!flag) return;
+            object oldpassword = controllerObj.GetOldPassword(USERNAME);
+            if (oldpassword !=null && OldPass.Text == oldpassword.ToString())
+            {
+                int result = controllerObj.ChangePassword(USERNAME,NewPass.Text);
+                if (result > 0)
+                {
+                    MessageBox.Show("Password changed successfully");
+                }
+                else
+                    MessageBox.Show("An error occured");
+            }   
+            else
+                MessageBox.Show("Wrong old password");
+        }
+        void FillDepartmentTable()
+        {
+            dataGridView2.DataSource = controllerObj.DepartmentStatistics();
+        }
         private void label64_Click(object sender, EventArgs e)
         {
 
         }
+
+        
     }
 }

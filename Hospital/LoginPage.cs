@@ -52,7 +52,7 @@ namespace Hospital
                 }
                 else 
                 {
-                    Admin admin = new Admin();
+                    Admin admin = new Admin(id.Text);
                     admin.Show();
                 }
             }

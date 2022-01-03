@@ -63,7 +63,6 @@ namespace Hospital
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@username", username);
             Parameters.Add("@password", passwrod);
-
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }   
         public int InsertDoctor(int Doctor_id,string Fname,string Minit,string Lname,
@@ -117,7 +116,6 @@ namespace Hospital
 
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
-
         public int InsertDepartment(int Dnumber, string specialization)
         {
 
@@ -148,6 +146,11 @@ namespace Hospital
         public DataTable GetAllDepartmentNumber()
         {
             string StoredProcedureName = StoredProcedures.GetAllDepartmentNumber;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable DepartmentStatistics()
+        {
+            string StoredProcedureName = StoredProcedures.DepartmentStatistics;
             return dbMan.ExecuteReader(StoredProcedureName, null);
         }
         public DataTable GetAllEmployees(string position, string specialization)
@@ -234,8 +237,22 @@ namespace Hospital
                 StoredProcedureName = StoredProcedures.DeleteRecept;
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
+        public int ChangePassword(string username, string password)
+        {
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@username", username);
+            Parameters.Add("@newpassword", password);
+            string StoredProcedureName = StoredProcedures.ChangePassword;
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
 
-
+        public object GetOldPassword(string username)
+        {
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@username", username);
+            string StoredProcedureName = StoredProcedures.GetOldPassword;
+            return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+        }
         //---------------------------------Doctor----------------------------
         public DataTable SelectPatientsID()
         {
