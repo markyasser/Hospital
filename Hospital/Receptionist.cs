@@ -14,10 +14,14 @@ namespace Hospital
     public partial class Receptionist : Form
     {
         private int borderSize = 2;
+        Controller c;
+        Validation v;
 
         public Receptionist()
         {
             InitializeComponent();
+            c = new Controller();           
+            v = new Validation();
             //CollapseMenu();
             HideSubmenus();
             InitializePanels();
@@ -27,15 +31,15 @@ namespace Hospital
 
         }
         //Drag Form
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
+        //[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        //private extern static void ReleaseCapture();
+        //[DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        //private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        //private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    ReleaseCapture();
+        //    SendMessage(this.Handle, 0x112, 0xf012, 0);
+        //}
 
         private void CollapseMenu()
         {
@@ -186,19 +190,52 @@ namespace Hospital
         {
             try
             {
-                if (Fname_textBox.Text == "" || Lname_textBox.Text == "" || minit_textBox.Text == "" || Address_textBox.Text == "" || ID_textBox.Text == "" || phno_textBox.Text == "")
+                bool f = false;
+                foreach (TextBox txtbox in addPatient_panel.Controls.OfType<TextBox>())
+                {
+                    if (v.IsEmpty(txtbox.Text))
+                    {
+                        f=true;
+                    }
+                }
+                if(f || gender_comboBox.SelectedIndex.ToString() == "-1")//lo fadi
                 {
                     MessageBox.Show("Enter All Required Data");
                 }
+                //if (Fname_textBox.Text == "" || Lname_textBox.Text == "" || minit_textBox.Text == "" || Address_textBox.Text == "" || ID_textBox.Text == "" || phno_textBox.Text == ""||gender_comboBox.SelectedIndex.ToString()=="-1")
+                //{
+                //    MessageBox.Show("Enter All Required Data");
+                //}
                 else
                 {
-
+                    if (!v.IsAlpha(Fname_textBox.Text)||!v.IsAlpha(Lname_textBox.Text)||!v.IsAlpha(minit_textBox.Text)||!v.IsPosInteger(ID_textBox.Text)||!v.IsPosInteger(phno_textBox.Text))
+                    {
+                        MessageBox.Show("Enter Valid Data");
+                    }
+                    else
+                    {
+                        int result = c.InsertPatient(int.Parse(ID_textBox.Text), Fname_textBox.Text, char.Parse(minit_textBox.Text), Lname_textBox.Text, patient_dateTimePicker.Text, Address_textBox.Text,phno_textBox.Text,gender_comboBox.SelectedItem.ToString());
+                        if (result >0)
+                        {
+                            MessageBox.Show("The Patient added successfully to the system");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Insertion Failled");
+                        }
+                    }
                 }
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Insertion Failled");
             }
+        }
+
+        private void Receptionist_Load(object sender, EventArgs e)
+        {
+            patient_dateTimePicker.CustomFormat = "yyyy-MM-dd";
+            patient_dateTimePicker.Format = DateTimePickerFormat.Custom;
         }
     }
 }

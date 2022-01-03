@@ -1187,6 +1187,7 @@ namespace Hospital
             this.Controls.Add(this.panelMenu);
             this.Name = "Receptionist";
             this.Text = "Receptionist";
+            this.Load += new System.EventHandler(this.Receptionist_Load);
             this.panelMenu.ResumeLayout(false);
             this.App_panel.ResumeLayout(false);
             this.Logo_panel.ResumeLayout(false);

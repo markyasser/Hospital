@@ -138,11 +138,118 @@ namespace Hospital
             }
 
         }
+
+        void RefreshNurseID_Change()
+        {
+            string[] values;
+            DataTable dt = controllerObj.GetNursesWithNoRooms();
+            if (dt != null)
+            {
+                values = dt.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
+                if (values != null)
+                {
+                    NurseID_Change_comboBox.DataSource = values;
+                }
+                else
+                {
+                    NurseID_Change_comboBox.Items.Clear();
+                }
+            }
+            else
+            {
+                NurseID_Change_comboBox.DataSource = null;
+            }
+
+        }
+        void RefreshNurseID_Assign()
+        {
+            string[] values;
+            DataTable dt = controllerObj.GetNursesWithNoRooms();
+            if (dt != null)
+            {
+                values = dt.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
+                if (values != null)
+                {
+                    NurseID_Assign_comboBox.DataSource = values;
+                }
+                else
+                {
+                    NurseID_Assign_comboBox.Items.Clear();
+                }
+            }
+            else
+            {
+                NurseID_Assign_comboBox.DataSource = null;
+            }
+        }
+        void RefreshNurseID_Delete()
+        {
+            string[] values;
+            DataTable dt = controllerObj.GetNursesWithRooms();
+            if (dt != null)
+            {
+                values = dt.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
+                if (values != null)
+                {
+                    NurseID_Delete_comboBox.DataSource = values;
+                }
+                else
+                {
+                    NurseID_Delete_comboBox.Items.Clear();
+                }
+            }
+        }
+        void RefreshRoomNo_Assign()
+        {
+            string[] values;
+            DataTable dt = controllerObj.GetAllRooms();
+            if (dt != null)
+            {
+                values = dt.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
+                if (values != null)
+                {
+                    RoomNo_Assign_comboBox.DataSource = values;
+                }
+                else
+                {
+                    RoomNo_Assign_comboBox.Items.Clear();
+                }
+            }
+        }
+        void RefreshRoomNo_Change()
+        {
+            string[] values;
+            DataTable dt = controllerObj.GetRoomsWithNurses();
+            if (dt != null)
+            {
+                values = dt.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
+                if (values != null)
+                {
+                    RoomNo_Change_comboBox.DataSource = values;
+                }
+                else
+                {
+                    RoomNo_Change_comboBox.Items.Clear();
+                }
+            }
+        }
+        void RefreshNurseDataGrid()
+        {
+            DataTable dt = controllerObj.DisplayNurseRoomsData();
+            Rooms_Nurses_dataGridView.DataSource = dt;
+            Rooms_Nurses_dataGridView.Refresh();
+
+        }
         void RefreshComboBox()
         {
             RefreshPatient();
             RefreshSurgNames();
             RefreshSurgOperate();
+            RefreshNurseID_Assign();
+            RefreshNurseID_Change();
+            RefreshNurseID_Delete();
+            RefreshRoomNo_Assign();
+            RefreshRoomNo_Change();
         }
 
         //hide submenus at the beginning
@@ -296,6 +403,7 @@ namespace Hospital
         {
             ShowPanel(Nurses_panel);
             ActivateButton(Nurses_iconButton);
+            RefreshNurseDataGrid();
         }
 
         private void WorkHours_iconButton_Click(object sender, EventArgs e)
@@ -387,6 +495,95 @@ namespace Hospital
             {
                 MessageBox.Show("Cancelation successful!");
                 RefreshSurgOperate();
+            }
+        }
+
+        private void NurseID_Delete_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataTable dt = controllerObj.GetRoomOfANurse(int.Parse(NurseID_Delete_comboBox.Text.ToString()));
+            if (dt != null)
+            {
+                RoomNo_Delete_textBox.Text = dt.Rows[0].ItemArray[0].ToString();
+            }
+            else
+            {
+                RoomNo_Delete_textBox.Text = "";
+            }
+
+        }
+
+        private void AssignNurse_button_Click(object sender, EventArgs e)
+        {
+            if (NurseID_Assign_comboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please choose a nurse, if no nurses are shown, this means that all nurses are currently serving another rooms");
+                return;
+            }
+            if (RoomNo_Assign_comboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please choose a room, if no rooms are shown, this means that all rooms are currently served");
+                return;
+            }
+            int result = controllerObj.AssignNurseToRoom(int.Parse(NurseID_Assign_comboBox.Text.ToString()), int.Parse(RoomNo_Assign_comboBox.Text.ToString()));
+            if (result == 0)
+            {
+                MessageBox.Show("Assignment failed");
+            }
+            else
+            {
+                MessageBox.Show("Assignment successful!");
+                RefreshNurseID_Assign();
+                RefreshNurseID_Change();
+                RefreshNurseID_Delete();
+                RefreshRoomNo_Change();
+                RefreshNurseDataGrid();
+            }
+        }
+
+        private void ChangeNurse_button_Click(object sender, EventArgs e)
+        {
+            if (NurseID_Change_comboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please choose a nurse, if no nurses are shown, this means that all nurses are currently serving another rooms");
+                return;
+            }
+            if (RoomNo_Change_comboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please choose a room, if no rooms are shown, this means that all rooms are currently served");
+                return;
+            }
+            int result = controllerObj.AssignNurseToRoom(int.Parse(NurseID_Change_comboBox.Text.ToString()), int.Parse(RoomNo_Change_comboBox.Text.ToString()));
+            if (result == 0)
+            {
+                MessageBox.Show("Change failed");
+            }
+            else
+            {
+                MessageBox.Show("Change successful!");
+                RefreshNurseID_Delete();
+                RefreshNurseDataGrid();
+            }
+        }
+
+        private void DeleteNurse_button_Click(object sender, EventArgs e)
+        {
+            if (NurseID_Delete_comboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please choose a nurse, if no nurses are shown, this means that all nurses are currently serving another rooms");
+                return;
+            }
+            int result = controllerObj.RemoveNursefromRoom(int.Parse(NurseID_Delete_comboBox.Text.ToString()));
+            if (result == 0)
+            {
+                MessageBox.Show("Deletion failed");
+            }
+            else
+            {
+                MessageBox.Show("Deletion successful!");
+                RefreshNurseID_Assign();
+                RefreshNurseID_Change();
+                RefreshNurseID_Delete();
+                RefreshNurseDataGrid();
             }
         }
     }

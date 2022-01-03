@@ -62,6 +62,19 @@ namespace Hospital
         public static string ReserveSurgery = "ReserveSurgery";
         
         public static string CancelSurgery = "CancelSurgery";
+        public static string GetNurseIDs = "GetNurseIDs";
+        public static string GetRoomsWithNoNurses = "GetRoomsWithNoNurses";
+        public static string GetNursesWithNoRooms = "SelectNurseIDsWithNoRooms";
+        public static string GetNursesWithRooms = "SelectNurseIDsWithRooms";
+        public static string GetRoomsWithNurses = "GetRoomsWithNurses";
+        public static string GetRoomOfANurse = "GetRoomOfANurse";
+        public static string AssignNurseToRoom = "AssignNurseToRoom";
+        public static string RemoveNursefromRoom = "RemoveNursefromRoom";
+        public static string GetAllRooms = "GetAllRooms";
+        
+        public static string DisplayNurseRoomsData = "DisplayNurseRoomsData";
 
+        //--------------------------------Receptionist-----------------------------------
+        public static string InsertPatient = "InsertPatient";
     }
 }
