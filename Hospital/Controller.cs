@@ -192,7 +192,7 @@ namespace Hospital
                 StoredProcedureName = StoredProcedures.GetPID;
 
             else if (position == "Receptionist")
-                StoredProcedureName = StoredProcedures.GetRID;
+                StoredProcedureName = StoredProcedures.GetDRID;
 
             return dbMan.ExecuteReader(StoredProcedureName, null);
         }

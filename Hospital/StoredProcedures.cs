@@ -46,7 +46,7 @@ namespace Hospital
         public static string GetDID = "GetDID";
         public static string GetPID = "GetPID";
         public static string GetNID = "GetNID";
-        public static string GetRID = "GetRID";
+        public static string GetDRID = "GetDRID";
 
         public static string GetDoctorByID = "GetDoctorByID";
         public static string GetNurseByID = "GetNurseByID";

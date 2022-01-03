@@ -72,6 +72,7 @@ namespace Hospital
             Departments_Panel.Visible = false;
             surgery_Panel.Visible = false;
             medtests_Panel.Visible = false;
+            settings_panel.Visible = false;
         }
         //make the dock: fill for all the pannels
         void InitializePanels()
@@ -83,6 +84,7 @@ namespace Hospital
             Departments_Panel.Dock = DockStyle.Fill;
             surgery_Panel.Dock = DockStyle.Fill;
             medtests_Panel.Dock = DockStyle.Fill;
+            settings_panel.Dock = DockStyle.Fill;
         }
         //create border for the activate button feature
         void CreateLeftButtonBorder()
@@ -272,6 +274,11 @@ namespace Hospital
         {
             ShowPanel(CreateAccount_panel);
             ActivateButton(Create_Account_iconButton);
+        }
+        private void Settings_iconButton_Click(object sender, EventArgs e)
+        {
+            ShowPanel(settings_panel);
+            ActivateButton(Settings_iconButton);
         }
         private void Logout_iconButton_Click(object sender, EventArgs e)
         {
@@ -509,7 +516,7 @@ namespace Hospital
                 label33.Text = "* Please enter a valid price";
             else label33.Text = "";
 
-            if (surgery_name.Text == "")
+            if (test_name.Text == "")
             {
                 label50.Text = "* Please enter a valid name";
                 flag = false;
@@ -520,7 +527,7 @@ namespace Hospital
 
             int result = controllerObj.InsertMedicalTest(test_name.Text.ToString(), cost);
             if (result > 0)
-                MessageBox.Show("Medical Test : '" + surgery_name.Text + "' is inserted successfully");
+                MessageBox.Show("Medical Test : '" + test_name.Text + "' is inserted successfully");
             else
                 MessageBox.Show("Insertion Failed");
         }
@@ -592,6 +599,9 @@ namespace Hospital
             }
         }
 
-        
+        private void label64_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
