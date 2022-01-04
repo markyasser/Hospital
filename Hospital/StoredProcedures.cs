@@ -83,5 +83,8 @@ namespace Hospital
         public static string GetAllMedicine = "GetAllMedicine";
         public static string GetMedPrice = "GetMedPrice";
         public static string SetMedPrice = "SetMedPrice";
+        //-----------------------------------Nurse--------------------------------------
+        public static string GetAllMedicalTest = "GetAllMedicalTest";
+        public static string GetMedicalTestPrice = "GetMedicalTestPrice";
     }
 }
