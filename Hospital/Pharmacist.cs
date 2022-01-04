@@ -42,17 +42,22 @@ namespace Hospital
 
         private void AddMedicine_btn_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new AddMedicine());
+            OpenChildForm(new AddMedicine());
         }
 
         private void SetPrice_btn_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new SetPrice());
+            OpenChildForm(new SetPrice());
         }
 
         private void Sell_btn_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new SellOrAsk());
+            OpenChildForm(new SellOrAsk());
+        }
+
+        private void ChildPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

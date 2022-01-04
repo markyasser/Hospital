@@ -48,6 +48,7 @@
             this.SideMenu.Name = "SideMenu";
             this.SideMenu.Size = new System.Drawing.Size(145, 450);
             this.SideMenu.TabIndex = 0;
+            this.SideMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.SideMenu_Paint);
             // 
             // MedicalTest_btn
             // 

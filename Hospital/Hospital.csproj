@@ -55,6 +55,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMedicine.Designer.cs">
+      <DependentUpon>AddMedicine.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddPatient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,12 @@
     </Compile>
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MedicalTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedicalTest.Designer.cs">
+      <DependentUpon>MedicalTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Payment.cs">
       <SubType>Form</SubType>
@@ -113,8 +125,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SellOrAsk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellOrAsk.Designer.cs">
+      <DependentUpon>SellOrAsk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetPrice.Designer.cs">
+      <DependentUpon>SetPrice.cs</DependentUpon>
+    </Compile>
     <Compile Include="StoredProcedures.cs" />
     <Compile Include="Validation.cs" />
+    <EmbeddedResource Include="AddMedicine.resx">
+      <DependentUpon>AddMedicine.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddPatient.resx">
       <DependentUpon>AddPatient.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedicalTest.resx">
+      <DependentUpon>MedicalTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nurse.resx">
       <DependentUpon>Nurse.cs</DependentUpon>
@@ -148,6 +178,12 @@
     </Compile>
     <EmbeddedResource Include="Receptionist.resx">
       <DependentUpon>Receptionist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellOrAsk.resx">
+      <DependentUpon>SellOrAsk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetPrice.resx">
+      <DependentUpon>SetPrice.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

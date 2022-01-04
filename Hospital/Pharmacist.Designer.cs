@@ -138,6 +138,7 @@ namespace Hospital
             this.ChildPanel.Name = "ChildPanel";
             this.ChildPanel.Size = new System.Drawing.Size(655, 450);
             this.ChildPanel.TabIndex = 1;
+            this.ChildPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ChildPanel_Paint);
             // 
             // Pharmacist
             // 
