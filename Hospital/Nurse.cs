@@ -12,15 +12,17 @@ namespace Hospital
 {
     public partial class Nurse : Form
     {
+        Controller ControllerObj;
         private Form CurrentChildForm;
         public Nurse()
         {
+            ControllerObj = new Controller();
             InitializeComponent();
         }
 
         private void Nurse_Load(object sender, EventArgs e)
         {
-
+          
         }
 
 
@@ -42,17 +44,17 @@ namespace Hospital
 
         private void AskMedicine_btn_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new SellOrAsk());
+            OpenChildForm(new SellOrAsk(ControllerObj));
         }
 
         private void SetPrice_btn_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new SetPrice());
+            OpenChildForm(new SetPrice(ControllerObj));
         }
 
         private void MedicalTest_btn_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new MedicalTest());
+            OpenChildForm(new MedicalTest(ControllerObj));
         }
 
         private void ChildPanel_Paint(object sender, PaintEventArgs e)
@@ -61,6 +63,11 @@ namespace Hospital
         }
 
         private void SideMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Logo_Paint(object sender, PaintEventArgs e)
         {
 
         }

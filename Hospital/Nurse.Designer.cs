@@ -103,6 +103,7 @@
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(145, 65);
             this.Logo.TabIndex = 0;
+            this.Logo.Paint += new System.Windows.Forms.PaintEventHandler(this.Logo_Paint);
             // 
             // ChildPanel
             // 

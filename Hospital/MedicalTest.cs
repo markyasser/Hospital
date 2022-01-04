@@ -12,8 +12,10 @@ namespace Hospital
 {
     public partial class MedicalTest : Form
     {
-        public MedicalTest()
+        Controller ControllerObj;
+        public MedicalTest(Controller Obj)
         {
+            ControllerObj = Obj;
             InitializeComponent();
         }
 

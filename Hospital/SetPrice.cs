@@ -12,8 +12,10 @@ namespace Hospital
 {
     public partial class SetPrice : Form
     {
-        public SetPrice()
+        Controller ControllerObj;
+        public SetPrice(Controller Obj)
         {
+            ControllerObj = Obj;
             InitializeComponent();
         }
 
@@ -26,6 +28,27 @@ namespace Hospital
             }
             else
                 PriceMsg_lbl.Visible = false;
+        }
+
+        private void SetPrice_Load(object sender, EventArgs e)
+        {
+            DataTable dt1 = ControllerObj.GetAllMedicine();
+            Name_cmb.DataSource = dt1;
+            Name_cmb.DisplayMember = "Name";
+        }
+
+        private void Name_cmb_TextChanged(object sender, EventArgs e)
+        {
+            PreviousPrice_txt.Text = ControllerObj.GetMedPrice(Name_cmb.Text).ToString();
+        }
+
+        private void UpdatePrice_btn_Click(object sender, EventArgs e)
+        {
+            int result = ControllerObj.SetMedPrice(Name_cmb.Text, Convert.ToInt32(UpdatedPrice_txt.Text));
+            if (result == 0)
+                MessageBox.Show("Updating price failed");
+            else
+                MessageBox.Show("Updating price succeed");
         }
     }
 }

@@ -43,6 +43,9 @@
             this.MedIDMsg_lbl = new System.Windows.Forms.Label();
             this.QuantityMsg_lbl = new System.Windows.Forms.Label();
             this.PriceMsg_lbl = new System.Windows.Forms.Label();
+            this.EmptyNameMsb_lbl = new System.Windows.Forms.Label();
+            this.EmptyMedIDMsg_lbl = new System.Windows.Forms.Label();
+            this.EmptyQuantityMsg_lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Price_lbl
@@ -61,7 +64,7 @@
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(292, 235);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.MinDate = new System.DateTime(2021, 12, 30, 20, 13, 28, 330);
+            this.dateTimePicker1.MinDate = System.DateTime.Now;
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(198, 20);
             this.dateTimePicker1.TabIndex = 35;
@@ -160,12 +163,13 @@
             this.AddMedicine_btn.TabIndex = 41;
             this.AddMedicine_btn.Text = "Add medicine";
             this.AddMedicine_btn.UseVisualStyleBackColor = true;
+            this.AddMedicine_btn.Click += new System.EventHandler(this.AddMedicine_btn_Click);
             // 
             // NameMsg_lbl
             // 
             this.NameMsg_lbl.AutoSize = true;
             this.NameMsg_lbl.ForeColor = System.Drawing.Color.Black;
-            this.NameMsg_lbl.Location = new System.Drawing.Point(289, 57);
+            this.NameMsg_lbl.Location = new System.Drawing.Point(289, 46);
             this.NameMsg_lbl.Name = "NameMsg_lbl";
             this.NameMsg_lbl.Size = new System.Drawing.Size(211, 13);
             this.NameMsg_lbl.TabIndex = 42;
@@ -176,7 +180,7 @@
             // 
             this.MedIDMsg_lbl.AutoSize = true;
             this.MedIDMsg_lbl.ForeColor = System.Drawing.Color.Black;
-            this.MedIDMsg_lbl.Location = new System.Drawing.Point(324, 128);
+            this.MedIDMsg_lbl.Location = new System.Drawing.Point(324, 117);
             this.MedIDMsg_lbl.Name = "MedIDMsg_lbl";
             this.MedIDMsg_lbl.Size = new System.Drawing.Size(134, 13);
             this.MedIDMsg_lbl.TabIndex = 43;
@@ -187,7 +191,7 @@
             // 
             this.QuantityMsg_lbl.AutoSize = true;
             this.QuantityMsg_lbl.ForeColor = System.Drawing.Color.Black;
-            this.QuantityMsg_lbl.Location = new System.Drawing.Point(324, 198);
+            this.QuantityMsg_lbl.Location = new System.Drawing.Point(324, 187);
             this.QuantityMsg_lbl.Name = "QuantityMsg_lbl";
             this.QuantityMsg_lbl.Size = new System.Drawing.Size(134, 13);
             this.QuantityMsg_lbl.TabIndex = 44;
@@ -198,18 +202,54 @@
             // 
             this.PriceMsg_lbl.AutoSize = true;
             this.PriceMsg_lbl.ForeColor = System.Drawing.Color.Black;
-            this.PriceMsg_lbl.Location = new System.Drawing.Point(324, 313);
+            this.PriceMsg_lbl.Location = new System.Drawing.Point(324, 304);
             this.PriceMsg_lbl.Name = "PriceMsg_lbl";
             this.PriceMsg_lbl.Size = new System.Drawing.Size(134, 13);
             this.PriceMsg_lbl.TabIndex = 45;
             this.PriceMsg_lbl.Text = "Please, enter numbers only";
             this.PriceMsg_lbl.Visible = false;
             // 
+            // EmptyNameMsb_lbl
+            // 
+            this.EmptyNameMsb_lbl.AutoSize = true;
+            this.EmptyNameMsb_lbl.ForeColor = System.Drawing.Color.Black;
+            this.EmptyNameMsb_lbl.Location = new System.Drawing.Point(315, 59);
+            this.EmptyNameMsb_lbl.Name = "EmptyNameMsb_lbl";
+            this.EmptyNameMsb_lbl.Size = new System.Drawing.Size(143, 13);
+            this.EmptyNameMsb_lbl.TabIndex = 46;
+            this.EmptyNameMsb_lbl.Text = "Please, do not leave it empty";
+            this.EmptyNameMsb_lbl.Visible = false;
+            // 
+            // EmptyMedIDMsg_lbl
+            // 
+            this.EmptyMedIDMsg_lbl.AutoSize = true;
+            this.EmptyMedIDMsg_lbl.ForeColor = System.Drawing.Color.Black;
+            this.EmptyMedIDMsg_lbl.Location = new System.Drawing.Point(315, 130);
+            this.EmptyMedIDMsg_lbl.Name = "EmptyMedIDMsg_lbl";
+            this.EmptyMedIDMsg_lbl.Size = new System.Drawing.Size(143, 13);
+            this.EmptyMedIDMsg_lbl.TabIndex = 47;
+            this.EmptyMedIDMsg_lbl.Text = "Please, do not leave it empty";
+            this.EmptyMedIDMsg_lbl.Visible = false;
+            // 
+            // EmptyQuantityMsg_lbl
+            // 
+            this.EmptyQuantityMsg_lbl.AutoSize = true;
+            this.EmptyQuantityMsg_lbl.ForeColor = System.Drawing.Color.Black;
+            this.EmptyQuantityMsg_lbl.Location = new System.Drawing.Point(315, 200);
+            this.EmptyQuantityMsg_lbl.Name = "EmptyQuantityMsg_lbl";
+            this.EmptyQuantityMsg_lbl.Size = new System.Drawing.Size(143, 13);
+            this.EmptyQuantityMsg_lbl.TabIndex = 48;
+            this.EmptyQuantityMsg_lbl.Text = "Please, do not leave it empty";
+            this.EmptyQuantityMsg_lbl.Visible = false;
+            // 
             // AddMedicine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 450);
+            this.Controls.Add(this.EmptyQuantityMsg_lbl);
+            this.Controls.Add(this.EmptyMedIDMsg_lbl);
+            this.Controls.Add(this.EmptyNameMsb_lbl);
             this.Controls.Add(this.PriceMsg_lbl);
             this.Controls.Add(this.QuantityMsg_lbl);
             this.Controls.Add(this.MedIDMsg_lbl);
@@ -249,5 +289,8 @@
         private System.Windows.Forms.Label MedIDMsg_lbl;
         private System.Windows.Forms.Label QuantityMsg_lbl;
         private System.Windows.Forms.Label PriceMsg_lbl;
+        private System.Windows.Forms.Label EmptyNameMsb_lbl;
+        private System.Windows.Forms.Label EmptyMedIDMsg_lbl;
+        private System.Windows.Forms.Label EmptyQuantityMsg_lbl;
     }
 }

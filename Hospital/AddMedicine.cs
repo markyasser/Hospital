@@ -12,8 +12,10 @@ namespace Hospital
 {
     public partial class AddMedicine : Form
     {
-        public AddMedicine()
+        Controller ControllerObj;
+        public AddMedicine(Controller Obj)
         {
+            ControllerObj = Obj;
             InitializeComponent();
         }
 
@@ -69,6 +71,30 @@ namespace Hospital
         private void Button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void AddMedicine_btn_Click(object sender, EventArgs e)
+        {
+            if (MedID_txt.Text == "")
+            {
+                EmptyMedIDMsg_lbl.Visible = true;
+                if (Name_txt.Text == "")
+                {
+                    EmptyNameMsb_lbl.Visible = true;
+                    if (Quantity_txt.Text == "")
+                        EmptyQuantityMsg_lbl.Visible = true;
+                }
+            }
+            else
+            {
+                int result = ControllerObj.InsertMedicine(Convert.ToInt32(MedID_txt.Text), Name_txt.Text,
+                             Convert.ToInt32(Price_txt.Text), Convert.ToInt32(Quantity_txt.Text),
+                             dateTimePicker1.Value.ToShortDateString());
+                if (result == 0)
+                    MessageBox.Show("insertion has been failed");
+                else
+                    MessageBox.Show("insertion has been success");
+            }
         }
     }
 }

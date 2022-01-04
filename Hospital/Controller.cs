@@ -7,7 +7,7 @@ using System.Data;
 
 namespace Hospital
 {
-    class Controller
+    public class Controller
     {
         DBManager dbMan;
         public Controller()
@@ -36,17 +36,17 @@ namespace Hospital
 
             string StoredProcedureName = StoredProcedures.IsDoctor;
             retrunValue = dbMan.ExecuteScalar(StoredProcedureName, Parameters);
-            if (retrunValue != null) 
+            if (retrunValue != null)
                 return "Doctor";
 
             StoredProcedureName = StoredProcedures.IsPharma;
             retrunValue = dbMan.ExecuteScalar(StoredProcedureName, Parameters);
-            if (retrunValue != null) 
+            if (retrunValue != null)
                 return "Pharmacist";
 
             StoredProcedureName = StoredProcedures.IsRecept;
             retrunValue = dbMan.ExecuteScalar(StoredProcedureName, Parameters);
-            if (retrunValue != null) 
+            if (retrunValue != null)
                 return "Receptionist";
 
 
@@ -64,9 +64,9 @@ namespace Hospital
             Parameters.Add("@username", username);
             Parameters.Add("@password", passwrod);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
-        }   
-        public int InsertDoctor(int Doctor_id,string Fname,string Minit,string Lname,
-                                string d_username, string Bdate,string address,int phoneNumber, char Gender,int DNO)
+        }
+        public int InsertDoctor(int Doctor_id, string Fname, string Minit, string Lname,
+                                string d_username, string Bdate, string address, int phoneNumber, char Gender, int DNO)
         {
             string StoredProcedureName = StoredProcedures.InsertDoctor;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
@@ -85,9 +85,9 @@ namespace Hospital
         public int InsertNotDoctor(int id, string Fname, string Minit, string Lname,
                                 string username, string Bdate, string address, int phoneNumber, char Gender, string position)
         {
-            string StoredProcedureName="";
+            string StoredProcedureName = "";
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
-            if (position=="Nurse")
+            if (position == "Nurse")
             {
                 StoredProcedureName = StoredProcedures.InsertNurse;
                 Parameters.Add("@nurse_id", id);
@@ -105,7 +105,7 @@ namespace Hospital
                 Parameters.Add("@receptionist_id", id);
                 Parameters.Add("@r_username", username);
             }
-            
+
             Parameters.Add("@Fname", Fname);
             Parameters.Add("@Minit", Minit);
             Parameters.Add("@Lname", Lname);
@@ -125,7 +125,7 @@ namespace Hospital
             Parameters.Add("@specialization", specialization);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
-        public int InsertSurgery( string Surgery_Name, int surg_price)
+        public int InsertSurgery(string Surgery_Name, int surg_price)
         {
 
             string StoredProcedureName = StoredProcedures.InsertSurgery;
@@ -157,8 +157,8 @@ namespace Hospital
         {
             string StoredProcedureName = "";
             if (position == "Doctor")
-            {  
-                
+            {
+
                 if (specialization != "")
                 {
                     StoredProcedureName = StoredProcedures.GetAllDep_Doctors;
@@ -386,6 +386,40 @@ namespace Hospital
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
         //-------------------------------Pharmacist--------------------------
+        public int InsertMedicine(int MedicineID, string MedicineName,int Price,int Quantity ,string ExpiryDate )
+        {
+            string StoredProcedureName = StoredProcedures.InsertMedicine;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@MedicineID", MedicineID);
+            Parameters.Add("@MedicineName", MedicineName);
+            Parameters.Add("@MedicinePrice", Price);
+            Parameters.Add("@MedicineQuantity", Quantity);
+            Parameters.Add("@MedicineExpiryDate", ExpiryDate);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+
+        public DataTable GetAllMedicine()
+        {
+            string StoredProcedureName = StoredProcedures.GetAllMedicine;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+
+        public object GetMedPrice (string MedicineName)
+        {
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@MedicineName", MedicineName);
+            string StoredProcedureName = StoredProcedures.GetMedPrice;
+            return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+        }
+
+        public int SetMedPrice(string MedicineName,int UpdatedPrice)
+        {
+            string StoredProcedureName = StoredProcedures.SetMedPrice;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add ("@MedicineNam", MedicineName);
+            Parameters.Add("@MedicinePrice", UpdatedPrice);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
     }
 
 }

@@ -36,7 +36,7 @@
             this.Show_btn = new System.Windows.Forms.Button();
             this.Med1_gb = new System.Windows.Forms.GroupBox();
             this.Price1_lbl = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Price1_txt = new System.Windows.Forms.TextBox();
             this.Med2_gb = new System.Windows.Forms.GroupBox();
             this.Price2_lbl = new System.Windows.Forms.Label();
             this.Price2_txt = new System.Windows.Forms.TextBox();
@@ -44,17 +44,17 @@
             this.Medname2_cmb = new System.Windows.Forms.ComboBox();
             this.Med3_gb = new System.Windows.Forms.GroupBox();
             this.price3_lbl = new System.Windows.Forms.Label();
-            this.price3_txt = new System.Windows.Forms.TextBox();
+            this.Price3_txt = new System.Windows.Forms.TextBox();
             this.Medname3_lbl = new System.Windows.Forms.Label();
             this.Medname3_cmb = new System.Windows.Forms.ComboBox();
             this.Med4_gb = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Price4_txt = new System.Windows.Forms.TextBox();
             this.Medname4_lbl = new System.Windows.Forms.Label();
             this.Medname4_cmb = new System.Windows.Forms.ComboBox();
             this.Med5_gb = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Price5_txt = new System.Windows.Forms.TextBox();
             this.Medname5_lbl = new System.Windows.Forms.Label();
             this.Medname5_cmb = new System.Windows.Forms.ComboBox();
             this.TotalPrice_lbl = new System.Windows.Forms.Label();
@@ -105,6 +105,7 @@
             this.Medname1_cmb.Name = "Medname1_cmb";
             this.Medname1_cmb.Size = new System.Drawing.Size(190, 24);
             this.Medname1_cmb.TabIndex = 22;
+            this.Medname1_cmb.TextChanged += new System.EventHandler(this.Medname1_cmb_TextChanged);
             // 
             // Get_btn
             // 
@@ -116,6 +117,7 @@
             this.Get_btn.TabIndex = 24;
             this.Get_btn.Text = "Get";
             this.Get_btn.UseVisualStyleBackColor = true;
+            this.Get_btn.Click += new System.EventHandler(this.Get_btn_Click);
             // 
             // Show_btn
             // 
@@ -132,7 +134,7 @@
             // Med1_gb
             // 
             this.Med1_gb.Controls.Add(this.Price1_lbl);
-            this.Med1_gb.Controls.Add(this.textBox1);
+            this.Med1_gb.Controls.Add(this.Price1_txt);
             this.Med1_gb.Controls.Add(this.Medname1_lbl);
             this.Med1_gb.Controls.Add(this.Medname1_cmb);
             this.Med1_gb.Location = new System.Drawing.Point(43, 89);
@@ -153,13 +155,13 @@
             this.Price1_lbl.TabIndex = 41;
             this.Price1_lbl.Text = "Price";
             // 
-            // textBox1
+            // Price1_txt
             // 
-            this.textBox1.Location = new System.Drawing.Point(477, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(112, 20);
-            this.textBox1.TabIndex = 40;
+            this.Price1_txt.Location = new System.Drawing.Point(477, 12);
+            this.Price1_txt.Name = "Price1_txt";
+            this.Price1_txt.ReadOnly = true;
+            this.Price1_txt.Size = new System.Drawing.Size(112, 20);
+            this.Price1_txt.TabIndex = 40;
             // 
             // Med2_gb
             // 
@@ -213,11 +215,12 @@
             this.Medname2_cmb.Name = "Medname2_cmb";
             this.Medname2_cmb.Size = new System.Drawing.Size(190, 24);
             this.Medname2_cmb.TabIndex = 22;
+            this.Medname2_cmb.TextChanged += new System.EventHandler(this.Medname2_cmb_TextChanged);
             // 
             // Med3_gb
             // 
             this.Med3_gb.Controls.Add(this.price3_lbl);
-            this.Med3_gb.Controls.Add(this.price3_txt);
+            this.Med3_gb.Controls.Add(this.Price3_txt);
             this.Med3_gb.Controls.Add(this.Medname3_lbl);
             this.Med3_gb.Controls.Add(this.Medname3_cmb);
             this.Med3_gb.Location = new System.Drawing.Point(43, 199);
@@ -239,13 +242,13 @@
             this.price3_lbl.TabIndex = 41;
             this.price3_lbl.Text = "Price";
             // 
-            // price3_txt
+            // Price3_txt
             // 
-            this.price3_txt.Location = new System.Drawing.Point(477, 12);
-            this.price3_txt.Name = "price3_txt";
-            this.price3_txt.ReadOnly = true;
-            this.price3_txt.Size = new System.Drawing.Size(112, 20);
-            this.price3_txt.TabIndex = 40;
+            this.Price3_txt.Location = new System.Drawing.Point(477, 12);
+            this.Price3_txt.Name = "Price3_txt";
+            this.Price3_txt.ReadOnly = true;
+            this.Price3_txt.Size = new System.Drawing.Size(112, 20);
+            this.Price3_txt.TabIndex = 40;
             // 
             // Medname3_lbl
             // 
@@ -266,11 +269,12 @@
             this.Medname3_cmb.Name = "Medname3_cmb";
             this.Medname3_cmb.Size = new System.Drawing.Size(190, 24);
             this.Medname3_cmb.TabIndex = 22;
+            this.Medname3_cmb.TextChanged += new System.EventHandler(this.Medname3_cmb_TextChanged);
             // 
             // Med4_gb
             // 
             this.Med4_gb.Controls.Add(this.label3);
-            this.Med4_gb.Controls.Add(this.textBox4);
+            this.Med4_gb.Controls.Add(this.Price4_txt);
             this.Med4_gb.Controls.Add(this.Medname4_lbl);
             this.Med4_gb.Controls.Add(this.Medname4_cmb);
             this.Med4_gb.Location = new System.Drawing.Point(43, 250);
@@ -292,13 +296,13 @@
             this.label3.TabIndex = 41;
             this.label3.Text = "Price";
             // 
-            // textBox4
+            // Price4_txt
             // 
-            this.textBox4.Location = new System.Drawing.Point(477, 12);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(112, 20);
-            this.textBox4.TabIndex = 40;
+            this.Price4_txt.Location = new System.Drawing.Point(477, 12);
+            this.Price4_txt.Name = "Price4_txt";
+            this.Price4_txt.ReadOnly = true;
+            this.Price4_txt.Size = new System.Drawing.Size(112, 20);
+            this.Price4_txt.TabIndex = 40;
             // 
             // Medname4_lbl
             // 
@@ -319,11 +323,12 @@
             this.Medname4_cmb.Name = "Medname4_cmb";
             this.Medname4_cmb.Size = new System.Drawing.Size(190, 24);
             this.Medname4_cmb.TabIndex = 22;
+            this.Medname4_cmb.TextChanged += new System.EventHandler(this.Medname4_cmb_TextChanged);
             // 
             // Med5_gb
             // 
             this.Med5_gb.Controls.Add(this.label4);
-            this.Med5_gb.Controls.Add(this.textBox5);
+            this.Med5_gb.Controls.Add(this.Price5_txt);
             this.Med5_gb.Controls.Add(this.Medname5_lbl);
             this.Med5_gb.Controls.Add(this.Medname5_cmb);
             this.Med5_gb.Location = new System.Drawing.Point(43, 301);
@@ -345,13 +350,13 @@
             this.label4.TabIndex = 41;
             this.label4.Text = "Price";
             // 
-            // textBox5
+            // Price5_txt
             // 
-            this.textBox5.Location = new System.Drawing.Point(477, 12);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(112, 20);
-            this.textBox5.TabIndex = 40;
+            this.Price5_txt.Location = new System.Drawing.Point(477, 12);
+            this.Price5_txt.Name = "Price5_txt";
+            this.Price5_txt.ReadOnly = true;
+            this.Price5_txt.Size = new System.Drawing.Size(112, 20);
+            this.Price5_txt.TabIndex = 40;
             // 
             // Medname5_lbl
             // 
@@ -372,6 +377,7 @@
             this.Medname5_cmb.Name = "Medname5_cmb";
             this.Medname5_cmb.Size = new System.Drawing.Size(190, 24);
             this.Medname5_cmb.TabIndex = 22;
+            this.Medname5_cmb.TextChanged += new System.EventHandler(this.Medname5_cmb_TextChanged);
             // 
             // TotalPrice_lbl
             // 
@@ -448,15 +454,15 @@
         private System.Windows.Forms.Label Medname5_lbl;
         private System.Windows.Forms.ComboBox Medname5_cmb;
         private System.Windows.Forms.Label Price1_lbl;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Price1_txt;
         private System.Windows.Forms.Label Price2_lbl;
         private System.Windows.Forms.TextBox Price2_txt;
         private System.Windows.Forms.Label price3_lbl;
-        private System.Windows.Forms.TextBox price3_txt;
+        private System.Windows.Forms.TextBox Price3_txt;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox Price4_txt;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox Price5_txt;
         private System.Windows.Forms.Label TotalPrice_lbl;
         private System.Windows.Forms.TextBox TotalPrice_txt;
     }

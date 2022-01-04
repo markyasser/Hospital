@@ -78,5 +78,10 @@ namespace Hospital
 
         //--------------------------------Receptionist-----------------------------------
         public static string InsertPatient = "InsertPatient";
+        //--------------------------------Pharmacist-------------------------------------
+        public static string InsertMedicine = "InsertMedicine";
+        public static string GetAllMedicine = "GetAllMedicine";
+        public static string GetMedPrice = "GetMedPrice";
+        public static string SetMedPrice = "SetMedPrice";
     }
 }

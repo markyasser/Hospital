@@ -12,9 +12,11 @@ namespace Hospital
 {
     public partial class Pharmacist : Form
     {
+        Controller ControllerObj;
         private Form CurrentChildForm;
         public Pharmacist()
         {
+            ControllerObj = new Controller();
             InitializeComponent();
         }
 
@@ -42,20 +44,25 @@ namespace Hospital
 
         private void AddMedicine_btn_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new AddMedicine());
+            OpenChildForm(new AddMedicine(ControllerObj));
         }
 
         private void SetPrice_btn_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new SetPrice());
+            OpenChildForm(new SetPrice(ControllerObj));
         }
 
         private void Sell_btn_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new SellOrAsk());
+            OpenChildForm(new SellOrAsk(ControllerObj));
         }
 
         private void ChildPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Logo_Paint(object sender, PaintEventArgs e)
         {
 
         }

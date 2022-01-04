@@ -48,13 +48,14 @@
             this.UpdatePrice_btn.TabIndex = 25;
             this.UpdatePrice_btn.Text = "Update price";
             this.UpdatePrice_btn.UseVisualStyleBackColor = true;
+            this.UpdatePrice_btn.Click += new System.EventHandler(this.UpdatePrice_btn_Click);
             // 
             // PriceMsg_lbl
             // 
             this.PriceMsg_lbl.AutoSize = true;
             this.PriceMsg_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.PriceMsg_lbl.ForeColor = System.Drawing.Color.Black;
-            this.PriceMsg_lbl.Location = new System.Drawing.Point(301, 201);
+            this.PriceMsg_lbl.Location = new System.Drawing.Point(301, 197);
             this.PriceMsg_lbl.Name = "PriceMsg_lbl";
             this.PriceMsg_lbl.Size = new System.Drawing.Size(134, 13);
             this.PriceMsg_lbl.TabIndex = 24;
@@ -120,6 +121,7 @@
             this.Name_cmb.Name = "Name_cmb";
             this.Name_cmb.Size = new System.Drawing.Size(190, 24);
             this.Name_cmb.TabIndex = 18;
+            this.Name_cmb.TextChanged += new System.EventHandler(this.Name_cmb_TextChanged);
             // 
             // SetPrice
             // 
@@ -136,6 +138,7 @@
             this.Controls.Add(this.Name_cmb);
             this.Name = "SetPrice";
             this.Text = "SetPrice";
+            this.Load += new System.EventHandler(this.SetPrice_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
