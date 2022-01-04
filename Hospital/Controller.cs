@@ -125,6 +125,14 @@ namespace Hospital
             Parameters.Add("@specialization", specialization);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
+        public int DeleteDepartment(int Dnumber)
+        {
+
+            string StoredProcedureName = StoredProcedures.DeleteDepartment;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Dnumber", Dnumber);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
         public int InsertSurgery(string Surgery_Name, int surg_price)
         {
 

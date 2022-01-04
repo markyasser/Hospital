@@ -20,7 +20,8 @@ namespace Hospital
         private bool SidePanel_IsOpen;
         private const int OpenSideMenuWidth = 330;
         private const int ClosedSideMenuWidth = 100;
-        public Doctor()
+        string USERNAME;
+        public Doctor(string user)
         {
             InitializeComponent();
             controllerObj = new Controller();
@@ -32,6 +33,7 @@ namespace Hospital
             SidePanel_IsOpen = true;
             Open_Close_SideMenu();
             RefreshComboBox();
+            USERNAME = user;
         }
         void RefreshPatient()
         {

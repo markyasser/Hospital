@@ -26,40 +26,43 @@ namespace Hospital
             // check if the id is valid
             Object Exsit = obj.ValidateUser(id.Text);
             // check if the password is valid
-
             if (Exsit != null)
             {
                 string user = obj.GetUser(id.Text);
-                if (user == "Doctor")
+                string pass = obj.GetOldPassword(id.Text).ToString();
+                if (pass == password.Text)
                 {
-                    Doctor dr = new Doctor();
-                    dr.Show();
+                    if (user == "Doctor")
+                    {
+                        Doctor dr = new Doctor(id.Text);
+                        dr.Show();
+                    }
+                    else if (user == "Pharmacist")
+                    {
+                        Pharmacist p = new Pharmacist();
+                        p.Show();
+                    }
+                    else if (user == "Receptionist")
+                    {
+                        Receptionist r = new Receptionist();
+                        r.Show();
+                    }
+                    else if (user == "Nurse")
+                    {
+                        Nurse n = new Nurse();
+                        n.Show();
+                    }
+                    else
+                    {
+                        Admin admin = new Admin(id.Text);
+                        admin.Show();
+                        Hide();
+                    }
                 }
-                else if (user == "Pharmacist")
-                {
-                    Pharmacist p = new Pharmacist();
-                    p.Show();
-                }
-                else if (user == "Receptionist")
-                {
-                    Receptionist r = new Receptionist();
-                    r.Show();
-                }
-                else if (user == "Nurse")
-                {
-                    Nurse n = new Nurse();
-                    n.Show();
-                }
-                else 
-                {
-                    Admin admin = new Admin(id.Text);
-                    admin.Show();
-                }
+                else label1.Text = "* Wrong Password";
             }
-            
-            else label1.Text = "* Wrong ID or Password";
+            else label1.Text = "* Wrong username or password";
             //check the first 2 chars in the id to go to the corresponding interface
-            
             //this.Close();
         }
 

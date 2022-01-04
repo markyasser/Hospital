@@ -381,15 +381,28 @@ namespace Hospital
             int result1=0, result2 = 0;
 
             result2 = controllerObj.CreateAccount(username.Text, password.Text);
+            if (result2 == 0)
+            {
+                MessageBox.Show("This username already exist");
+                return;
+            }
+            if (password.Text.Length < 4)
+            {
+                MessageBox.Show("Password is very weak");
+                return;
+            }
             if (pos.Text == "Doctor")
             {
                 result1 = controllerObj.InsertDoctor(ID, fname.Text, minit.Text, lname.Text, username.Text, birthdate, address.Text, Phone, SEX, dep.SelectedIndex + 1);
                 FillDepartmentTable();
             }
-            
             else
                 result1 = controllerObj.InsertNotDoctor(ID, fname.Text, minit.Text, lname.Text, username.Text, birthdate, address.Text, Phone, SEX, pos.Text);
-            
+            if (result1==0)
+            {
+                MessageBox.Show("This ID already exist");
+                return;
+            }
             if (result1 > 0 && result2 > 0)
                 MessageBox.Show(pos.Text + " " + fname.Text + " is inserted successfully");
             else
@@ -628,8 +641,19 @@ namespace Hospital
             else label67.Text = "";
             if (!flag) return;
             object oldpassword = controllerObj.GetOldPassword(USERNAME);
+            
             if (oldpassword !=null && OldPass.Text == oldpassword.ToString())
             {
+                if (OldPass.Text == NewPass.Text)
+                {
+                    MessageBox.Show("The new password must be different");
+                    return;
+                }
+                if (NewPass.Text.Length < 4)
+                {
+                    MessageBox.Show("Password is very weak");
+                    return;
+                }
                 int result = controllerObj.ChangePassword(USERNAME,NewPass.Text);
                 if (result > 0)
                 {
@@ -644,6 +668,40 @@ namespace Hospital
         void FillDepartmentTable()
         {
             dataGridView2.DataSource = controllerObj.DepartmentStatistics();
+            DataGridViewButtonColumn delete_dep = new DataGridViewButtonColumn();
+            if (dataGridView2.Columns.Count==3)
+            {
+                dataGridView2.Columns.Add(delete_dep);
+            }
+            delete_dep.HeaderText = "Delete";
+            delete_dep.Text = "Delete";
+            delete_dep.UseColumnTextForButtonValue = true;
+            
+        }
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            if (e.ColumnIndex == 3 && e.RowIndex >-1)
+            {
+                string dname = dataGridView2[1, e.RowIndex].Value.ToString();
+                int dn = Int32.Parse(dataGridView2[0, e.RowIndex].Value.ToString());
+                DialogResult choice = MessageBox.Show("Are you sure you want to delete " + dname + " departement ?", " Delete Department", MessageBoxButtons.YesNo);
+                if (choice == DialogResult.Yes)
+                {
+                    int result = controllerObj.DeleteDepartment(dn);
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Department " + dname + " is Delete from the database");
+                        FillDepartmentTable();
+                    }
+                    else
+                        MessageBox.Show("Could not delete this department");
+                }
+            }
+           
+        }
+        private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
         }
         private void label64_Click(object sender, EventArgs e)
         {
