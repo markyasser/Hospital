@@ -19,8 +19,10 @@ namespace Hospital
         private Panel leftBtnBorder;
         private Color PrevColorOfActiveButton;
         string USERNAME;
+        int var;
         public Admin(string user) 
         {
+            var = 0;
             USERNAME = user;
             InitializeComponent();
             controllerObj = new Controller();
@@ -55,7 +57,7 @@ namespace Hospital
             {
                 depart.Items.Add(arrray[i]);
             }
-            
+            depart.Items.Add("All");
         }
 
         //Drag Form
@@ -668,26 +670,32 @@ namespace Hospital
         void FillDepartmentTable()
         {
             dataGridView2.DataSource = controllerObj.DepartmentStatistics();
-            DataGridViewButtonColumn delete_dep = new DataGridViewButtonColumn();
-            if (dataGridView2.Columns.Count==3)
+            if (dataGridView2.Columns.Count!=4)
             {
+                DataGridViewButtonColumn delete_dep = new DataGridViewButtonColumn();
                 dataGridView2.Columns.Add(delete_dep);
+                delete_dep.HeaderText = "Delete";
+                delete_dep.Text = "Delete";
+                delete_dep.UseColumnTextForButtonValue = true;
             }
-            delete_dep.HeaderText = "Delete";
-            delete_dep.Text = "Delete";
-            delete_dep.UseColumnTextForButtonValue = true;
-            
         }
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            if (e.ColumnIndex == 3 && e.RowIndex >-1)
+            string dname = dataGridView2[1, e.RowIndex].Value.ToString();
+            int x=0;
+            bool flag = Int32.TryParse(dname, out x);
+            if (flag)
             {
-                string dname = dataGridView2[1, e.RowIndex].Value.ToString();
-                int dn = Int32.Parse(dataGridView2[0, e.RowIndex].Value.ToString());
+                x=1;
+                dname = dataGridView2[2, e.RowIndex].Value.ToString();
+            }
+            if (dataGridView2[e.ColumnIndex, e.RowIndex].Value.ToString() == "Delete")
+            {
+                
                 DialogResult choice = MessageBox.Show("Are you sure you want to delete " + dname + " departement ?", " Delete Department", MessageBoxButtons.YesNo);
                 if (choice == DialogResult.Yes)
                 {
+                    int dn = Int32.Parse(dataGridView2[x, e.RowIndex].Value.ToString());
                     int result = controllerObj.DeleteDepartment(dn);
                     if (result > 0)
                     {
@@ -700,12 +708,21 @@ namespace Hospital
             }
            
         }
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            dataGridView3.DataSource = controllerObj.Earnings("Medicines", dateTimePicker1.Value);
+            dataGridView4.DataSource = controllerObj.Earnings("MedicalTests", dateTimePicker1.Value);
+            dataGridView5.DataSource = controllerObj.Earnings("Appointments", dateTimePicker1.Value);
+            dataGridView6.DataSource = controllerObj.Earnings("Operations", dateTimePicker1.Value);
+            //dataGridView7.DataSource = controllerObj.Earnings("Rooms", dateTimePicker1.Value);
+        }
         private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            return;
         }
         private void label64_Click(object sender, EventArgs e)
         {
-
+            return;
         }
 
         

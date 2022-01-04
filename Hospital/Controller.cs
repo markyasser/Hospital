@@ -166,8 +166,7 @@ namespace Hospital
             string StoredProcedureName = "";
             if (position == "Doctor")
             {
-
-                if (specialization != "")
+                if (specialization != "" && specialization != "All")
                 {
                     StoredProcedureName = StoredProcedures.GetAllDep_Doctors;
                     Dictionary<string, object> Parameters = new Dictionary<string, object>();
@@ -260,6 +259,27 @@ namespace Hospital
             Parameters.Add("@username", username);
             string StoredProcedureName = StoredProcedures.GetOldPassword;
             return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+        }
+        public DataTable Earnings(string service, DateTime date)
+        {
+            string StoredProcedureName = "";
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@date", date);
+            if (service == "Rooms")
+                StoredProcedureName = StoredProcedures.EarningsRooms;
+
+            else if (service == "Medicines")
+                StoredProcedureName = StoredProcedures.EarningsMedicines;
+
+            else if (service == "Appointments")
+                StoredProcedureName = StoredProcedures.EarningsAppointments;
+
+            else if (service == "Operations")
+                StoredProcedureName = StoredProcedures.EarningsOperations;
+            else if (service == "MedicalTests")
+                StoredProcedureName = StoredProcedures.EarningsMedicalTests;
+
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
         //---------------------------------Doctor----------------------------
         public DataTable SelectPatientsID()

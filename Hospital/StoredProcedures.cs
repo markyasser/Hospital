@@ -38,7 +38,6 @@ namespace Hospital
         public static string GetAllNurses = "GetAllNurses";
         public static string GetAllPharma = "GetAllPharma";
         public static string GetAllRecept = "GetAllRecept";
-
         //delete Employees
         public static string DeleteDoctor = "DeleteDoctor";
         public static string DeletePharma = "DeletePharma";
@@ -54,7 +53,12 @@ namespace Hospital
         public static string GetNurseByID = "GetNurseByID";
         public static string GetReceptionistByID = "GetReceptionistByID";
         public static string GetPharmaByID = "GetPharmaByID";
-
+        //EARNINGS
+        public static string EarningsMedicines = "EarningsMedicines";
+        public static string EarningsMedicalTests = "EarningsMedicalTests";
+        public static string EarningsRooms = "EarningsRooms";
+        public static string EarningsOperations = "EarningsOperations";
+        public static string EarningsAppointments = "EarningsAppointments";
         //-----------------------------Doctor--------------------------------
         public static string SelectPatientWithID = "SelectPatientWithID";
         public static string SelectPatientsID = "SelectPatientsID";
