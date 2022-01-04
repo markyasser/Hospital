@@ -30,17 +30,17 @@
         {
             this.Med3_gb = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Price3_txt = new System.Windows.Forms.TextBox();
             this.Medname3_lbl = new System.Windows.Forms.Label();
             this.MT3_cmb = new System.Windows.Forms.ComboBox();
             this.Med2_gb = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Price2_txt = new System.Windows.Forms.TextBox();
             this.Medname2_lbl = new System.Windows.Forms.Label();
             this.MT2_cmb = new System.Windows.Forms.ComboBox();
             this.Med1_gb = new System.Windows.Forms.GroupBox();
             this.Price1_lbl = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Price1_txt = new System.Windows.Forms.TextBox();
             this.Medname1_lbl = new System.Windows.Forms.Label();
             this.MT1_cmb = new System.Windows.Forms.ComboBox();
             this.Show_btn = new System.Windows.Forms.Button();
@@ -60,7 +60,7 @@
             // Med3_gb
             // 
             this.Med3_gb.Controls.Add(this.label2);
-            this.Med3_gb.Controls.Add(this.textBox3);
+            this.Med3_gb.Controls.Add(this.Price3_txt);
             this.Med3_gb.Controls.Add(this.Medname3_lbl);
             this.Med3_gb.Controls.Add(this.MT3_cmb);
             this.Med3_gb.Location = new System.Drawing.Point(35, 192);
@@ -82,13 +82,13 @@
             this.label2.TabIndex = 40;
             this.label2.Text = "Price";
             // 
-            // textBox3
+            // Price3_txt
             // 
-            this.textBox3.Location = new System.Drawing.Point(481, 15);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(112, 20);
-            this.textBox3.TabIndex = 26;
+            this.Price3_txt.Location = new System.Drawing.Point(481, 15);
+            this.Price3_txt.Name = "Price3_txt";
+            this.Price3_txt.ReadOnly = true;
+            this.Price3_txt.Size = new System.Drawing.Size(112, 20);
+            this.Price3_txt.TabIndex = 26;
             // 
             // Medname3_lbl
             // 
@@ -109,11 +109,12 @@
             this.MT3_cmb.Name = "MT3_cmb";
             this.MT3_cmb.Size = new System.Drawing.Size(190, 24);
             this.MT3_cmb.TabIndex = 22;
+            this.MT3_cmb.TextChanged += new System.EventHandler(this.MT3_cmb_TextChanged);
             // 
             // Med2_gb
             // 
             this.Med2_gb.Controls.Add(this.label1);
-            this.Med2_gb.Controls.Add(this.textBox2);
+            this.Med2_gb.Controls.Add(this.Price2_txt);
             this.Med2_gb.Controls.Add(this.Medname2_lbl);
             this.Med2_gb.Controls.Add(this.MT2_cmb);
             this.Med2_gb.Location = new System.Drawing.Point(35, 133);
@@ -135,13 +136,13 @@
             this.label1.TabIndex = 40;
             this.label1.Text = "Price";
             // 
-            // textBox2
+            // Price2_txt
             // 
-            this.textBox2.Location = new System.Drawing.Point(481, 14);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(112, 20);
-            this.textBox2.TabIndex = 25;
+            this.Price2_txt.Location = new System.Drawing.Point(481, 14);
+            this.Price2_txt.Name = "Price2_txt";
+            this.Price2_txt.ReadOnly = true;
+            this.Price2_txt.Size = new System.Drawing.Size(112, 20);
+            this.Price2_txt.TabIndex = 25;
             // 
             // Medname2_lbl
             // 
@@ -162,11 +163,12 @@
             this.MT2_cmb.Name = "MT2_cmb";
             this.MT2_cmb.Size = new System.Drawing.Size(190, 24);
             this.MT2_cmb.TabIndex = 22;
+            this.MT2_cmb.TextChanged += new System.EventHandler(this.MT2_cmb_TextChanged);
             // 
             // Med1_gb
             // 
             this.Med1_gb.Controls.Add(this.Price1_lbl);
-            this.Med1_gb.Controls.Add(this.textBox1);
+            this.Med1_gb.Controls.Add(this.Price1_txt);
             this.Med1_gb.Controls.Add(this.Medname1_lbl);
             this.Med1_gb.Controls.Add(this.MT1_cmb);
             this.Med1_gb.Location = new System.Drawing.Point(35, 82);
@@ -187,13 +189,13 @@
             this.Price1_lbl.TabIndex = 39;
             this.Price1_lbl.Text = "Price";
             // 
-            // textBox1
+            // Price1_txt
             // 
-            this.textBox1.Location = new System.Drawing.Point(481, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(112, 20);
-            this.textBox1.TabIndex = 24;
+            this.Price1_txt.Location = new System.Drawing.Point(481, 12);
+            this.Price1_txt.Name = "Price1_txt";
+            this.Price1_txt.ReadOnly = true;
+            this.Price1_txt.Size = new System.Drawing.Size(112, 20);
+            this.Price1_txt.TabIndex = 24;
             // 
             // Medname1_lbl
             // 
@@ -214,6 +216,7 @@
             this.MT1_cmb.Name = "MT1_cmb";
             this.MT1_cmb.Size = new System.Drawing.Size(190, 24);
             this.MT1_cmb.TabIndex = 22;
+            this.MT1_cmb.TextChanged += new System.EventHandler(this.MT1_cmb_TextChanged);
             // 
             // Show_btn
             // 
@@ -355,9 +358,9 @@
         private System.Windows.Forms.ComboBox PatientID_cmb;
         private System.Windows.Forms.Label Discribtion_lbl;
         private System.Windows.Forms.TextBox Discribtion_txt;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Price3_txt;
+        private System.Windows.Forms.TextBox Price2_txt;
+        private System.Windows.Forms.TextBox Price1_txt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Price1_lbl;

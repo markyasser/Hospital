@@ -428,6 +428,20 @@ namespace Hospital
             Parameters.Add("@MedicinePrice", UpdatedPrice);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
+
+        public DataTable GetAllMedicalTest ()
+        {
+            String StoredProcedureName = StoredProcedures.GetAllMedicalTest;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+
+        public object GetMedicalTestPrice(string MedicalTestName)
+        {
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@MedicalTestName", MedicalTestName);
+            string StoredProcedureName = StoredProcedures.GetMedicalTestPrice;
+            return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+        }
     }
 
 }
