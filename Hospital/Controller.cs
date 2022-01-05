@@ -133,6 +133,20 @@ namespace Hospital
             Parameters.Add("@Dnumber", Dnumber);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
+        public int DeleteMedicalTest(string testname)
+        {
+            string StoredProcedureName = StoredProcedures.DeleteMedicalTest;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@name", testname);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public int DeleteSurgery(string Sname)
+        {
+            string StoredProcedureName = StoredProcedures.DeleteSurgery;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@name", Sname);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
         public int InsertSurgery(string Surgery_Name, int surg_price)
         {
 
@@ -159,6 +173,11 @@ namespace Hospital
         public DataTable DepartmentStatistics()
         {
             string StoredProcedureName = StoredProcedures.DepartmentStatistics;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetAllSurgeries()
+        {
+            string StoredProcedureName = StoredProcedures.GetAllSurgeries;
             return dbMan.ExecuteReader(StoredProcedureName, null);
         }
         public DataTable GetAllEmployees(string position, string specialization)
@@ -451,7 +470,7 @@ namespace Hospital
 
         public DataTable GetAllMedicalTest ()
         {
-            String StoredProcedureName = StoredProcedures.GetAllMedicalTest;
+            string StoredProcedureName = StoredProcedures.GetAllMedicalTest;
             return dbMan.ExecuteReader(StoredProcedureName, null);
         }
 

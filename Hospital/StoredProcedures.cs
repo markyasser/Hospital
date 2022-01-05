@@ -30,8 +30,12 @@ namespace Hospital
         public static string DepartmentStatistics = "DepartmentStatistics";
         //surgeries
         public static string InsertSurgery = "InsertSurgery";
+        public static string DeleteSurgery = "DeleteSurgery";
+        public static string GetAllSurgeries = "GetAllSurgeries";
         //Medical Tests
         public static string InsertMedicalTest = "InsertMedicalTest";
+        public static string DeleteMedicalTest = "DeleteMedicalTest";
+        //public static string GetAllMedicalTest = "GetAllMedicalTest";
         //Show Employees
         public static string GetAllDep_Doctors = "GetAllDep_Doctors";
         public static string GetAllDoctors = "GetAllDoctors";
