@@ -30,12 +30,18 @@ namespace Hospital
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.SideMenu_panel = new System.Windows.Forms.Panel();
             this.Price_iconButton = new FontAwesome.Sharp.IconButton();
             this.WorkHours_iconButton = new FontAwesome.Sharp.IconButton();
@@ -57,7 +63,6 @@ namespace Hospital
             this.Welcome_label = new System.Windows.Forms.Label();
             this.SelectPatient_panel = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.CurrentMedicines_dataGridView = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.PatBD_textBox = new System.Windows.Forms.TextBox();
             this.PatGender_textBox = new System.Windows.Forms.TextBox();
@@ -95,10 +100,21 @@ namespace Hospital
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.MedTest_panel = new System.Windows.Forms.Panel();
+            this.TestName_comboBox = new System.Windows.Forms.ComboBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.TestResult_richTextBox = new System.Windows.Forms.RichTextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.PatID_Test_comboBox = new System.Windows.Forms.ComboBox();
+            this.Test_dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
+            this.MakeTest_button = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.Refresh_MedTest_button = new System.Windows.Forms.Button();
             this.Surgery_panel = new System.Windows.Forms.Panel();
-            this.Surgery_dataGridView = new System.Windows.Forms.DataGridView();
+            this.PatID_Surg_comboBox = new System.Windows.Forms.ComboBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
             this.SurgDate_Cancel_comboBox = new System.Windows.Forms.ComboBox();
             this.SurgName_Reserve_comboBox = new System.Windows.Forms.ComboBox();
             this.SurgDate_dateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -110,7 +126,6 @@ namespace Hospital
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.Nurses_panel = new System.Windows.Forms.Panel();
             this.RoomNo_Assign_comboBox = new System.Windows.Forms.ComboBox();
@@ -139,29 +154,26 @@ namespace Hospital
             this.SetAppointPrice_textBox = new System.Windows.Forms.TextBox();
             this.SetApppointPrice_button = new System.Windows.Forms.Button();
             this.label38 = new System.Windows.Forms.Label();
-            this.PatID_Test_comboBox = new System.Windows.Forms.ComboBox();
-            this.Test_dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.label15 = new System.Windows.Forms.Label();
-            this.MakeTest_button = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.TestResult_richTextBox = new System.Windows.Forms.RichTextBox();
-            this.TestName_comboBox = new System.Windows.Forms.ComboBox();
-            this.label41 = new System.Windows.Forms.Label();
+            this.Surgery_dataGridView = new System.Windows.Forms.DataGridView();
+            this.label23 = new System.Windows.Forms.Label();
+            this.CurrentMedicines_dataGridView = new System.Windows.Forms.DataGridView();
+            this.CurrMedTests_dataGridView = new System.Windows.Forms.DataGridView();
+            this.label46 = new System.Windows.Forms.Label();
             this.SideMenu_panel.SuspendLayout();
             this.Patient_panel.SuspendLayout();
             this.Logo_panel.SuspendLayout();
             this.Dashboard_panel.SuspendLayout();
             this.SelectPatient_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CurrentMedicines_dataGridView)).BeginInit();
             this.WorkingHours_panel.SuspendLayout();
             this.Prescription_panel.SuspendLayout();
             this.MedTest_panel.SuspendLayout();
             this.Surgery_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Surgery_dataGridView)).BeginInit();
             this.Nurses_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Rooms_Nurses_dataGridView)).BeginInit();
             this.Price_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Surgery_dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CurrentMedicines_dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CurrMedTests_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // SideMenu_panel
@@ -517,8 +529,12 @@ namespace Hospital
             // 
             this.SelectPatient_panel.AutoScroll = true;
             this.SelectPatient_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.SelectPatient_panel.Controls.Add(this.label13);
+            this.SelectPatient_panel.Controls.Add(this.CurrMedTests_dataGridView);
+            this.SelectPatient_panel.Controls.Add(this.label46);
             this.SelectPatient_panel.Controls.Add(this.CurrentMedicines_dataGridView);
+            this.SelectPatient_panel.Controls.Add(this.Surgery_dataGridView);
+            this.SelectPatient_panel.Controls.Add(this.label23);
+            this.SelectPatient_panel.Controls.Add(this.label13);
             this.SelectPatient_panel.Controls.Add(this.label10);
             this.SelectPatient_panel.Controls.Add(this.PatBD_textBox);
             this.SelectPatient_panel.Controls.Add(this.PatGender_textBox);
@@ -533,9 +549,10 @@ namespace Hospital
             this.SelectPatient_panel.Controls.Add(this.label2);
             this.SelectPatient_panel.Controls.Add(this.SelectPatID_comboBox);
             this.SelectPatient_panel.Controls.Add(this.label1);
-            this.SelectPatient_panel.Location = new System.Drawing.Point(802, 118);
+            this.SelectPatient_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SelectPatient_panel.Location = new System.Drawing.Point(330, 100);
             this.SelectPatient_panel.Name = "SelectPatient_panel";
-            this.SelectPatient_panel.Size = new System.Drawing.Size(451, 117);
+            this.SelectPatient_panel.Size = new System.Drawing.Size(994, 657);
             this.SelectPatient_panel.TabIndex = 2;
             // 
             // label13
@@ -544,23 +561,9 @@ namespace Hospital
             this.label13.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(49, 531);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(693, 39);
+            this.label13.Size = new System.Drawing.Size(335, 39);
             this.label13.TabIndex = 19;
-            this.label13.Text = "Current Medicines For Selected Patient";
-            // 
-            // CurrentMedicines_dataGridView
-            // 
-            this.CurrentMedicines_dataGridView.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.CurrentMedicines_dataGridView.AllowUserToAddRows = false;
-            this.CurrentMedicines_dataGridView.AllowUserToDeleteRows = false;
-            this.CurrentMedicines_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CurrentMedicines_dataGridView.Location = new System.Drawing.Point(56, 586);
-            this.CurrentMedicines_dataGridView.Name = "CurrentMedicines_dataGridView";
-            this.CurrentMedicines_dataGridView.ReadOnly = true;
-            this.CurrentMedicines_dataGridView.RowHeadersWidth = 51;
-            this.CurrentMedicines_dataGridView.RowTemplate.Height = 24;
-            this.CurrentMedicines_dataGridView.Size = new System.Drawing.Size(472, 310);
-            this.CurrentMedicines_dataGridView.TabIndex = 18;
+            this.label13.Text = "Current Medicines";
             // 
             // label10
             // 
@@ -907,7 +910,7 @@ namespace Hospital
             this.Refresh_Medicines_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_Medicines_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Refresh_Medicines_button.ForeColor = System.Drawing.Color.White;
-            this.Refresh_Medicines_button.Location = new System.Drawing.Point(5379, 7319);
+            this.Refresh_Medicines_button.Location = new System.Drawing.Point(6005, 7987);
             this.Refresh_Medicines_button.Name = "Refresh_Medicines_button";
             this.Refresh_Medicines_button.Size = new System.Drawing.Size(138, 40);
             this.Refresh_Medicines_button.TabIndex = 26;
@@ -972,11 +975,108 @@ namespace Hospital
             this.MedTest_panel.Controls.Add(this.label16);
             this.MedTest_panel.Controls.Add(this.label44);
             this.MedTest_panel.Controls.Add(this.Refresh_MedTest_button);
-            this.MedTest_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MedTest_panel.Location = new System.Drawing.Point(330, 100);
+            this.MedTest_panel.Location = new System.Drawing.Point(858, 248);
             this.MedTest_panel.Name = "MedTest_panel";
-            this.MedTest_panel.Size = new System.Drawing.Size(994, 657);
+            this.MedTest_panel.Size = new System.Drawing.Size(316, 102);
             this.MedTest_panel.TabIndex = 26;
+            // 
+            // TestName_comboBox
+            // 
+            this.TestName_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TestName_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TestName_comboBox.FormattingEnabled = true;
+            this.TestName_comboBox.Location = new System.Drawing.Point(342, 143);
+            this.TestName_comboBox.Name = "TestName_comboBox";
+            this.TestName_comboBox.Size = new System.Drawing.Size(224, 37);
+            this.TestName_comboBox.TabIndex = 50;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(337, 108);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(137, 29);
+            this.label41.TabIndex = 49;
+            this.label41.Text = "Test Name";
+            // 
+            // TestResult_richTextBox
+            // 
+            this.TestResult_richTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TestResult_richTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TestResult_richTextBox.Location = new System.Drawing.Point(72, 262);
+            this.TestResult_richTextBox.MaxLength = 100;
+            this.TestResult_richTextBox.Name = "TestResult_richTextBox";
+            this.TestResult_richTextBox.Size = new System.Drawing.Size(581, 240);
+            this.TestResult_richTextBox.TabIndex = 48;
+            this.TestResult_richTextBox.Text = "";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(75, 226);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(141, 29);
+            this.label20.TabIndex = 47;
+            this.label20.Text = "Test Result";
+            // 
+            // PatID_Test_comboBox
+            // 
+            this.PatID_Test_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PatID_Test_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatID_Test_comboBox.FormattingEnabled = true;
+            this.PatID_Test_comboBox.Location = new System.Drawing.Point(75, 143);
+            this.PatID_Test_comboBox.Name = "PatID_Test_comboBox";
+            this.PatID_Test_comboBox.Size = new System.Drawing.Size(224, 37);
+            this.PatID_Test_comboBox.TabIndex = 45;
+            // 
+            // Test_dateTimePicker
+            // 
+            this.Test_dateTimePicker.CustomFormat = "yyyy-MM-dd";
+            this.Test_dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Test_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Test_dateTimePicker.Location = new System.Drawing.Point(613, 144);
+            this.Test_dateTimePicker.MinDate = new System.DateTime(2021, 12, 26, 1, 44, 3, 0);
+            this.Test_dateTimePicker.Name = "Test_dateTimePicker";
+            this.Test_dateTimePicker.Size = new System.Drawing.Size(272, 36);
+            this.Test_dateTimePicker.TabIndex = 44;
+            this.Test_dateTimePicker.Value = new System.DateTime(2021, 12, 26, 1, 44, 3, 0);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(608, 111);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(122, 29);
+            this.label15.TabIndex = 43;
+            this.label15.Text = "Test Date";
+            // 
+            // MakeTest_button
+            // 
+            this.MakeTest_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.MakeTest_button.FlatAppearance.BorderSize = 0;
+            this.MakeTest_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MakeTest_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MakeTest_button.ForeColor = System.Drawing.Color.White;
+            this.MakeTest_button.Location = new System.Drawing.Point(80, 534);
+            this.MakeTest_button.Name = "MakeTest_button";
+            this.MakeTest_button.Size = new System.Drawing.Size(143, 36);
+            this.MakeTest_button.TabIndex = 42;
+            this.MakeTest_button.Text = "Finish";
+            this.MakeTest_button.UseVisualStyleBackColor = false;
+            this.MakeTest_button.Click += new System.EventHandler(this.MakeTest_button_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(70, 108);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(123, 29);
+            this.label16.TabIndex = 41;
+            this.label16.Text = "Patient ID";
             // 
             // label44
             // 
@@ -996,7 +1096,7 @@ namespace Hospital
             this.Refresh_MedTest_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_MedTest_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Refresh_MedTest_button.ForeColor = System.Drawing.Color.White;
-            this.Refresh_MedTest_button.Location = new System.Drawing.Point(5075, 5231);
+            this.Refresh_MedTest_button.Location = new System.Drawing.Point(5535, 5612);
             this.Refresh_MedTest_button.Name = "Refresh_MedTest_button";
             this.Refresh_MedTest_button.Size = new System.Drawing.Size(144, 46);
             this.Refresh_MedTest_button.TabIndex = 25;
@@ -1007,7 +1107,9 @@ namespace Hospital
             // 
             this.Surgery_panel.AutoScroll = true;
             this.Surgery_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.Surgery_panel.Controls.Add(this.Surgery_dataGridView);
+            this.Surgery_panel.Controls.Add(this.PatID_Surg_comboBox);
+            this.Surgery_panel.Controls.Add(this.label45);
+            this.Surgery_panel.Controls.Add(this.label43);
             this.Surgery_panel.Controls.Add(this.SurgDate_Cancel_comboBox);
             this.Surgery_panel.Controls.Add(this.SurgName_Reserve_comboBox);
             this.Surgery_panel.Controls.Add(this.SurgDate_dateTimePicker);
@@ -1019,64 +1121,49 @@ namespace Hospital
             this.Surgery_panel.Controls.Add(this.label17);
             this.Surgery_panel.Controls.Add(this.label18);
             this.Surgery_panel.Controls.Add(this.label22);
-            this.Surgery_panel.Controls.Add(this.label23);
             this.Surgery_panel.Controls.Add(this.label24);
-            this.Surgery_panel.Location = new System.Drawing.Point(342, 364);
+            this.Surgery_panel.Location = new System.Drawing.Point(355, 361);
             this.Surgery_panel.Name = "Surgery_panel";
-            this.Surgery_panel.Size = new System.Drawing.Size(363, 102);
+            this.Surgery_panel.Size = new System.Drawing.Size(374, 114);
             this.Surgery_panel.TabIndex = 27;
             // 
-            // Surgery_dataGridView
+            // PatID_Surg_comboBox
             // 
-            this.Surgery_dataGridView.AllowUserToAddRows = false;
-            this.Surgery_dataGridView.AllowUserToResizeColumns = false;
-            this.Surgery_dataGridView.AllowUserToResizeRows = false;
-            this.Surgery_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.Surgery_dataGridView.BackgroundColor = System.Drawing.Color.White;
-            this.Surgery_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Surgery_dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.Surgery_dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Surgery_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
-            this.Surgery_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Surgery_dataGridView.GridColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Surgery_dataGridView.Location = new System.Drawing.Point(56, 390);
-            this.Surgery_dataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Surgery_dataGridView.Name = "Surgery_dataGridView";
-            this.Surgery_dataGridView.ReadOnly = true;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Surgery_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
-            this.Surgery_dataGridView.RowHeadersVisible = false;
-            this.Surgery_dataGridView.RowHeadersWidth = 51;
-            this.Surgery_dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Red;
-            this.Surgery_dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle21;
-            this.Surgery_dataGridView.RowTemplate.Height = 24;
-            this.Surgery_dataGridView.Size = new System.Drawing.Size(535, 270);
-            this.Surgery_dataGridView.TabIndex = 32;
+            this.PatID_Surg_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PatID_Surg_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatID_Surg_comboBox.FormattingEnabled = true;
+            this.PatID_Surg_comboBox.Location = new System.Drawing.Point(66, 118);
+            this.PatID_Surg_comboBox.Name = "PatID_Surg_comboBox";
+            this.PatID_Surg_comboBox.Size = new System.Drawing.Size(224, 37);
+            this.PatID_Surg_comboBox.TabIndex = 35;
+            this.PatID_Surg_comboBox.SelectedIndexChanged += new System.EventHandler(this.PatID_Surg_comboBox_SelectedIndexChanged);
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(61, 83);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(123, 29);
+            this.label45.TabIndex = 34;
+            this.label45.Text = "Patient ID";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(310, 257);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(161, 29);
+            this.label43.TabIndex = 33;
+            this.label43.Text = "Surgery Date";
             // 
             // SurgDate_Cancel_comboBox
             // 
             this.SurgDate_Cancel_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SurgDate_Cancel_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SurgDate_Cancel_comboBox.FormattingEnabled = true;
-            this.SurgDate_Cancel_comboBox.Location = new System.Drawing.Point(582, 247);
+            this.SurgDate_Cancel_comboBox.Location = new System.Drawing.Point(315, 295);
             this.SurgDate_Cancel_comboBox.Name = "SurgDate_Cancel_comboBox";
             this.SurgDate_Cancel_comboBox.Size = new System.Drawing.Size(224, 37);
             this.SurgDate_Cancel_comboBox.TabIndex = 31;
@@ -1086,7 +1173,7 @@ namespace Hospital
             this.SurgName_Reserve_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SurgName_Reserve_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SurgName_Reserve_comboBox.FormattingEnabled = true;
-            this.SurgName_Reserve_comboBox.Location = new System.Drawing.Point(66, 118);
+            this.SurgName_Reserve_comboBox.Location = new System.Drawing.Point(315, 118);
             this.SurgName_Reserve_comboBox.Name = "SurgName_Reserve_comboBox";
             this.SurgName_Reserve_comboBox.Size = new System.Drawing.Size(224, 37);
             this.SurgName_Reserve_comboBox.TabIndex = 30;
@@ -1096,10 +1183,10 @@ namespace Hospital
             this.SurgDate_dateTimePicker.CustomFormat = "yyyy-MM-dd";
             this.SurgDate_dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SurgDate_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.SurgDate_dateTimePicker.Location = new System.Drawing.Point(369, 120);
+            this.SurgDate_dateTimePicker.Location = new System.Drawing.Point(573, 118);
             this.SurgDate_dateTimePicker.MinDate = new System.DateTime(2021, 12, 26, 1, 44, 3, 0);
             this.SurgDate_dateTimePicker.Name = "SurgDate_dateTimePicker";
-            this.SurgDate_dateTimePicker.Size = new System.Drawing.Size(272, 36);
+            this.SurgDate_dateTimePicker.Size = new System.Drawing.Size(181, 36);
             this.SurgDate_dateTimePicker.TabIndex = 29;
             this.SurgDate_dateTimePicker.Value = new System.DateTime(2021, 12, 26, 1, 44, 3, 0);
             // 
@@ -1107,7 +1194,7 @@ namespace Hospital
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(364, 86);
+            this.label25.Location = new System.Drawing.Point(568, 84);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(161, 29);
             this.label25.TabIndex = 28;
@@ -1121,7 +1208,7 @@ namespace Hospital
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(8615, 8092);
+            this.button1.Location = new System.Drawing.Point(9196, 8449);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 40);
             this.button1.TabIndex = 26;
@@ -1135,7 +1222,7 @@ namespace Hospital
             this.DeleteSurg_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteSurg_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteSurg_button.ForeColor = System.Drawing.Color.White;
-            this.DeleteSurg_button.Location = new System.Drawing.Point(840, 247);
+            this.DeleteSurg_button.Location = new System.Drawing.Point(800, 294);
             this.DeleteSurg_button.Name = "DeleteSurg_button";
             this.DeleteSurg_button.Size = new System.Drawing.Size(143, 36);
             this.DeleteSurg_button.TabIndex = 25;
@@ -1150,7 +1237,7 @@ namespace Hospital
             this.ReserveSurg_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ReserveSurg_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReserveSurg_button.ForeColor = System.Drawing.Color.White;
-            this.ReserveSurg_button.Location = new System.Drawing.Point(840, 119);
+            this.ReserveSurg_button.Location = new System.Drawing.Point(801, 118);
             this.ReserveSurg_button.Name = "ReserveSurg_button";
             this.ReserveSurg_button.Size = new System.Drawing.Size(143, 36);
             this.ReserveSurg_button.TabIndex = 24;
@@ -1163,7 +1250,7 @@ namespace Hospital
             this.SurgName_Cancel_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SurgName_Cancel_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SurgName_Cancel_comboBox.FormattingEnabled = true;
-            this.SurgName_Cancel_comboBox.Location = new System.Drawing.Point(314, 247);
+            this.SurgName_Cancel_comboBox.Location = new System.Drawing.Point(66, 295);
             this.SurgName_Cancel_comboBox.Name = "SurgName_Cancel_comboBox";
             this.SurgName_Cancel_comboBox.Size = new System.Drawing.Size(224, 37);
             this.SurgName_Cancel_comboBox.TabIndex = 23;
@@ -1193,21 +1280,11 @@ namespace Hospital
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(61, 83);
+            this.label22.Location = new System.Drawing.Point(310, 83);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(176, 29);
             this.label22.TabIndex = 18;
             this.label22.Text = "Surgery Name";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(59, 323);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(331, 39);
-            this.label23.TabIndex = 17;
-            this.label23.Text = "Current Surgeries";
             // 
             // label24
             // 
@@ -1319,39 +1396,39 @@ namespace Hospital
             this.Rooms_Nurses_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Rooms_Nurses_dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Rooms_Nurses_dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Rooms_Nurses_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Rooms_Nurses_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.Rooms_Nurses_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Rooms_Nurses_dataGridView.GridColor = System.Drawing.SystemColors.ControlLightLight;
             this.Rooms_Nurses_dataGridView.Location = new System.Drawing.Point(60, 602);
             this.Rooms_Nurses_dataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Rooms_Nurses_dataGridView.Name = "Rooms_Nurses_dataGridView";
             this.Rooms_Nurses_dataGridView.ReadOnly = true;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Rooms_Nurses_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Rooms_Nurses_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.Rooms_Nurses_dataGridView.RowHeadersVisible = false;
             this.Rooms_Nurses_dataGridView.RowHeadersWidth = 51;
             this.Rooms_Nurses_dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Red;
-            this.Rooms_Nurses_dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Red;
+            this.Rooms_Nurses_dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.Rooms_Nurses_dataGridView.RowTemplate.Height = 24;
-            this.Rooms_Nurses_dataGridView.Size = new System.Drawing.Size(535, 270);
+            this.Rooms_Nurses_dataGridView.Size = new System.Drawing.Size(952, 270);
             this.Rooms_Nurses_dataGridView.TabIndex = 40;
             // 
             // label33
@@ -1437,7 +1514,7 @@ namespace Hospital
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(8995, 10980);
+            this.button2.Location = new System.Drawing.Point(10253, 12467);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 40);
             this.button2.TabIndex = 26;
@@ -1564,103 +1641,163 @@ namespace Hospital
             this.label38.TabIndex = 16;
             this.label38.Text = "Appointment Price";
             // 
-            // PatID_Test_comboBox
+            // Surgery_dataGridView
             // 
-            this.PatID_Test_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.PatID_Test_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PatID_Test_comboBox.FormattingEnabled = true;
-            this.PatID_Test_comboBox.Location = new System.Drawing.Point(75, 143);
-            this.PatID_Test_comboBox.Name = "PatID_Test_comboBox";
-            this.PatID_Test_comboBox.Size = new System.Drawing.Size(224, 37);
-            this.PatID_Test_comboBox.TabIndex = 45;
+            this.Surgery_dataGridView.AllowUserToAddRows = false;
+            this.Surgery_dataGridView.AllowUserToDeleteRows = false;
+            this.Surgery_dataGridView.AllowUserToResizeColumns = false;
+            this.Surgery_dataGridView.AllowUserToResizeRows = false;
+            this.Surgery_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Surgery_dataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.Surgery_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Surgery_dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.Surgery_dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Surgery_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.Surgery_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Surgery_dataGridView.GridColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Surgery_dataGridView.Location = new System.Drawing.Point(49, 1264);
+            this.Surgery_dataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Surgery_dataGridView.Name = "Surgery_dataGridView";
+            this.Surgery_dataGridView.ReadOnly = true;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Surgery_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.Surgery_dataGridView.RowHeadersVisible = false;
+            this.Surgery_dataGridView.RowHeadersWidth = 51;
+            this.Surgery_dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Red;
+            this.Surgery_dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.Surgery_dataGridView.RowTemplate.Height = 24;
+            this.Surgery_dataGridView.Size = new System.Drawing.Size(878, 270);
+            this.Surgery_dataGridView.TabIndex = 34;
             // 
-            // Test_dateTimePicker
+            // label23
             // 
-            this.Test_dateTimePicker.CustomFormat = "yyyy-MM-dd";
-            this.Test_dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Test_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Test_dateTimePicker.Location = new System.Drawing.Point(613, 144);
-            this.Test_dateTimePicker.MinDate = new System.DateTime(2021, 12, 26, 1, 44, 3, 0);
-            this.Test_dateTimePicker.Name = "Test_dateTimePicker";
-            this.Test_dateTimePicker.Size = new System.Drawing.Size(272, 36);
-            this.Test_dateTimePicker.TabIndex = 44;
-            this.Test_dateTimePicker.Value = new System.DateTime(2021, 12, 26, 1, 44, 3, 0);
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(52, 1214);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(331, 39);
+            this.label23.TabIndex = 33;
+            this.label23.Text = "Current Surgeries";
             // 
-            // label15
+            // CurrentMedicines_dataGridView
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(608, 111);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(122, 29);
-            this.label15.TabIndex = 43;
-            this.label15.Text = "Test Date";
+            this.CurrentMedicines_dataGridView.AllowUserToAddRows = false;
+            this.CurrentMedicines_dataGridView.AllowUserToDeleteRows = false;
+            this.CurrentMedicines_dataGridView.AllowUserToResizeColumns = false;
+            this.CurrentMedicines_dataGridView.AllowUserToResizeRows = false;
+            this.CurrentMedicines_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.CurrentMedicines_dataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.CurrentMedicines_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CurrentMedicines_dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.CurrentMedicines_dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CurrentMedicines_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.CurrentMedicines_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CurrentMedicines_dataGridView.GridColor = System.Drawing.SystemColors.ControlLightLight;
+            this.CurrentMedicines_dataGridView.Location = new System.Drawing.Point(56, 589);
+            this.CurrentMedicines_dataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CurrentMedicines_dataGridView.Name = "CurrentMedicines_dataGridView";
+            this.CurrentMedicines_dataGridView.ReadOnly = true;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CurrentMedicines_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.CurrentMedicines_dataGridView.RowHeadersVisible = false;
+            this.CurrentMedicines_dataGridView.RowHeadersWidth = 51;
+            this.CurrentMedicines_dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Red;
+            this.CurrentMedicines_dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.CurrentMedicines_dataGridView.RowTemplate.Height = 24;
+            this.CurrentMedicines_dataGridView.Size = new System.Drawing.Size(878, 270);
+            this.CurrentMedicines_dataGridView.TabIndex = 35;
             // 
-            // MakeTest_button
+            // CurrMedTests_dataGridView
             // 
-            this.MakeTest_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.MakeTest_button.FlatAppearance.BorderSize = 0;
-            this.MakeTest_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MakeTest_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MakeTest_button.ForeColor = System.Drawing.Color.White;
-            this.MakeTest_button.Location = new System.Drawing.Point(80, 534);
-            this.MakeTest_button.Name = "MakeTest_button";
-            this.MakeTest_button.Size = new System.Drawing.Size(143, 36);
-            this.MakeTest_button.TabIndex = 42;
-            this.MakeTest_button.Text = "Finish";
-            this.MakeTest_button.UseVisualStyleBackColor = false;
-            this.MakeTest_button.Click += new System.EventHandler(this.MakeTest_button_Click);
+            this.CurrMedTests_dataGridView.AllowUserToAddRows = false;
+            this.CurrMedTests_dataGridView.AllowUserToDeleteRows = false;
+            this.CurrMedTests_dataGridView.AllowUserToResizeColumns = false;
+            this.CurrMedTests_dataGridView.AllowUserToResizeRows = false;
+            this.CurrMedTests_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.CurrMedTests_dataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.CurrMedTests_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CurrMedTests_dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.CurrMedTests_dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CurrMedTests_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.CurrMedTests_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CurrMedTests_dataGridView.GridColor = System.Drawing.SystemColors.ControlLightLight;
+            this.CurrMedTests_dataGridView.Location = new System.Drawing.Point(51, 923);
+            this.CurrMedTests_dataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CurrMedTests_dataGridView.Name = "CurrMedTests_dataGridView";
+            this.CurrMedTests_dataGridView.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CurrMedTests_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.CurrMedTests_dataGridView.RowHeadersVisible = false;
+            this.CurrMedTests_dataGridView.RowHeadersWidth = 51;
+            this.CurrMedTests_dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Red;
+            this.CurrMedTests_dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.CurrMedTests_dataGridView.RowTemplate.Height = 24;
+            this.CurrMedTests_dataGridView.Size = new System.Drawing.Size(878, 270);
+            this.CurrMedTests_dataGridView.TabIndex = 37;
             // 
-            // label16
+            // label46
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(70, 108);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(123, 29);
-            this.label16.TabIndex = 41;
-            this.label16.Text = "Patient ID";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(75, 226);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(141, 29);
-            this.label20.TabIndex = 47;
-            this.label20.Text = "Test Result";
-            // 
-            // TestResult_richTextBox
-            // 
-            this.TestResult_richTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TestResult_richTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TestResult_richTextBox.Location = new System.Drawing.Point(72, 262);
-            this.TestResult_richTextBox.MaxLength = 100;
-            this.TestResult_richTextBox.Name = "TestResult_richTextBox";
-            this.TestResult_richTextBox.Size = new System.Drawing.Size(581, 240);
-            this.TestResult_richTextBox.TabIndex = 48;
-            this.TestResult_richTextBox.Text = "";
-            // 
-            // TestName_comboBox
-            // 
-            this.TestName_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TestName_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TestName_comboBox.FormattingEnabled = true;
-            this.TestName_comboBox.Location = new System.Drawing.Point(342, 143);
-            this.TestName_comboBox.Name = "TestName_comboBox";
-            this.TestName_comboBox.Size = new System.Drawing.Size(224, 37);
-            this.TestName_comboBox.TabIndex = 50;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(337, 108);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(137, 29);
-            this.label41.TabIndex = 49;
-            this.label41.Text = "Test Name";
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(54, 873);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(396, 39);
+            this.label46.TabIndex = 36;
+            this.label46.Text = "Current Medical Tests";
             // 
             // Doctor
             // 
@@ -1669,13 +1806,13 @@ namespace Hospital
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1324, 757);
+            this.Controls.Add(this.SelectPatient_panel);
             this.Controls.Add(this.MedTest_panel);
             this.Controls.Add(this.Surgery_panel);
+            this.Controls.Add(this.Nurses_panel);
             this.Controls.Add(this.Prescription_panel);
-            this.Controls.Add(this.SelectPatient_panel);
             this.Controls.Add(this.Price_panel);
             this.Controls.Add(this.WorkingHours_panel);
-            this.Controls.Add(this.Nurses_panel);
             this.Controls.Add(this.Dashboard_panel);
             this.Controls.Add(this.SideMenu_panel);
             this.Name = "Doctor";
@@ -1689,7 +1826,6 @@ namespace Hospital
             this.Dashboard_panel.PerformLayout();
             this.SelectPatient_panel.ResumeLayout(false);
             this.SelectPatient_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CurrentMedicines_dataGridView)).EndInit();
             this.WorkingHours_panel.ResumeLayout(false);
             this.WorkingHours_panel.PerformLayout();
             this.Prescription_panel.ResumeLayout(false);
@@ -1698,12 +1834,14 @@ namespace Hospital
             this.MedTest_panel.PerformLayout();
             this.Surgery_panel.ResumeLayout(false);
             this.Surgery_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Surgery_dataGridView)).EndInit();
             this.Nurses_panel.ResumeLayout(false);
             this.Nurses_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Rooms_Nurses_dataGridView)).EndInit();
             this.Price_panel.ResumeLayout(false);
             this.Price_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Surgery_dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CurrentMedicines_dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CurrMedTests_dataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1754,7 +1892,6 @@ namespace Hospital
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Panel Nurses_panel;
         private System.Windows.Forms.Label label33;
@@ -1786,7 +1923,6 @@ namespace Hospital
         private System.Windows.Forms.Timer SidePanel_timer;
         private System.Windows.Forms.ComboBox SurgName_Reserve_comboBox;
         private System.Windows.Forms.ComboBox SurgDate_Cancel_comboBox;
-        private System.Windows.Forms.DataGridView Surgery_dataGridView;
         private System.Windows.Forms.TextBox RoomNo_Delete_textBox;
         private System.Windows.Forms.ComboBox NurseID_Delete_comboBox;
         private System.Windows.Forms.ComboBox RoomNo_Change_comboBox;
@@ -1807,7 +1943,6 @@ namespace Hospital
         private System.Windows.Forms.ComboBox TimeinMed_comboBox;
         private System.Windows.Forms.ComboBox PatIDinMed_comboBox;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DataGridView CurrentMedicines_dataGridView;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.TextBox PrescTestName_textBox;
         private System.Windows.Forms.Button PrescribeTest_button;
@@ -1822,5 +1957,13 @@ namespace Hospital
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox TestName_comboBox;
         private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.ComboBox PatID_Surg_comboBox;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.DataGridView CurrentMedicines_dataGridView;
+        private System.Windows.Forms.DataGridView Surgery_dataGridView;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.DataGridView CurrMedTests_dataGridView;
+        private System.Windows.Forms.Label label46;
     }
 }

@@ -92,6 +92,12 @@ namespace Hospital
         public static string PrescribeMedicalTest = "PrescribeMedicalTest";
         public static string MakeMedicalTest = "MakeMedicalTest";
         public static string GetMedTestsNames = "GetMedTestsNames";
+        public static string GetDrIDByUsername = "GetDrIDByUsername";
+        public static string GetWorkingHours = "GetWorkingHours";
+        public static string GetRoomsWithPatient = "GetRoomsWithPatient";
+        public static string GetDoctorPrice = "GetDoctorPrice";
+        public static string GetMedTestsForPatient = "GetMedTestsForPatient";
+        public static string GetSurgeriesForPatient = "GetSurgeriesForPatient";
 
 
         //--------------------------------Receptionist-----------------------------------
