@@ -83,6 +83,16 @@ namespace Hospital
         public static string GetAllRooms = "GetAllRooms";
         
         public static string DisplayNurseRoomsData = "DisplayNurseRoomsData";
+        public static string SetDrWorkingHours = "SetDrWorkingHours";
+        public static string SetAppointmentPrice = "SetAppointmentPrice";
+        public static string GetAppointTimeToday = "GetAppointTimeToday";
+        public static string GetAppointPatientsToday = "GetAppointPatientsToday";
+        public static string PrescribeMedicine = "PrescribeMedicine";
+        public static string GetMedicinesForPatient = "GetMedicinesForPatient";
+        public static string PrescribeMedicalTest = "PrescribeMedicalTest";
+        public static string MakeMedicalTest = "MakeMedicalTest";
+        public static string GetMedTestsNames = "GetMedTestsNames";
+
 
         //--------------------------------Receptionist-----------------------------------
         public static string InsertPatient = "InsertPatient";

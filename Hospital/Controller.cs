@@ -348,6 +348,81 @@ namespace Hospital
             Parameters.Add("@date", date);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
+        public int SetDrWorkingHours(string username, string start, string end)
+        {
+            String StoredProcedureName = StoredProcedures.SetDrWorkingHours;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@username", username);
+            Parameters.Add("@start", start);
+            Parameters.Add("@end", end);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public int SetAppointmentPrice(string username, int price)
+        {
+            String StoredProcedureName = StoredProcedures.SetAppointmentPrice;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@user", username);
+            Parameters.Add("@p", price);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+
+        public int PrescribeMedicine(int pid, int Did, string date, string time, string med)
+        {
+            String StoredProcedureName = StoredProcedures.PrescribeMedicine;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Pid", pid);
+            Parameters.Add("@Did", Did);
+            Parameters.Add("@date", date);
+            Parameters.Add("@time", time);
+            Parameters.Add("@med", med);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public int PrescribeMedicalTest(int pid, int Did, string date, string time, string medTest)
+        {
+            String StoredProcedureName = StoredProcedures.PrescribeMedicalTest;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Pid", pid);
+            Parameters.Add("@Did", Did);
+            Parameters.Add("@date", date);
+            Parameters.Add("@time", time);
+            Parameters.Add("@medTest", medTest);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public int MakeMedicalTest(int pid, int Did, string medTest, string date, string result)
+        {
+            String StoredProcedureName = StoredProcedures.MakeMedicalTest;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Pid", pid);
+            Parameters.Add("@Did", Did);
+            Parameters.Add("@testname", medTest);
+            Parameters.Add("@date", date);
+            Parameters.Add("@result", result);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+
+        public DataTable GetAppointTimeToday(int drid, int patid)
+        {
+            String StoredProcedureName = StoredProcedures.GetAppointTimeToday;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@drid", drid);
+            Parameters.Add("@patid", patid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetMedicinesForPatient(int drid, int patid)
+        {
+            String StoredProcedureName = StoredProcedures.GetMedicinesForPatient;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Did", drid);
+            Parameters.Add("@Pid", patid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetAppointPatientsToday(int drid)
+        {
+            String StoredProcedureName = StoredProcedures.GetAppointPatientsToday;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@drid", drid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
         public int CancelSurgery(int Patid, int DrID, string SurgID, string date)
         {
             String StoredProcedureName = StoredProcedures.CancelSurgery;
@@ -362,6 +437,11 @@ namespace Hospital
         public DataTable SelectNurseIDs()
         {
             String StoredProcedureName = StoredProcedures.GetNurseIDs;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetMedTestNames()
+        {
+            String StoredProcedureName = StoredProcedures.GetMedTestsNames;
             return dbMan.ExecuteReader(StoredProcedureName, null);
         }
         public DataTable GetRoomsWithNoNurses()
