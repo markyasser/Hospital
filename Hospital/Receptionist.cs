@@ -233,7 +233,7 @@ namespace Hospital
         }
 
         private void Receptionist_Load(object sender, EventArgs e)
-        {
+        { 
             patient_dateTimePicker.CustomFormat = "yyyy-MM-dd";
             patient_dateTimePicker.Format = DateTimePickerFormat.Custom;
         }
