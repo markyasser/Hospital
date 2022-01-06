@@ -56,6 +56,10 @@ namespace Hospital
         }
         private void SelectPatID_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (SelectPatID_comboBox.SelectedIndex == -1)
+            {
+                return;
+            }
             int id;
             bool valid = int.TryParse(SelectPatID_comboBox.SelectedValue.ToString(), out id);
             if (!valid)
