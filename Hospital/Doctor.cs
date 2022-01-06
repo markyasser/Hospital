@@ -30,6 +30,9 @@ namespace Hospital
             UserName_label.Text = USERNAME;
             //----------------get doctor id from database-----------------
             GetDoctorID(USERNAME);
+            //-------------------Make dates start from today-----------
+            SurgDate_dateTimePicker.MinDate = DateTime.Now.Date;
+            Test_dateTimePicker.MinDate = DateTime.Now.Date;
             //----------------Panels initialization-----------------
             HideSubmenus();  
             HidePanels();    
