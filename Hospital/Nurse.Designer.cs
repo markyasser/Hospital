@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Nurse));
             this.SideMenu = new System.Windows.Forms.Panel();
-            this.MedicalTest_btn = new FontAwesome.Sharp.IconButton();
+            this.Serve_btn = new FontAwesome.Sharp.IconButton();
             this.AskMedicine_btn = new FontAwesome.Sharp.IconButton();
             this.Logo = new System.Windows.Forms.Panel();
             this.ChildPanel = new System.Windows.Forms.Panel();
@@ -39,7 +40,7 @@
             // SideMenu
             // 
             this.SideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.SideMenu.Controls.Add(this.MedicalTest_btn);
+            this.SideMenu.Controls.Add(this.Serve_btn);
             this.SideMenu.Controls.Add(this.AskMedicine_btn);
             this.SideMenu.Controls.Add(this.Logo);
             this.SideMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -48,29 +49,30 @@
             this.SideMenu.Name = "SideMenu";
             this.SideMenu.Size = new System.Drawing.Size(145, 450);
             this.SideMenu.TabIndex = 0;
+            this.SideMenu.Click += new System.EventHandler(this.SideMenu_Click);
             this.SideMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.SideMenu_Paint);
             // 
-            // MedicalTest_btn
+            // Serve_btn
             // 
-            this.MedicalTest_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MedicalTest_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.MedicalTest_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MedicalTest_btn.ForeColor = System.Drawing.Color.White;
-            this.MedicalTest_btn.IconChar = FontAwesome.Sharp.IconChar.Receipt;
-            this.MedicalTest_btn.IconColor = System.Drawing.Color.Black;
-            this.MedicalTest_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.MedicalTest_btn.IconSize = 30;
-            this.MedicalTest_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MedicalTest_btn.Location = new System.Drawing.Point(0, 121);
-            this.MedicalTest_btn.Name = "MedicalTest_btn";
-            this.MedicalTest_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.MedicalTest_btn.Size = new System.Drawing.Size(145, 56);
-            this.MedicalTest_btn.TabIndex = 3;
-            this.MedicalTest_btn.Text = "Medical test";
-            this.MedicalTest_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MedicalTest_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.MedicalTest_btn.UseVisualStyleBackColor = true;
-            this.MedicalTest_btn.Click += new System.EventHandler(this.MedicalTest_btn_Click);
+            this.Serve_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Serve_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Serve_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Serve_btn.ForeColor = System.Drawing.Color.White;
+            this.Serve_btn.IconChar = FontAwesome.Sharp.IconChar.HandHoldingMedical;
+            this.Serve_btn.IconColor = System.Drawing.Color.Black;
+            this.Serve_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Serve_btn.IconSize = 30;
+            this.Serve_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Serve_btn.Location = new System.Drawing.Point(0, 121);
+            this.Serve_btn.Name = "Serve_btn";
+            this.Serve_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.Serve_btn.Size = new System.Drawing.Size(145, 56);
+            this.Serve_btn.TabIndex = 3;
+            this.Serve_btn.Text = "Serve";
+            this.Serve_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Serve_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Serve_btn.UseVisualStyleBackColor = true;
+            this.Serve_btn.Click += new System.EventHandler(this.Serve_btn_Click);
             // 
             // AskMedicine_btn
             // 
@@ -97,12 +99,14 @@
             // Logo
             // 
             this.Logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.Logo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Logo.BackgroundImage")));
             this.Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Logo.Dock = System.Windows.Forms.DockStyle.Top;
             this.Logo.Location = new System.Drawing.Point(0, 0);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(145, 65);
             this.Logo.TabIndex = 0;
+            this.Logo.Click += new System.EventHandler(this.Logo_Click);
             this.Logo.Paint += new System.Windows.Forms.PaintEventHandler(this.Logo_Paint);
             // 
             // ChildPanel
@@ -132,7 +136,7 @@
 
         #endregion
         private System.Windows.Forms.Panel SideMenu;
-        private FontAwesome.Sharp.IconButton MedicalTest_btn;
+        private FontAwesome.Sharp.IconButton Serve_btn;
         private FontAwesome.Sharp.IconButton AskMedicine_btn;
         private System.Windows.Forms.Panel Logo;
         private System.Windows.Forms.Panel ChildPanel;

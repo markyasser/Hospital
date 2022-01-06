@@ -86,5 +86,14 @@ namespace Hospital
         //-----------------------------------Nurse--------------------------------------
         public static string GetAllMedicalTest = "GetAllMedicalTest";
         public static string GetMedicalTestPrice = "GetMedicalTestPrice";
+        public static string GetExpiredMedicines = "GetExpiredMedicines";
+        public static string GetValidMedicines = "GetValidMedicines";
+        public static string GetEmptyMedicines = "GetEmptyMedicines";
+        public static string GetNurseName = "GetNurseName";
+        public static string GetNurseID = "GetNurseID";
+        public static string GetRooms = "GetRooms";
+        public static string InsertServe = "InsertServe";
+        public static string DontServe = "DontServe";
+
     }
 }

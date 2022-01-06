@@ -131,11 +131,23 @@
     <Compile Include="SellOrAsk.Designer.cs">
       <DependentUpon>SellOrAsk.cs</DependentUpon>
     </Compile>
+    <Compile Include="Serve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Serve.Designer.cs">
+      <DependentUpon>Serve.cs</DependentUpon>
+    </Compile>
     <Compile Include="SetPrice.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SetPrice.Designer.cs">
       <DependentUpon>SetPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics.Designer.cs">
+      <DependentUpon>Statistics.cs</DependentUpon>
     </Compile>
     <Compile Include="StoredProcedures.cs" />
     <Compile Include="Validation.cs" />
@@ -182,8 +194,14 @@
     <EmbeddedResource Include="SellOrAsk.resx">
       <DependentUpon>SellOrAsk.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Serve.resx">
+      <DependentUpon>Serve.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SetPrice.resx">
       <DependentUpon>SetPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics.resx">
+      <DependentUpon>Statistics.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
