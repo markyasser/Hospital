@@ -125,6 +125,18 @@ namespace Hospital
             Parameters.Add("@specialization", specialization);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
+        public int InsertRoom(int room_number, string type,int dep_id,int price)
+        {
+
+            string StoredProcedureName = StoredProcedures.InsertRooms;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@number", room_number);
+            Parameters.Add("@type", type);
+            Parameters.Add("@dep_id", dep_id);
+            Parameters.Add("@price", price);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        
         public int DeleteDepartment(int Dnumber)
         {
 
@@ -168,6 +180,11 @@ namespace Hospital
         public DataTable GetAllDepartmentNumber()
         {
             string StoredProcedureName = StoredProcedures.GetAllDepartmentNumber;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetAllRoomsInformation()
+        {
+            string StoredProcedureName = StoredProcedures.GetAllRoomsInfo;
             return dbMan.ExecuteReader(StoredProcedureName, null);
         }
         public DataTable DepartmentStatistics()

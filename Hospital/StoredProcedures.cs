@@ -39,6 +39,7 @@ namespace Hospital
         public static string DeleteMedicalTest = "DeleteMedicalTest";
         //Rooms
         public static string InsertRooms = "InsertRooms";
+        public static string GetAllRoomsInfo = "GetAllRoomsInfo";
         //public static string GetAllMedicalTest = "GetAllMedicalTest";
         //Show Employees
         public static string GetAllDep_Doctors = "GetAllDep_Doctors";
