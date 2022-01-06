@@ -69,7 +69,7 @@ namespace Hospital
         public static string EarningsAppointments = "EarningsAppointments";
         //-----------------------------Doctor--------------------------------
         public static string SelectPatientWithID = "SelectPatientWithID";
-        public static string SelectPatientsID = "SelectPatientsID";
+        public static string SelectPatientsID = "SelectPatientsID"; //
         public static string SelectSurgNames = "SelectSurgNames";
         public static string SurgInOperate = "SurgInOperate";
         public static string SelectUpcommingSurgDates = "SelectSurgDates";
@@ -78,8 +78,8 @@ namespace Hospital
         public static string CancelSurgery = "CancelSurgery";
         public static string GetNurseIDs = "GetNurseIDs";
         public static string GetRoomsWithNoNurses = "GetRoomsWithNoNurses";
-        public static string GetNursesWithNoRooms = "SelectNurseIDsWithNoRooms";
-        public static string GetNursesWithRooms = "SelectNurseIDsWithRooms";
+        public static string GetNursesWithNoRooms = "SelectNurseIDsWithNoRooms"; //
+        public static string GetNursesWithRooms = "SelectNurseIDsWithRooms"; //
         public static string GetRoomsWithNurses = "GetRoomsWithNurses";
         public static string GetRoomOfANurse = "GetRoomOfANurse";
         public static string AssignNurseToRoom = "AssignNurseToRoom";
@@ -90,7 +90,7 @@ namespace Hospital
         public static string SetDrWorkingHours = "SetDrWorkingHours";
         public static string SetAppointmentPrice = "SetAppointmentPrice";
         public static string GetAppointTimeToday = "GetAppointTimeToday";
-        public static string GetAppointPatientsToday = "GetAppointPatientsToday";
+        public static string GetAppointPatientsToday = "GetAppointPatientsToday"; //
         public static string PrescribeMedicine = "PrescribeMedicine";
         public static string GetMedicinesForPatient = "GetMedicinesForPatient";
         public static string PrescribeMedicalTest = "PrescribeMedicalTest";
@@ -102,6 +102,7 @@ namespace Hospital
         public static string GetDoctorPrice = "GetDoctorPrice";
         public static string GetMedTestsForPatient = "GetMedTestsForPatient";
         public static string GetSurgeriesForPatient = "GetSurgeriesForPatient";
+        public static string SelectPatientsOfDoctor = "SelectPatientsOfDoctor"; //
 
 
         //--------------------------------Receptionist-----------------------------------

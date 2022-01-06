@@ -329,6 +329,13 @@ namespace Hospital
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@ID", id);
             return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        } 
+        public DataTable SelectPatientsOfDoctor(int id)
+        {
+            String StoredProcedureName = StoredProcedures.SelectPatientsOfDoctor;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
         public DataTable SelectSurgNames()
         {
