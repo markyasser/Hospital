@@ -11,6 +11,7 @@ namespace Hospital
         //----------------------------Accounts------------------------------
         public static string CreateAccount = "CreateAccount";
         public static string AccountExcist = "AccountExcist";
+        public static string DeleteAccount = "DeleteAccount";
         public static string IsDoctor = "IsDoctor";
         public static string IsNurse = "IsNurse";
         public static string IsPharma = "IsPharma";
@@ -28,6 +29,7 @@ namespace Hospital
         public static string DeleteDepartment = "DeleteDepartment";
         public static string GetAllDepartmentNumber = "GetAllDepartmentNumber";
         public static string DepartmentStatistics = "DepartmentStatistics";
+        public static string GetDepartmentNumberBySpt = "GetDepartmentNumberBySpt";
         //surgeries
         public static string InsertSurgery = "InsertSurgery";
         public static string DeleteSurgery = "DeleteSurgery";
@@ -35,6 +37,8 @@ namespace Hospital
         //Medical Tests
         public static string InsertMedicalTest = "InsertMedicalTest";
         public static string DeleteMedicalTest = "DeleteMedicalTest";
+        //Rooms
+        public static string InsertRooms = "InsertRooms";
         //public static string GetAllMedicalTest = "GetAllMedicalTest";
         //Show Employees
         public static string GetAllDep_Doctors = "GetAllDep_Doctors";
@@ -48,15 +52,15 @@ namespace Hospital
         public static string DeleteNurse = "DeleteNurse";
         public static string DeleteRecept = "DeleteRecept";
 
-        public static string GetDID = "GetDID";
-        public static string GetPID = "GetPID";
-        public static string GetNID = "GetNID";
-        public static string GetDRID = "GetDRID";
+        public static string GetDNames = "GetDnames";
+        public static string GetNNames = "GetNnames";
+        public static string GetPNames = "GetPnames";
+        public static string GetRNames = "GetRnames";
 
-        public static string GetDoctorByID = "GetDoctorByID";
-        public static string GetNurseByID = "GetNurseByID";
-        public static string GetReceptionistByID = "GetReceptionistByID";
-        public static string GetPharmaByID = "GetPharmaByID";
+        public static string GetDoctorByName = "GetDoctorByName";
+        public static string GetNurseByName = "GetNurseByName";
+        public static string GetReceptionistByName = "GetReceptionistByName";
+        public static string GetPharmaByName = "GetPharmaByName";
         //EARNINGS
         public static string EarningsMedicines = "EarningsMedicines";
         public static string EarningsMedicalTests = "EarningsMedicalTests";
