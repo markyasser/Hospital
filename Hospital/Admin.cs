@@ -290,7 +290,10 @@ namespace Hospital
         }
         private void Logout_iconButton_Click(object sender, EventArgs e)
         {
+            LoginPage l = new LoginPage();
+            l.Show();
             Close();
+            
         }
         private void SignUp_Click_1(object sender, EventArgs e)
         {

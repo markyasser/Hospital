@@ -32,6 +32,7 @@ namespace Hospital
                 string pass = obj.GetOldPassword(id.Text).ToString();
                 if (pass == password.Text)
                 {
+                    Hide();
                     if (user == "Doctor")
                     {
                         Doctor dr = new Doctor(id.Text);
@@ -56,7 +57,6 @@ namespace Hospital
                     {
                         Admin admin = new Admin(id.Text);
                         admin.Show();
-                        Hide();
                     }
                 }
                 else label1.Text = "* Wrong Password";
