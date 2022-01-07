@@ -716,6 +716,15 @@ namespace Hospital
             Parameters.Add("@Quantity", Quantity);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
+
+        public int BuyMedicine(string MedName, int Amount)
+        {
+            string StoredProcedureName = StoredProcedures.AddMedicineToPatient;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@MedName", MedName);
+            Parameters.Add("@Amount", Amount);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
     }
 
 }

@@ -126,5 +126,6 @@ namespace Hospital
         public static string DontServe = "DontServe";
         public static string GetPatientName = "GetPatientName";
         public static string AddMedicineToPatient = "AddMedicineToPatient";
+        public static string BuyMedicine = "BuyMedicine";
     }
 }
