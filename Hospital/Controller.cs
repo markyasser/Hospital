@@ -62,7 +62,7 @@ namespace Hospital
             string StoredProcedureName = StoredProcedures.CreateAccount;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@username", username);
-            Parameters.Add("@password", passwrod);
+            Parameters.Add("@password",Validation.hashpassword(passwrod));
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
         public int InsertDoctor(int Doctor_id, string Fname, string Minit, string Lname,
@@ -125,6 +125,18 @@ namespace Hospital
             Parameters.Add("@specialization", specialization);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
+        public int InsertRoom(int room_number, string type,int dep_id,int price)
+        {
+
+            string StoredProcedureName = StoredProcedures.InsertRooms;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@number", room_number);
+            Parameters.Add("@type", type);
+            Parameters.Add("@dep_id", dep_id);
+            Parameters.Add("@price", price);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        
         public int DeleteDepartment(int Dnumber)
         {
 
@@ -170,6 +182,11 @@ namespace Hospital
             string StoredProcedureName = StoredProcedures.GetAllDepartmentNumber;
             return dbMan.ExecuteReader(StoredProcedureName, null);
         }
+        public DataTable GetAllRoomsInformation()
+        {
+            string StoredProcedureName = StoredProcedures.GetAllRoomsInfo;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
         public DataTable DepartmentStatistics()
         {
             string StoredProcedureName = StoredProcedures.DepartmentStatistics;
@@ -208,39 +225,41 @@ namespace Hospital
             }
             return dbMan.ExecuteReader(StoredProcedureName, null);
         }
-        public DataTable GetIDs(string position)
+        public DataTable GetNames(string position)
         {
             string StoredProcedureName = "";
             if (position == "Doctor")
-                StoredProcedureName = StoredProcedures.GetDID;
+                StoredProcedureName = StoredProcedures.GetDNames;
 
             else if (position == "Nurse")
-                StoredProcedureName = StoredProcedures.GetNID;
+                StoredProcedureName = StoredProcedures.GetNNames;
 
             else if (position == "Pharmacist")
-                StoredProcedureName = StoredProcedures.GetPID;
+                StoredProcedureName = StoredProcedures.GetPNames;
 
             else if (position == "Receptionist")
-                StoredProcedureName = StoredProcedures.GetDRID;
+                StoredProcedureName = StoredProcedures.GetRNames;
 
             return dbMan.ExecuteReader(StoredProcedureName, null);
         }
-        public DataTable GetEmployeeByID(string position, int id)
+        public DataTable GetEmployeeByName(string position, string fname, string minit, string lname)
         {
             string StoredProcedureName = "";
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
-            Parameters.Add("@id", id);
+            Parameters.Add("@fname", fname);
+            Parameters.Add("@minit", minit);
+            Parameters.Add("@lname", lname);
             if (position == "Doctor")
-                StoredProcedureName = StoredProcedures.GetDoctorByID;
+                StoredProcedureName = StoredProcedures.GetDoctorByName;
 
             else if (position == "Nurse")
-                StoredProcedureName = StoredProcedures.GetNurseByID;
+                StoredProcedureName = StoredProcedures.GetNurseByName;
 
             else if (position == "Pharmacist")
-                StoredProcedureName = StoredProcedures.GetPharmaByID;
+                StoredProcedureName = StoredProcedures.GetPharmaByName;
 
             else if (position == "Receptionist")
-                StoredProcedureName = StoredProcedures.GetReceptionistByID;
+                StoredProcedureName = StoredProcedures.GetReceptionistByName;
 
             return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
@@ -271,12 +290,25 @@ namespace Hospital
             string StoredProcedureName = StoredProcedures.ChangePassword;
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
-
+        public int DeleteAccount(string username)
+        {
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@user", username);
+            string StoredProcedureName = StoredProcedures.DeleteAccount;
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
         public object GetOldPassword(string username)
         {
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@username", username);
             string StoredProcedureName = StoredProcedures.GetOldPassword;
+            return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+        }
+        public object getDnumber(string spt)
+        {
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@spt", spt);
+            string StoredProcedureName = StoredProcedures.GetDepartmentNumberBySpt;
             return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
         }
         public DataTable Earnings(string service, DateTime date)
@@ -313,6 +345,13 @@ namespace Hospital
             String StoredProcedureName = StoredProcedures.SelectPatientWithID;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@ID", id);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        } 
+        public DataTable SelectPatientsOfDoctor(int id)
+        {
+            String StoredProcedureName = StoredProcedures.SelectPatientsOfDoctor;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
             return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
         public DataTable SelectSurgNames()

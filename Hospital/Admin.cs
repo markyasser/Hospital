@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -52,12 +53,12 @@ namespace Hospital
             for (int i = 0; i < arrray.Length; i++)
             {
                 dep.Items.Add(arrray[i]);
-            }
-            for (int i = 0; i < arrray.Length; i++)
-            {
                 depart.Items.Add(arrray[i]);
+                DepartmentRoom.Items.Add(arrray[i]);
             }
             depart.Items.Add("All");
+
+
         }
 
         //Drag Form
@@ -76,6 +77,7 @@ namespace Hospital
             Departments_Panel.Visible = false;
             surgery_Panel.Visible = false;
             medtests_Panel.Visible = false;
+            Rooms_panel.Visible = false;
             settings_panel.Visible = false;
         }
         //make the dock: fill for all the pannels
@@ -89,6 +91,7 @@ namespace Hospital
             surgery_Panel.Dock = DockStyle.Fill;
             medtests_Panel.Dock = DockStyle.Fill;
             settings_panel.Dock = DockStyle.Fill;
+            Rooms_panel.Dock = DockStyle.Fill;
         }
         //create border for the activate button feature
         void CreateLeftButtonBorder()
@@ -277,7 +280,13 @@ namespace Hospital
             ActivateButton(Search_iconButton);
         }
 
-
+        private void Rooms_Click(object sender, EventArgs e)
+        {
+            ShowPanel(Rooms_panel);
+            ActivateButton(Rooms);
+            Fill_ComboBox();
+            FillRoomsTable();
+        }
         private void Create_Account_iconButton_Click(object sender, EventArgs e)
         {
             ShowPanel(CreateAccount_panel);
@@ -298,6 +307,35 @@ namespace Hospital
         private void SignUp_Click_1(object sender, EventArgs e)
         {
             bool flag = true;
+            if (password.Text == "")
+            {
+                label10.Text = "*";
+                flag = false;
+            }
+
+            else label10.Text = "";
+            if (username.Text == "")
+            {
+                label19.Text = "*";
+                flag = false;
+            }
+            else label19.Text = "";
+            if (pos.Text=="Admin")
+            {
+                if (!flag) return;
+
+                int result_Admin = controllerObj.CreateAccount(username.Text, password.Text);
+                if (result_Admin != 0)
+                {
+                    MessageBox.Show("Admin inserted successfully");
+                }
+                else
+                {
+                    MessageBox.Show("This Username already exist");
+                }
+                return;
+            }
+            
             if (fname.Text == "")
             {
                 label6.Text = "*";
@@ -339,23 +377,11 @@ namespace Hospital
                 label9.Text = "*";
                 flag = false;
             }
-                
             else label9.Text = "";
 
-            if (password.Text == "")
-            {
-                label10.Text = "*";
-                flag = false;
-            }
-                
-            else label10.Text = "";
-            if (username.Text == "")
-            {
-                label19.Text = "*";
-                flag = false;
-            }
+            
 
-            else label19.Text = "";
+            
             if (dep.Text == "" && pos.Text== "Doctor")
             {
                 label11.Text = "*";
@@ -388,12 +414,7 @@ namespace Hospital
 
             int result1=0, result2 = 0;
 
-            result2 = controllerObj.CreateAccount(username.Text, password.Text);
-            if (result2 == 0)
-            {
-                MessageBox.Show("This username already exist");
-                return;
-            }
+            
             if (password.Text.Length < 4)
             {
                 MessageBox.Show("Password is very weak");
@@ -401,23 +422,48 @@ namespace Hospital
             }
             if (pos.Text == "Doctor")
             {
-                result1 = controllerObj.InsertDoctor(ID, fname.Text, minit.Text, lname.Text, username.Text, birthdate, address.Text, Phone, SEX, dep.SelectedIndex + 1);
-                FillDepartmentTable();
+                result2 = controllerObj.CreateAccount(username.Text, password.Text);
+                if (result2 != 0)
+                {
+                    int dpnumber = int.Parse(controllerObj.getDnumber(dep.Text).ToString());
+                    result1 = controllerObj.InsertDoctor(ID, fname.Text, minit.Text, lname.Text, username.Text, birthdate, address.Text, Phone, SEX, dpnumber);
+                    if (result1 == 0)
+                    {
+                        controllerObj.DeleteAccount(username.Text);
+                    }
+                    else FillDepartmentTable();
+                }
+                else
+                {
+                    MessageBox.Show("This Username already exist");
+                    return;
+                }
+
             }
             else
-                result1 = controllerObj.InsertNotDoctor(ID, fname.Text, minit.Text, lname.Text, username.Text, birthdate, address.Text, Phone, SEX, pos.Text);
-            if (result1==0)
             {
-                MessageBox.Show("This ID already exist");
-                return;
+                result2 = controllerObj.CreateAccount(username.Text, password.Text);
+                if (result2 != 0)
+                {
+                    result1 = controllerObj.InsertNotDoctor(ID, fname.Text, minit.Text, lname.Text, username.Text, birthdate, address.Text, Phone, SEX, pos.Text);
+                    if (result1 == 0)
+                    {
+                        controllerObj.DeleteAccount(username.Text);
+                    }
+                        
+                }
+                else
+                {
+                    MessageBox.Show("This Username already exist");
+                    return;
+                }
             }
             if (result1 > 0 && result2 > 0)
                 MessageBox.Show(pos.Text + " " + fname.Text + " is inserted successfully");
             else
-                MessageBox.Show("Insertion Failed");
+                MessageBox.Show("This ID already exist");
 
         }
-
         private void Show_Hide_Password_Click(object sender, EventArgs e)
         {
             if (Show_Hide_Password.IconChar == IconChar.Eye)
@@ -434,17 +480,24 @@ namespace Hospital
 
         private void pos_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (pos.Text == "Admin")
+            {
+                groupBox10.Visible = false;
+                return;
+            }
             if (pos.Text == "Doctor")
             {
                 dep.Visible = true;
                 label43.Visible = true;
                 label11.Visible = true;
+                groupBox10.Visible = true;
             }
             else
             {
                 dep.Visible = false;
                 label43.Visible = false;
                 label11.Visible = false;
+                groupBox10.Visible = true;
             }
         }
         private void position_SelectedIndexChanged(object sender, EventArgs e)
@@ -493,7 +546,7 @@ namespace Hospital
                 FillDepartmentTable();
             }
             else
-                MessageBox.Show("Insertion Failed");
+                MessageBox.Show("This Department already exist");
         }
 
         private void ShowList_button_Click(object sender, EventArgs e)
@@ -537,7 +590,7 @@ namespace Hospital
                 FillSurgery();
             }
             else
-                MessageBox.Show("Insertion Failed");
+                MessageBox.Show("This Surgery already exist");
         }
 
         private void surgery_Panel_Paint(object sender, PaintEventArgs e)
@@ -570,7 +623,7 @@ namespace Hospital
             }
                
             else
-                MessageBox.Show("Insertion Failed");
+                MessageBox.Show("This Medical Test already exist");
         }
 
         private void select_id_SelectedIndexChanged(object sender, EventArgs e)
@@ -583,26 +636,39 @@ namespace Hospital
             }
             else label61.Text = "";
 
-            int id;
-            bool flag1 = Int32.TryParse(select_id.Text, out id);
-            if (!flag1)
-                label58.Text = "* Please enter a valid price";
-            else label58.Text = "";
+            string fullname = select_name.Text;
+            string fname = "";
+            string minit = "";
+            string lname = "";
+            int index = 0;
+            while (fullname[index] != ' ')
+            {
+                fname += fullname[index];
+                index++;
+            }
+            index++;
+            minit += fullname[index];
+            index+=3;
+            while (fullname[index] != ' ')
+            {
+                lname += fullname[index];
+                index++;
+            }
 
             if (!flag) return;
-            DataTable table =  controllerObj.GetEmployeeByID(search_position.Text,id);
+            DataTable table =  controllerObj.GetEmployeeByName(search_position.Text, fname,minit,lname);
             object[] arrray = table.Rows[0].ItemArray;
-            Name_textBox.Text = arrray[0].ToString() + " " +arrray[1].ToString() + ". "+arrray[2].ToString();
-            BD_textBox.Text = arrray[3].ToString();
-            Gender_textBox.Text = arrray[4].ToString();
-            Address_textBox.Text= arrray[5].ToString();
-            PhoneNo_textBox.Text = "0" + arrray[6].ToString();
+            ID_textBox.Text = arrray[0].ToString();
+            BD_textBox.Text = arrray[1].ToString();
+            Gender_textBox.Text = arrray[2].ToString();
+            Address_textBox.Text= arrray[3].ToString();
+            PhoneNo_textBox.Text = "0" + arrray[4].ToString();
 
             if (search_position.Text=="Doctor")
             {
                 Dep_textBox.Visible = true;
                 label62.Visible = true;
-                Dep_textBox.Text = arrray[7].ToString();
+                Dep_textBox.Text = arrray[5].ToString();
             }
             else
             {
@@ -612,14 +678,14 @@ namespace Hospital
         }
         private void Search_By_ID_button_Click(object sender, EventArgs e)
         {
-            if (Name_textBox.Text != "")
+            if (ID_textBox.Text != "")
             {
-                DialogResult choice = MessageBox.Show("Are you sure you want to delete "+ search_position.Text + " " + Name_textBox.Text, " Delete Employee", MessageBoxButtons.YesNo);
+                DialogResult choice = MessageBox.Show("Are you sure you want to delete "+ search_position.Text + " " + ID_textBox.Text, " Delete Employee", MessageBoxButtons.YesNo);
                 if (choice == DialogResult.Yes)
                 {
-                    int result = controllerObj.DeleteEmployee(search_position.Text, Int32.Parse(select_id.Text));
+                    int result = controllerObj.DeleteEmployee(search_position.Text, Int32.Parse(select_name.Text));
                     if (result > 0)
-                        MessageBox.Show(search_position.Text + " " + Name_textBox.Text + " is Delete from the database");
+                        MessageBox.Show(search_position.Text + " " + ID_textBox.Text + " is Delete from the database");
                     else
                         MessageBox.Show("Deletetion Failed");
                 }
@@ -627,15 +693,17 @@ namespace Hospital
         }
         private void search_position_SelectedIndexChanged(object sender, EventArgs e)
         {
-            select_id.Text = "";
-            select_id.Items.Clear();
-            DataTable table = controllerObj.GetIDs(search_position.Text);
+            select_name.Text = "";
+            select_name.Items.Clear();
+            DataTable table = controllerObj.GetNames(search_position.Text);
             if (table !=null)
             {
-                string[] arrray = table.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
-                for (int i = 0; i < arrray.Length; i++)
+                string[] arrray1 = table.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
+                string[] arrray2 = table.Rows.OfType<DataRow>().Select(k => k[1].ToString()).ToArray();
+                string[] arrray3 = table.Rows.OfType<DataRow>().Select(k => k[2].ToString()).ToArray();
+                for (int i = 0; i < arrray1.Length; i++)
                 {
-                    select_id.Items.Add(arrray[i]);
+                    select_name.Items.Add(arrray1[i]+' '+ arrray2[i] + ". "+arrray3[i] + ' ');
                 }
             }
         }
@@ -666,10 +734,10 @@ namespace Hospital
                 }
                 if (NewPass.Text.Length < 4)
                 {
-                    MessageBox.Show("Password is very weak");
+                    MessageBox.Show("Password must be more than 4 character");
                     return;
                 }
-                int result = controllerObj.ChangePassword(USERNAME,NewPass.Text);
+                int result = controllerObj.ChangePassword(USERNAME, Validation.hashpassword(NewPass.Text));
                 if (result > 0)
                 {
                     MessageBox.Show("Password changed successfully");
@@ -813,15 +881,71 @@ namespace Hospital
             dataGridView6.DataSource = controllerObj.Earnings("Operations", dateTimePicker1.Value);
             dataGridView7.DataSource = controllerObj.Earnings("Rooms", dateTimePicker1.Value);
         }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            bool flag = true;
+            int roomNumber;
+            flag = int.TryParse(room_number.Text, out roomNumber);
+            if (!flag)
+            {
+                label86.Text = "* Please enter room number";
+                flag = false;
+            }
+            else label86.Text = "";
+
+            int price;
+            bool flag2 = int.TryParse(pricepernight.Text, out price);
+            if (!flag2)
+            {
+                label77.Text = "* Please enter room number";
+                flag = false;
+            }
+            else label77.Text = "";
+
+            if (Room_Type.Text == "")
+            {
+                label79.Text = "* Please enter room number";
+                flag = false;
+            }
+            else label79.Text = "";
+
+            if (DepartmentRoom.Text == "")
+            {
+                label85.Text = "* Please enter room number";
+                flag = false;
+            }
+            else label85.Text = "";
+            if (!flag) return;
+
+            int dpnumber = int.Parse(controllerObj.getDnumber(DepartmentRoom.Text).ToString());
+            int result = controllerObj.InsertRoom(roomNumber, Room_Type.Text, dpnumber, price);
+            if (result > 0)
+            {
+                FillRoomsTable();
+                MessageBox.Show("Room " + roomNumber + " is inserted successfully");
+                
+            }
+            else
+                MessageBox.Show("This room already exist");
+        }
+        void FillRoomsTable()
+        {
+            dataGridView10.DataSource = controllerObj.GetAllRoomsInformation();
+        }
         private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            return;
         }
         private void label64_Click(object sender, EventArgs e)
         {
-            return;
         }
 
-        
+        private void CreateAccount_panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pricepernight_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

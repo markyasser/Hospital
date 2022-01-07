@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace Hospital
 {
@@ -30,7 +31,8 @@ namespace Hospital
             {
                 string user = obj.GetUser(id.Text);
                 string pass = obj.GetOldPassword(id.Text).ToString();
-                if (pass == password.Text)
+                string encrypted = Validation.hashpassword(password.Text);
+                if (pass == encrypted)
                 {
                     Hide();
                     if (user == "Doctor")
@@ -65,8 +67,6 @@ namespace Hospital
             //check the first 2 chars in the id to go to the corresponding interface
             //this.Close();
         }
-
-        
         private void id_click(object sender, EventArgs e)
         {
             id.BackColor = selected;
