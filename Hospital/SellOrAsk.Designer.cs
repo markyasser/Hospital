@@ -135,7 +135,7 @@
             this.Get_btn.TabIndex = 24;
             this.Get_btn.Text = "Get";
             this.Get_btn.UseVisualStyleBackColor = true;
-            this.Get_btn.Click += new System.EventHandler(this.Get_btn_Click);
+            //this.Get_btn.Click += new System.EventHandler(this.Get_btn_Click);
             // 
             // Show_btn
             // 

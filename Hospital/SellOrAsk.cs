@@ -122,120 +122,120 @@ namespace Hospital
             return sum.ToString();
         }
 
-        int PerformMed1()
-        {
+        //int PerformMed1()
+        //{
 
-            int result = ControllerObj.BuyMedicine(Medname1_cmb.Text, Convert.ToInt32(Amount1_txt.Text));
-            if (result != 0)
-            {
-                int result1 = ControllerObj.AddMedicineToPatient(Medname1_cmb.Text,
-                    Convert.ToInt32(PatientID_cmb.Text), Convert.ToInt32(Amount1_txt.Text));
-                return result1;
-            }
-            else
-                return 0;
+        //    int result = ControllerObj.BuyMedicine(Medname1_cmb.Text, Convert.ToInt32(Amount1_txt.Text));
+        //    if (result != 0)
+        //    {
+        //        int result1 = ControllerObj.AddMedicineToPatient(Medname1_cmb.Text,
+        //            Convert.ToInt32(PatientID_cmb.Text), Convert.ToInt32(Amount1_txt.Text));
+        //        return result1;
+        //    }
+        //    else
+        //        return 0;
 
-        }
+        //}
 
-        int PerformMed2()
-        {
+        //int PerformMed2()
+        //{
 
-            int result = ControllerObj.BuyMedicine(Medname2_cmb.Text, Convert.ToInt32(Amount2_txt.Text));
-            if (result != 0)
-            {
-                int result1 = ControllerObj.AddMedicineToPatient(Medname2_cmb.Text,
-                    Convert.ToInt32(PatientID_cmb.Text), Convert.ToInt32(Amount2_txt.Text));
-                return result1;
-            }
-            else
-                return 0;
-        }
+        //    int result = ControllerObj.BuyMedicine(Medname2_cmb.Text, Convert.ToInt32(Amount2_txt.Text));
+        //    if (result != 0)
+        //    {
+        //        int result1 = ControllerObj.AddMedicineToPatient(Medname2_cmb.Text,
+        //            Convert.ToInt32(PatientID_cmb.Text), Convert.ToInt32(Amount2_txt.Text));
+        //        return result1;
+        //    }
+        //    else
+        //        return 0;
+        //}
 
-        int PerformMed3()
-        {
+        //int PerformMed3()
+        //{
 
-            int result = ControllerObj.BuyMedicine(Medname3_cmb.Text, Convert.ToInt32(Amount3_txt.Text));
-            if (result != 0)
-            {
-                int result1 = ControllerObj.AddMedicineToPatient(Medname3_cmb.Text,
-                    Convert.ToInt32(PatientID_cmb.Text), Convert.ToInt32(Amount3_txt.Text));
-                return result1;
-            }
-            else
-                return 0;
-        }
+        //    int result = ControllerObj.BuyMedicine(Medname3_cmb.Text, Convert.ToInt32(Amount3_txt.Text));
+        //    if (result != 0)
+        //    {
+        //        int result1 = ControllerObj.AddMedicineToPatient(Medname3_cmb.Text,
+        //            Convert.ToInt32(PatientID_cmb.Text), Convert.ToInt32(Amount3_txt.Text));
+        //        return result1;
+        //    }
+        //    else
+        //        return 0;
+        //}
 
-        int PerformMed4()
-        {
+        //int PerformMed4()
+        //{
 
-            int result = ControllerObj.BuyMedicine(Medname4_cmb.Text, Convert.ToInt32(Amount4_txt.Text));
-            if (result != 0)
-            {
-                int result1 = ControllerObj.AddMedicineToPatient(Medname4_cmb.Text,
-                    Convert.ToInt32(PatientID_cmb.Text), Convert.ToInt32(Amount4_txt.Text));
-                return result1;
-            }
-            else
-                return 0;
-        }
+        //    int result = ControllerObj.BuyMedicine(Medname4_cmb.Text, Convert.ToInt32(Amount4_txt.Text));
+        //    if (result != 0)
+        //    {
+        //        int result1 = ControllerObj.AddMedicineToPatient(Medname4_cmb.Text,
+        //            Convert.ToInt32(PatientID_cmb.Text), Convert.ToInt32(Amount4_txt.Text));
+        //        return result1;
+        //    }
+        //    else
+        //        return 0;
+        //}
 
-        int PerformMed5()
-        {
+        //int PerformMed5()
+        //{
 
-            int result = ControllerObj.BuyMedicine(Medname5_cmb.Text, Convert.ToInt32(Amount5_txt.Text));
-            if (result != 0)
-            {
-                int result1 = ControllerObj.AddMedicineToPatient(Medname5_cmb.Text,
-                    Convert.ToInt32(PatientID_cmb.Text), Convert.ToInt32(Amount5_txt.Text));
-                return result1;
-            }
-            else
-                return 0;
-        }
+        //    int result = ControllerObj.BuyMedicine(Medname5_cmb.Text, Convert.ToInt32(Amount5_txt.Text));
+        //    if (result != 0)
+        //    {
+        //        int result1 = ControllerObj.AddMedicineToPatient(Medname5_cmb.Text,
+        //            Convert.ToInt32(PatientID_cmb.Text), Convert.ToInt32(Amount5_txt.Text));
+        //        return result1;
+        //    }
+        //    else
+        //        return 0;
+        //}
 
-        private void Get_btn_Click(object sender, EventArgs e)
-        {
-            if (Med1_gb.Visible == true)
-            {
-                int result1=PerformMed1();
-                if (result1 != 0)
-                    MessageBox.Show("Buying first medicine succes");
-                else
-                    MessageBox.Show("Buying first medicine failed");
-                if (Med2_gb.Visible==true)
-                {
-                    int result2 = PerformMed2();
-                    if (result2 != 0)
-                        MessageBox.Show("Buying second medicine succes");
-                    else
-                        MessageBox.Show("Buying second medicine failed");
-                    if (Med3_gb.Visible==true)
-                    {
-                        int result3 = PerformMed3();
-                        if (result3 != 0)
-                            MessageBox.Show("Buying third medicine succes");
-                        else
-                            MessageBox.Show("Buying third medicine failed");
-                        if (Med4_gb.Visible==true)
-                        {
-                            int result4 = PerformMed4();
-                            if (result4 != 0)
-                                MessageBox.Show("Buying fourth medicine succes");
-                            else
-                                MessageBox.Show("Buying fourth medicine failed");
-                            if(Med5_gb.Visible==true)
-                            {
-                                int result5 = PerformMed5();
-                                if (result5 != 0)
-                                    MessageBox.Show("Buying fifth medicine succes");
-                                else
-                                    MessageBox.Show("Buying fifth medicine failed");
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        //private void Get_btn_Click(object sender, EventArgs e)
+        //{
+        //    if (Med1_gb.Visible == true)
+        //    {
+        //        int result1=PerformMed1();
+        //        if (result1 != 0)
+        //            MessageBox.Show("Buying first medicine succes");
+        //        else
+        //            MessageBox.Show("Buying first medicine failed");
+        //        if (Med2_gb.Visible==true)
+        //        {
+        //            int result2 = PerformMed2();
+        //            if (result2 != 0)
+        //                MessageBox.Show("Buying second medicine succes");
+        //            else
+        //                MessageBox.Show("Buying second medicine failed");
+        //            if (Med3_gb.Visible==true)
+        //            {
+        //                int result3 = PerformMed3();
+        //                if (result3 != 0)
+        //                    MessageBox.Show("Buying third medicine succes");
+        //                else
+        //                    MessageBox.Show("Buying third medicine failed");
+        //                if (Med4_gb.Visible==true)
+        //                {
+        //                    int result4 = PerformMed4();
+        //                    if (result4 != 0)
+        //                        MessageBox.Show("Buying fourth medicine succes");
+        //                    else
+        //                        MessageBox.Show("Buying fourth medicine failed");
+        //                    if(Med5_gb.Visible==true)
+        //                    {
+        //                        int result5 = PerformMed5();
+        //                        if (result5 != 0)
+        //                            MessageBox.Show("Buying fifth medicine succes");
+        //                        else
+        //                            MessageBox.Show("Buying fifth medicine failed");
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
 
         private void Label5_Click(object sender, EventArgs e)
         {
