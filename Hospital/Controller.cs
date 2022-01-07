@@ -699,6 +699,23 @@ namespace Hospital
             return dbMan.ExecuteReader(StoredProcedureName, null);
         }
 
+        public object GetPatientName(int PatientID)
+        {
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@PatientID", PatientID);
+            string StoredProcedureName = StoredProcedures.GetPatientName;
+            return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+        }
+
+        public int AddMedicineToPatient(string MedicineName,int Pid,int Quantity)
+        {
+            string StoredProcedureName = StoredProcedures.AddMedicineToPatient;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@MedicineName", MedicineName);
+            Parameters.Add("@Pid", Pid);
+            Parameters.Add("@Quantity", Quantity);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
     }
 
 }

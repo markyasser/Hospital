@@ -114,6 +114,8 @@ namespace Hospital
         public static string GetMedPrice = "GetMedPrice";
         public static string SetMedPrice = "SetMedPrice";
         //-----------------------------------Nurse--------------------------------------
+        public static string GetAllMedicalTest = "GetAllMedicalTest";
+        public static string GetMedicalTestPrice = "GetMedicalTestPrice";
         public static string GetExpiredMedicines = "GetExpiredMedicines";
         public static string GetValidMedicines = "GetValidMedicines";
         public static string GetEmptyMedicines = "GetEmptyMedicines";
@@ -122,6 +124,7 @@ namespace Hospital
         public static string GetRooms = "GetRooms";
         public static string InsertServe = "InsertServe";
         public static string DontServe = "DontServe";
-
+        public static string GetPatientName = "GetPatientName";
+        public static string AddMedicineToPatient = "AddMedicineToPatient";
     }
 }

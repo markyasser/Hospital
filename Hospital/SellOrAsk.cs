@@ -56,10 +56,10 @@ namespace Hospital
             DataTable dt1 = ControllerObj.GetAllMedicine();
             Medname1_cmb.DataSource = dt1;
             Medname1_cmb.DisplayMember = "Name";
-
-            //DataTable dt = ControllerObj.GetAllPatien;
-            //Medname1_cmb.DataSource = dt1;
-            //Medname1_cmb.DisplayMember = "Name";
+            
+            DataTable dt = ControllerObj.SelectPatientsID();
+            PatientID_cmb.DataSource = dt1;
+            PatientID_cmb.DisplayMember = "Pid";
         }
 
         private void Medname1_cmb_TextChanged(object sender, EventArgs e)
@@ -97,19 +97,19 @@ namespace Hospital
             int sum = 0;
             if (Med1_gb.Visible == true)
             {
-                sum += Convert.ToInt32(Price1_txt.Text);
+                sum += Convert.ToInt32(Price1_txt.Text)*Convert.ToInt32(Amount1_txt.Text);
                 if (Med2_gb.Visible == true)
                 {
-                    sum += Convert.ToInt32(Price2_txt.Text);
+                    sum += Convert.ToInt32(Price2_txt.Text) * Convert.ToInt32(Amount2_txt.Text); ;
                     if (Med3_gb.Visible == true)
                     {
-                        sum += Convert.ToInt32(Price3_txt.Text);
+                        sum += Convert.ToInt32(Price3_txt.Text) * Convert.ToInt32(Amount3_txt.Text); ;
                         if (Med4_gb.Visible == true)
                         {
-                            sum += Convert.ToInt32(Price4_txt.Text);
+                            sum += Convert.ToInt32(Price4_txt.Text) * Convert.ToInt32(Amount4_txt.Text); ;
                             if (Med5_gb.Visible == true)
                             {
-                                sum += Convert.ToInt32(Price5_txt.Text);
+                                sum += Convert.ToInt32(Price5_txt.Text) * Convert.ToInt32(Amount5_txt.Text); ;
                             }
                             return sum.ToString();
                         }
@@ -124,7 +124,74 @@ namespace Hospital
 
         private void Get_btn_Click(object sender, EventArgs e)
         {
-            //to DO
+            
+        }
+
+        private void Label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+  
+
+        private void Amount2_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                Amount2Msg_lbl.Visible = true;
+                e.Handled = true;
+            }
+            else
+                Amount2Msg_lbl.Visible = false;
+        }
+
+        private void Amount1_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                Amount1Msg_lbl.Visible = true;
+                e.Handled = true;
+            }
+            else
+                Amount1Msg_lbl.Visible = false;
+        }
+
+        private void Amount3_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                Amount3Msg_lbl.Visible = true;
+                e.Handled = true;
+            }
+            else
+                Amount3Msg_lbl.Visible = false;
+        }
+
+        private void Amount4_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                Amount4Msg_lbl.Visible = true;
+                e.Handled = true;
+            }
+            else
+                Amount4Msg_lbl.Visible = false;
+        }
+
+        private void Amount5_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                Amount5Msg_lbl.Visible = true;
+                e.Handled = true;
+            }
+            else
+                Amount5Msg_lbl.Visible = false;
+        }
+
+        private void PatientID_cmb_TextChanged(object sender, EventArgs e)
+        {
+            PatientName_txt.Text=ControllerObj.GetPatientName(Convert.ToInt32(PatientID_cmb.Text)).ToString();
         }
     }
 }
