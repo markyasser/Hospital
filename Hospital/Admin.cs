@@ -19,8 +19,10 @@ namespace Hospital
         private Panel leftBtnBorder;
         private Color PrevColorOfActiveButton;
         string USERNAME;
+        int var;
         public Admin(string user) 
         {
+            var = 0;
             USERNAME = user;
             InitializeComponent();
             controllerObj = new Controller();
@@ -55,7 +57,7 @@ namespace Hospital
             {
                 depart.Items.Add(arrray[i]);
             }
-            
+            depart.Items.Add("All");
         }
 
         //Drag Form
@@ -242,6 +244,7 @@ namespace Hospital
         {
             ShowPanel(Earnings_panel);
             ActivateButton(Earnings_iconButton);
+            getEarnings();
         }
         private void Departments_Click(object sender, EventArgs e)
         {
@@ -253,12 +256,14 @@ namespace Hospital
         {
             ShowPanel(surgery_Panel);
             ActivateButton(surgeries);
+            FillSurgery();
         }
 
         private void MedicalTests_Click(object sender, EventArgs e)
         {
             ShowPanel(medtests_Panel);
             ActivateButton(MedicalTests);
+            FillMedicalTestsTable();
         }
         private void List_iconButton_Click(object sender, EventArgs e)
         {
@@ -285,7 +290,10 @@ namespace Hospital
         }
         private void Logout_iconButton_Click(object sender, EventArgs e)
         {
+            LoginPage l = new LoginPage();
+            l.Show();
             Close();
+            
         }
         private void SignUp_Click_1(object sender, EventArgs e)
         {
@@ -381,15 +389,28 @@ namespace Hospital
             int result1=0, result2 = 0;
 
             result2 = controllerObj.CreateAccount(username.Text, password.Text);
+            if (result2 == 0)
+            {
+                MessageBox.Show("This username already exist");
+                return;
+            }
+            if (password.Text.Length < 4)
+            {
+                MessageBox.Show("Password is very weak");
+                return;
+            }
             if (pos.Text == "Doctor")
             {
                 result1 = controllerObj.InsertDoctor(ID, fname.Text, minit.Text, lname.Text, username.Text, birthdate, address.Text, Phone, SEX, dep.SelectedIndex + 1);
                 FillDepartmentTable();
             }
-            
             else
                 result1 = controllerObj.InsertNotDoctor(ID, fname.Text, minit.Text, lname.Text, username.Text, birthdate, address.Text, Phone, SEX, pos.Text);
-            
+            if (result1==0)
+            {
+                MessageBox.Show("This ID already exist");
+                return;
+            }
             if (result1 > 0 && result2 > 0)
                 MessageBox.Show(pos.Text + " " + fname.Text + " is inserted successfully");
             else
@@ -511,7 +532,10 @@ namespace Hospital
 
             int result = controllerObj.InsertSurgery( surgery_name.Text.ToString(),cost);
             if (result > 0)
+            {
                 MessageBox.Show("Surgery " + surgery_name.Text + " is inserted successfully");
+                FillSurgery();
+            }
             else
                 MessageBox.Show("Insertion Failed");
         }
@@ -540,7 +564,11 @@ namespace Hospital
 
             int result = controllerObj.InsertMedicalTest(test_name.Text.ToString(), cost);
             if (result > 0)
+            {
                 MessageBox.Show("Medical Test : '" + test_name.Text + "' is inserted successfully");
+                FillMedicalTestsTable();
+            }
+               
             else
                 MessageBox.Show("Insertion Failed");
         }
@@ -628,8 +656,19 @@ namespace Hospital
             else label67.Text = "";
             if (!flag) return;
             object oldpassword = controllerObj.GetOldPassword(USERNAME);
+            
             if (oldpassword !=null && OldPass.Text == oldpassword.ToString())
             {
+                if (OldPass.Text == NewPass.Text)
+                {
+                    MessageBox.Show("The new password must be different");
+                    return;
+                }
+                if (NewPass.Text.Length < 4)
+                {
+                    MessageBox.Show("Password is very weak");
+                    return;
+                }
                 int result = controllerObj.ChangePassword(USERNAME,NewPass.Text);
                 if (result > 0)
                 {
@@ -644,10 +683,143 @@ namespace Hospital
         void FillDepartmentTable()
         {
             dataGridView2.DataSource = controllerObj.DepartmentStatistics();
+            if (dataGridView2.Columns.Count!=4)
+            {
+                DataGridViewButtonColumn delete_dep = new DataGridViewButtonColumn();
+                dataGridView2.Columns.Add(delete_dep);
+                delete_dep.HeaderText = "Delete";
+                delete_dep.Text = "Delete";
+                delete_dep.UseColumnTextForButtonValue = true;
+            }
+        }
+        void FillMedicalTestsTable()
+        {
+            dataGridView8.DataSource = controllerObj.GetAllMedicalTest();
+            if (dataGridView8.Columns.Count == 2)
+            {
+                DataGridViewButtonColumn delete_dep = new DataGridViewButtonColumn();
+                dataGridView8.Columns.Add(delete_dep);
+                delete_dep.HeaderText = "Delete";
+                delete_dep.Text = "Delete";
+                delete_dep.UseColumnTextForButtonValue = true;
+            }
+        }
+        void FillSurgery()
+        {
+            dataGridView9.DataSource = controllerObj.GetAllSurgeries();
+            if (dataGridView9.Columns.Count == 2)
+            {
+                DataGridViewButtonColumn delete_dep = new DataGridViewButtonColumn();
+                dataGridView9.Columns.Add(delete_dep);
+                delete_dep.HeaderText = "Delete";
+                delete_dep.Text = "Delete";
+                delete_dep.UseColumnTextForButtonValue = true;
+            }
+        }
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string dname = dataGridView2[1, e.RowIndex].Value.ToString();
+            int x=0;
+            bool flag = Int32.TryParse(dname, out x);
+            if (flag)
+            {
+                x=1;
+                dname = dataGridView2[2, e.RowIndex].Value.ToString();
+            }
+            if (dataGridView2[e.ColumnIndex, e.RowIndex].Value.ToString() == "Delete")
+            {
+                
+                DialogResult choice = MessageBox.Show("Are you sure you want to delete " + dname + " departement ?", " Delete Department", MessageBoxButtons.YesNo);
+                if (choice == DialogResult.Yes)
+                {
+                    int dn = Int32.Parse(dataGridView2[x, e.RowIndex].Value.ToString());
+                    int result = controllerObj.DeleteDepartment(dn);
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Department " + dname + " is Delete from the database");
+                        FillDepartmentTable();
+                    }
+                    else
+                        MessageBox.Show("Could not delete this department");
+                }
+            }
+           
+        }
+        private void dataGridView8_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string medtest = dataGridView8[0, e.RowIndex].Value.ToString();
+            int x = 0;
+            bool flag = Int32.TryParse(dataGridView8[1, e.RowIndex].Value.ToString(), out x);
+            if (!flag)
+            {
+                x = 1;
+                medtest = dataGridView8[1, e.RowIndex].Value.ToString();
+            }
+            if (dataGridView8[e.ColumnIndex, e.RowIndex].Value.ToString() == "Delete")
+            {
+
+                DialogResult choice = MessageBox.Show("Are you sure you want to delete Medical Test " + medtest + "  ?", " Delete Medical Test", MessageBoxButtons.YesNo);
+                if (choice == DialogResult.Yes)
+                {
+                   
+                    int result = controllerObj.DeleteMedicalTest(medtest);
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Medical Test " + medtest + " is Delete from the database");
+                        FillMedicalTestsTable();
+                    }
+                    else
+                        MessageBox.Show("Could not delete this Medical Test");
+                }
+            }
+        }
+        private void dataGridView9_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string Sname = dataGridView9[0, e.RowIndex].Value.ToString();
+            int x = 0;
+            bool flag = Int32.TryParse(dataGridView9[1, e.RowIndex].Value.ToString(), out x);
+            if (!flag)
+            {
+                x = 1;
+                Sname = dataGridView9[1, e.RowIndex].Value.ToString();
+            }
+            if (dataGridView9[e.ColumnIndex, e.RowIndex].Value.ToString() == "Delete")
+            {
+
+                DialogResult choice = MessageBox.Show("Are you sure you want to delete Surgery " + Sname + "  ?", " Delete Medical Test", MessageBoxButtons.YesNo);
+                if (choice == DialogResult.Yes)
+                {
+
+                    int result = controllerObj.DeleteSurgery(Sname);
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Surgery " + Sname + " is Delete from the database");
+                        FillSurgery();
+                    }
+                    else
+                        MessageBox.Show("Could not delete this Surgery");
+                }
+            }
+        }
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            getEarnings();
+        }
+        void getEarnings()
+        {
+            dataGridView3.DataSource = controllerObj.Earnings("Medicines", dateTimePicker1.Value);
+            dataGridView4.DataSource = controllerObj.Earnings("MedicalTests", dateTimePicker1.Value);
+            dataGridView5.DataSource = controllerObj.Earnings("Appointments", dateTimePicker1.Value);
+            dataGridView6.DataSource = controllerObj.Earnings("Operations", dateTimePicker1.Value);
+            dataGridView7.DataSource = controllerObj.Earnings("Rooms", dateTimePicker1.Value);
+        }
+        private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            return;
         }
         private void label64_Click(object sender, EventArgs e)
         {
-
+            return;
         }
 
         

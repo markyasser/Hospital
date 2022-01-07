@@ -30,15 +30,18 @@ namespace Hospital
         public static string DepartmentStatistics = "DepartmentStatistics";
         //surgeries
         public static string InsertSurgery = "InsertSurgery";
+        public static string DeleteSurgery = "DeleteSurgery";
+        public static string GetAllSurgeries = "GetAllSurgeries";
         //Medical Tests
         public static string InsertMedicalTest = "InsertMedicalTest";
+        public static string DeleteMedicalTest = "DeleteMedicalTest";
+        //public static string GetAllMedicalTest = "GetAllMedicalTest";
         //Show Employees
         public static string GetAllDep_Doctors = "GetAllDep_Doctors";
         public static string GetAllDoctors = "GetAllDoctors";
         public static string GetAllNurses = "GetAllNurses";
         public static string GetAllPharma = "GetAllPharma";
         public static string GetAllRecept = "GetAllRecept";
-
         //delete Employees
         public static string DeleteDoctor = "DeleteDoctor";
         public static string DeletePharma = "DeletePharma";
@@ -54,7 +57,12 @@ namespace Hospital
         public static string GetNurseByID = "GetNurseByID";
         public static string GetReceptionistByID = "GetReceptionistByID";
         public static string GetPharmaByID = "GetPharmaByID";
-
+        //EARNINGS
+        public static string EarningsMedicines = "EarningsMedicines";
+        public static string EarningsMedicalTests = "EarningsMedicalTests";
+        public static string EarningsRooms = "EarningsRooms";
+        public static string EarningsOperations = "EarningsOperations";
+        public static string EarningsAppointments = "EarningsAppointments";
         //-----------------------------Doctor--------------------------------
         public static string SelectPatientWithID = "SelectPatientWithID";
         public static string SelectPatientsID = "SelectPatientsID";
@@ -75,6 +83,22 @@ namespace Hospital
         public static string GetAllRooms = "GetAllRooms";
         
         public static string DisplayNurseRoomsData = "DisplayNurseRoomsData";
+        public static string SetDrWorkingHours = "SetDrWorkingHours";
+        public static string SetAppointmentPrice = "SetAppointmentPrice";
+        public static string GetAppointTimeToday = "GetAppointTimeToday";
+        public static string GetAppointPatientsToday = "GetAppointPatientsToday";
+        public static string PrescribeMedicine = "PrescribeMedicine";
+        public static string GetMedicinesForPatient = "GetMedicinesForPatient";
+        public static string PrescribeMedicalTest = "PrescribeMedicalTest";
+        public static string MakeMedicalTest = "MakeMedicalTest";
+        public static string GetMedTestsNames = "GetMedTestsNames";
+        public static string GetDrIDByUsername = "GetDrIDByUsername";
+        public static string GetWorkingHours = "GetWorkingHours";
+        public static string GetRoomsWithPatient = "GetRoomsWithPatient";
+        public static string GetDoctorPrice = "GetDoctorPrice";
+        public static string GetMedTestsForPatient = "GetMedTestsForPatient";
+        public static string GetSurgeriesForPatient = "GetSurgeriesForPatient";
+
 
         //--------------------------------Receptionist-----------------------------------
         public static string InsertPatient = "InsertPatient";

@@ -13,27 +13,41 @@ namespace Hospital
     public partial class Doctor : Form
     {
         Controller controllerObj;
-        private int CurrentPatientID;
         private int CurrentDoctorID; //to be sent from login page
         private IconButton activeButton; //holds the currently selected (highlighted) button
         private Color PrevColorOfActiveButton;
         private bool SidePanel_IsOpen;
         private const int OpenSideMenuWidth = 330;
         private const int ClosedSideMenuWidth = 100;
-        public Doctor()
+        private string USERNAME;
+        public Doctor(string user)
         {
             InitializeComponent();
             controllerObj = new Controller();
-            CurrentPatientID = 1;
-            CurrentDoctorID = 1;
+            USERNAME = user;
+            UserName_label.Text = USERNAME;
+            GetDoctorID(USERNAME);
             HideSubmenus();  
             HidePanels();    
             InitializePanels();
             SidePanel_IsOpen = true;
             Open_Close_SideMenu();
-            RefreshComboBox();
         }
-        void RefreshPatient()
+        void GetDoctorID(string username)
+        {
+            DataTable dt = controllerObj.GetDrIDByUsername(username);
+            if (dt != null)
+            {
+                CurrentDoctorID = int.Parse(dt.Rows[0][0].ToString());
+            }
+            else
+            {
+                MessageBox.Show("Error Occured, can't find id");
+                this.Close();
+            }
+        }
+        //refresh all patients IDs in the sent combobox
+        void RefreshPatient(ComboBox output)
         {
             string[] values;
             DataTable dt = controllerObj.SelectPatientsID();
@@ -42,14 +56,17 @@ namespace Hospital
                 values = dt.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
                 if (values != null)
                 {
-                    SelectPatID_comboBox.DataSource = values;
+                    output.DataSource = values;
                 }
                 else
                 {
-                    SelectPatID_comboBox.Items.Clear();
+                    output.Items.Clear();
                 }
             }
-          
+            else
+            {
+                output.DataSource = null;
+            }
         }
         void RefreshSurgNames()
         {
@@ -67,12 +84,20 @@ namespace Hospital
                     SurgName_Reserve_comboBox.Items.Clear();
                 }
             }
-          
+            else
+            {
+                SurgName_Reserve_comboBox.DataSource = null;
+            }
+
         }
         void RefreshSurgOperate()
         {
+            if (PatID_Surg_comboBox.SelectedIndex == -1)
+            {
+                return;
+            }
             string[] values;
-            DataTable dt = controllerObj.SelectSurgNamesInOperate(CurrentPatientID, CurrentDoctorID);
+            DataTable dt = controllerObj.SelectSurgNamesInOperate(int.Parse(PatID_Surg_comboBox.Text), CurrentDoctorID);
             if (dt != null)
             {
                 values = dt.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
@@ -85,12 +110,19 @@ namespace Hospital
                     SurgName_Cancel_comboBox.Items.Clear();
                 }
             }
-           
+            else
+            {
+                SurgName_Cancel_comboBox.DataSource = null;
+            }
         }
         void RefreshSurgUpcommingDatesOperate(string surgID)
         {
+            if (PatID_Surg_comboBox.SelectedIndex == -1)
+            {
+                return;
+            }
             string[] values;
-            DataTable dt = controllerObj.SelectUpcommingSurgDates(CurrentPatientID, CurrentDoctorID, surgID); ;
+            DataTable dt = controllerObj.SelectUpcommingSurgDates(int.Parse(PatID_Surg_comboBox.Text), CurrentDoctorID, surgID);
             if (dt != null)
             {
                 values = dt.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
@@ -98,36 +130,7 @@ namespace Hospital
                 {
                     for (int i = 0; i < values.Length; i++)
                     {
-                        int j = 0;
-                        while (values[i][j] != ' ')
-                        {
-                            j++;
-                        }
-                        values[i] = values[i].Substring(0, j);
-                        j = 0;
-                        while (values[i][j] != '/')
-                        {
-                            j++;
-                        }
-                        string day = values[i].Substring(0, j);
-                        if (j == 1)
-                        {
-                            day = "0" + day;
-                        }
-                        j++;
-                        int k = 0;
-                        while (values[i][j] != '/')
-                        {
-                            j++;
-                            k++;
-                        }
-                        string month = values[i].Substring(day.Length, k);
-                        if (k == 1)
-                        {
-                            month = "0" + month;
-                        }
-                        string year = values[i].Substring(j + 1, 4);
-                        values[i] = year + "-" + month + "-" + day;
+                        values[i] = Convert.ToDateTime(values[i]).ToString("yyyy-MM-dd");
                     }
                     SurgDate_Cancel_comboBox.DataSource = values;
                 }
@@ -135,6 +138,10 @@ namespace Hospital
                 {
                     SurgDate_Cancel_comboBox.Items.Clear();
                 }
+            }
+            else
+            {
+                SurgDate_Cancel_comboBox.DataSource = null;
             }
 
         }
@@ -198,11 +205,15 @@ namespace Hospital
                     NurseID_Delete_comboBox.Items.Clear();
                 }
             }
+            else
+            {
+                NurseID_Delete_comboBox.DataSource = null;
+            }
         }
         void RefreshRoomNo_Assign()
         {
             string[] values;
-            DataTable dt = controllerObj.GetAllRooms();
+            DataTable dt = controllerObj.GetRoomsWithPatient();
             if (dt != null)
             {
                 values = dt.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
@@ -214,6 +225,10 @@ namespace Hospital
                 {
                     RoomNo_Assign_comboBox.Items.Clear();
                 }
+            }
+            else
+            {
+                RoomNo_Assign_comboBox.DataSource = null;
             }
         }
         void RefreshRoomNo_Change()
@@ -232,6 +247,10 @@ namespace Hospital
                     RoomNo_Change_comboBox.Items.Clear();
                 }
             }
+            else
+            {
+                RoomNo_Change_comboBox.DataSource = null;
+            }
         }
         void RefreshNurseDataGrid()
         {
@@ -240,18 +259,107 @@ namespace Hospital
             Rooms_Nurses_dataGridView.Refresh();
 
         }
-        void RefreshComboBox()
+        void RefreshMedTestNames()
         {
-            RefreshPatient();
-            RefreshSurgNames();
-            RefreshSurgOperate();
-            RefreshNurseID_Assign();
-            RefreshNurseID_Change();
-            RefreshNurseID_Delete();
-            RefreshRoomNo_Assign();
-            RefreshRoomNo_Change();
+            string[] values;
+            DataTable dt = controllerObj.GetMedTestNames();
+            if (dt != null)
+            {
+                values = dt.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
+                if (values != null)
+                {
+                    TestName_comboBox.DataSource = values;
+                }
+                else
+                {
+                    TestName_comboBox.Items.Clear();
+                }
+            }
+            else
+            {
+                TestName_comboBox.DataSource = null;
+            }
         }
-
+        void RefreshMedicine()
+        {
+            RefreshAppointPatientsToday(PatIDinMed_comboBox);
+            RefreshAppointTimeToday(TimeinMed_comboBox, PatIDinMed_comboBox);
+        }
+        void RefreshAppointPatientsToday(ComboBox outputcombo)
+        {
+            string[] values;
+            DataTable dt = controllerObj.GetAppointPatientsToday(CurrentDoctorID);
+            if (dt != null)
+            {
+                values = dt.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
+                if (values != null)
+                {
+                    outputcombo.DataSource = values;
+                }
+                else
+                {
+                    outputcombo.Items.Clear();
+                }
+            }
+            else
+            {
+                outputcombo.DataSource = null;
+            }
+        }
+        void RefreshPrice()
+        {
+            DataTable dt = controllerObj.GetDoctorPrice(CurrentDoctorID);
+            if (dt != null)
+            {
+                int price;
+                bool isValid = int.TryParse(dt.Rows[0][0].ToString(), out price);
+                if (isValid)
+                {
+                    SetAppointPrice_textBox.Text = price.ToString();
+                }
+            }
+        }
+        void RefreshAppointTimeToday(ComboBox outputcombo, ComboBox patidcombo)
+        {
+            string[] values;
+            if (patidcombo.SelectedIndex == -1)
+            {
+                return;
+            }
+            DataTable dt = controllerObj.GetAppointTimeToday(CurrentDoctorID, int.Parse(patidcombo.Text.ToString()));
+            if (dt != null)
+            {
+                values = dt.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
+                if (values != null)
+                {
+                    outputcombo.DataSource = values;
+                }
+                else
+                {
+                    outputcombo.Items.Clear();
+                }
+            }
+            else
+            {
+                outputcombo.DataSource = null;
+            }
+        }
+        void RefreshWorkingHours()
+        {
+            DataTable dt = controllerObj.GetWorkingHours(CurrentDoctorID);
+            if (dt != null)
+            {
+                if (dt.Columns.Count >= 1)
+                {
+                    WrkStrtTime.Text = dt.Rows[0][0].ToString();
+                }
+                if (dt.Columns.Count >= 2)
+                {
+                    WrkEndTime.Text = dt.Rows[0][1].ToString();
+                }
+            }
+        }
+       
         //hide submenus at the beginning
         void HideSubmenus()
         {
@@ -262,20 +370,22 @@ namespace Hospital
         {
             SelectPatient_panel.Visible = false;
             WorkingHours_panel.Visible = false;
-            Medicines_panel.Visible = false;
+            Prescription_panel.Visible = false;
             MedTest_panel.Visible = false;
             Surgery_panel.Visible = false;
             Nurses_panel.Visible = false;
+            Price_panel.Visible = false;
         }
         //make the dock: fill for all the pannels
         void InitializePanels()
         {
             SelectPatient_panel.Dock = DockStyle.Fill;
             WorkingHours_panel.Dock = DockStyle.Fill;
-            Medicines_panel.Dock = DockStyle.Fill;
+            Prescription_panel.Dock = DockStyle.Fill;
             MedTest_panel.Dock = DockStyle.Fill;
             Surgery_panel.Dock = DockStyle.Fill;
             Nurses_panel.Dock = DockStyle.Fill;
+            Price_panel.Dock = DockStyle.Fill;
         }
         //show submenu if you click a button
         void ShowSubmenu(Panel menu)
@@ -377,30 +487,43 @@ namespace Hospital
 
         private void SelectPatient_iconButton_Click(object sender, EventArgs e)
         {
+            RefreshPatient(SelectPatID_comboBox);
             ShowPanel(SelectPatient_panel);
             ActivateButton(SelectPatient_iconButton);
         }
 
-        private void Medicines_iconButton_Click(object sender, EventArgs e)
+        private void Prescription_iconButton_Click(object sender, EventArgs e)
         {
-            ShowPanel(Medicines_panel);
-            ActivateButton(Medicines_iconButton);
+            RefreshMedicine();
+            ShowPanel(Prescription_panel);
+            ActivateButton(Prescription_iconButton);
         }
 
         private void MedicalTests_iconButton_Click(object sender, EventArgs e)
         {
             ShowPanel(MedTest_panel);
+            RefreshPatient(PatID_Test_comboBox);
+            RefreshMedTestNames();
             ActivateButton(MedicalTests_iconButton);
         }
 
         private void Surgery_iconButton_Click(object sender, EventArgs e)
         {
             ShowPanel(Surgery_panel);
+            RefreshPatient(PatID_Surg_comboBox);
+            RefreshSurgNames();
+            RefreshSurgOperate();
             ActivateButton(Surgery_iconButton);
         }
 
         private void Nurses_iconButton_Click(object sender, EventArgs e)
         {
+            RefreshNurseDataGrid();
+            RefreshNurseID_Assign();
+            RefreshNurseID_Change();
+            RefreshNurseID_Delete();
+            RefreshRoomNo_Assign();
+            RefreshRoomNo_Change();
             ShowPanel(Nurses_panel);
             ActivateButton(Nurses_iconButton);
             RefreshNurseDataGrid();
@@ -409,7 +532,15 @@ namespace Hospital
         private void WorkHours_iconButton_Click(object sender, EventArgs e)
         {
             ShowPanel(WorkingHours_panel);
+            RefreshWorkingHours();
             ActivateButton(WorkHours_iconButton);
+        }
+
+        private void Price_iconButton_Click(object sender, EventArgs e)
+        {
+            ShowPanel(Price_panel);
+            RefreshPrice();
+            ActivateButton(Price_iconButton);
         }
 
         private void SideBar_iconButton_Click(object sender, EventArgs e)
@@ -449,14 +580,25 @@ namespace Hospital
         private void SelectPatID_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             int id = int.Parse(SelectPatID_comboBox.Text.ToString());
-            CurrentPatientID = id;
             DataTable dt = controllerObj.SelectPatientWithID(id);
             string FullName = dt.Rows[0].ItemArray[1].ToString() + " " + dt.Rows[0].ItemArray[2].ToString() + " " + dt.Rows[0].ItemArray[3].ToString();
             PatName_textBox.Text = FullName;
-            PatBD_textBox.Text = dt.Rows[0].ItemArray[4].ToString();
+            PatBD_textBox.Text = Convert.ToDateTime(dt.Rows[0].ItemArray[4]).ToString("yyyy-MM-dd");
             PatAddress_textBox.Text = dt.Rows[0].ItemArray[5].ToString();
             PatGender_textBox.Text = dt.Rows[0].ItemArray[7].ToString();
             PatPhoneNo_textBox.Text = dt.Rows[0].ItemArray[6].ToString();
+            //------------------------Medicines-------------------
+            dt = controllerObj.GetMedicinesForPatient(CurrentDoctorID, int.Parse(SelectPatID_comboBox.Text));
+            CurrentMedicines_dataGridView.DataSource = dt;
+            CurrentMedicines_dataGridView.Refresh();
+            //------------------------Medical Tests-------------------
+            dt = controllerObj.GetMedTestsForPatient(int.Parse(SelectPatID_comboBox.Text), CurrentDoctorID);
+            CurrMedTests_dataGridView.DataSource = dt;
+            CurrMedTests_dataGridView.Refresh();
+            //------------------------Medical Tests-------------------
+            dt = controllerObj.GetSurgeriesForPatient(int.Parse(SelectPatID_comboBox.Text), CurrentDoctorID);
+            Surgery_dataGridView.DataSource = dt;
+            Surgery_dataGridView.Refresh();
         }
 
         private void Doctor_FormClosing(object sender, FormClosingEventArgs e)
@@ -472,7 +614,17 @@ namespace Hospital
 
         private void ReserveSurg_button_Click(object sender, EventArgs e)
         {
-            int result = controllerObj.ReserveSurgery(CurrentPatientID, CurrentDoctorID, SurgName_Reserve_comboBox.Text, SurgDate_dateTimePicker.Text.ToString());
+            if (PatID_Surg_comboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a patient");
+                return;
+            }
+            if (SurgName_Reserve_comboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a surgery");
+                return;
+            }
+            int result = controllerObj.ReserveSurgery(int.Parse(PatID_Surg_comboBox.Text), CurrentDoctorID, SurgName_Reserve_comboBox.Text, SurgDate_dateTimePicker.Text.ToString());
             if (result == 0)
             {
                 MessageBox.Show("Reservation of a new surgery failed");
@@ -486,7 +638,11 @@ namespace Hospital
 
         private void DeleteSurg_button_Click(object sender, EventArgs e)
         {
-            int result = controllerObj.CancelSurgery(CurrentPatientID, CurrentDoctorID, SurgName_Cancel_comboBox.Text.ToString(), SurgDate_Cancel_comboBox.Text.ToString());
+            if (PatID_Surg_comboBox.SelectedIndex == -1)
+            {
+                return;
+            }
+            int result = controllerObj.CancelSurgery(int.Parse(PatID_Surg_comboBox.Text), CurrentDoctorID, SurgName_Cancel_comboBox.Text.ToString(), SurgDate_Cancel_comboBox.Text.ToString());
             if (result == 0)
             {
                 MessageBox.Show("Cancelation failed");
@@ -585,6 +741,147 @@ namespace Hospital
                 RefreshNurseID_Delete();
                 RefreshNurseDataGrid();
             }
+        }
+
+        private void WrkHrs_button_Click(object sender, EventArgs e)
+        {
+
+            int result = controllerObj.SetDrWorkingHours(USERNAME, WrkStrtTime.Text, WrkEndTime.Text);
+            if (result == 0)
+            {
+                MessageBox.Show("Update failed");
+            }
+            else
+            {
+                MessageBox.Show("Update successful!");
+            }
+        }
+
+        private void SetApppointPrice_button_Click(object sender, EventArgs e)
+        {
+            int price;
+            bool isNumber = int.TryParse(SetAppointPrice_textBox.Text, out price);
+            if (!isNumber)
+            {
+                MessageBox.Show("Update failed, Price must be a number!");
+                return;
+            }
+            bool ispos = price > 0 ? true : false;
+            if (!ispos)
+            {
+                MessageBox.Show("Update failed, Price must be a positive number!");
+                return;
+            }
+            int result = controllerObj.SetAppointmentPrice(USERNAME, price);
+            if (result == 0)
+            {
+                MessageBox.Show("Update failed");
+            }
+            else
+            {
+                MessageBox.Show("Update successful!");
+            }
+        }
+
+        private void PatIDinMed_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshAppointTimeToday(TimeinMed_comboBox, PatIDinMed_comboBox);
+        }
+
+        private void TimeinMed_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddMed_button_Click(object sender, EventArgs e)
+        {
+            if (PatIDinMed_comboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("There are no patients for today");
+                return;
+            }
+            if (MedName_Add_textBox.Text == string.Empty)
+            {
+                MessageBox.Show("Please write a medicine name");
+                return;
+            }
+            int patid = int.Parse(PatIDinMed_comboBox.Text);
+            string time = TimeinMed_comboBox.Text;
+            string date = DateTime.Today.Date.ToString("yyyy-MM-dd");
+            int result = controllerObj.PrescribeMedicine(patid, CurrentDoctorID, date, time, MedName_Add_textBox.Text);
+            if (result == 0)
+            {
+                MessageBox.Show("Prescription failed");
+            }
+            else
+            {
+                MessageBox.Show("Prescription successful!");
+            }
+        }
+        //private void RefreshMedicinesForPatient()
+       
+
+        private void PatIDinTest_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void PrescribeTest_button_Click(object sender, EventArgs e)
+        {
+            if (PatIDinMed_comboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("There are no patients for today");
+                return;
+            }
+            if (PrescTestName_textBox.Text == string.Empty)
+            {
+                MessageBox.Show("Please write a medical test name");
+                return;
+            }
+            int patid = int.Parse(PatIDinMed_comboBox.Text);
+            string time = TimeinMed_comboBox.Text;
+            string date = DateTime.Today.Date.ToString("yyyy-MM-dd");
+            int result = controllerObj.PrescribeMedicalTest(patid, CurrentDoctorID, date, time, PrescTestName_textBox.Text);
+            if (result == 0)
+            {
+                MessageBox.Show("Prescription failed");
+            }
+            else
+            {
+                MessageBox.Show("Prescription successful!");
+            }
+        }
+
+        private void MakeTest_button_Click(object sender, EventArgs e)
+        {
+            if (PatID_Test_comboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a patient");
+                return;
+            }
+            if (TestName_comboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a medical test");
+                return;
+            }
+            int patid = int.Parse(PatID_Test_comboBox.Text);
+            string testName = TestName_comboBox.Text;
+            string date = Test_dateTimePicker.Text;
+            string TestRes = TestResult_richTextBox.Text.ToString();
+            int result = controllerObj.MakeMedicalTest(patid, CurrentDoctorID, testName, date, TestRes);
+            if (result == 0)
+            {
+                MessageBox.Show("Adding medical test failed");
+            }
+            else
+            {
+                MessageBox.Show("Adding medical test successful!");
+            }
+        }
+
+        private void PatID_Surg_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshSurgNames();
+            RefreshSurgOperate();
         }
     }
 }
