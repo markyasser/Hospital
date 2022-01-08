@@ -30,8 +30,16 @@ namespace Hospital
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            //this.CrystalReport11 = new Hospital.CrystalReport1();
+            this.MedTestCR1 = new Hospital.MedTestCR();
             this.dataSet11 = new Hospital.DataSet1();
+            this.crystalReportViewer2 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.MedicineCrystalReport1 = new Hospital.MedicineCrystalReport();
+            this.crystalReportViewer3 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.AppointCrystalReport1 = new Hospital.AppointCrystalReport();
+            this.crystalReportViewer4 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.crystalReportViewer5 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.OperateCrystalReport1 = new Hospital.OperateCrystalReport();
+            this.OperateCrystalReport2 = new Hospital.OperateCrystalReport();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,17 +48,59 @@ namespace Hospital
             this.crystalReportViewer1.ActiveViewIndex = 0;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Location = new System.Drawing.Point(12, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.CrystalReport11;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1254, 544);
+            this.crystalReportViewer1.ReportSource = this.MedTestCR1;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(514, 309);
             this.crystalReportViewer1.TabIndex = 0;
             // 
             // dataSet11
             // 
             this.dataSet11.DataSetName = "DataSet1";
             this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // crystalReportViewer2
+            // 
+            this.crystalReportViewer2.ActiveViewIndex = 0;
+            this.crystalReportViewer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer2.Location = new System.Drawing.Point(484, 0);
+            this.crystalReportViewer2.Name = "crystalReportViewer2";
+            this.crystalReportViewer2.ReportSource = this.MedicineCrystalReport1;
+            this.crystalReportViewer2.Size = new System.Drawing.Size(758, 316);
+            this.crystalReportViewer2.TabIndex = 1;
+            // 
+            // crystalReportViewer3
+            // 
+            this.crystalReportViewer3.ActiveViewIndex = 0;
+            this.crystalReportViewer3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer3.Location = new System.Drawing.Point(555, 322);
+            this.crystalReportViewer3.Name = "crystalReportViewer3";
+            this.crystalReportViewer3.ReportSource = this.AppointCrystalReport1;
+            this.crystalReportViewer3.Size = new System.Drawing.Size(571, 210);
+            this.crystalReportViewer3.TabIndex = 2;
+            // 
+            // crystalReportViewer4
+            // 
+            this.crystalReportViewer4.ActiveViewIndex = -1;
+            this.crystalReportViewer4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer4.Location = new System.Drawing.Point(24, 315);
+            this.crystalReportViewer4.Name = "crystalReportViewer4";
+            this.crystalReportViewer4.Size = new System.Drawing.Size(150, 150);
+            this.crystalReportViewer4.TabIndex = 3;
+            // 
+            // crystalReportViewer5
+            // 
+            this.crystalReportViewer5.ActiveViewIndex = 0;
+            this.crystalReportViewer5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer5.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer5.Location = new System.Drawing.Point(208, 315);
+            this.crystalReportViewer5.Name = "crystalReportViewer5";
+            this.crystalReportViewer5.ReportSource = this.OperateCrystalReport2;
+            this.crystalReportViewer5.Size = new System.Drawing.Size(771, 202);
+            this.crystalReportViewer5.TabIndex = 4;
             // 
             // ReportEarnings
             // 
@@ -64,6 +114,10 @@ namespace Hospital
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "ReportEarnings";
             this.Text = "ReportEarnings";
+            this.Load += new System.EventHandler(this.ReportEarnings_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -78,5 +132,7 @@ namespace Hospital
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer5;
         private MedicineCrystalReport MedicineCrystalReport1;
         private AppointCrystalReport AppointCrystalReport1;
+        private OperateCrystalReport OperateCrystalReport1;
+        private OperateCrystalReport OperateCrystalReport2;
     }
 }

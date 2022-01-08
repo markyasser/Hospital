@@ -21,6 +21,9 @@ namespace Hospital
         DataSet1TableAdapters.Buy_MedicineTableAdapter buymedAdapt;
 
         DataSet1TableAdapters.AppointmentTableAdapter appAdapt;
+
+        DataSet1TableAdapters.OperateTableAdapter oppAdapt;
+        DataSet1TableAdapters.SurgeryTableAdapter surgAdapt;
         public ReportEarnings(string Type,string date)
         {
             InitializeComponent();
@@ -31,6 +34,8 @@ namespace Hospital
             medicineAdapt = new DataSet1TableAdapters.MedicineTableAdapter();
             buymedAdapt = new DataSet1TableAdapters.Buy_MedicineTableAdapter();
             appAdapt = new DataSet1TableAdapters.AppointmentTableAdapter();
+            oppAdapt = new DataSet1TableAdapters.OperateTableAdapter();
+            surgAdapt = new DataSet1TableAdapters.SurgeryTableAdapter();
 
 
             makeTestdAdapt.Fill(dataSet11.Make_MedicalTest, date);
@@ -42,6 +47,10 @@ namespace Hospital
 
             medicineAdapt.Fill(dataSet11.Medicine);
             buymedAdapt.Fill(dataSet11.Buy_Medicine,date);
+
+
+            oppAdapt.Fill(dataSet11.Operate, date);
+            surgAdapt.Fill(dataSet11.Surgery);
 
             ChooseReport(Type);
             
@@ -59,8 +68,8 @@ namespace Hospital
             {
                 crystalReportViewer5.Dock = DockStyle.Fill;
                 crystalReportViewer5.BringToFront();
-                this.MedTestCR1.SetDataSource(dataSet11);
-                this.crystalReportViewer1.RefreshReport();
+                this.OperateCrystalReport2.SetDataSource(dataSet11);
+                this.crystalReportViewer5.RefreshReport();
             }
             else if (type == "Appointment")
             {

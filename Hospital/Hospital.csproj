@@ -119,6 +119,12 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="OperateCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OperateCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PrescMedReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,7 +200,7 @@
     <Compile Include="ReportEarnings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportEarnings.Designer.cs">
+    <Compile Include="ReportEarnings.designer.cs">
       <DependentUpon>ReportEarnings.cs</DependentUpon>
     </Compile>
     <Compile Include="SellOrAsk.cs">
@@ -255,6 +261,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nurse.resx">
       <DependentUpon>Nurse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperateCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OperateCrystalReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientMedTest_CrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
