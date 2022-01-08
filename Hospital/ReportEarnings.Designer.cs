@@ -30,7 +30,7 @@ namespace Hospital
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.CrystalReport11 = new Hospital.CrystalReport1();
+            //this.CrystalReport11 = new Hospital.CrystalReport1();
             this.dataSet11 = new Hospital.DataSet1();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.SuspendLayout();

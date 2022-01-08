@@ -593,6 +593,13 @@ namespace Hospital
             Parameters.Add("@gender", gender[0]);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
+        public int isPatientExist(int patient_id)
+        {
+            string StoredProcedureName = StoredProcedures.isPatientExist;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Pid", patient_id);
+            return (int)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+        }
         public DataTable SelectPatientsID_name()
         {
             String StoredProcedureName = StoredProcedures.SelectPatientsID_name;

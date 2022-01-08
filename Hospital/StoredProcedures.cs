@@ -132,7 +132,7 @@ namespace Hospital
         public static string sumSurgery = "sumSurgery";
         public static string ValidDateReserve = "ValidDateReserve";
         public static string VaidAppEdit = "VaidAppEdit";
-
+        public static string isPatientExist = "isPatientExist";
         //--------------------------------Pharmacist-------------------------------------
         public static string InsertMedicine = "InsertMedicine";
         public static string GetAllMedicine = "GetAllMedicine";

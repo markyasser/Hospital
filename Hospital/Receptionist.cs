@@ -16,7 +16,7 @@ namespace Hospital
         private int borderSize = 2;
         Controller c;
         Validation v;
-
+        private string USERNAME; //sent from login screen
         public Receptionist()
         {
             InitializeComponent();
@@ -116,6 +116,7 @@ namespace Hospital
             cancelApp_panel.Dock = DockStyle.Fill;
             reserve_panel.Dock = DockStyle.Fill;
             pay_panel.Dock = DockStyle.Fill; ;
+            settings_panel.Dock = DockStyle.Fill;
         }
         //hide the panels
         void HidePanels()
@@ -127,6 +128,7 @@ namespace Hospital
             cancelApp_panel.Visible = false;
             reserve_panel.Visible = false;
             pay_panel.Visible = false;
+            settings_panel.Visible = false;
         }
         //show panel when you click its button
         void ShowPanel(Panel menu)
@@ -218,7 +220,7 @@ namespace Hospital
                     {
                         MessageBox.Show("Enter Valid Data");
                     }
-                    else
+                    else if(c.isPatientExist(int.Parse(ID_textBox.Text))==0)
                     {
                         int result = c.InsertPatient(int.Parse(ID_textBox.Text), Fname_textBox.Text, char.Parse(minit_textBox.Text), Lname_textBox.Text, patient_dateTimePicker.Text, Address_textBox.Text, int.Parse(phno_textBox.Text), gender_comboBox.SelectedItem.ToString());
                         if (result == 0)
@@ -229,6 +231,10 @@ namespace Hospital
                         {
                             MessageBox.Show("The row is inserted successfully!");
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("The Patient Is Already In The System");
                     }
                 }
             }
@@ -802,6 +808,52 @@ namespace Hospital
             Pid_res_textBox.Text = PID_reserve_comboBox.SelectedValue.ToString();
         }
 
+        private void Change_Passwrod_Click(object sender, EventArgs e)
+        {
+            bool flag = true;
+            if (OldPass.Text == "")
+            {
+                label66.Text = "*This field cannot be empty";
+                flag = false;
+            }
+            else label66.Text = "";
+            if (NewPass.Text == "")
+            {
+                label67.Text = "*This field cannot be empty";
+                flag = false;
+            }
+            else label67.Text = "";
+            if (!flag) return;
+            object oldpassword = c.GetOldPassword(USERNAME);
 
+            if (oldpassword != null && OldPass.Text == oldpassword.ToString())
+            {
+                if (OldPass.Text == NewPass.Text)
+                {
+                    MessageBox.Show("The new password must be different");
+                    return;
+                }
+                if (NewPass.Text.Length < 4)
+                {
+                    MessageBox.Show("Password is very weak, insert more than 4 characters");
+                    return;
+                }
+                int result = c.ChangePassword(USERNAME, NewPass.Text);
+                if (result > 0)
+                {
+                    MessageBox.Show("Password changed successfully");
+                }
+                else
+                    MessageBox.Show("An error occured");
+            }
+            else
+                MessageBox.Show("Wrong old password");
+        }
+
+        private void Settings_iconButton_Click(object sender, EventArgs e)
+        {
+            ShowPanel(settings_panel);
+            //ActivateButton(Settings_iconButton);
+        }
     }
 }
