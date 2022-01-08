@@ -35,8 +35,8 @@
   <ItemGroup>
     <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net472\FontAwesome.Sharp.dll</HintPath>
@@ -118,6 +118,58 @@
     </Compile>
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrescMedReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrescMedReport.Designer.cs">
+      <DependentUpon>PrescMedReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrescMed_CrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrescMed_CrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PrescReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrescReport.Designer.cs">
+      <DependentUpon>PrescReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatMedTest_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatMedTest_Report.Designer.cs">
+      <DependentUpon>PatMedTest_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientMedTest_CrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatientMedTest_CrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Patient_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Patient_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrescCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrescCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Prescription_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Prescription_DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Receptionist.cs">
       <SubType>Form</SubType>
@@ -210,8 +262,29 @@
     <EmbeddedResource Include="Nurse.resx">
       <DependentUpon>Nurse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PatientMedTest_CrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PatientMedTest_CrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatMedTest_Report.resx">
+      <DependentUpon>PatMedTest_Report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pharmacist.resx">
       <DependentUpon>Pharmacist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrescCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrescCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrescMedReport.resx">
+      <DependentUpon>PrescMedReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrescMed_CrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrescMed_CrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrescReport.resx">
+      <DependentUpon>PrescReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -253,7 +326,28 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\AllEarnings.datasource" />
+    <None Include="Patient_DataSet.xsc">
+      <DependentUpon>Patient_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Patient_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Patient_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Patient_DataSet.xss">
+      <DependentUpon>Patient_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Prescription_DataSet.xsc">
+      <DependentUpon>Prescription_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Prescription_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Prescription_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Prescription_DataSet.xss">
+      <DependentUpon>Prescription_DataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

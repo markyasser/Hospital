@@ -178,6 +178,12 @@ namespace Hospital
 
         private void logoyt_btn_Click(object sender, EventArgs e)
         {
+            DialogResult choice = MessageBox.Show("Are you sure you want to Log out?", "Log out", MessageBoxButtons.YesNo);
+            if (choice == DialogResult.Yes)
+            {
+                c.TerminateConnection();
+                this.Close();
+            }
             HideSubmenus();
         }
 
@@ -234,6 +240,7 @@ namespace Hospital
 
         private void Receptionist_Load(object sender, EventArgs e)
         {
+            //-------------------------make-----------------------
             patient_dateTimePicker.CustomFormat = "yyyy-MM-dd";
             patient_dateTimePicker.Format = DateTimePickerFormat.Custom;
             appDate.CustomFormat = "yyyy-MM-dd";
@@ -244,30 +251,87 @@ namespace Hospital
             Pname_comboBox.DataSource = c.SelectPatientsID_name();
             Pname_comboBox.DisplayMember = "full_name";
             Pname_comboBox.ValueMember = "patient_id";
-            docName_comboBox.DataSource = c.SelectDocID_name();
-            docName_comboBox.DisplayMember = "full_name";
-            docName_comboBox.ValueMember = "Doctor_id";
+            make_Dept_name.DataSource = c.getDepartmentData();
+            make_Dept_name.DisplayMember = "specialization";
+            make_Dept_name.ValueMember = "Dnumber";
+            if (make_Dept_name.SelectedIndex.ToString() != "-1")
+            {
+                int x;
+                if (int.TryParse(make_Dept_name.SelectedValue.ToString(), out x))
+                {
+                    docName_comboBox.DataSource = c.SelectDocID_name(x);
+                    docName_comboBox.DisplayMember = "full_name";
+                    docName_comboBox.ValueMember = "Doctor_id";
+                }
+            }
+            //----------------edit app-----------------------------
             PnameEdit_combo.DataSource = c.SelectPatientsID_name();
             PnameEdit_combo.DisplayMember = "full_name";
             PnameEdit_combo.ValueMember = "patient_id";
-            DrNameEdit.DataSource = c.SelectDocID_name();
-            DrNameEdit.DisplayMember = "full_name";
-            DrNameEdit.ValueMember = "Doctor_id";
-            appDateEdit.Visible = false;
-            appTimeEdit.Visible = false;
-            label35.Visible = false;
-            label15.Visible = false;
+
+            edit_dept_name.DataSource = c.getDepartmentData();
+            edit_dept_name.DisplayMember = "specialization";
+            edit_dept_name.ValueMember = "Dnumber";
+            if (edit_dept_name.SelectedIndex.ToString() != "-1")
+            {
+                int x;
+                if (int.TryParse(make_Dept_name.SelectedValue.ToString(), out x))
+                {
+                    DrNameEdit.DataSource = c.SelectDocID_name(x);
+                    DrNameEdit.DisplayMember = "full_name";
+                    DrNameEdit.ValueMember = "Doctor_id";
+                }
+            }
+
+            appDateEdit.Enabled = false;
+            appTimeEdit.Enabled = false;
+
             appDateEdit.CustomFormat = "yyyy-MM-dd";
             appDateEdit.Format = DateTimePickerFormat.Custom;
             appDateEdit.MinDate = DateTime.Today;
             appTimeEdit.CustomFormat = "hh:mm";
             appTimeEdit.Format = DateTimePickerFormat.Custom;
+            
+            //---------delete app----------
             PnameDelete.DataSource = c.SelectPatientsID_name();
             PnameDelete.DisplayMember = "full_name";
             PnameDelete.ValueMember = "patient_id";
-            DrnameDelete.DataSource = c.SelectDocID_name();
-            DrnameDelete.DisplayMember = "full_name";
-            DrnameDelete.ValueMember = "Doctor_id";
+            delete_dept_name.DataSource = c.getDepartmentData();
+            delete_dept_name.DisplayMember = "specialization";
+            delete_dept_name.ValueMember = "Dnumber";
+            if (delete_dept_name.SelectedIndex.ToString() != "-1")
+            {
+                int x;
+                if (int.TryParse(delete_dept_name.SelectedValue.ToString(), out x))
+                {
+                    DrnameDelete.DataSource = c.SelectDocID_name(x);
+                    DrnameDelete.DisplayMember = "full_name";
+                    DrnameDelete.ValueMember = "Doctor_id";
+                }
+            }
+            if (PnameDelete.SelectedIndex.ToString()!="-1"&&DrnameDelete.SelectedIndex.ToString()!="-1")
+            {
+                int x,y;
+                if (int.TryParse(PnameDelete.SelectedValue.ToString(), out x)&& int.TryParse(DrnameDelete.SelectedValue.ToString(), out y))
+                {
+                    appDateDelete.DataSource = c.AppDate(y, x);
+                    appDateDelete.DisplayMember = "date";
+                    appDateDelete.ValueMember = "date";
+                }
+            }
+            if (PnameEdit_combo.SelectedIndex.ToString() != "-1" && DrNameEdit.SelectedIndex.ToString() != "-1" && oldAppDate.SelectedIndex.ToString() != "-1")
+            {
+                int x, y;
+                if (int.TryParse(PnameEdit_combo.SelectedValue.ToString(), out x) && int.TryParse(DrNameEdit.SelectedValue.ToString(), out y))
+                {
+                    oldAppTime.DataSource = c.AppTime(y, x, oldAppDate.SelectedValue.ToString());
+                    oldAppTime.DisplayMember = "Time";
+                    oldAppTime.ValueMember = "Time";
+                    //anta bt3ml edit le 7agat maogoda so use combox we selec it then change it
+
+                }
+            }
+            //---------reserve 
             Resrve_date.CustomFormat = "yyyy-MM-dd";
             Resrve_date.Format = DateTimePickerFormat.Custom;
             Resrve_date.MinDate = DateTime.Today;
@@ -277,35 +341,59 @@ namespace Hospital
             deptname_reserve_comboBox.DataSource = c.getDepartmentData();
             deptname_reserve_comboBox.DisplayMember = "specialization";
             deptname_reserve_comboBox.ValueMember = "Dnumber";
-            object ob = deptname_reserve_comboBox.SelectedValue;
-            if (ob!=null)
+            if (deptname_reserve_comboBox.SelectedIndex.ToString() != "-1")
             {
-                rooms_reserve_comboBox.DataSource = c.Avail_Rooms(int.Parse(ob.ToString()), Resrve_date.Text);
+                rooms_reserve_comboBox.DataSource = c.Avail_Rooms(int.Parse(deptname_reserve_comboBox.SelectedValue.ToString()), Resrve_date.Text);
+                rooms_reserve_comboBox.DisplayMember = "RoomNumber";
+                rooms_reserve_comboBox.ValueMember = "RoomNumber";
             }
-            rooms_reserve_comboBox.DisplayMember = "RoomNumber";
-            rooms_reserve_comboBox.ValueMember = "RoomNumber";
+
+            //Bill
             pay_dateTimePicker.CustomFormat = "yyyy-MM-dd";
             pay_dateTimePicker.Format = DateTimePickerFormat.Custom;
             Pid_bill_combo.DataSource = c.SelectPatientsID_name();
-            Pid_bill_combo.DisplayMember = "patient_id";
+            Pid_bill_combo.DisplayMember = "full_name";
             Pid_bill_combo.ValueMember = "patient_id";
+            Pid_bill.Text = "Please Choose a patient";
         }
 
         private void AddApp_button_Click(object sender, EventArgs e)
         {
-            //al mafrod date ali yzhr mn delw2ty le al future -->bemoi 
-            if (v.IsPast(appDate.Value))
+            try
             {
-                MessageBox.Show("Choose a valid date");
-            }
-            //if (appTime.ToString())
-            {
-                if (c.appReserved(int.Parse(docName_comboBox.SelectedValue.ToString()), appDate.ToString(), appTime.ToString()) == 0)
+                //if (v.IsPast(appDate.Value))
+                //{
+                //    MessageBox.Show("Choose a valid date");
+                //}
+                if (docName_comboBox.SelectedIndex.ToString() == "-1" || Pname_comboBox.SelectedIndex.ToString() == "-1" || make_Dept_name.SelectedIndex.ToString() == "-1")
                 {
-                    //insert the app
-
-
+                    MessageBox.Show("Please Enter All Required Data");
                 }
+                else
+                {
+                    if (c.appReserved(int.Parse(docName_comboBox.SelectedValue.ToString()), appDate.Text, appTime.Text) != 0)
+                    {
+                        MessageBox.Show("This Appointment is already reserved");//probleeeem ??
+                    }
+                    else
+                    {
+                        //insert the app
+                        int result = c.AddAppointment(int.Parse(Pname_comboBox.SelectedValue.ToString()), int.Parse(docName_comboBox.SelectedValue.ToString()), appDate.Text, appTime.Text);
+                        if (result == 0)
+                        {
+                            MessageBox.Show("Reservation Failled");
+                        }
+                        else
+                        {
+                            MessageBox.Show("The Appointment is made successfully");
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -313,39 +401,124 @@ namespace Hospital
         {
             try
             {
-                if (docName_comboBox.SelectedIndex.ToString() != "-1")
+                int x;
+                if (docName_comboBox.SelectedIndex.ToString() == "-1")
                 {
-                    int x = int.Parse(docName_comboBox.SelectedValue.ToString());
+                    return;
+                }
+                if (int.TryParse(docName_comboBox.SelectedValue.ToString(), out x))
+                {
+
                     DataTable dt = c.SelectDoc_srt_end(x);
-                    srtTime_txt.Text = dt.Rows[0].Field<string>("Start_Time");
-                    //srtTime_txt.Text = dt.Rows[0][0].ToString();
-                    //endTime_txt.Text = dt.Rows[0][1].ToString();
-                    endTime_txt.Text = dt.Rows[1].Field<string>("Finish_Time");
+                    //srtTime_txt.Text = dt.Rows[0].Field<string>("Start_Time");
+                    srtTime_txt.Text = dt.Rows[0][0].ToString();
+                    endTime_txt.Text = dt.Rows[0][1].ToString();
+                    //endTime_txt.Text = dt.Rows[1].Field<string>("Finish_Time");
                     appTime.MinDate = DateTime.Parse(srtTime_txt.Text);
                     appTime.MaxDate = DateTime.Parse(endTime_txt.Text);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("doc make");
             }
         }
 
         private void PnameEdit_combo_SelectedValueChanged(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    if (docName_comboBox.SelectedIndex.ToString() != "-1")
+            //    {
+            //        //srtTime_txt.Text = docName_comboBox.SelectedValue.ToString();
+            //        //DataTable dt = c.SelectDoc_srt_end(int.Parse(docName_comboBox.SelectedValue.ToString()));
+            //        //srtTime_txt.Text = dt.Rows[0].Field<string>("Start_Time");
+            //        //srtTime.Text = dt.Rows[0][0];
+            //        //endTime.Text = dt.Rows[0][1];
+            //        //endTime_txt.Text = dt.Rows[1].Field<string>("Finish_Time");
+            //        //appTime.MinDate = DateTime.Parse(srtTime_txt.Text);
+            //        //appTime.MaxDate = DateTime.Parse(endTime_txt.Text);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+        }
+
+        private void EditType_combo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (EditType_combo.SelectedItem.ToString() == "Edit Appointment Date")
+            {
+                appDateEdit.Enabled = true;
+                
+            }
+            else if (EditType_combo.SelectedItem.ToString() == "Edit Appointment Time")
+            {
+                appTimeEdit.Enabled = true;
+                
+            }
+            EditType_combo.Enabled = false;
+        }
+
+        private void editApp_btn_Click(object sender, EventArgs e)
+        {
             try
             {
-                if (docName_comboBox.SelectedIndex.ToString() != "-1")
+                if (EditType_combo.SelectedIndex.ToString()!="-1"|| edit_dept_name.SelectedIndex.ToString()!="-1"|| DrNameEdit.SelectedIndex.ToString()!="-1"|| PnameEdit_combo.SelectedIndex.ToString()!="-1")
                 {
-                    //srtTime_txt.Text = docName_comboBox.SelectedValue.ToString();
-                    //DataTable dt = c.SelectDoc_srt_end(int.Parse(docName_comboBox.SelectedValue.ToString()));
-                    //srtTime_txt.Text = dt.Rows[0].Field<string>("Start_Time");
-                    //srtTime.Text = dt.Rows[0][0];
-                    //endTime.Text = dt.Rows[0][1];
-                    //endTime_txt.Text = dt.Rows[1].Field<string>("Finish_Time");
-                    //appTime.MinDate = DateTime.Parse(srtTime_txt.Text);
-                    //appTime.MaxDate = DateTime.Parse(endTime_txt.Text);
+                    if (EditType_combo.SelectedItem.ToString() == "Edit Appointment Date"&&oldAppDate.SelectedIndex.ToString()!="-1")
+                    {
+                        if (c.VaidAppEdit(appDateEdit.Text, oldAppTime.SelectedValue.ToString()) == 0)
+                        {
+                            int result = c.updateApp(int.Parse(DrNameEdit.SelectedValue.ToString()), int.Parse(PnameEdit_combo.SelectedValue.ToString()), oldAppTime.SelectedValue.ToString(), oldAppDate.SelectedValue.ToString(), appDateEdit.Text);
+                            if (result == 0)
+                            {
+                                MessageBox.Show("Upadate Failed");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Update Successfully");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("This Appointment is reserved");
+                        }
+                    }
+                    else if (EditType_combo.SelectedItem.ToString() == "Edit Appointment Time" && oldAppDate.SelectedIndex.ToString() != "-1")
+                    {
+                        int x, y;
+                        if (int.TryParse(PnameEdit_combo.SelectedValue.ToString(), out x) && int.TryParse(DrNameEdit.SelectedValue.ToString(), out y))
+                        {
+                            if (c.VaidAppEdit(oldAppDate.SelectedValue.ToString(), appTimeEdit.Text) == 0)
+                            {
+                                int result = c.updateAppTime(y, x, oldAppDate.SelectedValue.ToString(), oldAppTime.SelectedValue.ToString(), appTimeEdit.Text);
+                                if (result == 0)
+                                {
+                                    MessageBox.Show("Upadate Failed");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Update Successfully");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("This Appointment is reserved");
+                            }
+                        }
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Please Enter All The Required Data");
+                }
+                appDateEdit.Enabled = false;
+                appTimeEdit.Enabled = false;
+           
+                EditType_combo.Enabled = true;
+              
             }
             catch (Exception ex)
             {
@@ -353,67 +526,37 @@ namespace Hospital
             }
         }
 
-        private void EditType_combo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (EditType_combo.SelectedItem.ToString() == "Edit Appointment Date")
-            {
-                appDateEdit.Visible = true;
-                label35.Visible = true;
-                appDateEdit.Value = DateTime.Parse(c.AppDate(int.Parse(DrNameEdit.SelectedValue.ToString()), int.Parse(PnameEdit_combo.SelectedValue.ToString())));
-            }
-            else if (EditType_combo.SelectedItem.ToString() == "Edit Appointment Time")
-            {
-                appTimeEdit.Visible = true;
-                label15.Visible = true;
-            }
-            else if (EditType_combo.SelectedItem.ToString() == "Edit Both")
-            {
-                appDateEdit.Visible = true;
-                appTimeEdit.Visible = true;
-                label35.Visible = true;
-                label15.Visible = true;
-            }
-            EditType_combo.Enabled = false;
-        }
-
-        private void editApp_btn_Click(object sender, EventArgs e)
-        {//edit button not complete
-
-            appDateEdit.Visible = false;
-            appTimeEdit.Visible = false;
-            label35.Visible = false;
-            label15.Visible = false;
-            EditType_combo.Enabled = true;
-        }
-
         private void cancel_btn_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    int result = c.DeleteApp(int.Parse(DrnameDelete.SelectedValue.ToString()), int.Parse(PnameDelete.SelectedValue.ToString()), appDateDelete.ToString());
-            //    if (result==0)
-            //    {
-            //        MessageBox.Show("No Instance of This Appointment");
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("The Appointment deleted successfully");
-            //    }
-            //}
-            //catch(Exception ex)
-            //{
-
-            //}
+            try
+            {
+                int result = c.DeleteApp(int.Parse(DrnameDelete.SelectedValue.ToString()), int.Parse(PnameDelete.SelectedValue.ToString()), appDateDelete.SelectedValue.ToString(),appTimeDelete.SelectedValue.ToString());
+                if (result == 0)
+                {
+                    MessageBox.Show("Deletion Failed");
+                }
+                else
+                {
+                    MessageBox.Show("The Appointment deleted successfully");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
-
-        private void PnameDelete_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //appDateDelete.DataSource = c.AppDate();//al function de 8lt lazm 
-        }
-
         private void DrnameDelete_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //appDateDelete.DataSource = c.AppDate();
+            if (PnameDelete.SelectedIndex.ToString() != "-1" && DrnameDelete.SelectedIndex.ToString() != "-1")
+            {
+                int x, y;
+                if (int.TryParse(PnameDelete.SelectedValue.ToString(), out x) && int.TryParse(DrnameDelete.SelectedValue.ToString(), out y))
+                {
+                    appDateDelete.DataSource = c.AppDate(y, x);
+                    appDateDelete.DisplayMember = "date";
+                    appDateDelete.ValueMember = "date";
+                }
+            }
         }
 
         private void deptname_reserve_comboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -437,15 +580,19 @@ namespace Hospital
                 if (PID_reserve_comboBox.SelectedIndex.ToString() == "-1" || rooms_reserve_comboBox.SelectedIndex.ToString() == "-1")
                 {
                     MessageBox.Show("Please Enter All the Required Data for Reservation");
+                    return;
                 }
-                int result = c.ReserveRoom(int.Parse(PID_reserve_comboBox.SelectedValue.ToString()), int.Parse(rooms_reserve_comboBox.SelectedValue.ToString()), Resrve_date.Text, (int)Nonights.Value);
-                if (result == 0)
+                if (c.ValidDateReserve(Resrve_date.Text, (int)Nonights.Value) == 0)
                 {
-                    MessageBox.Show("Reservation Failled");
-                }
-                else
-                {
-                    MessageBox.Show("The Room resrved successfully");
+                    int result = c.ReserveRoom(int.Parse(PID_reserve_comboBox.SelectedValue.ToString()), int.Parse(rooms_reserve_comboBox.SelectedValue.ToString()), Resrve_date.Text, (int)Nonights.Value);
+                    if (result == 0)
+                    {
+                        MessageBox.Show("Reservation Failled");
+                    }
+                    else
+                    {
+                        MessageBox.Show("The Room resrved successfully");
+                    }
                 }
             }
             catch (Exception ex)
@@ -463,9 +610,198 @@ namespace Hospital
             rooms_reserve_comboBox.ValueMember = "RoomNumber";
         }
 
+        private void make_Dept_name_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int x;
+                if (make_Dept_name.SelectedIndex.ToString() != "-1")
+                {
+                    if (int.TryParse(make_Dept_name.SelectedValue.ToString(), out x))
+                    {
+                        docName_comboBox.DataSource = c.SelectDocID_name(x);
+                        docName_comboBox.DisplayMember = "full_name";
+                        docName_comboBox.ValueMember = "Doctor_id";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("make dept name");
+            }
+        }
+
+        private void DrNameEdit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int x;
+                if (DrNameEdit.SelectedIndex.ToString() == "-1")
+                {
+                    return;
+                }
+                if (int.TryParse(DrNameEdit.SelectedValue.ToString(), out x))
+                {
+
+                    DataTable dt = c.SelectDoc_srt_end(x);
+                    //srtTime_txt.Text = dt.Rows[0].Field<string>("Start_Time");
+                    edit_start_Time.Text = dt.Rows[0][0].ToString();
+                    edit_end_Time.Text = dt.Rows[0][1].ToString();
+                    //endTime_txt.Text = dt.Rows[1].Field<string>("Finish_Time");
+                    appTimeEdit.MinDate = DateTime.Parse(edit_start_Time.Text);
+                    appTimeEdit.MaxDate = DateTime.Parse(edit_end_Time.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void PnameEdit_combo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int x, y;
+                if (PnameEdit_combo.SelectedIndex.ToString()!="-1" && DrNameEdit.SelectedIndex.ToString()!="-1")
+                {
+                    if (int.TryParse(PnameEdit_combo.SelectedValue.ToString(),out x)&&int.TryParse(DrNameEdit.SelectedValue.ToString(),out y))
+                    {
+                        oldAppDate.DataSource = c.AppDate(y, x);
+                        //display and value members
+                        oldAppDate.DisplayMember = "date";
+                        oldAppDate.ValueMember = "date";
+                        Pid_edit_textBox.Text = x.ToString();
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void oldAppDate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+               
+                if (PnameEdit_combo.SelectedIndex.ToString() != "-1" && DrNameEdit.SelectedIndex.ToString() != "-1"&&oldAppDate.SelectedIndex.ToString()!="-1")
+                {
+                    int x, y;
+                    if (int.TryParse(PnameEdit_combo.SelectedValue.ToString(), out x) && int.TryParse(DrNameEdit.SelectedValue.ToString(), out y))
+                    {
+                        oldAppTime.DataSource= c.AppTime(y, x, oldAppDate.SelectedValue.ToString());
+                        oldAppTime.DisplayMember = "Time";
+                        oldAppTime.ValueMember = "Time";
+                        //anta bt3ml edit le 7agat maogoda so use combox we selec it then change it
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void delete_dept_name_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (delete_dept_name.SelectedIndex.ToString() != "-1")
+            {
+                int x;
+                if (int.TryParse(delete_dept_name.SelectedValue.ToString(), out x))
+                {
+                    DrnameDelete.DataSource = c.SelectDocID_name(x);
+                    DrnameDelete.DisplayMember = "full_name";
+                    DrnameDelete.ValueMember = "Doctor_id";
+                }
+            }
+        }
+
+        private void appDateDelete_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (appDateDelete.SelectedIndex.ToString() != "-1")
+            {
+                int x, y;
+                if (int.TryParse(PnameDelete.SelectedValue.ToString(), out x) && int.TryParse(DrnameDelete.SelectedValue.ToString(), out y))
+                {
+                    appTimeDelete.DataSource = c.AppTime(y, x, appDateDelete.SelectedValue.ToString());
+                    appTimeDelete.DisplayMember = "Time";
+                    appTimeDelete.ValueMember = "Time";
+                }
+
+            }
+        }
+
+        private void Pid_bill_combo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Pid_bill.Text = Pid_bill_combo.SelectedValue.ToString();
+        }
+
+        private void bill_button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int x;
+                string d = pay_dateTimePicker.Text;//Room
+                if (Pid_bill_combo.SelectedIndex.ToString() != "-1" && BillType.SelectedIndex.ToString()!="-1"&&int.TryParse(Pid_bill_combo.SelectedValue.ToString(),out x))
+                {
+                    if (BillType.SelectedItem.ToString()== "Medical Test")
+                    {
+                        bill_dataGridView.DataSource = c.MedicalTestBill(x, d);
+                        bill_dataGridView.Refresh();
+                    }
+                    else if(BillType.SelectedItem.ToString() == "Medicine")
+                    {
+                        bill_dataGridView.DataSource = c.MedicineBill(x, d);
+                        bill_dataGridView.Refresh();
+                    }
+                    else if(BillType.SelectedItem.ToString() == "Surgery")
+                    {
+                        bill_dataGridView.DataSource = c.SurgeryBill(x, d);
+                        bill_dataGridView.Refresh();
+                    }
+                    else
+                    {
+                        bill_dataGridView.DataSource = c.ReserveBill(x, d);
+                        bill_dataGridView.Refresh();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void totBill_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Pid_bill_combo.SelectedIndex.ToString()!="-1")
+                {
+                    int x = int.Parse( Pid_bill_combo.SelectedValue.ToString());
+                    string d = pay_dateTimePicker.Text;
+                    //int s1 = Convert.ToInt32(c.sumSurgery(x, d));
+                    //int s2  = Convert.ToInt32(c.MedicalTestSum(x, d));
+                    //int s3 = Convert.ToInt32(c.MedicineSum(x, d));
+                    //int s4 = Convert.ToInt32(c.ReserveSum(x, d));
+                    //int sum = s1+s2+s3+s4;
+                    //price_pay_textBox.Text = sum.ToString(); bygib exception ???????????
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void PID_reserve_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Pid_res_textBox.Text = PID_reserve_comboBox.SelectedValue.ToString();
         }
+
+
     }
 }

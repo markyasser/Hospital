@@ -119,6 +119,20 @@ namespace Hospital
         public static string getDepartmentData = "getDepartmentData";
         public static string Avail_Rooms = "Avail_Rooms";
         public static string ReserveRoom = "ReserveRoom";
+        public static string AddAppointment = "AddAppointment";
+        public static string updateApp = "updateApp"; //for date
+        public static string updateAppTime = "updateAppTime";
+        public static string MedicalTestBill = "MedicalTestBill";
+        public static string MedicalTestSum = "MedicalTestSum";
+        public static string MedicineBill = "MedicineBill";
+        public static string MedicineSum = "MedicineSum";
+        public static string ReserveBill = "ReserveBill";
+        public static string ReserveSum = "ReserveSum";
+        public static string SurgeryBill = "SurgeryBill";
+        public static string sumSurgery = "sumSurgery";
+        public static string ValidDateReserve = "ValidDateReserve";
+        public static string VaidAppEdit = "VaidAppEdit";
+
         //--------------------------------Pharmacist-------------------------------------
         public static string InsertMedicine = "InsertMedicine";
         public static string GetAllMedicine = "GetAllMedicine";
