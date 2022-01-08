@@ -43,10 +43,10 @@ namespace Hospital
             OpenChildForm(new AddMedicine(ControllerObj));
         }
 
-        private void SetPrice_btn_Click(object sender, EventArgs e)
+        private void EditMedicineInfo_btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.White);
-            OpenChildForm(new SetPrice(ControllerObj));
+            OpenChildForm(new EditMedicineInfo(ControllerObj));
         }
 
         private void Sell_btn_Click(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace Hospital
                 CurrentBtn.ImageAlign = ContentAlignment.MiddleLeft;
                 if (CurrentBtn.Text == "Add medicine")
                     CurrentBtn.IconColor = Color.FromArgb(186, 13, 13);
-                else if (CurrentBtn.Text == "Set Price")
+                else if (CurrentBtn.Text == "Edit Medicine Info")
                     CurrentBtn.IconColor = Color.FromArgb(10, 204, 23);
                 else
                     CurrentBtn.IconColor = Color.Black;

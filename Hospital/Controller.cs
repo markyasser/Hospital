@@ -843,6 +843,12 @@ namespace Hospital
             return dbMan.ExecuteReader(StoredProcedureName, null);
         }
 
+        public DataTable GetAllNeededMedicine()
+        {
+            string StoredProcedureName = StoredProcedures.GetAllNeededMedicine;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+
         public object GetMedPrice (string MedicineName)
         {
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
@@ -851,14 +857,24 @@ namespace Hospital
             return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
         }
 
-        public int SetMedPrice(string MedicineName,int UpdatedPrice)
+        public int SetMedPrice(string MedicineName, int UpdatedPrice)
         {
             string StoredProcedureName = StoredProcedures.SetMedPrice;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
-            Parameters.Add ("@MedicineName", MedicineName);
+            Parameters.Add("@MedicineName", MedicineName);
             Parameters.Add("@MedicinePrice", UpdatedPrice);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
+
+        public int InsertMedicineQuantity(string MedName, int Amount)
+        {
+            string StoredProcedureName = StoredProcedures.InsertMedicineQuantity;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@MedName", MedName);
+            Parameters.Add("@Amount", Amount);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+
         public int GetMedID(string MedicineName)
         {
             string StoredProcedureName = StoredProcedures.GetMedID;

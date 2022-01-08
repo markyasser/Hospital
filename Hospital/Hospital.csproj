@@ -215,11 +215,11 @@
     <Compile Include="Serve.Designer.cs">
       <DependentUpon>Serve.cs</DependentUpon>
     </Compile>
-    <Compile Include="SetPrice.cs">
+    <Compile Include="EditMedicineInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SetPrice.Designer.cs">
-      <DependentUpon>SetPrice.cs</DependentUpon>
+    <Compile Include="EditMedicineInfo.Designer.cs">
+      <DependentUpon>EditMedicineInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Statistics.cs">
       <SubType>Form</SubType>
@@ -312,8 +312,8 @@
     <EmbeddedResource Include="Serve.resx">
       <DependentUpon>Serve.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SetPrice.resx">
-      <DependentUpon>SetPrice.cs</DependentUpon>
+    <EmbeddedResource Include="EditMedicineInfo.resx">
+      <DependentUpon>EditMedicineInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Statistics.resx">
       <DependentUpon>Statistics.cs</DependentUpon>
