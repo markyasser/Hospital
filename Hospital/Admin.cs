@@ -723,7 +723,7 @@ namespace Hospital
             if (!flag) return;
             object oldpassword = controllerObj.GetOldPassword(USERNAME);
             
-            if (oldpassword !=null && OldPass.Text == oldpassword.ToString())
+            if (oldpassword !=null && Validation.hashpassword(OldPass.Text) == oldpassword.ToString())
             {
                 if (OldPass.Text == NewPass.Text)
                 {

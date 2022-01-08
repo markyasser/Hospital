@@ -420,13 +420,18 @@ namespace Hospital
                     srtTime_txt.Text = dt.Rows[0][0].ToString();
                     endTime_txt.Text = dt.Rows[0][1].ToString();
                     //endTime_txt.Text = dt.Rows[1].Field<string>("Finish_Time");
-                    appTime.MinDate = DateTime.Parse(srtTime_txt.Text);
+
+
+                    appTime.MinDate = DateTimePicker.MinimumDateTime;
+
                     appTime.MaxDate = DateTime.Parse(endTime_txt.Text);
+                    appTime.MinDate = DateTime.Parse(srtTime_txt.Text);
+                    
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("doc make");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -751,9 +756,14 @@ namespace Hospital
             {
                 int x;
                 string d = pay_dateTimePicker.Text;//Room
-                if (Pid_bill_combo.SelectedIndex.ToString() != "-1" && BillType.SelectedIndex.ToString()!="-1"&&int.TryParse(Pid_bill_combo.SelectedValue.ToString(),out x))
+                if (Pid_bill_combo.SelectedIndex.ToString() != "-1" && BillType.SelectedIndex.ToString()!="-1" && int.TryParse(Pid_bill_combo.SelectedValue.ToString(),out x))
                 {
-                    if (BillType.SelectedItem.ToString()== "Medical Test")
+                    if (BillType.SelectedItem.ToString() == "Appointment")
+                    {
+                        bill_dataGridView.DataSource = c.appBill(x, d);
+                        bill_dataGridView.Refresh();
+                    }
+                    else if (BillType.SelectedItem.ToString()== "Medical Test")
                     {
                         bill_dataGridView.DataSource = c.MedicalTestBill(x, d);
                         bill_dataGridView.Refresh();
@@ -826,7 +836,7 @@ namespace Hospital
             if (!flag) return;
             object oldpassword = c.GetOldPassword(USERNAME);
 
-            if (oldpassword != null && OldPass.Text == oldpassword.ToString())
+            if (oldpassword != null && Validation.hashpassword(OldPass.Text) == oldpassword.ToString())
             {
                 if (OldPass.Text == NewPass.Text)
                 {
