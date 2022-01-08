@@ -41,6 +41,21 @@ namespace Hospital
             Open_Close_SideMenu();
         }
         #region SelectPatientPanel
+        private void MedTestReport_button_Click(object sender, EventArgs e)
+        {
+            if (SelectPatID_comboBox.SelectedIndex == -1)
+            {
+                return;
+            }
+            int id;
+            bool valid = int.TryParse(SelectPatID_comboBox.SelectedValue.ToString(), out id);
+            if (!valid)
+            {
+                return;
+            }
+            PatMedTest_Report report = new PatMedTest_Report(id ,CurrentDoctorID);
+            report.Show();
+        }
         //get patients who have dealt with the current doctor before either in appointment,
         //surgery or medical test
         void RefreshPatientsOfDoctor(ComboBox output)
@@ -206,6 +221,38 @@ namespace Hospital
             {
                 MessageBox.Show("Prescription successful!");
             }
+        }
+
+        private void TestReport_button_Click(object sender, EventArgs e)
+        {
+            if (PatIDinMed_comboBox.SelectedIndex == -1)
+            {
+                return;
+            }
+            int id;
+            bool valid = int.TryParse(PatIDinMed_comboBox.SelectedValue.ToString(), out id);
+            if (!valid)
+            {
+                return;
+            }
+            PrescReport report = new PrescReport(id, CurrentDoctorID, DateTime.Now.Date.ToString("yyyy-MM-dd"));
+            report.Show();
+        }
+
+        private void MedReport_button_Click(object sender, EventArgs e)
+        {
+            if (PatIDinMed_comboBox.SelectedIndex == -1)
+            {
+                return;
+            }
+            int id;
+            bool valid = int.TryParse(PatIDinMed_comboBox.SelectedValue.ToString(), out id);
+            if (!valid)
+            {
+                return;
+            }
+            PrescMedReport report = new PrescMedReport(id, CurrentDoctorID, DateTime.Now.Date.ToString("yyyy-MM-dd"));
+            report.Show();
         }
         #endregion
 
@@ -900,6 +947,6 @@ namespace Hospital
         private void PatIDinTest_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
-        
+
     }
 }
