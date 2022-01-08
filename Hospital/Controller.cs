@@ -841,7 +841,7 @@ namespace Hospital
             string StoredProcedureName = StoredProcedures.GetMedID;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@MedicineName", MedicineName);
-            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+            return int.Parse (dbMan.ExecuteScalar(StoredProcedureName, Parameters).ToString());
         }
         public DataTable GetAllMedicalTest ()
         {

@@ -932,8 +932,8 @@ namespace Hospital
         }
         private void Show_Statistics_btn_Click(object sender, EventArgs e)
         {
-            //EarningStatistics f = new EarningStatistics();
-            // f.Show();
+            ReportEarnings f = new ReportEarnings(dateTimePicker1.Text);
+            f.Show();
         }
         private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
