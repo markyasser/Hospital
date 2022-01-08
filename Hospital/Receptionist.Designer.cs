@@ -64,56 +64,71 @@ namespace Hospital
             this.label1 = new System.Windows.Forms.Label();
             this.makeApp_panel = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
-            this.newappID_textBox = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.AddApp_button = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.Pname_comboBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.appDate = new System.Windows.Forms.DateTimePicker();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.endTime_txt = new System.Windows.Forms.TextBox();
+            this.srtTime_txt = new System.Windows.Forms.TextBox();
+            this.appTime = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
+            this.AddApp_button = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.docName_comboBox = new System.Windows.Forms.ComboBox();
             this.editApp_panel = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.editApp_btn = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.PnameEdit_combo = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.appDateEdit = new System.Windows.Forms.DateTimePicker();
+            this.appTimeEdit = new System.Windows.Forms.DateTimePicker();
+            this.label35 = new System.Windows.Forms.Label();
+            this.DrNameEdit = new System.Windows.Forms.ComboBox();
+            this.editApp_btn = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.EditType_combo = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.pay_panel = new System.Windows.Forms.Panel();
-            this.pay_button = new System.Windows.Forms.Button();
-            this.price_pay_textBox = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.pay_dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.label31 = new System.Windows.Forms.Label();
-            this.billType_pay_comboBox = new System.Windows.Forms.ComboBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.patientID_pay_textBox = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.billID_pay_textBox = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             this.reserve_panel = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.Resrve_date = new System.Windows.Forms.DateTimePicker();
+            this.Nonights = new System.Windows.Forms.NumericUpDown();
+            this.resrve_btn = new System.Windows.Forms.Button();
             this.PID_reserve_comboBox = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.noNights_reserve_textBox = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.rooms_reserve_comboBox = new System.Windows.Forms.ComboBox();
             this.deptname_reserve_comboBox = new System.Windows.Forms.ComboBox();
+            this.pay_panel = new System.Windows.Forms.Panel();
+            this.BillType = new System.Windows.Forms.ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.bill_dataGridView = new System.Windows.Forms.DataGridView();
+            this.Pid_bill_combo = new System.Windows.Forms.ComboBox();
+            this.bill_button = new System.Windows.Forms.Button();
+            this.price_pay_textBox = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.pay_dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.cancelApp_panel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.cancelID_comboBox = new System.Windows.Forms.ComboBox();
+            this.appDateDelete = new System.Windows.Forms.ComboBox();
+            this.PnameDelete = new System.Windows.Forms.ComboBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.DrnameDelete = new System.Windows.Forms.ComboBox();
+            this.cancel_btn = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.App_panel.SuspendLayout();
             this.Logo_panel.SuspendLayout();
@@ -121,8 +136,10 @@ namespace Hospital
             this.makeApp_panel.SuspendLayout();
             this.editApp_panel.SuspendLayout();
             this.panelDesktop.SuspendLayout();
-            this.pay_panel.SuspendLayout();
             this.reserve_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Nonights)).BeginInit();
+            this.pay_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bill_dataGridView)).BeginInit();
             this.cancelApp_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,8 +156,9 @@ namespace Hospital
             this.panelMenu.Controls.Add(this.logoyt_btn);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(329, 712);
+            this.panelMenu.Size = new System.Drawing.Size(247, 586);
             this.panelMenu.TabIndex = 0;
             // 
             // Pay_btn
@@ -155,10 +173,11 @@ namespace Hospital
             this.Pay_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Pay_btn.IconSize = 35;
             this.Pay_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Pay_btn.Location = new System.Drawing.Point(0, 474);
+            this.Pay_btn.Location = new System.Drawing.Point(0, 384);
+            this.Pay_btn.Margin = new System.Windows.Forms.Padding(2);
             this.Pay_btn.Name = "Pay_btn";
-            this.Pay_btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Pay_btn.Size = new System.Drawing.Size(329, 67);
+            this.Pay_btn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.Pay_btn.Size = new System.Drawing.Size(247, 54);
             this.Pay_btn.TabIndex = 20;
             this.Pay_btn.Tag = "Payment";
             this.Pay_btn.Text = "  Payment";
@@ -179,10 +198,11 @@ namespace Hospital
             this.reserve_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.reserve_btn.IconSize = 35;
             this.reserve_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.reserve_btn.Location = new System.Drawing.Point(0, 407);
+            this.reserve_btn.Location = new System.Drawing.Point(0, 330);
+            this.reserve_btn.Margin = new System.Windows.Forms.Padding(2);
             this.reserve_btn.Name = "reserve_btn";
-            this.reserve_btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.reserve_btn.Size = new System.Drawing.Size(329, 67);
+            this.reserve_btn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.reserve_btn.Size = new System.Drawing.Size(247, 54);
             this.reserve_btn.TabIndex = 19;
             this.reserve_btn.Tag = "Reserve";
             this.reserve_btn.Text = "  Reserve";
@@ -199,9 +219,10 @@ namespace Hospital
             this.App_panel.Controls.Add(this.EditApp_iconButton);
             this.App_panel.Controls.Add(this.MakeAPP_iconButton);
             this.App_panel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.App_panel.Location = new System.Drawing.Point(0, 229);
+            this.App_panel.Location = new System.Drawing.Point(0, 185);
+            this.App_panel.Margin = new System.Windows.Forms.Padding(2);
             this.App_panel.Name = "App_panel";
-            this.App_panel.Size = new System.Drawing.Size(329, 178);
+            this.App_panel.Size = new System.Drawing.Size(247, 145);
             this.App_panel.TabIndex = 20;
             // 
             // cancelApp_iconButton
@@ -216,10 +237,11 @@ namespace Hospital
             this.cancelApp_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.cancelApp_iconButton.IconSize = 35;
             this.cancelApp_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cancelApp_iconButton.Location = new System.Drawing.Point(0, 120);
+            this.cancelApp_iconButton.Location = new System.Drawing.Point(0, 98);
+            this.cancelApp_iconButton.Margin = new System.Windows.Forms.Padding(2);
             this.cancelApp_iconButton.Name = "cancelApp_iconButton";
-            this.cancelApp_iconButton.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.cancelApp_iconButton.Size = new System.Drawing.Size(329, 58);
+            this.cancelApp_iconButton.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.cancelApp_iconButton.Size = new System.Drawing.Size(247, 47);
             this.cancelApp_iconButton.TabIndex = 34;
             this.cancelApp_iconButton.Tag = "Cancel App";
             this.cancelApp_iconButton.Text = "  Cancel App";
@@ -240,10 +262,11 @@ namespace Hospital
             this.EditApp_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.EditApp_iconButton.IconSize = 35;
             this.EditApp_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EditApp_iconButton.Location = new System.Drawing.Point(0, 60);
+            this.EditApp_iconButton.Location = new System.Drawing.Point(0, 49);
+            this.EditApp_iconButton.Margin = new System.Windows.Forms.Padding(2);
             this.EditApp_iconButton.Name = "EditApp_iconButton";
-            this.EditApp_iconButton.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.EditApp_iconButton.Size = new System.Drawing.Size(329, 60);
+            this.EditApp_iconButton.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.EditApp_iconButton.Size = new System.Drawing.Size(247, 49);
             this.EditApp_iconButton.TabIndex = 33;
             this.EditApp_iconButton.Tag = "Edit App";
             this.EditApp_iconButton.Text = "  Edit App";
@@ -265,9 +288,10 @@ namespace Hospital
             this.MakeAPP_iconButton.IconSize = 35;
             this.MakeAPP_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MakeAPP_iconButton.Location = new System.Drawing.Point(0, 0);
+            this.MakeAPP_iconButton.Margin = new System.Windows.Forms.Padding(2);
             this.MakeAPP_iconButton.Name = "MakeAPP_iconButton";
-            this.MakeAPP_iconButton.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.MakeAPP_iconButton.Size = new System.Drawing.Size(329, 60);
+            this.MakeAPP_iconButton.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.MakeAPP_iconButton.Size = new System.Drawing.Size(247, 49);
             this.MakeAPP_iconButton.TabIndex = 32;
             this.MakeAPP_iconButton.Tag = "Make App";
             this.MakeAPP_iconButton.Text = "  Make App";
@@ -288,10 +312,11 @@ namespace Hospital
             this.app_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.app_btn.IconSize = 35;
             this.app_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.app_btn.Location = new System.Drawing.Point(0, 162);
+            this.app_btn.Location = new System.Drawing.Point(0, 131);
+            this.app_btn.Margin = new System.Windows.Forms.Padding(2);
             this.app_btn.Name = "app_btn";
-            this.app_btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.app_btn.Size = new System.Drawing.Size(329, 67);
+            this.app_btn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.app_btn.Size = new System.Drawing.Size(247, 54);
             this.app_btn.TabIndex = 17;
             this.app_btn.Tag = "Appointment";
             this.app_btn.Text = "  Appointment";
@@ -312,10 +337,11 @@ namespace Hospital
             this.Patientpanal_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Patientpanal_btn.IconSize = 35;
             this.Patientpanal_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Patientpanal_btn.Location = new System.Drawing.Point(0, 95);
+            this.Patientpanal_btn.Location = new System.Drawing.Point(0, 77);
+            this.Patientpanal_btn.Margin = new System.Windows.Forms.Padding(2);
             this.Patientpanal_btn.Name = "Patientpanal_btn";
-            this.Patientpanal_btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Patientpanal_btn.Size = new System.Drawing.Size(329, 67);
+            this.Patientpanal_btn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.Patientpanal_btn.Size = new System.Drawing.Size(247, 54);
             this.Patientpanal_btn.TabIndex = 16;
             this.Patientpanal_btn.Tag = "Add Patient";
             this.Patientpanal_btn.Text = "  Add Patient";
@@ -332,8 +358,9 @@ namespace Hospital
             this.Logo_panel.Controls.Add(this.HP_lbl);
             this.Logo_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.Logo_panel.Location = new System.Drawing.Point(0, 0);
+            this.Logo_panel.Margin = new System.Windows.Forms.Padding(2);
             this.Logo_panel.Name = "Logo_panel";
-            this.Logo_panel.Size = new System.Drawing.Size(329, 95);
+            this.Logo_panel.Size = new System.Drawing.Size(247, 77);
             this.Logo_panel.TabIndex = 15;
             // 
             // MS_lbl
@@ -342,9 +369,10 @@ namespace Hospital
             this.MS_lbl.Dock = System.Windows.Forms.DockStyle.Top;
             this.MS_lbl.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MS_lbl.ForeColor = System.Drawing.Color.White;
-            this.MS_lbl.Location = new System.Drawing.Point(0, 49);
+            this.MS_lbl.Location = new System.Drawing.Point(0, 39);
+            this.MS_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MS_lbl.Name = "MS_lbl";
-            this.MS_lbl.Size = new System.Drawing.Size(271, 29);
+            this.MS_lbl.Size = new System.Drawing.Size(217, 23);
             this.MS_lbl.TabIndex = 1;
             this.MS_lbl.Text = "Management System";
             // 
@@ -356,9 +384,10 @@ namespace Hospital
             this.menu_btn.IconColor = System.Drawing.Color.White;
             this.menu_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.menu_btn.IconSize = 30;
-            this.menu_btn.Location = new System.Drawing.Point(276, 0);
+            this.menu_btn.Location = new System.Drawing.Point(207, 0);
+            this.menu_btn.Margin = new System.Windows.Forms.Padding(2);
             this.menu_btn.Name = "menu_btn";
-            this.menu_btn.Size = new System.Drawing.Size(60, 60);
+            this.menu_btn.Size = new System.Drawing.Size(45, 49);
             this.menu_btn.TabIndex = 14;
             this.menu_btn.UseVisualStyleBackColor = true;
             this.menu_btn.Click += new System.EventHandler(this.menu_btn_Click);
@@ -370,8 +399,9 @@ namespace Hospital
             this.HP_lbl.Font = new System.Drawing.Font("Cooper Black", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HP_lbl.ForeColor = System.Drawing.Color.White;
             this.HP_lbl.Location = new System.Drawing.Point(0, 0);
+            this.HP_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.HP_lbl.Name = "HP_lbl";
-            this.HP_lbl.Size = new System.Drawing.Size(202, 49);
+            this.HP_lbl.Size = new System.Drawing.Size(162, 39);
             this.HP_lbl.TabIndex = 0;
             this.HP_lbl.Text = "Hospital";
             // 
@@ -387,10 +417,11 @@ namespace Hospital
             this.logoyt_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.logoyt_btn.IconSize = 35;
             this.logoyt_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logoyt_btn.Location = new System.Drawing.Point(0, 645);
+            this.logoyt_btn.Location = new System.Drawing.Point(0, 532);
+            this.logoyt_btn.Margin = new System.Windows.Forms.Padding(2);
             this.logoyt_btn.Name = "logoyt_btn";
-            this.logoyt_btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.logoyt_btn.Size = new System.Drawing.Size(329, 67);
+            this.logoyt_btn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 8);
+            this.logoyt_btn.Size = new System.Drawing.Size(247, 54);
             this.logoyt_btn.TabIndex = 9;
             this.logoyt_btn.Tag = "Log Out";
             this.logoyt_btn.Text = "  Log Out";
@@ -421,10 +452,10 @@ namespace Hospital
             this.addPatient_panel.Controls.Add(this.Lname_textBox);
             this.addPatient_panel.Controls.Add(this.Fname_textBox);
             this.addPatient_panel.Controls.Add(this.label1);
-            this.addPatient_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.addPatient_panel.Location = new System.Drawing.Point(0, 0);
+            this.addPatient_panel.Location = new System.Drawing.Point(0, 319);
+            this.addPatient_panel.Margin = new System.Windows.Forms.Padding(2);
             this.addPatient_panel.Name = "addPatient_panel";
-            this.addPatient_panel.Size = new System.Drawing.Size(1125, 712);
+            this.addPatient_panel.Size = new System.Drawing.Size(232, 259);
             this.addPatient_panel.TabIndex = 0;
             // 
             // label13
@@ -435,8 +466,9 @@ namespace Hospital
             this.label13.Font = new System.Drawing.Font("Verdana", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.label13.Location = new System.Drawing.Point(0, 0);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(475, 80);
+            this.label13.Size = new System.Drawing.Size(382, 65);
             this.label13.TabIndex = 43;
             this.label13.Text = "Add Patient";
             // 
@@ -447,9 +479,10 @@ namespace Hospital
             this.Addpatient_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Addpatient_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Addpatient_button.ForeColor = System.Drawing.Color.White;
-            this.Addpatient_button.Location = new System.Drawing.Point(514, 574);
+            this.Addpatient_button.Location = new System.Drawing.Point(386, 466);
+            this.Addpatient_button.Margin = new System.Windows.Forms.Padding(2);
             this.Addpatient_button.Name = "Addpatient_button";
-            this.Addpatient_button.Size = new System.Drawing.Size(158, 64);
+            this.Addpatient_button.Size = new System.Drawing.Size(118, 52);
             this.Addpatient_button.TabIndex = 42;
             this.Addpatient_button.Text = "Add";
             this.Addpatient_button.UseVisualStyleBackColor = false;
@@ -460,9 +493,10 @@ namespace Hospital
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(583, 471);
+            this.label4.Location = new System.Drawing.Point(437, 383);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 31);
+            this.label4.Size = new System.Drawing.Size(92, 25);
             this.label4.TabIndex = 41;
             this.label4.Text = "Gender";
             // 
@@ -472,17 +506,19 @@ namespace Hospital
             this.gender_comboBox.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.gender_comboBox.Location = new System.Drawing.Point(810, 476);
+            this.gender_comboBox.Location = new System.Drawing.Point(608, 387);
+            this.gender_comboBox.Margin = new System.Windows.Forms.Padding(2);
             this.gender_comboBox.Name = "gender_comboBox";
-            this.gender_comboBox.Size = new System.Drawing.Size(270, 24);
+            this.gender_comboBox.Size = new System.Drawing.Size(204, 21);
             this.gender_comboBox.TabIndex = 40;
             // 
             // ID_textBox
             // 
-            this.ID_textBox.Location = new System.Drawing.Point(810, 135);
+            this.ID_textBox.Location = new System.Drawing.Point(608, 110);
+            this.ID_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.ID_textBox.MaxLength = 14;
             this.ID_textBox.Name = "ID_textBox";
-            this.ID_textBox.Size = new System.Drawing.Size(270, 22);
+            this.ID_textBox.Size = new System.Drawing.Size(204, 20);
             this.ID_textBox.TabIndex = 39;
             // 
             // label3
@@ -490,9 +526,10 @@ namespace Hospital
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(583, 130);
+            this.label3.Location = new System.Drawing.Point(437, 106);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 31);
+            this.label3.Size = new System.Drawing.Size(127, 25);
             this.label3.TabIndex = 38;
             this.label3.Text = "Patient ID";
             // 
@@ -501,9 +538,10 @@ namespace Hospital
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(46, 466);
+            this.label8.Location = new System.Drawing.Point(34, 379);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(126, 31);
+            this.label8.Size = new System.Drawing.Size(103, 25);
             this.label8.TabIndex = 37;
             this.label8.Text = "Address";
             // 
@@ -512,17 +550,19 @@ namespace Hospital
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(583, 361);
+            this.label7.Location = new System.Drawing.Point(437, 293);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(155, 31);
+            this.label7.Size = new System.Drawing.Size(124, 25);
             this.label7.TabIndex = 36;
             this.label7.Text = "Phone no.";
             // 
             // patient_dateTimePicker
             // 
-            this.patient_dateTimePicker.Location = new System.Drawing.Point(810, 235);
+            this.patient_dateTimePicker.Location = new System.Drawing.Point(608, 191);
+            this.patient_dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.patient_dateTimePicker.Name = "patient_dateTimePicker";
-            this.patient_dateTimePicker.Size = new System.Drawing.Size(270, 22);
+            this.patient_dateTimePicker.Size = new System.Drawing.Size(204, 20);
             this.patient_dateTimePicker.TabIndex = 35;
             // 
             // label6
@@ -530,9 +570,10 @@ namespace Hospital
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(583, 235);
+            this.label6.Location = new System.Drawing.Point(437, 191);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(158, 31);
+            this.label6.Size = new System.Drawing.Size(126, 25);
             this.label6.TabIndex = 34;
             this.label6.Text = "Birth Date";
             // 
@@ -541,9 +582,10 @@ namespace Hospital
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(46, 358);
+            this.label5.Location = new System.Drawing.Point(34, 291);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(163, 31);
+            this.label5.Size = new System.Drawing.Size(130, 25);
             this.label5.TabIndex = 33;
             this.label5.Text = "Last Name";
             // 
@@ -552,50 +594,56 @@ namespace Hospital
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(46, 230);
+            this.label2.Location = new System.Drawing.Point(34, 187);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 31);
+            this.label2.Size = new System.Drawing.Size(68, 25);
             this.label2.TabIndex = 32;
             this.label2.Text = "Minit";
             // 
             // Address_textBox
             // 
-            this.Address_textBox.Location = new System.Drawing.Point(243, 476);
+            this.Address_textBox.Location = new System.Drawing.Point(182, 387);
+            this.Address_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.Address_textBox.MaxLength = 50;
             this.Address_textBox.Name = "Address_textBox";
-            this.Address_textBox.Size = new System.Drawing.Size(266, 22);
+            this.Address_textBox.Size = new System.Drawing.Size(200, 20);
             this.Address_textBox.TabIndex = 31;
             // 
             // minit_textBox
             // 
-            this.minit_textBox.Location = new System.Drawing.Point(243, 236);
+            this.minit_textBox.Location = new System.Drawing.Point(182, 192);
+            this.minit_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.minit_textBox.MaxLength = 1;
             this.minit_textBox.Name = "minit_textBox";
-            this.minit_textBox.Size = new System.Drawing.Size(266, 22);
+            this.minit_textBox.Size = new System.Drawing.Size(200, 20);
             this.minit_textBox.TabIndex = 30;
             // 
             // phno_textBox
             // 
-            this.phno_textBox.Location = new System.Drawing.Point(810, 361);
+            this.phno_textBox.Location = new System.Drawing.Point(608, 293);
+            this.phno_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.phno_textBox.MaxLength = 20;
             this.phno_textBox.Name = "phno_textBox";
-            this.phno_textBox.Size = new System.Drawing.Size(270, 22);
+            this.phno_textBox.Size = new System.Drawing.Size(204, 20);
             this.phno_textBox.TabIndex = 29;
             // 
             // Lname_textBox
             // 
-            this.Lname_textBox.Location = new System.Drawing.Point(243, 364);
+            this.Lname_textBox.Location = new System.Drawing.Point(182, 296);
+            this.Lname_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.Lname_textBox.MaxLength = 50;
             this.Lname_textBox.Name = "Lname_textBox";
-            this.Lname_textBox.Size = new System.Drawing.Size(266, 22);
+            this.Lname_textBox.Size = new System.Drawing.Size(200, 20);
             this.Lname_textBox.TabIndex = 28;
             // 
             // Fname_textBox
             // 
-            this.Fname_textBox.Location = new System.Drawing.Point(243, 135);
+            this.Fname_textBox.Location = new System.Drawing.Point(182, 110);
+            this.Fname_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.Fname_textBox.MaxLength = 50;
             this.Fname_textBox.Name = "Fname_textBox";
-            this.Fname_textBox.Size = new System.Drawing.Size(266, 22);
+            this.Fname_textBox.Size = new System.Drawing.Size(200, 20);
             this.Fname_textBox.TabIndex = 27;
             // 
             // label1
@@ -603,9 +651,10 @@ namespace Hospital
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(46, 131);
+            this.label1.Location = new System.Drawing.Point(34, 106);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 31);
+            this.label1.Size = new System.Drawing.Size(134, 25);
             this.label1.TabIndex = 26;
             this.label1.Text = "First Name";
             // 
@@ -614,36 +663,116 @@ namespace Hospital
             this.makeApp_panel.AutoScroll = true;
             this.makeApp_panel.BackColor = System.Drawing.Color.White;
             this.makeApp_panel.Controls.Add(this.label19);
-            this.makeApp_panel.Controls.Add(this.newappID_textBox);
-            this.makeApp_panel.Controls.Add(this.label12);
-            this.makeApp_panel.Controls.Add(this.AddApp_button);
-            this.makeApp_panel.Controls.Add(this.comboBox1);
-            this.makeApp_panel.Controls.Add(this.label11);
             this.makeApp_panel.Controls.Add(this.Pname_comboBox);
             this.makeApp_panel.Controls.Add(this.label10);
+            this.makeApp_panel.Controls.Add(this.appDate);
+            this.makeApp_panel.Controls.Add(this.label34);
+            this.makeApp_panel.Controls.Add(this.label33);
+            this.makeApp_panel.Controls.Add(this.endTime_txt);
+            this.makeApp_panel.Controls.Add(this.srtTime_txt);
+            this.makeApp_panel.Controls.Add(this.appTime);
+            this.makeApp_panel.Controls.Add(this.label12);
+            this.makeApp_panel.Controls.Add(this.AddApp_button);
+            this.makeApp_panel.Controls.Add(this.label11);
             this.makeApp_panel.Controls.Add(this.label9);
             this.makeApp_panel.Controls.Add(this.docName_comboBox);
-            this.makeApp_panel.Location = new System.Drawing.Point(451, 372);
+            this.makeApp_panel.Location = new System.Drawing.Point(406, 284);
+            this.makeApp_panel.Margin = new System.Windows.Forms.Padding(2);
             this.makeApp_panel.Name = "makeApp_panel";
-            this.makeApp_panel.Size = new System.Drawing.Size(464, 247);
+            this.makeApp_panel.Size = new System.Drawing.Size(316, 230);
             this.makeApp_panel.TabIndex = 1;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label19.Location = new System.Drawing.Point(65, 160);
+            this.label19.Location = new System.Drawing.Point(40, 419);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(439, 39);
-            this.label19.TabIndex = 28;
-            this.label19.Text = "Available Appointments";
+            this.label19.Size = new System.Drawing.Size(276, 31);
+            this.label19.TabIndex = 37;
+            this.label19.Text = "Appointment Time";
             // 
-            // newappID_textBox
+            // Pname_comboBox
             // 
-            this.newappID_textBox.Location = new System.Drawing.Point(540, 162);
-            this.newappID_textBox.Name = "newappID_textBox";
-            this.newappID_textBox.Size = new System.Drawing.Size(455, 22);
-            this.newappID_textBox.TabIndex = 27;
+            this.Pname_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Pname_comboBox.FormattingEnabled = true;
+            this.Pname_comboBox.Location = new System.Drawing.Point(434, 113);
+            this.Pname_comboBox.Margin = new System.Windows.Forms.Padding(2);
+            this.Pname_comboBox.Name = "Pname_comboBox";
+            this.Pname_comboBox.Size = new System.Drawing.Size(348, 21);
+            this.Pname_comboBox.TabIndex = 36;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label10.Location = new System.Drawing.Point(40, 100);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(199, 31);
+            this.label10.TabIndex = 35;
+            this.label10.Text = "Patient Name";
+            // 
+            // appDate
+            // 
+            this.appDate.Location = new System.Drawing.Point(440, 362);
+            this.appDate.Margin = new System.Windows.Forms.Padding(2);
+            this.appDate.MinDate = new System.DateTime(2022, 1, 5, 21, 29, 12, 0);
+            this.appDate.Name = "appDate";
+            this.appDate.Size = new System.Drawing.Size(342, 20);
+            this.appDate.TabIndex = 34;
+            this.appDate.Value = new System.DateTime(2022, 1, 5, 21, 29, 12, 0);
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label34.Location = new System.Drawing.Point(143, 232);
+            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(162, 31);
+            this.label34.TabIndex = 33;
+            this.label34.Text = "Start Time";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label33.Location = new System.Drawing.Point(498, 232);
+            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(177, 31);
+            this.label33.TabIndex = 32;
+            this.label33.Text = "Finish Time";
+            // 
+            // endTime_txt
+            // 
+            this.endTime_txt.Location = new System.Drawing.Point(503, 296);
+            this.endTime_txt.Margin = new System.Windows.Forms.Padding(2);
+            this.endTime_txt.Name = "endTime_txt";
+            this.endTime_txt.ReadOnly = true;
+            this.endTime_txt.Size = new System.Drawing.Size(149, 20);
+            this.endTime_txt.TabIndex = 31;
+            // 
+            // srtTime_txt
+            // 
+            this.srtTime_txt.Location = new System.Drawing.Point(143, 296);
+            this.srtTime_txt.Margin = new System.Windows.Forms.Padding(2);
+            this.srtTime_txt.Name = "srtTime_txt";
+            this.srtTime_txt.ReadOnly = true;
+            this.srtTime_txt.Size = new System.Drawing.Size(154, 20);
+            this.srtTime_txt.TabIndex = 30;
+            // 
+            // appTime
+            // 
+            this.appTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.appTime.Location = new System.Drawing.Point(442, 425);
+            this.appTime.Margin = new System.Windows.Forms.Padding(2);
+            this.appTime.Name = "appTime";
+            this.appTime.ShowUpDown = true;
+            this.appTime.Size = new System.Drawing.Size(344, 20);
+            this.appTime.TabIndex = 29;
             // 
             // label12
             // 
@@ -653,8 +782,9 @@ namespace Hospital
             this.label12.Font = new System.Drawing.Font("Verdana", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.label12.Location = new System.Drawing.Point(0, 0);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(745, 80);
+            this.label12.Size = new System.Drawing.Size(597, 65);
             this.label12.TabIndex = 26;
             this.label12.Text = "Make Appointment";
             // 
@@ -665,58 +795,34 @@ namespace Hospital
             this.AddApp_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddApp_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddApp_button.ForeColor = System.Drawing.Color.White;
-            this.AddApp_button.Location = new System.Drawing.Point(536, 588);
+            this.AddApp_button.Location = new System.Drawing.Point(345, 500);
+            this.AddApp_button.Margin = new System.Windows.Forms.Padding(2);
             this.AddApp_button.Name = "AddApp_button";
-            this.AddApp_button.Size = new System.Drawing.Size(129, 59);
+            this.AddApp_button.Size = new System.Drawing.Size(97, 48);
             this.AddApp_button.TabIndex = 25;
             this.AddApp_button.Text = "Add";
             this.AddApp_button.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(540, 392);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(455, 24);
-            this.comboBox1.TabIndex = 6;
+            this.AddApp_button.Click += new System.EventHandler(this.AddApp_button_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label11.Location = new System.Drawing.Point(65, 382);
+            this.label11.Location = new System.Drawing.Point(40, 349);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(439, 39);
+            this.label11.Size = new System.Drawing.Size(271, 31);
             this.label11.TabIndex = 5;
-            this.label11.Text = "Available Appointments";
-            // 
-            // Pname_comboBox
-            // 
-            this.Pname_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Pname_comboBox.FormattingEnabled = true;
-            this.Pname_comboBox.Location = new System.Drawing.Point(536, 512);
-            this.Pname_comboBox.Name = "Pname_comboBox";
-            this.Pname_comboBox.Size = new System.Drawing.Size(463, 24);
-            this.Pname_comboBox.TabIndex = 4;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label10.Location = new System.Drawing.Point(65, 504);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(251, 39);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Patient Name";
+            this.label11.Text = "Appointment Date";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label9.Location = new System.Drawing.Point(65, 258);
+            this.label9.Location = new System.Drawing.Point(40, 167);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(243, 39);
+            this.label9.Size = new System.Drawing.Size(193, 31);
             this.label9.TabIndex = 1;
             this.label9.Text = "Doctor Name";
             // 
@@ -724,38 +830,145 @@ namespace Hospital
             // 
             this.docName_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.docName_comboBox.FormattingEnabled = true;
-            this.docName_comboBox.Location = new System.Drawing.Point(540, 272);
+            this.docName_comboBox.Location = new System.Drawing.Point(442, 167);
+            this.docName_comboBox.Margin = new System.Windows.Forms.Padding(2);
             this.docName_comboBox.Name = "docName_comboBox";
-            this.docName_comboBox.Size = new System.Drawing.Size(455, 24);
+            this.docName_comboBox.Size = new System.Drawing.Size(342, 21);
             this.docName_comboBox.TabIndex = 0;
+            this.docName_comboBox.SelectedIndexChanged += new System.EventHandler(this.docName_comboBox_SelectedIndexChanged);
             // 
             // editApp_panel
             // 
             this.editApp_panel.AutoScroll = true;
             this.editApp_panel.BackColor = System.Drawing.Color.White;
-            this.editApp_panel.Controls.Add(this.comboBox2);
-            this.editApp_panel.Controls.Add(this.editApp_btn);
-            this.editApp_panel.Controls.Add(this.textBox3);
+            this.editApp_panel.Controls.Add(this.label36);
+            this.editApp_panel.Controls.Add(this.label37);
+            this.editApp_panel.Controls.Add(this.textBox1);
             this.editApp_panel.Controls.Add(this.textBox2);
-            this.editApp_panel.Controls.Add(this.label18);
+            this.editApp_panel.Controls.Add(this.PnameEdit_combo);
             this.editApp_panel.Controls.Add(this.label15);
+            this.editApp_panel.Controls.Add(this.appDateEdit);
+            this.editApp_panel.Controls.Add(this.appTimeEdit);
+            this.editApp_panel.Controls.Add(this.label35);
+            this.editApp_panel.Controls.Add(this.DrNameEdit);
+            this.editApp_panel.Controls.Add(this.editApp_btn);
+            this.editApp_panel.Controls.Add(this.label18);
             this.editApp_panel.Controls.Add(this.label16);
             this.editApp_panel.Controls.Add(this.label17);
-            this.editApp_panel.Controls.Add(this.comboBox4);
+            this.editApp_panel.Controls.Add(this.EditType_combo);
             this.editApp_panel.Controls.Add(this.label14);
             this.editApp_panel.Location = new System.Drawing.Point(0, 0);
+            this.editApp_panel.Margin = new System.Windows.Forms.Padding(2);
             this.editApp_panel.Name = "editApp_panel";
-            this.editApp_panel.Size = new System.Drawing.Size(247, 204);
+            this.editApp_panel.Size = new System.Drawing.Size(185, 167);
             this.editApp_panel.TabIndex = 2;
             // 
-            // comboBox2
+            // label36
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(447, 259);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(455, 24);
-            this.comboBox2.TabIndex = 38;
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label36.Location = new System.Drawing.Point(34, 467);
+            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(162, 31);
+            this.label36.TabIndex = 47;
+            this.label36.Text = "Start Time";
+            this.label36.Visible = false;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label37.Location = new System.Drawing.Point(388, 469);
+            this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(177, 31);
+            this.label37.TabIndex = 46;
+            this.label37.Text = "Finish Time";
+            this.label37.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(394, 533);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(149, 20);
+            this.textBox1.TabIndex = 45;
+            this.textBox1.Visible = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(34, 533);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(154, 20);
+            this.textBox2.TabIndex = 44;
+            this.textBox2.Visible = false;
+            // 
+            // PnameEdit_combo
+            // 
+            this.PnameEdit_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PnameEdit_combo.FormattingEnabled = true;
+            this.PnameEdit_combo.Location = new System.Drawing.Point(427, 265);
+            this.PnameEdit_combo.Margin = new System.Windows.Forms.Padding(2);
+            this.PnameEdit_combo.Name = "PnameEdit_combo";
+            this.PnameEdit_combo.Size = new System.Drawing.Size(342, 21);
+            this.PnameEdit_combo.TabIndex = 43;
+            this.PnameEdit_combo.SelectedValueChanged += new System.EventHandler(this.PnameEdit_combo_SelectedValueChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label15.Location = new System.Drawing.Point(26, 397);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(346, 31);
+            this.label15.TabIndex = 42;
+            this.label15.Text = "New Appointment Time";
+            // 
+            // appDateEdit
+            // 
+            this.appDateEdit.Location = new System.Drawing.Point(427, 334);
+            this.appDateEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.appDateEdit.MinDate = new System.DateTime(2022, 1, 5, 21, 29, 12, 0);
+            this.appDateEdit.Name = "appDateEdit";
+            this.appDateEdit.Size = new System.Drawing.Size(342, 20);
+            this.appDateEdit.TabIndex = 41;
+            this.appDateEdit.Value = new System.DateTime(2022, 1, 5, 21, 29, 12, 0);
+            // 
+            // appTimeEdit
+            // 
+            this.appTimeEdit.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.appTimeEdit.Location = new System.Drawing.Point(428, 401);
+            this.appTimeEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.appTimeEdit.Name = "appTimeEdit";
+            this.appTimeEdit.ShowUpDown = true;
+            this.appTimeEdit.Size = new System.Drawing.Size(344, 20);
+            this.appTimeEdit.TabIndex = 40;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label35.Location = new System.Drawing.Point(26, 327);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(341, 31);
+            this.label35.TabIndex = 39;
+            this.label35.Text = "New Appointment Date";
+            // 
+            // DrNameEdit
+            // 
+            this.DrNameEdit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DrNameEdit.FormattingEnabled = true;
+            this.DrNameEdit.Location = new System.Drawing.Point(427, 196);
+            this.DrNameEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.DrNameEdit.Name = "DrNameEdit";
+            this.DrNameEdit.Size = new System.Drawing.Size(342, 21);
+            this.DrNameEdit.TabIndex = 38;
             // 
             // editApp_btn
             // 
@@ -764,54 +977,34 @@ namespace Hospital
             this.editApp_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editApp_btn.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editApp_btn.ForeColor = System.Drawing.Color.White;
-            this.editApp_btn.Location = new System.Drawing.Point(901, 583);
+            this.editApp_btn.Location = new System.Drawing.Point(707, 492);
+            this.editApp_btn.Margin = new System.Windows.Forms.Padding(2);
             this.editApp_btn.Name = "editApp_btn";
-            this.editApp_btn.Size = new System.Drawing.Size(174, 82);
+            this.editApp_btn.Size = new System.Drawing.Size(99, 49);
             this.editApp_btn.TabIndex = 37;
             this.editApp_btn.Text = "Edit";
             this.editApp_btn.UseVisualStyleBackColor = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(447, 487);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(455, 22);
-            this.textBox3.TabIndex = 36;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(447, 373);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(455, 22);
-            this.textBox2.TabIndex = 35;
+            this.editApp_btn.Click += new System.EventHandler(this.editApp_btn_Click);
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label18.Location = new System.Drawing.Point(23, 145);
+            this.label18.Location = new System.Drawing.Point(26, 118);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(185, 39);
+            this.label18.Size = new System.Drawing.Size(149, 31);
             this.label18.TabIndex = 33;
             this.label18.Text = "Edit Type";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label15.Location = new System.Drawing.Point(23, 361);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(348, 39);
-            this.label15.TabIndex = 32;
-            this.label15.Text = "Appointment Time";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label16.Location = new System.Drawing.Point(23, 470);
+            this.label16.Location = new System.Drawing.Point(26, 258);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(251, 39);
+            this.label16.Size = new System.Drawing.Size(199, 31);
             this.label16.TabIndex = 30;
             this.label16.Text = "Patient Name";
             // 
@@ -819,20 +1012,27 @@ namespace Hospital
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label17.Location = new System.Drawing.Point(23, 252);
+            this.label17.Location = new System.Drawing.Point(26, 188);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(243, 39);
+            this.label17.Size = new System.Drawing.Size(193, 31);
             this.label17.TabIndex = 29;
             this.label17.Text = "Doctor Name";
             // 
-            // comboBox4
+            // EditType_combo
             // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(447, 157);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(455, 24);
-            this.comboBox4.TabIndex = 28;
+            this.EditType_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EditType_combo.FormattingEnabled = true;
+            this.EditType_combo.Items.AddRange(new object[] {
+            "Edit Appointment Date",
+            "Edit Appointment Time",
+            "Edit Both"});
+            this.EditType_combo.Location = new System.Drawing.Point(427, 127);
+            this.EditType_combo.Margin = new System.Windows.Forms.Padding(2);
+            this.EditType_combo.Name = "EditType_combo";
+            this.EditType_combo.Size = new System.Drawing.Size(342, 21);
+            this.EditType_combo.TabIndex = 28;
+            this.EditType_combo.SelectedIndexChanged += new System.EventHandler(this.EditType_combo_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -842,8 +1042,9 @@ namespace Hospital
             this.label14.Font = new System.Drawing.Font("Verdana", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.label14.Location = new System.Drawing.Point(0, 0);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(693, 80);
+            this.label14.Size = new System.Drawing.Size(556, 65);
             this.label14.TabIndex = 27;
             this.label14.Text = "Edit Appointment";
             // 
@@ -851,223 +1052,125 @@ namespace Hospital
             // 
             this.panelDesktop.AutoScroll = true;
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.panelDesktop.Controls.Add(this.addPatient_panel);
-            this.panelDesktop.Controls.Add(this.editApp_panel);
-            this.panelDesktop.Controls.Add(this.pay_panel);
             this.panelDesktop.Controls.Add(this.reserve_panel);
-            this.panelDesktop.Controls.Add(this.cancelApp_panel);
             this.panelDesktop.Controls.Add(this.makeApp_panel);
+            this.panelDesktop.Controls.Add(this.pay_panel);
+            this.panelDesktop.Controls.Add(this.cancelApp_panel);
+            this.panelDesktop.Controls.Add(this.editApp_panel);
+            this.panelDesktop.Controls.Add(this.addPatient_panel);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(329, 0);
+            this.panelDesktop.Location = new System.Drawing.Point(247, 0);
+            this.panelDesktop.Margin = new System.Windows.Forms.Padding(2);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1125, 712);
+            this.panelDesktop.Size = new System.Drawing.Size(781, 586);
             this.panelDesktop.TabIndex = 2;
-            // 
-            // pay_panel
-            // 
-            this.pay_panel.AutoScroll = true;
-            this.pay_panel.BackColor = System.Drawing.Color.White;
-            this.pay_panel.Controls.Add(this.pay_button);
-            this.pay_panel.Controls.Add(this.price_pay_textBox);
-            this.pay_panel.Controls.Add(this.label32);
-            this.pay_panel.Controls.Add(this.pay_dateTimePicker);
-            this.pay_panel.Controls.Add(this.label31);
-            this.pay_panel.Controls.Add(this.billType_pay_comboBox);
-            this.pay_panel.Controls.Add(this.label30);
-            this.pay_panel.Controls.Add(this.patientID_pay_textBox);
-            this.pay_panel.Controls.Add(this.label29);
-            this.pay_panel.Controls.Add(this.billID_pay_textBox);
-            this.pay_panel.Controls.Add(this.label28);
-            this.pay_panel.Controls.Add(this.label27);
-            this.pay_panel.Location = new System.Drawing.Point(657, 42);
-            this.pay_panel.Name = "pay_panel";
-            this.pay_panel.Size = new System.Drawing.Size(279, 203);
-            this.pay_panel.TabIndex = 3;
-            // 
-            // pay_button
-            // 
-            this.pay_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.pay_button.FlatAppearance.BorderSize = 0;
-            this.pay_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pay_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pay_button.ForeColor = System.Drawing.Color.White;
-            this.pay_button.Location = new System.Drawing.Point(263, 624);
-            this.pay_button.Name = "pay_button";
-            this.pay_button.Size = new System.Drawing.Size(158, 64);
-            this.pay_button.TabIndex = 50;
-            this.pay_button.Text = "Pay";
-            this.pay_button.UseVisualStyleBackColor = false;
-            // 
-            // price_pay_textBox
-            // 
-            this.price_pay_textBox.Location = new System.Drawing.Point(372, 561);
-            this.price_pay_textBox.Name = "price_pay_textBox";
-            this.price_pay_textBox.Size = new System.Drawing.Size(354, 22);
-            this.price_pay_textBox.TabIndex = 49;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label32.ForeColor = System.Drawing.Color.Black;
-            this.label32.Location = new System.Drawing.Point(99, 541);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(206, 39);
-            this.label32.TabIndex = 48;
-            this.label32.Text = "Total Price";
-            // 
-            // pay_dateTimePicker
-            // 
-            this.pay_dateTimePicker.Location = new System.Drawing.Point(377, 439);
-            this.pay_dateTimePicker.Name = "pay_dateTimePicker";
-            this.pay_dateTimePicker.Size = new System.Drawing.Size(354, 22);
-            this.pay_dateTimePicker.TabIndex = 47;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label31.ForeColor = System.Drawing.Color.Black;
-            this.label31.Location = new System.Drawing.Point(99, 428);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(97, 39);
-            this.label31.TabIndex = 46;
-            this.label31.Text = "Date";
-            // 
-            // billType_pay_comboBox
-            // 
-            this.billType_pay_comboBox.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.billType_pay_comboBox.Location = new System.Drawing.Point(369, 354);
-            this.billType_pay_comboBox.Name = "billType_pay_comboBox";
-            this.billType_pay_comboBox.Size = new System.Drawing.Size(354, 24);
-            this.billType_pay_comboBox.TabIndex = 45;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label30.ForeColor = System.Drawing.Color.Black;
-            this.label30.Location = new System.Drawing.Point(99, 333);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(172, 39);
-            this.label30.TabIndex = 44;
-            this.label30.Text = "Bill Type";
-            // 
-            // patientID_pay_textBox
-            // 
-            this.patientID_pay_textBox.Location = new System.Drawing.Point(372, 140);
-            this.patientID_pay_textBox.Name = "patientID_pay_textBox";
-            this.patientID_pay_textBox.Size = new System.Drawing.Size(354, 22);
-            this.patientID_pay_textBox.TabIndex = 43;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label29.ForeColor = System.Drawing.Color.Black;
-            this.label29.Location = new System.Drawing.Point(94, 124);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(194, 39);
-            this.label29.TabIndex = 42;
-            this.label29.Text = "Patient ID";
-            // 
-            // billID_pay_textBox
-            // 
-            this.billID_pay_textBox.Location = new System.Drawing.Point(369, 254);
-            this.billID_pay_textBox.Name = "billID_pay_textBox";
-            this.billID_pay_textBox.Size = new System.Drawing.Size(354, 22);
-            this.billID_pay_textBox.TabIndex = 41;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label28.ForeColor = System.Drawing.Color.Black;
-            this.label28.Location = new System.Drawing.Point(99, 237);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(127, 39);
-            this.label28.TabIndex = 40;
-            this.label28.Text = "Bill ID";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label27.Font = new System.Drawing.Font("Verdana", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.label27.Location = new System.Drawing.Point(0, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(367, 80);
-            this.label27.TabIndex = 28;
-            this.label27.Text = "Payment";
             // 
             // reserve_panel
             // 
             this.reserve_panel.BackColor = System.Drawing.Color.White;
-            this.reserve_panel.Controls.Add(this.button2);
+            this.reserve_panel.Controls.Add(this.label20);
+            this.reserve_panel.Controls.Add(this.Resrve_date);
+            this.reserve_panel.Controls.Add(this.Nonights);
+            this.reserve_panel.Controls.Add(this.resrve_btn);
             this.reserve_panel.Controls.Add(this.PID_reserve_comboBox);
             this.reserve_panel.Controls.Add(this.label26);
-            this.reserve_panel.Controls.Add(this.noNights_reserve_textBox);
             this.reserve_panel.Controls.Add(this.label25);
             this.reserve_panel.Controls.Add(this.label24);
             this.reserve_panel.Controls.Add(this.label23);
             this.reserve_panel.Controls.Add(this.label22);
             this.reserve_panel.Controls.Add(this.rooms_reserve_comboBox);
             this.reserve_panel.Controls.Add(this.deptname_reserve_comboBox);
-            this.reserve_panel.Location = new System.Drawing.Point(28, 259);
+            this.reserve_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reserve_panel.Location = new System.Drawing.Point(0, 0);
+            this.reserve_panel.Margin = new System.Windows.Forms.Padding(2);
             this.reserve_panel.Name = "reserve_panel";
-            this.reserve_panel.Size = new System.Drawing.Size(200, 100);
+            this.reserve_panel.Size = new System.Drawing.Size(781, 586);
             this.reserve_panel.TabIndex = 4;
             // 
-            // button2
+            // label20
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(432, 580);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(188, 64);
-            this.button2.TabIndex = 51;
-            this.button2.Text = "Reserve";
-            this.button2.UseVisualStyleBackColor = false;
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label20.Location = new System.Drawing.Point(15, 118);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(236, 31);
+            this.label20.TabIndex = 54;
+            this.label20.Text = "Resrvation Date";
+            // 
+            // Resrve_date
+            // 
+            this.Resrve_date.Location = new System.Drawing.Point(417, 125);
+            this.Resrve_date.Margin = new System.Windows.Forms.Padding(2);
+            this.Resrve_date.Name = "Resrve_date";
+            this.Resrve_date.Size = new System.Drawing.Size(342, 20);
+            this.Resrve_date.TabIndex = 53;
+            this.Resrve_date.ValueChanged += new System.EventHandler(this.Resrve_date_ValueChanged);
+            // 
+            // Nonights
+            // 
+            this.Nonights.Location = new System.Drawing.Point(423, 413);
+            this.Nonights.Margin = new System.Windows.Forms.Padding(2);
+            this.Nonights.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Nonights.Name = "Nonights";
+            this.Nonights.ReadOnly = true;
+            this.Nonights.Size = new System.Drawing.Size(335, 20);
+            this.Nonights.TabIndex = 52;
+            this.Nonights.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // resrve_btn
+            // 
+            this.resrve_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.resrve_btn.FlatAppearance.BorderSize = 0;
+            this.resrve_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resrve_btn.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resrve_btn.ForeColor = System.Drawing.Color.White;
+            this.resrve_btn.Location = new System.Drawing.Point(324, 483);
+            this.resrve_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.resrve_btn.Name = "resrve_btn";
+            this.resrve_btn.Size = new System.Drawing.Size(141, 52);
+            this.resrve_btn.TabIndex = 51;
+            this.resrve_btn.Text = "Reserve";
+            this.resrve_btn.UseVisualStyleBackColor = false;
+            this.resrve_btn.Click += new System.EventHandler(this.resrve_btn_Click);
             // 
             // PID_reserve_comboBox
             // 
+            this.PID_reserve_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PID_reserve_comboBox.FormattingEnabled = true;
-            this.PID_reserve_comboBox.Location = new System.Drawing.Point(561, 176);
+            this.PID_reserve_comboBox.Location = new System.Drawing.Point(417, 188);
+            this.PID_reserve_comboBox.Margin = new System.Windows.Forms.Padding(2);
             this.PID_reserve_comboBox.Name = "PID_reserve_comboBox";
-            this.PID_reserve_comboBox.Size = new System.Drawing.Size(455, 24);
+            this.PID_reserve_comboBox.Size = new System.Drawing.Size(342, 21);
             this.PID_reserve_comboBox.TabIndex = 50;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label26.Location = new System.Drawing.Point(25, 162);
+            this.label26.Location = new System.Drawing.Point(15, 188);
+            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(194, 39);
+            this.label26.Size = new System.Drawing.Size(156, 31);
             this.label26.TabIndex = 49;
             this.label26.Text = "Patient ID";
-            // 
-            // noNights_reserve_textBox
-            // 
-            this.noNights_reserve_textBox.Location = new System.Drawing.Point(561, 465);
-            this.noNights_reserve_textBox.Name = "noNights_reserve_textBox";
-            this.noNights_reserve_textBox.Size = new System.Drawing.Size(455, 22);
-            this.noNights_reserve_textBox.TabIndex = 48;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label25.Location = new System.Drawing.Point(25, 456);
+            this.label25.Location = new System.Drawing.Point(15, 401);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(320, 39);
+            this.label25.Size = new System.Drawing.Size(254, 31);
             this.label25.TabIndex = 47;
             this.label25.Text = "Number of nights";
             // 
@@ -1075,9 +1178,10 @@ namespace Hospital
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label24.Location = new System.Drawing.Point(15, 358);
+            this.label24.Location = new System.Drawing.Point(15, 330);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(303, 39);
+            this.label24.Size = new System.Drawing.Size(243, 31);
             this.label24.TabIndex = 46;
             this.label24.Text = "Available Rooms";
             // 
@@ -1085,9 +1189,10 @@ namespace Hospital
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label23.Location = new System.Drawing.Point(25, 260);
+            this.label23.Location = new System.Drawing.Point(15, 259);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(228, 39);
+            this.label23.Size = new System.Drawing.Size(181, 31);
             this.label23.TabIndex = 45;
             this.label23.Text = "Department";
             // 
@@ -1099,8 +1204,9 @@ namespace Hospital
             this.label22.Font = new System.Drawing.Font("Verdana", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.label22.Location = new System.Drawing.Point(0, 0);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(644, 80);
+            this.label22.Size = new System.Drawing.Size(517, 65);
             this.label22.TabIndex = 44;
             this.label22.Text = "Reserve a Room";
             // 
@@ -1108,52 +1214,274 @@ namespace Hospital
             // 
             this.rooms_reserve_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.rooms_reserve_comboBox.FormattingEnabled = true;
-            this.rooms_reserve_comboBox.Location = new System.Drawing.Point(561, 372);
+            this.rooms_reserve_comboBox.Location = new System.Drawing.Point(417, 338);
+            this.rooms_reserve_comboBox.Margin = new System.Windows.Forms.Padding(2);
             this.rooms_reserve_comboBox.Name = "rooms_reserve_comboBox";
-            this.rooms_reserve_comboBox.Size = new System.Drawing.Size(455, 24);
+            this.rooms_reserve_comboBox.Size = new System.Drawing.Size(342, 21);
             this.rooms_reserve_comboBox.TabIndex = 2;
             // 
             // deptname_reserve_comboBox
             // 
+            this.deptname_reserve_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.deptname_reserve_comboBox.FormattingEnabled = true;
-            this.deptname_reserve_comboBox.Location = new System.Drawing.Point(561, 274);
+            this.deptname_reserve_comboBox.Location = new System.Drawing.Point(417, 263);
+            this.deptname_reserve_comboBox.Margin = new System.Windows.Forms.Padding(2);
             this.deptname_reserve_comboBox.Name = "deptname_reserve_comboBox";
-            this.deptname_reserve_comboBox.Size = new System.Drawing.Size(455, 24);
+            this.deptname_reserve_comboBox.Size = new System.Drawing.Size(342, 21);
             this.deptname_reserve_comboBox.TabIndex = 1;
+            this.deptname_reserve_comboBox.SelectedIndexChanged += new System.EventHandler(this.deptname_reserve_comboBox_SelectedIndexChanged);
+            // 
+            // pay_panel
+            // 
+            this.pay_panel.AutoScroll = true;
+            this.pay_panel.BackColor = System.Drawing.Color.White;
+            this.pay_panel.Controls.Add(this.BillType);
+            this.pay_panel.Controls.Add(this.label28);
+            this.pay_panel.Controls.Add(this.bill_dataGridView);
+            this.pay_panel.Controls.Add(this.Pid_bill_combo);
+            this.pay_panel.Controls.Add(this.bill_button);
+            this.pay_panel.Controls.Add(this.price_pay_textBox);
+            this.pay_panel.Controls.Add(this.label32);
+            this.pay_panel.Controls.Add(this.pay_dateTimePicker);
+            this.pay_panel.Controls.Add(this.label31);
+            this.pay_panel.Controls.Add(this.label29);
+            this.pay_panel.Controls.Add(this.label27);
+            this.pay_panel.Location = new System.Drawing.Point(502, 7);
+            this.pay_panel.Margin = new System.Windows.Forms.Padding(2);
+            this.pay_panel.Name = "pay_panel";
+            this.pay_panel.Size = new System.Drawing.Size(126, 184);
+            this.pay_panel.TabIndex = 3;
+            // 
+            // BillType
+            // 
+            this.BillType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BillType.FormattingEnabled = true;
+            this.BillType.Items.AddRange(new object[] {
+            "Medical Test",
+            "Medicine",
+            "Surgery",
+            "Room"});
+            this.BillType.Location = new System.Drawing.Point(459, 147);
+            this.BillType.Margin = new System.Windows.Forms.Padding(2);
+            this.BillType.Name = "BillType";
+            this.BillType.Size = new System.Drawing.Size(348, 21);
+            this.BillType.TabIndex = 54;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label28.ForeColor = System.Drawing.Color.Black;
+            this.label28.Location = new System.Drawing.Point(22, 127);
+            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(138, 31);
+            this.label28.TabIndex = 53;
+            this.label28.Text = "Bill Type";
+            // 
+            // bill_dataGridView
+            // 
+            this.bill_dataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.bill_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bill_dataGridView.GridColor = System.Drawing.Color.White;
+            this.bill_dataGridView.Location = new System.Drawing.Point(20, 220);
+            this.bill_dataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.bill_dataGridView.Name = "bill_dataGridView";
+            this.bill_dataGridView.ReadOnly = true;
+            this.bill_dataGridView.RowHeadersWidth = 51;
+            this.bill_dataGridView.RowTemplate.Height = 24;
+            this.bill_dataGridView.Size = new System.Drawing.Size(824, 286);
+            this.bill_dataGridView.TabIndex = 52;
+            // 
+            // Pid_bill_combo
+            // 
+            this.Pid_bill_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Pid_bill_combo.FormattingEnabled = true;
+            this.Pid_bill_combo.Location = new System.Drawing.Point(459, 105);
+            this.Pid_bill_combo.Margin = new System.Windows.Forms.Padding(2);
+            this.Pid_bill_combo.Name = "Pid_bill_combo";
+            this.Pid_bill_combo.Size = new System.Drawing.Size(348, 21);
+            this.Pid_bill_combo.TabIndex = 51;
+            // 
+            // bill_button
+            // 
+            this.bill_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.bill_button.FlatAppearance.BorderSize = 0;
+            this.bill_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bill_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bill_button.ForeColor = System.Drawing.Color.White;
+            this.bill_button.Location = new System.Drawing.Point(655, 518);
+            this.bill_button.Margin = new System.Windows.Forms.Padding(2);
+            this.bill_button.Name = "bill_button";
+            this.bill_button.Size = new System.Drawing.Size(116, 45);
+            this.bill_button.TabIndex = 50;
+            this.bill_button.Text = "Bill";
+            this.bill_button.UseVisualStyleBackColor = false;
+            // 
+            // price_pay_textBox
+            // 
+            this.price_pay_textBox.Location = new System.Drawing.Point(258, 534);
+            this.price_pay_textBox.Margin = new System.Windows.Forms.Padding(2);
+            this.price_pay_textBox.Name = "price_pay_textBox";
+            this.price_pay_textBox.ReadOnly = true;
+            this.price_pay_textBox.Size = new System.Drawing.Size(266, 20);
+            this.price_pay_textBox.TabIndex = 49;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label32.ForeColor = System.Drawing.Color.Black;
+            this.label32.Location = new System.Drawing.Point(54, 524);
+            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(164, 31);
+            this.label32.TabIndex = 48;
+            this.label32.Text = "Total Price";
+            // 
+            // pay_dateTimePicker
+            // 
+            this.pay_dateTimePicker.Location = new System.Drawing.Point(459, 180);
+            this.pay_dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.pay_dateTimePicker.Name = "pay_dateTimePicker";
+            this.pay_dateTimePicker.Size = new System.Drawing.Size(348, 20);
+            this.pay_dateTimePicker.TabIndex = 47;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label31.ForeColor = System.Drawing.Color.Black;
+            this.label31.Location = new System.Drawing.Point(22, 167);
+            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(78, 31);
+            this.label31.TabIndex = 46;
+            this.label31.Text = "Date";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label29.ForeColor = System.Drawing.Color.Black;
+            this.label29.Location = new System.Drawing.Point(22, 84);
+            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(156, 31);
+            this.label29.TabIndex = 42;
+            this.label29.Text = "Patient ID";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label27.Font = new System.Drawing.Font("Verdana", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.label27.Location = new System.Drawing.Point(0, 0);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(295, 65);
+            this.label27.TabIndex = 28;
+            this.label27.Text = "Payment";
             // 
             // cancelApp_panel
             // 
             this.cancelApp_panel.BackColor = System.Drawing.Color.White;
-            this.cancelApp_panel.Controls.Add(this.button1);
-            this.cancelApp_panel.Controls.Add(this.cancelID_comboBox);
+            this.cancelApp_panel.Controls.Add(this.appDateDelete);
+            this.cancelApp_panel.Controls.Add(this.PnameDelete);
+            this.cancelApp_panel.Controls.Add(this.label38);
+            this.cancelApp_panel.Controls.Add(this.label41);
+            this.cancelApp_panel.Controls.Add(this.label42);
+            this.cancelApp_panel.Controls.Add(this.DrnameDelete);
+            this.cancelApp_panel.Controls.Add(this.cancel_btn);
             this.cancelApp_panel.Controls.Add(this.label21);
-            this.cancelApp_panel.Controls.Add(this.label20);
-            this.cancelApp_panel.Location = new System.Drawing.Point(358, 145);
+            this.cancelApp_panel.Location = new System.Drawing.Point(293, 58);
+            this.cancelApp_panel.Margin = new System.Windows.Forms.Padding(2);
             this.cancelApp_panel.Name = "cancelApp_panel";
-            this.cancelApp_panel.Size = new System.Drawing.Size(200, 100);
+            this.cancelApp_panel.Size = new System.Drawing.Size(136, 150);
             this.cancelApp_panel.TabIndex = 3;
             // 
-            // button1
+            // appDateDelete
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(421, 460);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(193, 81);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = false;
+            this.appDateDelete.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.appDateDelete.FormattingEnabled = true;
+            this.appDateDelete.Location = new System.Drawing.Point(442, 252);
+            this.appDateDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.appDateDelete.Name = "appDateDelete";
+            this.appDateDelete.Size = new System.Drawing.Size(342, 21);
+            this.appDateDelete.TabIndex = 49;
             // 
-            // cancelID_comboBox
+            // PnameDelete
             // 
-            this.cancelID_comboBox.FormattingEnabled = true;
-            this.cancelID_comboBox.Location = new System.Drawing.Point(563, 190);
-            this.cancelID_comboBox.Name = "cancelID_comboBox";
-            this.cancelID_comboBox.Size = new System.Drawing.Size(346, 24);
-            this.cancelID_comboBox.TabIndex = 31;
+            this.PnameDelete.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PnameDelete.FormattingEnabled = true;
+            this.PnameDelete.Location = new System.Drawing.Point(442, 124);
+            this.PnameDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.PnameDelete.Name = "PnameDelete";
+            this.PnameDelete.Size = new System.Drawing.Size(342, 21);
+            this.PnameDelete.TabIndex = 48;
+            this.PnameDelete.SelectedIndexChanged += new System.EventHandler(this.PnameDelete_SelectedIndexChanged);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label38.Location = new System.Drawing.Point(50, 114);
+            this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(199, 31);
+            this.label38.TabIndex = 47;
+            this.label38.Text = "Patient Name";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label41.Location = new System.Drawing.Point(50, 236);
+            this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(271, 31);
+            this.label41.TabIndex = 40;
+            this.label41.Text = "Appointment Date";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label42.Location = new System.Drawing.Point(50, 175);
+            this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(193, 31);
+            this.label42.TabIndex = 39;
+            this.label42.Text = "Doctor Name";
+            // 
+            // DrnameDelete
+            // 
+            this.DrnameDelete.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DrnameDelete.FormattingEnabled = true;
+            this.DrnameDelete.Location = new System.Drawing.Point(442, 184);
+            this.DrnameDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.DrnameDelete.Name = "DrnameDelete";
+            this.DrnameDelete.Size = new System.Drawing.Size(342, 21);
+            this.DrnameDelete.TabIndex = 38;
+            this.DrnameDelete.SelectedIndexChanged += new System.EventHandler(this.DrnameDelete_SelectedIndexChanged);
+            // 
+            // cancel_btn
+            // 
+            this.cancel_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.cancel_btn.FlatAppearance.BorderSize = 0;
+            this.cancel_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancel_btn.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancel_btn.ForeColor = System.Drawing.Color.White;
+            this.cancel_btn.Location = new System.Drawing.Point(316, 374);
+            this.cancel_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.cancel_btn.Name = "cancel_btn";
+            this.cancel_btn.Size = new System.Drawing.Size(145, 66);
+            this.cancel_btn.TabIndex = 32;
+            this.cancel_btn.Text = "Cancel";
+            this.cancel_btn.UseVisualStyleBackColor = false;
+            this.cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click);
             // 
             // label21
             // 
@@ -1163,28 +1491,20 @@ namespace Hospital
             this.label21.Font = new System.Drawing.Font("Verdana", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.label21.Location = new System.Drawing.Point(0, 0);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(794, 80);
+            this.label21.Size = new System.Drawing.Size(637, 65);
             this.label21.TabIndex = 30;
             this.label21.Text = "Cancel Appointment";
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label20.Location = new System.Drawing.Point(97, 176);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(318, 39);
-            this.label20.TabIndex = 29;
-            this.label20.Text = "Appointments ID";
-            // 
             // Receptionist
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1454, 712);
+            this.ClientSize = new System.Drawing.Size(1028, 586);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelMenu);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Receptionist";
             this.Text = "Receptionist";
             this.Load += new System.EventHandler(this.Receptionist_Load);
@@ -1199,10 +1519,12 @@ namespace Hospital
             this.editApp_panel.ResumeLayout(false);
             this.editApp_panel.PerformLayout();
             this.panelDesktop.ResumeLayout(false);
-            this.pay_panel.ResumeLayout(false);
-            this.pay_panel.PerformLayout();
             this.reserve_panel.ResumeLayout(false);
             this.reserve_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Nonights)).EndInit();
+            this.pay_panel.ResumeLayout(false);
+            this.pay_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bill_dataGridView)).EndInit();
             this.cancelApp_panel.ResumeLayout(false);
             this.cancelApp_panel.PerformLayout();
             this.ResumeLayout(false);
@@ -1239,20 +1561,13 @@ namespace Hospital
         private System.Windows.Forms.Panel makeApp_panel;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox docName_comboBox;
-        private System.Windows.Forms.ComboBox Pname_comboBox;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel editApp_panel;
         private System.Windows.Forms.Button editApp_btn;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox newappID_textBox;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button AddApp_button;
         private FontAwesome.Sharp.IconButton Pay_btn;
@@ -1265,36 +1580,58 @@ namespace Hospital
         private FontAwesome.Sharp.IconButton logoyt_btn;
         private System.Windows.Forms.Panel cancelApp_panel;
         private System.Windows.Forms.Panel reserve_panel;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button resrve_btn;
         private System.Windows.Forms.ComboBox PID_reserve_comboBox;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox noNights_reserve_textBox;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ComboBox rooms_reserve_comboBox;
         private System.Windows.Forms.ComboBox deptname_reserve_comboBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox cancelID_comboBox;
+        private System.Windows.Forms.Button cancel_btn;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel pay_panel;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox patientID_pay_textBox;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox billID_pay_textBox;
-        private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.ComboBox billType_pay_comboBox;
         private System.Windows.Forms.TextBox price_pay_textBox;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.DateTimePicker pay_dateTimePicker;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Button pay_button;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button bill_button;
+        private System.Windows.Forms.ComboBox DrNameEdit;
+        private System.Windows.Forms.DateTimePicker appTime;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox endTime_txt;
+        private System.Windows.Forms.TextBox srtTime_txt;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox Pname_comboBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker appDate;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DateTimePicker appDateEdit;
+        private System.Windows.Forms.DateTimePicker appTimeEdit;
+        private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox EditType_combo;
+        private System.Windows.Forms.ComboBox PnameEdit_combo;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox PnameDelete;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.ComboBox DrnameDelete;
+        private System.Windows.Forms.ComboBox appDateDelete;
+        private System.Windows.Forms.NumericUpDown Nonights;
+        private System.Windows.Forms.DateTimePicker Resrve_date;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox Pid_bill_combo;
+        private System.Windows.Forms.DataGridView bill_dataGridView;
+        private System.Windows.Forms.ComboBox BillType;
+        private System.Windows.Forms.Label label28;
     }
 }

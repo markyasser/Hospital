@@ -30,7 +30,9 @@ namespace Hospital
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pharmacist));
             this.SideMenu = new System.Windows.Forms.Panel();
+            this.Statistics_btn = new FontAwesome.Sharp.IconButton();
             this.Sell_btn = new FontAwesome.Sharp.IconButton();
             this.SetPrice_btn = new FontAwesome.Sharp.IconButton();
             this.AddMedicine_btn = new FontAwesome.Sharp.IconButton();
@@ -42,6 +44,7 @@ namespace Hospital
             // SideMenu
             // 
             this.SideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.SideMenu.Controls.Add(this.Statistics_btn);
             this.SideMenu.Controls.Add(this.Sell_btn);
             this.SideMenu.Controls.Add(this.SetPrice_btn);
             this.SideMenu.Controls.Add(this.AddMedicine_btn);
@@ -52,9 +55,34 @@ namespace Hospital
             this.SideMenu.Name = "SideMenu";
             this.SideMenu.Size = new System.Drawing.Size(145, 450);
             this.SideMenu.TabIndex = 0;
+            this.SideMenu.Click += new System.EventHandler(this.SideMenu_Click);
+            // 
+            // Statistics_btn
+            // 
+            this.Statistics_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.Statistics_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Statistics_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Statistics_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Statistics_btn.ForeColor = System.Drawing.Color.White;
+            this.Statistics_btn.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
+            this.Statistics_btn.IconColor = System.Drawing.Color.Black;
+            this.Statistics_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Statistics_btn.IconSize = 30;
+            this.Statistics_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Statistics_btn.Location = new System.Drawing.Point(0, 233);
+            this.Statistics_btn.Name = "Statistics_btn";
+            this.Statistics_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.Statistics_btn.Size = new System.Drawing.Size(145, 56);
+            this.Statistics_btn.TabIndex = 4;
+            this.Statistics_btn.Text = "Statistics";
+            this.Statistics_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Statistics_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Statistics_btn.UseVisualStyleBackColor = false;
+            this.Statistics_btn.Click += new System.EventHandler(this.Statistics_btn_Click);
             // 
             // Sell_btn
             // 
+            this.Sell_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
             this.Sell_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.Sell_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Sell_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -72,7 +100,7 @@ namespace Hospital
             this.Sell_btn.Text = "Sell";
             this.Sell_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Sell_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Sell_btn.UseVisualStyleBackColor = true;
+            this.Sell_btn.UseVisualStyleBackColor = false;
             this.Sell_btn.Click += new System.EventHandler(this.Sell_btn_Click);
             // 
             // SetPrice_btn
@@ -82,7 +110,7 @@ namespace Hospital
             this.SetPrice_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SetPrice_btn.ForeColor = System.Drawing.Color.White;
             this.SetPrice_btn.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
-            this.SetPrice_btn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(204)))), ((int)(((byte)(23)))));
+            this.SetPrice_btn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(204)))), ((int)(((byte)(23)))));
             this.SetPrice_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SetPrice_btn.IconSize = 30;
             this.SetPrice_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -122,13 +150,14 @@ namespace Hospital
             // Logo
             // 
             this.Logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.Logo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Logo.BackgroundImage")));
             this.Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Logo.Dock = System.Windows.Forms.DockStyle.Top;
             this.Logo.Location = new System.Drawing.Point(0, 0);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(145, 65);
             this.Logo.TabIndex = 0;
-            this.Logo.Paint += new System.Windows.Forms.PaintEventHandler(this.Logo_Paint);
+            this.Logo.Click += new System.EventHandler(this.Logo_Click);
             // 
             // ChildPanel
             // 
@@ -139,7 +168,6 @@ namespace Hospital
             this.ChildPanel.Name = "ChildPanel";
             this.ChildPanel.Size = new System.Drawing.Size(655, 450);
             this.ChildPanel.TabIndex = 1;
-            this.ChildPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ChildPanel_Paint);
             // 
             // Pharmacist
             // 
@@ -162,5 +190,6 @@ namespace Hospital
         private FontAwesome.Sharp.IconButton AddMedicine_btn;
         private System.Windows.Forms.Panel Logo;
         private System.Windows.Forms.Panel ChildPanel;
+        private FontAwesome.Sharp.IconButton Statistics_btn;
     }
 }

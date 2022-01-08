@@ -105,16 +105,39 @@ namespace Hospital
         public static string GetSurgeriesForPatient = "GetSurgeriesForPatient";
         public static string SelectPatientsOfDoctor = "SelectPatientsOfDoctor";
 
-
         //--------------------------------Receptionist-----------------------------------
         public static string InsertPatient = "InsertPatient";
+        public static string SelectPatientsID_name = "SelectPatientsID_name";
+        public static string SelectDocID_name = "SelectDocID_name";
+        public static string SelectDoc_srt_end = "SelectDoc_srt_end";
+        public static string appReserved = "appReserved";
+        public static string AppDate = "AppDate";
+        public static string AppTime = "AppTime";
+        public static string DeleteApp = "DeleteApp";
+        public static string InsertApp = "InsertApp";
+        public static string PatientsHasNoRoom = "PatientsHasNoRoom";
+        public static string getDepartmentData = "getDepartmentData";
+        public static string Avail_Rooms = "Avail_Rooms";
+        public static string ReserveRoom = "ReserveRoom";
         //--------------------------------Pharmacist-------------------------------------
         public static string InsertMedicine = "InsertMedicine";
         public static string GetAllMedicine = "GetAllMedicine";
         public static string GetMedPrice = "GetMedPrice";
         public static string SetMedPrice = "SetMedPrice";
+        public static string GetPatientName = "GetPatientName";
+        public static string GetPatientIDWithName = "GetPatientIDWithName";
+        public static string AddMedicineToPatient = "AddMedicineToPatient";
+        public static string BuyMedicine = "BuyMedicine";
+        public static string GetExpiredMedicines = "GetExpiredMedicines";
+        public static string GetValid = "GetValid";
+        public static string GetEmptyMedicines = "GetEmptyMedicines";
         //-----------------------------------Nurse--------------------------------------
         public static string GetAllMedicalTest = "GetAllMedicalTest";
         public static string GetMedicalTestPrice = "GetMedicalTestPrice";
+        public static string GetRooms = "GetRooms";
+        public static string InsertServe = "InsertServe";
+        public static string DontServe = "DontServe";
+        public static string GetNurseName = "GetNurseName";
+        public static string GetNurseIDWithName = "GetNurseIDWithName";
     }
 }
