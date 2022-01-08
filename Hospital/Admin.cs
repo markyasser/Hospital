@@ -20,10 +20,8 @@ namespace Hospital
         private Panel leftBtnBorder;
         private Color PrevColorOfActiveButton;
         string USERNAME;
-        int var;
         public Admin(string user) 
         {
-            var = 0;
             USERNAME = user;
             InitializeComponent();
             controllerObj = new Controller();
@@ -875,11 +873,11 @@ namespace Hospital
         }
         void getEarnings()
         {
-            dataGridView3.DataSource = controllerObj.Earnings("Medicines", dateTimePicker1.Value);
+            dataGridView3.DataSource = controllerObj.Earnings("Medicines"   , dateTimePicker1.Value);
             dataGridView4.DataSource = controllerObj.Earnings("MedicalTests", dateTimePicker1.Value);
             dataGridView5.DataSource = controllerObj.Earnings("Appointments", dateTimePicker1.Value);
-            dataGridView6.DataSource = controllerObj.Earnings("Operations", dateTimePicker1.Value);
-            dataGridView7.DataSource = controllerObj.Earnings("Rooms", dateTimePicker1.Value);
+            dataGridView6.DataSource = controllerObj.Earnings("Operations"  , dateTimePicker1.Value);
+            dataGridView7.DataSource = controllerObj.Earnings("Rooms"       , dateTimePicker1.Value);
         }
         private void button4_Click(object sender, EventArgs e)
         {
@@ -932,6 +930,11 @@ namespace Hospital
         {
             dataGridView10.DataSource = controllerObj.GetAllRoomsInformation();
         }
+        private void Show_Statistics_btn_Click(object sender, EventArgs e)
+        {
+            ReportEarnings f = new ReportEarnings(dateTimePicker1.Text);
+            f.Show();
+        }
         private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
         }
@@ -947,5 +950,7 @@ namespace Hospital
         private void pricepernight_TextChanged(object sender, EventArgs e)
         {
         }
+
+        
     }
 }
