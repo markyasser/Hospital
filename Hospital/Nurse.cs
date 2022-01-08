@@ -56,20 +56,6 @@ namespace Hospital
             OpenChildForm(new Serve(ControllerObj));
         }
 
-        private void ChildPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void SideMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Logo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void ActivateButton(object senderBtn, Color color)
         {

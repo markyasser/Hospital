@@ -690,11 +690,11 @@ namespace Hospital
         {
             string StoredProcedureName = StoredProcedures.InsertMedicine;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
-            Parameters.Add("@MedicineID", MedicineID);
             Parameters.Add("@MedicineName", MedicineName);
-            Parameters.Add("@MedicinePrice", Price);
-            Parameters.Add("@MedicineQuantity", Quantity);
             Parameters.Add("@MedicineExpiryDate", ExpiryDate);
+            Parameters.Add("@MedicineQuantity", Quantity);
+            Parameters.Add("@MedicinePrice", Price);
+            Parameters.Add("@MedicineID", MedicineID);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
 
@@ -735,15 +735,21 @@ namespace Hospital
             return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
         }
 
+        public DataTable GetPatientName()
+        {
+            String StoredProcedureName = StoredProcedures.GetPatientName;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+
         public DataTable GetEmptyMedicines()
         {
             String StoredProcedureName = StoredProcedures.GetEmptyMedicines;
             return dbMan.ExecuteReader(StoredProcedureName, null);
         }
 
-        public DataTable GetValidMedicines()
+        public DataTable GetValid()
         {
-            String StoredProcedureName = StoredProcedures.GetValidMedicines;
+            String StoredProcedureName = StoredProcedures.GetValid;
             return dbMan.ExecuteReader(StoredProcedureName, null);
         }
 
@@ -753,20 +759,20 @@ namespace Hospital
             return dbMan.ExecuteReader(StoredProcedureName, null);
         }
 
-        public object GetNurseName(int Nurse_ID)
+        public DataTable GetNurseName()
         {
-            Dictionary<string, object> Parameters = new Dictionary<string, object>();
-            Parameters.Add("@Nurse_ID", Nurse_ID);
             string StoredProcedureName = StoredProcedures.GetNurseName;
-            return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
-        }
-
-        public DataTable GetNurseID()
-        {
-            String StoredProcedureName = StoredProcedures.GetNurseID;
             return dbMan.ExecuteReader(StoredProcedureName, null);
         }
 
+        public DataTable GetNurseIDWithName(string Fullname)
+        {
+            String StoredProcedureName = StoredProcedures.GetNurseIDWithName;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Fullname", Fullname);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        
         public int InsertServe(int Nurse_ID, int RoomNumber)
         {
             string StoredProcedureName = StoredProcedures.InsertServe;
@@ -791,12 +797,12 @@ namespace Hospital
             return dbMan.ExecuteReader(StoredProcedureName, null);
         }
 
-        public object GetPatientName(int PatientID)
+        public DataTable GetPatientIDWithName(string Fullname)
         {
+            String StoredProcedureName = StoredProcedures.GetPatientIDWithName;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
-            Parameters.Add("@PatientID", PatientID);
-            string StoredProcedureName = StoredProcedures.GetPatientName;
-            return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+            Parameters.Add("@Fullname", Fullname);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
 
         public int AddMedicineToPatient(int MedID,int Pid,int Quantity)
@@ -811,7 +817,7 @@ namespace Hospital
 
         public int BuyMedicine(string MedName, int Amount)
         {
-            string StoredProcedureName = StoredProcedures.AddMedicineToPatient;
+            string StoredProcedureName = StoredProcedures.BuyMedicine;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@MedName", MedName);
             Parameters.Add("@Amount", Amount);

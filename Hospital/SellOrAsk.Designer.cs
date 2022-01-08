@@ -28,40 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PatientID_lbl = new System.Windows.Forms.Label();
-            this.PatientID_cmb = new System.Windows.Forms.ComboBox();
             this.Medname1_lbl = new System.Windows.Forms.Label();
-            this.Medname1_cmb = new System.Windows.Forms.ComboBox();
             this.Get_btn = new System.Windows.Forms.Button();
-            this.Show_btn = new System.Windows.Forms.Button();
             this.Med1_gb = new System.Windows.Forms.GroupBox();
-            this.Amount1_txt = new System.Windows.Forms.TextBox();
+            this.Amount1_NUD = new System.Windows.Forms.NumericUpDown();
+            this.Medname1_cmb = new System.Windows.Forms.ComboBox();
             this.Amount1_lbl = new System.Windows.Forms.Label();
             this.Price1_lbl = new System.Windows.Forms.Label();
             this.Price1_txt = new System.Windows.Forms.TextBox();
             this.Med2_gb = new System.Windows.Forms.GroupBox();
-            this.Amount2_txt = new System.Windows.Forms.TextBox();
+            this.Amount2_NUD = new System.Windows.Forms.NumericUpDown();
             this.Amount2_lbl = new System.Windows.Forms.Label();
             this.Price2_lbl = new System.Windows.Forms.Label();
             this.Price2_txt = new System.Windows.Forms.TextBox();
             this.Medname2_lbl = new System.Windows.Forms.Label();
             this.Medname2_cmb = new System.Windows.Forms.ComboBox();
             this.Med3_gb = new System.Windows.Forms.GroupBox();
-            this.Amount3_txt = new System.Windows.Forms.TextBox();
+            this.Amount3_NUD = new System.Windows.Forms.NumericUpDown();
             this.Amount3_lbl = new System.Windows.Forms.Label();
             this.price3_lbl = new System.Windows.Forms.Label();
             this.Price3_txt = new System.Windows.Forms.TextBox();
             this.Medname3_lbl = new System.Windows.Forms.Label();
             this.Medname3_cmb = new System.Windows.Forms.ComboBox();
             this.Med4_gb = new System.Windows.Forms.GroupBox();
-            this.Amount4_txt = new System.Windows.Forms.TextBox();
+            this.Amount4_NUD = new System.Windows.Forms.NumericUpDown();
             this.Amount4_lbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Price4_txt = new System.Windows.Forms.TextBox();
             this.Medname4_lbl = new System.Windows.Forms.Label();
             this.Medname4_cmb = new System.Windows.Forms.ComboBox();
             this.Med5_gb = new System.Windows.Forms.GroupBox();
-            this.Amount5_txt = new System.Windows.Forms.TextBox();
+            this.Amount5_NUD = new System.Windows.Forms.NumericUpDown();
             this.Amount5_lbl = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Price5_txt = new System.Windows.Forms.TextBox();
@@ -69,40 +66,23 @@
             this.Medname5_cmb = new System.Windows.Forms.ComboBox();
             this.TotalPrice_lbl = new System.Windows.Forms.Label();
             this.TotalPrice_txt = new System.Windows.Forms.TextBox();
-            this.Amount1Msg_lbl = new System.Windows.Forms.Label();
-            this.Amount2Msg_lbl = new System.Windows.Forms.Label();
-            this.Amount3Msg_lbl = new System.Windows.Forms.Label();
-            this.Amount4Msg_lbl = new System.Windows.Forms.Label();
-            this.Amount5Msg_lbl = new System.Windows.Forms.Label();
             this.PatientName_lbl = new System.Windows.Forms.Label();
-            this.PatientName_txt = new System.Windows.Forms.TextBox();
+            this.PatientName_cmb = new System.Windows.Forms.ComboBox();
+            this.Show_btn = new System.Windows.Forms.Button();
+            this.PatientID_lbl = new System.Windows.Forms.Label();
+            this.PatientID_cmb = new System.Windows.Forms.ComboBox();
+            this.RemoveMed_btn = new System.Windows.Forms.Button();
             this.Med1_gb.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Amount1_NUD)).BeginInit();
             this.Med2_gb.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Amount2_NUD)).BeginInit();
             this.Med3_gb.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Amount3_NUD)).BeginInit();
             this.Med4_gb.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Amount4_NUD)).BeginInit();
             this.Med5_gb.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Amount5_NUD)).BeginInit();
             this.SuspendLayout();
-            // 
-            // PatientID_lbl
-            // 
-            this.PatientID_lbl.AutoSize = true;
-            this.PatientID_lbl.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.PatientID_lbl.ForeColor = System.Drawing.Color.Black;
-            this.PatientID_lbl.Location = new System.Drawing.Point(21, 44);
-            this.PatientID_lbl.Name = "PatientID_lbl";
-            this.PatientID_lbl.Size = new System.Drawing.Size(86, 17);
-            this.PatientID_lbl.TabIndex = 21;
-            this.PatientID_lbl.Text = "Patient ID";
-            // 
-            // PatientID_cmb
-            // 
-            this.PatientID_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.PatientID_cmb.FormattingEnabled = true;
-            this.PatientID_cmb.Location = new System.Drawing.Point(109, 41);
-            this.PatientID_cmb.Name = "PatientID_cmb";
-            this.PatientID_cmb.Size = new System.Drawing.Size(130, 24);
-            this.PatientID_cmb.TabIndex = 20;
-            this.PatientID_cmb.TextChanged += new System.EventHandler(this.PatientID_cmb_TextChanged);
             // 
             // Medname1_lbl
             // 
@@ -115,16 +95,6 @@
             this.Medname1_lbl.TabIndex = 23;
             this.Medname1_lbl.Text = "Medicine #1";
             // 
-            // Medname1_cmb
-            // 
-            this.Medname1_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.Medname1_cmb.FormattingEnabled = true;
-            this.Medname1_cmb.Location = new System.Drawing.Point(117, 15);
-            this.Medname1_cmb.Name = "Medname1_cmb";
-            this.Medname1_cmb.Size = new System.Drawing.Size(156, 24);
-            this.Medname1_cmb.TabIndex = 22;
-            this.Medname1_cmb.TextChanged += new System.EventHandler(this.Medname1_cmb_TextChanged);
-            // 
             // Get_btn
             // 
             this.Get_btn.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
@@ -135,28 +105,16 @@
             this.Get_btn.TabIndex = 24;
             this.Get_btn.Text = "Get";
             this.Get_btn.UseVisualStyleBackColor = true;
-            //this.Get_btn.Click += new System.EventHandler(this.Get_btn_Click);
-            // 
-            // Show_btn
-            // 
-            this.Show_btn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
-            this.Show_btn.ForeColor = System.Drawing.Color.Black;
-            this.Show_btn.Location = new System.Drawing.Point(245, 31);
-            this.Show_btn.Name = "Show_btn";
-            this.Show_btn.Size = new System.Drawing.Size(124, 42);
-            this.Show_btn.TabIndex = 31;
-            this.Show_btn.Text = "Add another medicine";
-            this.Show_btn.UseVisualStyleBackColor = true;
-            this.Show_btn.Click += new System.EventHandler(this.Show_btn_Click);
+            this.Get_btn.Click += new System.EventHandler(this.Get_btn_Click);
             // 
             // Med1_gb
             // 
-            this.Med1_gb.Controls.Add(this.Amount1_txt);
+            this.Med1_gb.Controls.Add(this.Amount1_NUD);
+            this.Med1_gb.Controls.Add(this.Medname1_cmb);
             this.Med1_gb.Controls.Add(this.Amount1_lbl);
             this.Med1_gb.Controls.Add(this.Price1_lbl);
             this.Med1_gb.Controls.Add(this.Price1_txt);
             this.Med1_gb.Controls.Add(this.Medname1_lbl);
-            this.Med1_gb.Controls.Add(this.Medname1_cmb);
             this.Med1_gb.Location = new System.Drawing.Point(12, 84);
             this.Med1_gb.Name = "Med1_gb";
             this.Med1_gb.Size = new System.Drawing.Size(665, 45);
@@ -164,13 +122,34 @@
             this.Med1_gb.TabStop = false;
             this.Med1_gb.Text = "Med1";
             // 
-            // Amount1_txt
+            // Amount1_NUD
             // 
-            this.Amount1_txt.Location = new System.Drawing.Point(541, 15);
-            this.Amount1_txt.Name = "Amount1_txt";
-            this.Amount1_txt.Size = new System.Drawing.Size(92, 20);
-            this.Amount1_txt.TabIndex = 43;
-            this.Amount1_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Amount1_txt_KeyPress);
+            this.Amount1_NUD.Location = new System.Drawing.Point(541, 15);
+            this.Amount1_NUD.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Amount1_NUD.Name = "Amount1_NUD";
+            this.Amount1_NUD.Size = new System.Drawing.Size(57, 20);
+            this.Amount1_NUD.TabIndex = 56;
+            this.Amount1_NUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Amount1_NUD.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Amount1_NUD.ValueChanged += new System.EventHandler(this.Amount1_NUD_ValueChanged);
+            // 
+            // Medname1_cmb
+            // 
+            this.Medname1_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.Medname1_cmb.FormattingEnabled = true;
+            this.Medname1_cmb.Location = new System.Drawing.Point(117, 16);
+            this.Medname1_cmb.Name = "Medname1_cmb";
+            this.Medname1_cmb.Size = new System.Drawing.Size(156, 24);
+            this.Medname1_cmb.TabIndex = 44;
+            this.Medname1_cmb.TextChanged += new System.EventHandler(this.Medname1_cmb_TextChanged);
             // 
             // Amount1_lbl
             // 
@@ -204,7 +183,7 @@
             // 
             // Med2_gb
             // 
-            this.Med2_gb.Controls.Add(this.Amount2_txt);
+            this.Med2_gb.Controls.Add(this.Amount2_NUD);
             this.Med2_gb.Controls.Add(this.Amount2_lbl);
             this.Med2_gb.Controls.Add(this.Price2_lbl);
             this.Med2_gb.Controls.Add(this.Price2_txt);
@@ -218,13 +197,24 @@
             this.Med2_gb.Text = "Med2";
             this.Med2_gb.Visible = false;
             // 
-            // Amount2_txt
+            // Amount2_NUD
             // 
-            this.Amount2_txt.Location = new System.Drawing.Point(541, 14);
-            this.Amount2_txt.Name = "Amount2_txt";
-            this.Amount2_txt.Size = new System.Drawing.Size(92, 20);
-            this.Amount2_txt.TabIndex = 45;
-            this.Amount2_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Amount2_txt_KeyPress);
+            this.Amount2_NUD.Location = new System.Drawing.Point(541, 15);
+            this.Amount2_NUD.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Amount2_NUD.Name = "Amount2_NUD";
+            this.Amount2_NUD.Size = new System.Drawing.Size(57, 20);
+            this.Amount2_NUD.TabIndex = 57;
+            this.Amount2_NUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Amount2_NUD.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Amount2_NUD.ValueChanged += new System.EventHandler(this.Amount2_NUD_ValueChanged);
             // 
             // Amount2_lbl
             // 
@@ -279,7 +269,7 @@
             // 
             // Med3_gb
             // 
-            this.Med3_gb.Controls.Add(this.Amount3_txt);
+            this.Med3_gb.Controls.Add(this.Amount3_NUD);
             this.Med3_gb.Controls.Add(this.Amount3_lbl);
             this.Med3_gb.Controls.Add(this.price3_lbl);
             this.Med3_gb.Controls.Add(this.Price3_txt);
@@ -293,13 +283,24 @@
             this.Med3_gb.Text = "Med3";
             this.Med3_gb.Visible = false;
             // 
-            // Amount3_txt
+            // Amount3_NUD
             // 
-            this.Amount3_txt.Location = new System.Drawing.Point(541, 15);
-            this.Amount3_txt.Name = "Amount3_txt";
-            this.Amount3_txt.Size = new System.Drawing.Size(92, 20);
-            this.Amount3_txt.TabIndex = 45;
-            this.Amount3_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Amount3_txt_KeyPress);
+            this.Amount3_NUD.Location = new System.Drawing.Point(541, 15);
+            this.Amount3_NUD.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Amount3_NUD.Name = "Amount3_NUD";
+            this.Amount3_NUD.Size = new System.Drawing.Size(57, 20);
+            this.Amount3_NUD.TabIndex = 57;
+            this.Amount3_NUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Amount3_NUD.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Amount3_NUD.ValueChanged += new System.EventHandler(this.Amount3_NUD_ValueChanged);
             // 
             // Amount3_lbl
             // 
@@ -354,7 +355,7 @@
             // 
             // Med4_gb
             // 
-            this.Med4_gb.Controls.Add(this.Amount4_txt);
+            this.Med4_gb.Controls.Add(this.Amount4_NUD);
             this.Med4_gb.Controls.Add(this.Amount4_lbl);
             this.Med4_gb.Controls.Add(this.label3);
             this.Med4_gb.Controls.Add(this.Price4_txt);
@@ -368,13 +369,24 @@
             this.Med4_gb.Text = "Med4";
             this.Med4_gb.Visible = false;
             // 
-            // Amount4_txt
+            // Amount4_NUD
             // 
-            this.Amount4_txt.Location = new System.Drawing.Point(541, 18);
-            this.Amount4_txt.Name = "Amount4_txt";
-            this.Amount4_txt.Size = new System.Drawing.Size(92, 20);
-            this.Amount4_txt.TabIndex = 45;
-            this.Amount4_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Amount4_txt_KeyPress);
+            this.Amount4_NUD.Location = new System.Drawing.Point(541, 15);
+            this.Amount4_NUD.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Amount4_NUD.Name = "Amount4_NUD";
+            this.Amount4_NUD.Size = new System.Drawing.Size(57, 20);
+            this.Amount4_NUD.TabIndex = 58;
+            this.Amount4_NUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Amount4_NUD.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Amount4_NUD.ValueChanged += new System.EventHandler(this.Amount4_NUD_ValueChanged);
             // 
             // Amount4_lbl
             // 
@@ -429,7 +441,7 @@
             // 
             // Med5_gb
             // 
-            this.Med5_gb.Controls.Add(this.Amount5_txt);
+            this.Med5_gb.Controls.Add(this.Amount5_NUD);
             this.Med5_gb.Controls.Add(this.Amount5_lbl);
             this.Med5_gb.Controls.Add(this.label4);
             this.Med5_gb.Controls.Add(this.Price5_txt);
@@ -443,13 +455,24 @@
             this.Med5_gb.Text = "Med5";
             this.Med5_gb.Visible = false;
             // 
-            // Amount5_txt
+            // Amount5_NUD
             // 
-            this.Amount5_txt.Location = new System.Drawing.Point(541, 15);
-            this.Amount5_txt.Name = "Amount5_txt";
-            this.Amount5_txt.Size = new System.Drawing.Size(92, 20);
-            this.Amount5_txt.TabIndex = 45;
-            this.Amount5_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Amount5_txt_KeyPress);
+            this.Amount5_NUD.Location = new System.Drawing.Point(541, 14);
+            this.Amount5_NUD.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Amount5_NUD.Name = "Amount5_NUD";
+            this.Amount5_NUD.Size = new System.Drawing.Size(57, 20);
+            this.Amount5_NUD.TabIndex = 59;
+            this.Amount5_NUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Amount5_NUD.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Amount5_NUD.ValueChanged += new System.EventHandler(this.Amount5_NUD_ValueChanged);
             // 
             // Amount5_lbl
             // 
@@ -521,93 +544,82 @@
             this.TotalPrice_txt.Size = new System.Drawing.Size(157, 20);
             this.TotalPrice_txt.TabIndex = 40;
             // 
-            // Amount1Msg_lbl
-            // 
-            this.Amount1Msg_lbl.AutoSize = true;
-            this.Amount1Msg_lbl.ForeColor = System.Drawing.Color.Black;
-            this.Amount1Msg_lbl.Location = new System.Drawing.Point(527, 122);
-            this.Amount1Msg_lbl.Name = "Amount1Msg_lbl";
-            this.Amount1Msg_lbl.Size = new System.Drawing.Size(134, 13);
-            this.Amount1Msg_lbl.TabIndex = 44;
-            this.Amount1Msg_lbl.Text = "Please, enter numbers only";
-            this.Amount1Msg_lbl.Visible = false;
-            // 
-            // Amount2Msg_lbl
-            // 
-            this.Amount2Msg_lbl.AutoSize = true;
-            this.Amount2Msg_lbl.ForeColor = System.Drawing.Color.Black;
-            this.Amount2Msg_lbl.Location = new System.Drawing.Point(527, 172);
-            this.Amount2Msg_lbl.Name = "Amount2Msg_lbl";
-            this.Amount2Msg_lbl.Size = new System.Drawing.Size(134, 13);
-            this.Amount2Msg_lbl.TabIndex = 46;
-            this.Amount2Msg_lbl.Text = "Please, enter numbers only";
-            this.Amount2Msg_lbl.Visible = false;
-            // 
-            // Amount3Msg_lbl
-            // 
-            this.Amount3Msg_lbl.AutoSize = true;
-            this.Amount3Msg_lbl.ForeColor = System.Drawing.Color.Black;
-            this.Amount3Msg_lbl.Location = new System.Drawing.Point(527, 232);
-            this.Amount3Msg_lbl.Name = "Amount3Msg_lbl";
-            this.Amount3Msg_lbl.Size = new System.Drawing.Size(134, 13);
-            this.Amount3Msg_lbl.TabIndex = 47;
-            this.Amount3Msg_lbl.Text = "Please, enter numbers only";
-            this.Amount3Msg_lbl.Visible = false;
-            // 
-            // Amount4Msg_lbl
-            // 
-            this.Amount4Msg_lbl.AutoSize = true;
-            this.Amount4Msg_lbl.ForeColor = System.Drawing.Color.Black;
-            this.Amount4Msg_lbl.Location = new System.Drawing.Point(527, 286);
-            this.Amount4Msg_lbl.Name = "Amount4Msg_lbl";
-            this.Amount4Msg_lbl.Size = new System.Drawing.Size(134, 13);
-            this.Amount4Msg_lbl.TabIndex = 48;
-            this.Amount4Msg_lbl.Text = "Please, enter numbers only";
-            this.Amount4Msg_lbl.Visible = false;
-            this.Amount4Msg_lbl.Click += new System.EventHandler(this.Label5_Click);
-            // 
-            // Amount5Msg_lbl
-            // 
-            this.Amount5Msg_lbl.AutoSize = true;
-            this.Amount5Msg_lbl.ForeColor = System.Drawing.Color.Black;
-            this.Amount5Msg_lbl.Location = new System.Drawing.Point(527, 334);
-            this.Amount5Msg_lbl.Name = "Amount5Msg_lbl";
-            this.Amount5Msg_lbl.Size = new System.Drawing.Size(134, 13);
-            this.Amount5Msg_lbl.TabIndex = 49;
-            this.Amount5Msg_lbl.Text = "Please, enter numbers only";
-            this.Amount5Msg_lbl.Visible = false;
-            // 
             // PatientName_lbl
             // 
             this.PatientName_lbl.AutoSize = true;
             this.PatientName_lbl.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.PatientName_lbl.ForeColor = System.Drawing.Color.Black;
-            this.PatientName_lbl.Location = new System.Drawing.Point(375, 46);
+            this.PatientName_lbl.Location = new System.Drawing.Point(22, 14);
             this.PatientName_lbl.Name = "PatientName_lbl";
             this.PatientName_lbl.Size = new System.Drawing.Size(110, 17);
             this.PatientName_lbl.TabIndex = 51;
             this.PatientName_lbl.Text = "Patient Name";
             // 
-            // PatientName_txt
+            // PatientName_cmb
             // 
-            this.PatientName_txt.Location = new System.Drawing.Point(491, 45);
-            this.PatientName_txt.Name = "PatientName_txt";
-            this.PatientName_txt.ReadOnly = true;
-            this.PatientName_txt.Size = new System.Drawing.Size(186, 20);
-            this.PatientName_txt.TabIndex = 52;
+            this.PatientName_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.PatientName_cmb.FormattingEnabled = true;
+            this.PatientName_cmb.Location = new System.Drawing.Point(129, 12);
+            this.PatientName_cmb.Name = "PatientName_cmb";
+            this.PatientName_cmb.Size = new System.Drawing.Size(195, 24);
+            this.PatientName_cmb.TabIndex = 52;
+            this.PatientName_cmb.TextChanged += new System.EventHandler(this.PatientName_cmb_TextChanged_1);
+            // 
+            // Show_btn
+            // 
+            this.Show_btn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
+            this.Show_btn.ForeColor = System.Drawing.Color.Black;
+            this.Show_btn.Location = new System.Drawing.Point(349, 14);
+            this.Show_btn.Name = "Show_btn";
+            this.Show_btn.Size = new System.Drawing.Size(124, 42);
+            this.Show_btn.TabIndex = 55;
+            this.Show_btn.Text = "Add another medicine";
+            this.Show_btn.UseVisualStyleBackColor = true;
+            this.Show_btn.Click += new System.EventHandler(this.Show_btn_Click);
+            // 
+            // PatientID_lbl
+            // 
+            this.PatientID_lbl.AutoSize = true;
+            this.PatientID_lbl.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.PatientID_lbl.ForeColor = System.Drawing.Color.Black;
+            this.PatientID_lbl.Location = new System.Drawing.Point(22, 46);
+            this.PatientID_lbl.Name = "PatientID_lbl";
+            this.PatientID_lbl.Size = new System.Drawing.Size(86, 17);
+            this.PatientID_lbl.TabIndex = 54;
+            this.PatientID_lbl.Text = "Patient ID";
+            // 
+            // PatientID_cmb
+            // 
+            this.PatientID_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.PatientID_cmb.FormattingEnabled = true;
+            this.PatientID_cmb.Location = new System.Drawing.Point(129, 43);
+            this.PatientID_cmb.Name = "PatientID_cmb";
+            this.PatientID_cmb.Size = new System.Drawing.Size(130, 24);
+            this.PatientID_cmb.TabIndex = 53;
+            // 
+            // RemoveMed_btn
+            // 
+            this.RemoveMed_btn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
+            this.RemoveMed_btn.ForeColor = System.Drawing.Color.Black;
+            this.RemoveMed_btn.Location = new System.Drawing.Point(497, 14);
+            this.RemoveMed_btn.Name = "RemoveMed_btn";
+            this.RemoveMed_btn.Size = new System.Drawing.Size(124, 42);
+            this.RemoveMed_btn.TabIndex = 56;
+            this.RemoveMed_btn.Text = "remove medicine";
+            this.RemoveMed_btn.UseVisualStyleBackColor = true;
+            this.RemoveMed_btn.Click += new System.EventHandler(this.RemoveMed_btn_Click);
             // 
             // SellOrAsk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.PatientName_txt);
+            this.Controls.Add(this.RemoveMed_btn);
+            this.Controls.Add(this.Show_btn);
+            this.Controls.Add(this.PatientID_lbl);
+            this.Controls.Add(this.PatientID_cmb);
+            this.Controls.Add(this.PatientName_cmb);
             this.Controls.Add(this.PatientName_lbl);
-            this.Controls.Add(this.Amount5Msg_lbl);
-            this.Controls.Add(this.Amount4Msg_lbl);
-            this.Controls.Add(this.Amount3Msg_lbl);
-            this.Controls.Add(this.Amount2Msg_lbl);
-            this.Controls.Add(this.Amount1Msg_lbl);
             this.Controls.Add(this.TotalPrice_lbl);
             this.Controls.Add(this.TotalPrice_txt);
             this.Controls.Add(this.Med5_gb);
@@ -615,36 +627,33 @@
             this.Controls.Add(this.Med3_gb);
             this.Controls.Add(this.Med2_gb);
             this.Controls.Add(this.Med1_gb);
-            this.Controls.Add(this.Show_btn);
             this.Controls.Add(this.Get_btn);
-            this.Controls.Add(this.PatientID_lbl);
-            this.Controls.Add(this.PatientID_cmb);
             this.Name = "SellOrAsk";
             this.Text = "Sell";
             this.Load += new System.EventHandler(this.SellOrAsk_Load);
             this.Med1_gb.ResumeLayout(false);
             this.Med1_gb.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Amount1_NUD)).EndInit();
             this.Med2_gb.ResumeLayout(false);
             this.Med2_gb.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Amount2_NUD)).EndInit();
             this.Med3_gb.ResumeLayout(false);
             this.Med3_gb.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Amount3_NUD)).EndInit();
             this.Med4_gb.ResumeLayout(false);
             this.Med4_gb.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Amount4_NUD)).EndInit();
             this.Med5_gb.ResumeLayout(false);
             this.Med5_gb.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Amount5_NUD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label PatientID_lbl;
-        private System.Windows.Forms.ComboBox PatientID_cmb;
         private System.Windows.Forms.Label Medname1_lbl;
-        private System.Windows.Forms.ComboBox Medname1_cmb;
         private System.Windows.Forms.Button Get_btn;
-        private System.Windows.Forms.Button Show_btn;
         private System.Windows.Forms.GroupBox Med1_gb;
         private System.Windows.Forms.GroupBox Med2_gb;
         private System.Windows.Forms.Label Medname2_lbl;
@@ -670,22 +679,22 @@
         private System.Windows.Forms.TextBox Price5_txt;
         private System.Windows.Forms.Label TotalPrice_lbl;
         private System.Windows.Forms.TextBox TotalPrice_txt;
-        private System.Windows.Forms.TextBox Amount1_txt;
         private System.Windows.Forms.Label Amount1_lbl;
-        private System.Windows.Forms.TextBox Amount2_txt;
         private System.Windows.Forms.Label Amount2_lbl;
-        private System.Windows.Forms.TextBox Amount3_txt;
         private System.Windows.Forms.Label Amount3_lbl;
-        private System.Windows.Forms.TextBox Amount4_txt;
         private System.Windows.Forms.Label Amount4_lbl;
-        private System.Windows.Forms.TextBox Amount5_txt;
         private System.Windows.Forms.Label Amount5_lbl;
-        private System.Windows.Forms.Label Amount1Msg_lbl;
-        private System.Windows.Forms.Label Amount2Msg_lbl;
-        private System.Windows.Forms.Label Amount3Msg_lbl;
-        private System.Windows.Forms.Label Amount4Msg_lbl;
-        private System.Windows.Forms.Label Amount5Msg_lbl;
         private System.Windows.Forms.Label PatientName_lbl;
-        private System.Windows.Forms.TextBox PatientName_txt;
+        private System.Windows.Forms.ComboBox PatientName_cmb;
+        private System.Windows.Forms.Button Show_btn;
+        private System.Windows.Forms.Label PatientID_lbl;
+        private System.Windows.Forms.ComboBox PatientID_cmb;
+        private System.Windows.Forms.ComboBox Medname1_cmb;
+        private System.Windows.Forms.NumericUpDown Amount1_NUD;
+        private System.Windows.Forms.NumericUpDown Amount2_NUD;
+        private System.Windows.Forms.NumericUpDown Amount3_NUD;
+        private System.Windows.Forms.NumericUpDown Amount4_NUD;
+        private System.Windows.Forms.NumericUpDown Amount5_NUD;
+        private System.Windows.Forms.Button RemoveMed_btn;
     }
 }

@@ -19,10 +19,6 @@ namespace Hospital
             InitializeComponent();
         }
 
-        private void Statistics_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void Expired_btn_Click(object sender, EventArgs e)
         {
@@ -40,14 +36,9 @@ namespace Hospital
 
         private void Valid_btn_Click(object sender, EventArgs e)
         {
-            DataTable dt = ControllerObj.GetValidMedicines();
+            DataTable dt = ControllerObj.GetValid();
             dataGridView1.DataSource = dt;
             dataGridView1.Refresh();
-        }
-
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

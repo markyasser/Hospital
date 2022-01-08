@@ -21,12 +21,6 @@ namespace Hospital
             InitializeComponent();
         }
 
-        private void Pharmacist_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void OpenChildForm(Form ChildForm)
         {
             if (CurrentChildForm != null)
@@ -94,20 +88,6 @@ namespace Hospital
             }
         }
 
-        private void ChildPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-
-        }
-
-        private void Logo_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void SideMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void Logo_Click(object sender, EventArgs e)
         {

@@ -50,7 +50,6 @@
             this.SideMenu.Size = new System.Drawing.Size(145, 450);
             this.SideMenu.TabIndex = 0;
             this.SideMenu.Click += new System.EventHandler(this.SideMenu_Click);
-            this.SideMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.SideMenu_Paint);
             // 
             // Serve_btn
             // 
@@ -107,7 +106,6 @@
             this.Logo.Size = new System.Drawing.Size(145, 65);
             this.Logo.TabIndex = 0;
             this.Logo.Click += new System.EventHandler(this.Logo_Click);
-            this.Logo.Paint += new System.Windows.Forms.PaintEventHandler(this.Logo_Paint);
             // 
             // ChildPanel
             // 
@@ -118,7 +116,6 @@
             this.ChildPanel.Name = "ChildPanel";
             this.ChildPanel.Size = new System.Drawing.Size(655, 450);
             this.ChildPanel.TabIndex = 1;
-            this.ChildPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ChildPanel_Paint);
             // 
             // Nurse
             // 
