@@ -599,10 +599,12 @@ namespace Hospital
             return dbMan.ExecuteReader(StoredProcedureName, null);
 
         }
-        public DataTable SelectDocID_name()
+        public DataTable SelectDocID_name(int dno)
         {
             String StoredProcedureName = StoredProcedures.SelectDocID_name;
-            return dbMan.ExecuteReader(StoredProcedureName, null);
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@dno", dno);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
         public DataTable SelectDoc_srt_end(int id)
         {
@@ -620,29 +622,53 @@ namespace Hospital
             Parameters.Add("@Time", time);
             return (int)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
         }
-        public string AppDate(int Drid, int Pid)
+        public DataTable AppDate(int Drid, int Pid)
         {
             String StoredProcedureName = StoredProcedures.AppDate;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@Doctor_ID", Drid);
             Parameters.Add("@Patient_ID", Pid);
-            return (string)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
-        public string AppTime(int Drid, int Pid)
+        public int updateApp(int Drid, int Pid,string time,string oldDate,string newDate)
+        {
+            String StoredProcedureName = StoredProcedures.updateApp;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Doctor_ID", Drid);
+            Parameters.Add("@Patient_ID", Pid);
+            Parameters.Add("@Time", time);
+            Parameters.Add("@oldDate", oldDate);
+            Parameters.Add("@newDate", newDate);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public DataTable AppTime(int Drid, int Pid,string date)
         {
             String StoredProcedureName = StoredProcedures.AppTime;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@Doctor_ID", Drid);
             Parameters.Add("@Patient_ID", Pid);
-            return (string)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+            Parameters.Add("@Date", date);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
-        public int DeleteApp(int Drid, int Pid, string date)
+        public int updateAppTime(int Drid, int Pid, string Date, string oldTime,string newTime)
+        {
+            String StoredProcedureName = StoredProcedures.updateAppTime;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Doctor_ID", Drid);
+            Parameters.Add("@Patient_ID", Pid);
+            Parameters.Add("@Date", Date);
+            Parameters.Add("@oldTime", oldTime);
+            Parameters.Add("@newTime", newTime);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public int DeleteApp(int Drid, int Pid, string date,string time)
         {
             String StoredProcedureName = StoredProcedures.DeleteApp;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@Patient_ID", Pid);
             Parameters.Add("@Doctor_ID", Drid);
             Parameters.Add("@Date", date);
+            Parameters.Add("@Time", time);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
         public int InsertApp(int Drid, int Pid, string date, string time)
@@ -684,6 +710,96 @@ namespace Hospital
             Parameters.Add("@date", date);
             Parameters.Add("@nights_spent", nights);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public int AddAppointment(int Pid,int docID, string date,string time)
+        {
+            String StoredProcedureName = StoredProcedures.AddAppointment;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Pid", Pid);
+            Parameters.Add("@Doctor_ID", docID);
+            Parameters.Add("@Date", date);
+            Parameters.Add("@Time", time);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public DataTable MedicalTestBill(int Pid,string date)
+        {
+            String StoredProcedureName = StoredProcedures.MedicalTestBill;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@P_id", Pid);
+            Parameters.Add("@Date", date);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public int MedicalTestSum(int Pid, string date)
+        {
+            String StoredProcedureName = StoredProcedures.MedicalTestSum;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@P_id", Pid);
+            Parameters.Add("@Date", date);
+            return (int)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+        }
+        public DataTable MedicineBill(int Pid, string date)
+        {
+            String StoredProcedureName = StoredProcedures.MedicineBill;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@PatientID", Pid);
+            Parameters.Add("@Date", date);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public int MedicineSum(int Pid, string date)
+        {
+            String StoredProcedureName = StoredProcedures.MedicineSum;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@PatientID", Pid);
+            Parameters.Add("@Date", date);
+            return (int)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+        }
+        public DataTable ReserveBill(int Pid, string date)
+        {
+            String StoredProcedureName = StoredProcedures.ReserveBill;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@pat_id", Pid);
+            Parameters.Add("@date", date);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public int ReserveSum(int Pid, string date)
+        {
+            String StoredProcedureName = StoredProcedures.ReserveSum;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@pat_id", Pid);
+            Parameters.Add("@date", date);
+            return (int)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+        }
+        public DataTable SurgeryBill(int Pid, string date)
+        {
+            String StoredProcedureName = StoredProcedures.SurgeryBill;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Pid", Pid);
+            Parameters.Add("@Date", date);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public int sumSurgery(int Pid, string date)
+        {
+            String StoredProcedureName = StoredProcedures.sumSurgery;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Pid", Pid);
+            Parameters.Add("@Date", date);
+            return (int)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+        }
+        public int ValidDateReserve(string date,int nights)
+        {
+            String StoredProcedureName = StoredProcedures.ValidDateReserve;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Date", date);
+            Parameters.Add("@nights", nights);
+            return (int)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+        }
+        public int VaidAppEdit(string date, string time)
+        {
+            String StoredProcedureName = StoredProcedures.VaidAppEdit;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Date", date);
+            Parameters.Add("@Time", time);
+            return (int)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
         }
         //-------------------------------Pharmacist--------------------------
         public int InsertMedicine(int MedicineID, string MedicineName,int Price,int Quantity ,string ExpiryDate )
