@@ -1,7 +1,7 @@
 ﻿
 namespace Hospital
 {
-    partial class Payment
+    partial class ReportEarnings
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace Hospital
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Payment";
+            this.Text = "ReportEarnings";
         }
 
         #endregion
