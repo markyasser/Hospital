@@ -29,12 +29,47 @@ namespace Hospital
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.CrystalReport11 = new Hospital.CrystalReport1();
+            this.dataSet11 = new Hospital.DataSet1();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = 0;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.ReportSource = this.CrystalReport11;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1254, 544);
+            this.crystalReportViewer1.TabIndex = 0;
+            // 
+            // dataSet11
+            // 
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ReportEarnings
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1254, 544);
+            this.Controls.Add(this.crystalReportViewer1);
+            this.Name = "ReportEarnings";
             this.Text = "ReportEarnings";
+            this.Load += new System.EventHandler(this.ReportEarnings_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private CrystalReport1 CrystalReport11;
+        private DataSet1 dataSet11;
     }
 }
