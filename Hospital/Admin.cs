@@ -932,8 +932,25 @@ namespace Hospital
         }
         private void Show_Statistics_btn_Click(object sender, EventArgs e)
         {
-            ReportEarnings f = new ReportEarnings(dateTimePicker1.Text);
-            f.Show();
+            int s1, s2, s3, s4, s5;
+            s1 = s2 = s3 = s4 = s5 = 0;
+            for (int i = 0; i < dataGridView3.Rows.Count; i++)
+                s1 += int.Parse(dataGridView3[1, i].Value.ToString());
+
+            for (int i = 0; i < dataGridView4.Rows.Count; i++)
+                s2 += int.Parse(dataGridView4[1, i].Value.ToString());
+
+            for (int i = 0; i < dataGridView5.Rows.Count; i++)
+                s3 += int.Parse(dataGridView5[1, i].Value.ToString());
+
+            for (int i = 0; i < dataGridView6.Rows.Count; i++)
+                s4 += int.Parse(dataGridView6[1, i].Value.ToString());
+
+            for (int i = 0; i < dataGridView7.Rows.Count; i++)
+                s5 += int.Parse(dataGridView7[1, i].Value.ToString());
+
+            AllEarnings E = new AllEarnings(s1, s2, s3, s5, s4);
+            E.Show();
         }
         private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -951,6 +968,34 @@ namespace Hospital
         {
         }
 
-        
+        private void Report_MedicalTest_Click(object sender, EventArgs e)
+        {
+            ReportEarnings f = new ReportEarnings("MedicalTest", dateTimePicker1.Text);
+            f.Show();
+        }
+
+        private void Report_Medicines_Click(object sender, EventArgs e)
+        {
+            ReportEarnings f = new ReportEarnings("Medicine", dateTimePicker1.Text);
+            f.Show();
+        }
+
+        private void Report_Operation_Click(object sender, EventArgs e)
+        {
+            ReportEarnings f = new ReportEarnings("Operation", dateTimePicker1.Text);
+            f.Show();
+        }
+
+        private void Report_Appoint_Click(object sender, EventArgs e)
+        {
+            ReportEarnings f = new ReportEarnings("Appointment", dateTimePicker1.Text);
+            f.Show();
+        }
+
+        private void Report_Reserve_Click(object sender, EventArgs e)
+        {
+            ReportEarnings f = new ReportEarnings("Reserve", dateTimePicker1.Text);
+            f.Show();
+        }
     }
 }

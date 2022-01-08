@@ -43,7 +43,9 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Web" />
@@ -68,6 +70,18 @@
     <Compile Include="AddMedicine.Designer.cs">
       <DependentUpon>AddMedicine.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllEarnings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllEarnings.Designer.cs">
+      <DependentUpon>AllEarnings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppointCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppointCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Appointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,10 +89,16 @@
       <DependentUpon>Appointment.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller.cs" />
-    <Compile Include="CrystalReport1.cs">
+    <Compile Include="MedicineCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <DependentUpon>MedicineCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MedTestCR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MedTestCR.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataSet1.Designer.cs">
@@ -163,12 +183,23 @@
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AllEarnings.resx">
+      <DependentUpon>AllEarnings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppointCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AppointCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Appointment.resx">
       <DependentUpon>Appointment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport1.rpt">
+    <EmbeddedResource Include="MedicineCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+      <LastGenOutput>MedicineCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedTestCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MedTestCR.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor.resx">
       <DependentUpon>Doctor.cs</DependentUpon>
@@ -222,6 +253,7 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AllEarnings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
