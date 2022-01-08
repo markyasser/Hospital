@@ -277,7 +277,11 @@ namespace Hospital
             deptname_reserve_comboBox.DataSource = c.getDepartmentData();
             deptname_reserve_comboBox.DisplayMember = "specialization";
             deptname_reserve_comboBox.ValueMember = "Dnumber";
-            rooms_reserve_comboBox.DataSource = c.Avail_Rooms(int.Parse(deptname_reserve_comboBox.SelectedValue.ToString()), Resrve_date.Text);
+            object ob = deptname_reserve_comboBox.SelectedValue;
+            if (ob!=null)
+            {
+                rooms_reserve_comboBox.DataSource = c.Avail_Rooms(int.Parse(ob.ToString()), Resrve_date.Text);
+            }
             rooms_reserve_comboBox.DisplayMember = "RoomNumber";
             rooms_reserve_comboBox.ValueMember = "RoomNumber";
             pay_dateTimePicker.CustomFormat = "yyyy-MM-dd";
@@ -457,6 +461,11 @@ namespace Hospital
             rooms_reserve_comboBox.DataSource = c.Avail_Rooms(int.Parse(deptname_reserve_comboBox.SelectedValue.ToString()), Resrve_date.Text);
             rooms_reserve_comboBox.DisplayMember = "RoomNumber";
             rooms_reserve_comboBox.ValueMember = "RoomNumber";
+        }
+
+        private void PID_reserve_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

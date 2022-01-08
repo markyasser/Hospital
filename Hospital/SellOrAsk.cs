@@ -25,7 +25,7 @@ namespace Hospital
             Medname1_cmb.DisplayMember = "Name";
             Medname1_cmb.DataSource = dt1;
 
-            DataTable dt2 = ControllerObj.GetPatientName();
+            DataTable dt2 = ControllerObj.GetAllPatientName();
             PatientName_cmb.DisplayMember = "Full name";
             PatientName_cmb.DataSource = dt2;
 
@@ -71,26 +71,44 @@ namespace Hospital
 
         private void Medname2_cmb_TextChanged(object sender, EventArgs e)
         {
-            Price2_txt.Text = ControllerObj.GetMedPrice(Medname2_cmb.Text).ToString();
-            TotalPrice_txt.Text = CalculateTotalPrice();
+            object ob = ControllerObj.GetMedPrice(Medname2_cmb.Text);
+            if (ob != null)
+            {
+                Price2_txt.Text = ob.ToString();
+                TotalPrice_txt.Text = CalculateTotalPrice();
+            }
+            
+           
         }
 
         private void Medname3_cmb_TextChanged(object sender, EventArgs e)
         {
-            Price3_txt.Text = ControllerObj.GetMedPrice(Medname3_cmb.Text).ToString();
-            TotalPrice_txt.Text = CalculateTotalPrice();
+            object ob = ControllerObj.GetMedPrice(Medname3_cmb.Text);
+            if (ob != null)
+            {
+                Price3_txt.Text = ob.ToString();
+                TotalPrice_txt.Text = CalculateTotalPrice();
+            }
         }
 
         private void Medname4_cmb_TextChanged(object sender, EventArgs e)
         {
-            Price4_txt.Text = ControllerObj.GetMedPrice(Medname4_cmb.Text).ToString();
-            TotalPrice_txt.Text = CalculateTotalPrice();
+            object ob = ControllerObj.GetMedPrice(Medname4_cmb.Text);
+            if (ob != null)
+            {
+                Price4_txt.Text = ob.ToString();
+                TotalPrice_txt.Text = CalculateTotalPrice();
+            }
         }
 
         private void Medname5_cmb_TextChanged(object sender, EventArgs e)
         {
-            Price5_txt.Text = ControllerObj.GetMedPrice(Medname5_cmb.Text).ToString();
-            TotalPrice_txt.Text = CalculateTotalPrice();
+            object ob = ControllerObj.GetMedPrice(Medname5_cmb.Text);
+            if (ob != null)
+            {
+                Price5_txt.Text = ob.ToString();
+                TotalPrice_txt.Text = CalculateTotalPrice();
+            }
         }
 
         private String CalculateTotalPrice()
@@ -201,7 +219,7 @@ namespace Hospital
 
         private void Get_btn_Click(object sender, EventArgs e)
         {
-            if (Med1_gb.Visible == true)
+            if (Med1_gb.Visible == true && PatientID_cmb.SelectedIndex != -1)
             {
                 int result1 = PerformMed1();
                 if (result1 != 0)
@@ -306,5 +324,9 @@ namespace Hospital
             PatientID_cmb.DataSource = dt;
         }
 
+        private void PatientName_cmb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

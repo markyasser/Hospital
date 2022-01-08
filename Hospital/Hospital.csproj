@@ -75,12 +75,6 @@
       <DependentUpon>Appointment.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller.cs" />
-    <Compile Include="CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="DBManager.cs" />
     <Compile Include="Doctor.cs">
       <SubType>Form</SubType>
@@ -93,12 +87,6 @@
     </Compile>
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Payment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Payment.Designer.cs">
-      <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
     <Compile Include="Receptionist.cs">
       <SubType>Form</SubType>
@@ -126,6 +114,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportEarnings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportEarnings.Designer.cs">
+      <DependentUpon>ReportEarnings.cs</DependentUpon>
+    </Compile>
     <Compile Include="SellOrAsk.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,10 +155,6 @@
     <EmbeddedResource Include="Appointment.resx">
       <DependentUpon>Appointment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Doctor.resx">
       <DependentUpon>Doctor.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +179,9 @@
     </Compile>
     <EmbeddedResource Include="Receptionist.resx">
       <DependentUpon>Receptionist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportEarnings.resx">
+      <DependentUpon>ReportEarnings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SellOrAsk.resx">
       <DependentUpon>SellOrAsk.cs</DependentUpon>

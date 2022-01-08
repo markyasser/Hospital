@@ -39,7 +39,12 @@ namespace Hospital
 
         private void Name_cmb_TextChanged(object sender, EventArgs e)
         {
-            PreviousPrice_txt.Text = ControllerObj.GetMedPrice(Name_cmb.Text).ToString();
+            object ob = ControllerObj.GetMedPrice(Name_cmb.Text);
+            if (ob != null)
+            {
+                PreviousPrice_txt.Text = ob.ToString();
+            }
+            
         }
 
         private void UpdatePrice_btn_Click(object sender, EventArgs e)

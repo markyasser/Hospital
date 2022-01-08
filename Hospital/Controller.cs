@@ -720,7 +720,13 @@ namespace Hospital
             Parameters.Add("@MedicinePrice", UpdatedPrice);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
-
+        public int GetMedID(string MedicineName)
+        {
+            string StoredProcedureName = StoredProcedures.GetMedID;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@MedicineName", MedicineName);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
         public DataTable GetAllMedicalTest ()
         {
             string StoredProcedureName = StoredProcedures.GetAllMedicalTest;
@@ -740,7 +746,11 @@ namespace Hospital
             String StoredProcedureName = StoredProcedures.GetPatientName;
             return dbMan.ExecuteReader(StoredProcedureName, null);
         }
-
+        public DataTable GetAllPatientName()
+        {
+            String StoredProcedureName = StoredProcedures.GetAllPatientName;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
         public DataTable GetEmptyMedicines()
         {
             String StoredProcedureName = StoredProcedures.GetEmptyMedicines;

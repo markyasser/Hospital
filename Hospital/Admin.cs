@@ -20,10 +20,8 @@ namespace Hospital
         private Panel leftBtnBorder;
         private Color PrevColorOfActiveButton;
         string USERNAME;
-        int var;
         public Admin(string user) 
         {
-            var = 0;
             USERNAME = user;
             InitializeComponent();
             controllerObj = new Controller();
