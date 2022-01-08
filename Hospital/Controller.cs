@@ -586,13 +586,13 @@ namespace Hospital
             Parameters.Add("@Date", date);
             return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
-        public int AppSum(int pid, string date)
+        public object AppSum(int pid, string date)
         {
             string StoredProcedureName = StoredProcedures.AppSum;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@pat_id", pid);
             Parameters.Add("@Date", date);
-            return (int)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+            return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
         }
         public int InsertPatient(int patient_id, string Fname, char Minit, string Lname,
                                 string Bdate, string address, int phone_number, string gender)
@@ -752,13 +752,13 @@ namespace Hospital
             Parameters.Add("@Date", date);
             return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
-        public int MedicalTestSum(int Pid, string date)
+        public object MedicalTestSum(int Pid, string date)
         {
             String StoredProcedureName = StoredProcedures.MedicalTestSum;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@P_id", Pid);
             Parameters.Add("@Date", date);
-            return (int)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+            return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
         }
         public DataTable MedicineBill(int Pid, string date)
         {
@@ -768,13 +768,13 @@ namespace Hospital
             Parameters.Add("@Date", date);
             return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
-        public int MedicineSum(int Pid, string date)
+        public object MedicineSum(int Pid, string date)
         {
             String StoredProcedureName = StoredProcedures.MedicineSum;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@PatientID", Pid);
             Parameters.Add("@Date", date);
-            return (int)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+            return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
         }
         public DataTable ReserveBill(int Pid, string date)
         {
@@ -784,13 +784,13 @@ namespace Hospital
             Parameters.Add("@date", date);
             return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
-        public int ReserveSum(int Pid, string date)
+        public object ReserveSum(int Pid, string date)
         {
             String StoredProcedureName = StoredProcedures.ReserveSum;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@pat_id", Pid);
             Parameters.Add("@date", date);
-            return (int)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+            return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
         }
         public DataTable SurgeryBill(int Pid, string date)
         {
@@ -800,13 +800,13 @@ namespace Hospital
             Parameters.Add("@Date", date);
             return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
-        public int sumSurgery(int Pid, string date)
+        public object sumSurgery(int Pid, string date)
         {
             String StoredProcedureName = StoredProcedures.sumSurgery;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@Pid", Pid);
             Parameters.Add("@Date", date);
-            return (int)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+            return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
         }
         public int ValidDateReserve(string date,int nights)
         {

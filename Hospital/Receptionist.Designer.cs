@@ -1194,10 +1194,10 @@ namespace Hospital
             this.panelDesktop.AutoScroll = true;
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.panelDesktop.Controls.Add(this.pay_panel);
+            this.panelDesktop.Controls.Add(this.reserve_panel);
             this.panelDesktop.Controls.Add(this.makeApp_panel);
             this.panelDesktop.Controls.Add(this.settings_panel);
             this.panelDesktop.Controls.Add(this.editApp_panel);
-            this.panelDesktop.Controls.Add(this.reserve_panel);
             this.panelDesktop.Controls.Add(this.cancelApp_panel);
             this.panelDesktop.Controls.Add(this.addPatient_panel);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1409,7 +1409,7 @@ namespace Hospital
             this.settings_panel.Controls.Add(this.groupBox1);
             this.settings_panel.Controls.Add(this.ChangePassword);
             this.settings_panel.Controls.Add(this.button3);
-            this.settings_panel.Location = new System.Drawing.Point(390, 318);
+            this.settings_panel.Location = new System.Drawing.Point(413, 269);
             this.settings_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.settings_panel.Name = "settings_panel";
             this.settings_panel.Size = new System.Drawing.Size(433, 275);
@@ -1533,7 +1533,7 @@ namespace Hospital
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(17654, 12889);
+            this.button3.Location = new System.Drawing.Point(18195, 13137);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(139, 39);

@@ -475,134 +475,7 @@ namespace Hospital
 
         #endregion
 
-        #region NursePanel
-        void RefreshNurseDataGrid()
-        {
-            DataTable dt = controllerObj.DisplayNurseRoomsData();
-            Rooms_Nurses_dataGridView.DataSource = dt;
-            Rooms_Nurses_dataGridView.Refresh();
-
-        }
-
-        void RefreshNurseID_Assign()
-        {
-            DataTable dt = controllerObj.GetNursesWithNoRooms();
-            if (dt != null)
-            {
-                NurseID_Assign_comboBox.DataSource = dt;
-                NurseID_Assign_comboBox.ValueMember = "id";
-                NurseID_Assign_comboBox.DisplayMember = "name";
-            }
-            else
-            {
-                NurseID_Assign_comboBox.DataSource = null;
-            }
-        }
-        void RefreshNurseID_Delete()
-        {
-            DataTable dt = controllerObj.GetNursesWithRooms();
-            if (dt != null)
-            {
-                NurseID_Delete_comboBox.DataSource = dt;
-                NurseID_Delete_comboBox.ValueMember = "id";
-                NurseID_Delete_comboBox.DisplayMember = "name";
-            }
-            else
-            {
-                NurseID_Delete_comboBox.DataSource = null;
-            }
-        }
-        void RefreshRoomNo_Assign()
-        {
-            string[] values;
-            DataTable dt = controllerObj.GetRoomsWithPatient();
-            if (dt != null)
-            {
-                values = dt.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
-                if (values != null)
-                {
-                    RoomNo_Assign_comboBox.DataSource = values;
-                }
-                else
-                {
-                    RoomNo_Assign_comboBox.Items.Clear();
-                }
-            }
-            else
-            {
-                RoomNo_Assign_comboBox.DataSource = null;
-            }
-        }
-        private void NurseID_Delete_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (NurseID_Delete_comboBox.SelectedIndex == -1)
-            {
-                RoomNo_Delete_textBox.Text = "";
-                return;
-            }
-            int id;
-            bool valid = int.TryParse(NurseID_Delete_comboBox.SelectedValue.ToString(), out id);
-            if (!valid)
-            {
-                return;
-            }
-            DataTable dt = controllerObj.GetRoomOfANurse(id);
-            if (dt != null)
-            {
-                RoomNo_Delete_textBox.Text = dt.Rows[0].ItemArray[0].ToString();
-            }
-            else
-            {
-                RoomNo_Delete_textBox.Text = "";
-            }
-
-        }
-        private void AssignNurse_button_Click(object sender, EventArgs e)
-        {
-            if (NurseID_Assign_comboBox.SelectedIndex == -1)
-            {
-                MessageBox.Show("Please choose a nurse, if no nurses are shown, this means that all nurses are currently serving another rooms");
-                return;
-            }
-            if (RoomNo_Assign_comboBox.SelectedIndex == -1)
-            {
-                MessageBox.Show("Please choose a room, if no rooms are shown, this means that all rooms are currently served");
-                return;
-            }
-            int result = controllerObj.AssignNurseToRoom(int.Parse(NurseID_Assign_comboBox.SelectedValue.ToString()), int.Parse(RoomNo_Assign_comboBox.Text.ToString()));
-            if (result == 0)
-            {
-                MessageBox.Show("Assignment failed");
-            }
-            else
-            {
-                MessageBox.Show("Assignment successful!");
-                RefreshNurseID_Assign();
-                RefreshNurseID_Delete();
-                RefreshNurseDataGrid();
-            }
-        }
-        private void DeleteNurse_button_Click(object sender, EventArgs e)
-        {
-            if (NurseID_Delete_comboBox.SelectedIndex == -1)
-            {
-                MessageBox.Show("Please choose a nurse, if no nurses are shown, this means that all nurses are currently serving another rooms");
-                return;
-            }
-            int result = controllerObj.RemoveNursefromRoom(int.Parse(NurseID_Delete_comboBox.SelectedValue.ToString()));
-            if (result == 0)
-            {
-                MessageBox.Show("Deletion failed");
-            }
-            else
-            {
-                MessageBox.Show("Deletion successful!");
-                RefreshNurseID_Assign();
-                RefreshNurseID_Delete();
-                RefreshNurseDataGrid();
-            }
-        }
-        #endregion
+      
 
         #region WorkingHoursPanel
 
@@ -691,7 +564,6 @@ namespace Hospital
             Prescription_panel.Visible = false;
             MedTest_panel.Visible = false;
             Surgery_panel.Visible = false;
-            Nurses_panel.Visible = false;
             Price_panel.Visible = false;
             settings_panel.Visible = false;
         }
@@ -703,7 +575,6 @@ namespace Hospital
             Prescription_panel.Dock = DockStyle.Fill;
             MedTest_panel.Dock = DockStyle.Fill;
             Surgery_panel.Dock = DockStyle.Fill;
-            Nurses_panel.Dock = DockStyle.Fill;
             Price_panel.Dock = DockStyle.Fill;
             settings_panel.Dock = DockStyle.Fill;
         }
@@ -840,17 +711,6 @@ namespace Hospital
             ActivateButton(Surgery_iconButton);
         }
 
-        private void Nurses_iconButton_Click(object sender, EventArgs e)
-        {
-            RefreshNurseDataGrid();
-            RefreshNurseID_Assign();
-            RefreshNurseID_Delete();
-            RefreshRoomNo_Assign();
-            NurseID_Delete_comboBox_SelectedIndexChanged(null, null);
-            ShowPanel(Nurses_panel);
-            ActivateButton(Nurses_iconButton);
-            RefreshNurseDataGrid();
-        }
 
         private void WorkHours_iconButton_Click(object sender, EventArgs e)
         {
