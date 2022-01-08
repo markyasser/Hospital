@@ -70,6 +70,18 @@
     <Compile Include="AddMedicine.Designer.cs">
       <DependentUpon>AddMedicine.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllEarnings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllEarnings.Designer.cs">
+      <DependentUpon>AllEarnings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppointCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppointCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Appointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,10 +89,16 @@
       <DependentUpon>Appointment.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller.cs" />
-    <Compile Include="CrystalReport1.cs">
+    <Compile Include="MedicineCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <DependentUpon>MedicineCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MedTestCR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MedTestCR.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataSet1.Designer.cs">
@@ -100,6 +118,12 @@
     </Compile>
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperateCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OperateCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="PrescMedReport.cs">
       <SubType>Form</SubType>
@@ -176,7 +200,7 @@
     <Compile Include="ReportEarnings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportEarnings.Designer.cs">
+    <Compile Include="ReportEarnings.designer.cs">
       <DependentUpon>ReportEarnings.cs</DependentUpon>
     </Compile>
     <Compile Include="SellOrAsk.cs">
@@ -211,12 +235,23 @@
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AllEarnings.resx">
+      <DependentUpon>AllEarnings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppointCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AppointCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Appointment.resx">
       <DependentUpon>Appointment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport1.rpt">
+    <EmbeddedResource Include="MedicineCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+      <LastGenOutput>MedicineCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedTestCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MedTestCR.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor.resx">
       <DependentUpon>Doctor.cs</DependentUpon>
@@ -226,6 +261,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nurse.resx">
       <DependentUpon>Nurse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperateCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OperateCrystalReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientMedTest_CrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

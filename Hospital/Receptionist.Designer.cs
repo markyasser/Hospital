@@ -30,6 +30,7 @@ namespace Hospital
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.Settings_iconButton = new FontAwesome.Sharp.IconButton();
             this.Pay_btn = new FontAwesome.Sharp.IconButton();
             this.reserve_btn = new FontAwesome.Sharp.IconButton();
             this.App_panel = new System.Windows.Forms.Panel();
@@ -105,21 +106,6 @@ namespace Hospital
             this.EditType_combo = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.reserve_panel = new System.Windows.Forms.Panel();
-            this.Pid_res_textBox = new System.Windows.Forms.TextBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.Resrve_date = new System.Windows.Forms.DateTimePicker();
-            this.Nonights = new System.Windows.Forms.NumericUpDown();
-            this.resrve_btn = new System.Windows.Forms.Button();
-            this.PID_reserve_comboBox = new System.Windows.Forms.ComboBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.rooms_reserve_comboBox = new System.Windows.Forms.ComboBox();
-            this.deptname_reserve_comboBox = new System.Windows.Forms.ComboBox();
             this.pay_panel = new System.Windows.Forms.Panel();
             this.totBill_btn = new System.Windows.Forms.Button();
             this.label46 = new System.Windows.Forms.Label();
@@ -135,6 +121,33 @@ namespace Hospital
             this.label31 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.settings_panel = new System.Windows.Forms.Panel();
+            this.label49 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.OldPass = new System.Windows.Forms.TextBox();
+            this.NewPass = new System.Windows.Forms.TextBox();
+            this.Change_Passwrod = new System.Windows.Forms.Button();
+            this.ChangePassword = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.reserve_panel = new System.Windows.Forms.Panel();
+            this.Pid_res_textBox = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.Resrve_date = new System.Windows.Forms.DateTimePicker();
+            this.Nonights = new System.Windows.Forms.NumericUpDown();
+            this.resrve_btn = new System.Windows.Forms.Button();
+            this.PID_reserve_comboBox = new System.Windows.Forms.ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.rooms_reserve_comboBox = new System.Windows.Forms.ComboBox();
+            this.deptname_reserve_comboBox = new System.Windows.Forms.ComboBox();
             this.cancelApp_panel = new System.Windows.Forms.Panel();
             this.appTimeDelete = new System.Windows.Forms.ComboBox();
             this.label44 = new System.Windows.Forms.Label();
@@ -155,10 +168,12 @@ namespace Hospital
             this.makeApp_panel.SuspendLayout();
             this.editApp_panel.SuspendLayout();
             this.panelDesktop.SuspendLayout();
-            this.reserve_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Nonights)).BeginInit();
             this.pay_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bill_dataGridView)).BeginInit();
+            this.settings_panel.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.reserve_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Nonights)).BeginInit();
             this.cancelApp_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,6 +181,7 @@ namespace Hospital
             // 
             this.panelMenu.AutoScroll = true;
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.panelMenu.Controls.Add(this.Settings_iconButton);
             this.panelMenu.Controls.Add(this.Pay_btn);
             this.panelMenu.Controls.Add(this.reserve_btn);
             this.panelMenu.Controls.Add(this.App_panel);
@@ -177,8 +193,31 @@ namespace Hospital
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(329, 783);
+            this.panelMenu.Size = new System.Drawing.Size(329, 802);
             this.panelMenu.TabIndex = 0;
+            // 
+            // Settings_iconButton
+            // 
+            this.Settings_iconButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Settings_iconButton.FlatAppearance.BorderSize = 0;
+            this.Settings_iconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Settings_iconButton.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Settings_iconButton.ForeColor = System.Drawing.Color.White;
+            this.Settings_iconButton.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.Settings_iconButton.IconColor = System.Drawing.Color.White;
+            this.Settings_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Settings_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Settings_iconButton.Location = new System.Drawing.Point(0, 676);
+            this.Settings_iconButton.Name = "Settings_iconButton";
+            this.Settings_iconButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Settings_iconButton.Size = new System.Drawing.Size(329, 60);
+            this.Settings_iconButton.TabIndex = 35;
+            this.Settings_iconButton.Tag = "Settings";
+            this.Settings_iconButton.Text = "Settings";
+            this.Settings_iconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Settings_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Settings_iconButton.UseVisualStyleBackColor = true;
+            this.Settings_iconButton.Click += new System.EventHandler(this.Settings_iconButton_Click);
             // 
             // Pay_btn
             // 
@@ -434,7 +473,7 @@ namespace Hospital
             this.logoyt_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.logoyt_btn.IconSize = 35;
             this.logoyt_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logoyt_btn.Location = new System.Drawing.Point(0, 717);
+            this.logoyt_btn.Location = new System.Drawing.Point(0, 736);
             this.logoyt_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logoyt_btn.Name = "logoyt_btn";
             this.logoyt_btn.Padding = new System.Windows.Forms.Padding(11, 0, 0, 10);
@@ -469,10 +508,10 @@ namespace Hospital
             this.addPatient_panel.Controls.Add(this.Lname_textBox);
             this.addPatient_panel.Controls.Add(this.Fname_textBox);
             this.addPatient_panel.Controls.Add(this.label1);
-            this.addPatient_panel.Location = new System.Drawing.Point(0, 393);
+            this.addPatient_panel.Location = new System.Drawing.Point(18, 272);
             this.addPatient_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addPatient_panel.Name = "addPatient_panel";
-            this.addPatient_panel.Size = new System.Drawing.Size(309, 319);
+            this.addPatient_panel.Size = new System.Drawing.Size(332, 216);
             this.addPatient_panel.TabIndex = 0;
             // 
             // label13
@@ -689,7 +728,7 @@ namespace Hospital
             this.makeApp_panel.Location = new System.Drawing.Point(13, 25);
             this.makeApp_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.makeApp_panel.Name = "makeApp_panel";
-            this.makeApp_panel.Size = new System.Drawing.Size(230, 262);
+            this.makeApp_panel.Size = new System.Drawing.Size(264, 202);
             this.makeApp_panel.TabIndex = 1;
             // 
             // label30
@@ -706,7 +745,7 @@ namespace Hospital
             // 
             this.make_Dept_name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.make_Dept_name.FormattingEnabled = true;
-            this.make_Dept_name.Location = new System.Drawing.Point(579, 206);
+            this.make_Dept_name.Location = new System.Drawing.Point(706, 199);
             this.make_Dept_name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.make_Dept_name.Name = "make_Dept_name";
             this.make_Dept_name.Size = new System.Drawing.Size(463, 24);
@@ -727,7 +766,7 @@ namespace Hospital
             // 
             this.Pname_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Pname_comboBox.FormattingEnabled = true;
-            this.Pname_comboBox.Location = new System.Drawing.Point(579, 139);
+            this.Pname_comboBox.Location = new System.Drawing.Point(706, 132);
             this.Pname_comboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Pname_comboBox.Name = "Pname_comboBox";
             this.Pname_comboBox.Size = new System.Drawing.Size(463, 24);
@@ -745,7 +784,7 @@ namespace Hospital
             // 
             // appDate
             // 
-            this.appDate.Location = new System.Drawing.Point(587, 500);
+            this.appDate.Location = new System.Drawing.Point(714, 493);
             this.appDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.appDate.MinDate = new System.DateTime(2022, 1, 5, 21, 29, 12, 0);
             this.appDate.Name = "appDate";
@@ -767,7 +806,7 @@ namespace Hospital
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label33.Location = new System.Drawing.Point(662, 355);
+            this.label33.Location = new System.Drawing.Point(789, 348);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(221, 39);
             this.label33.TabIndex = 32;
@@ -775,7 +814,7 @@ namespace Hospital
             // 
             // endTime_txt
             // 
-            this.endTime_txt.Location = new System.Drawing.Point(669, 433);
+            this.endTime_txt.Location = new System.Drawing.Point(796, 426);
             this.endTime_txt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.endTime_txt.Name = "endTime_txt";
             this.endTime_txt.ReadOnly = true;
@@ -794,7 +833,7 @@ namespace Hospital
             // appTime
             // 
             this.appTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.appTime.Location = new System.Drawing.Point(589, 577);
+            this.appTime.Location = new System.Drawing.Point(716, 570);
             this.appTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.appTime.Name = "appTime";
             this.appTime.ShowUpDown = true;
@@ -854,7 +893,7 @@ namespace Hospital
             // 
             this.docName_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.docName_comboBox.FormattingEnabled = true;
-            this.docName_comboBox.Location = new System.Drawing.Point(579, 282);
+            this.docName_comboBox.Location = new System.Drawing.Point(706, 275);
             this.docName_comboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.docName_comboBox.Name = "docName_comboBox";
             this.docName_comboBox.Size = new System.Drawing.Size(467, 24);
@@ -1154,18 +1193,353 @@ namespace Hospital
             // 
             this.panelDesktop.AutoScroll = true;
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.panelDesktop.Controls.Add(this.editApp_panel);
-            this.panelDesktop.Controls.Add(this.makeApp_panel);
-            this.panelDesktop.Controls.Add(this.reserve_panel);
             this.panelDesktop.Controls.Add(this.pay_panel);
+            this.panelDesktop.Controls.Add(this.makeApp_panel);
+            this.panelDesktop.Controls.Add(this.settings_panel);
+            this.panelDesktop.Controls.Add(this.editApp_panel);
+            this.panelDesktop.Controls.Add(this.reserve_panel);
             this.panelDesktop.Controls.Add(this.cancelApp_panel);
             this.panelDesktop.Controls.Add(this.addPatient_panel);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(329, 0);
             this.panelDesktop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1206, 783);
+            this.panelDesktop.Size = new System.Drawing.Size(1234, 802);
             this.panelDesktop.TabIndex = 2;
+            // 
+            // pay_panel
+            // 
+            this.pay_panel.AutoScroll = true;
+            this.pay_panel.BackColor = System.Drawing.Color.White;
+            this.pay_panel.Controls.Add(this.totBill_btn);
+            this.pay_panel.Controls.Add(this.label46);
+            this.pay_panel.Controls.Add(this.Pid_bill);
+            this.pay_panel.Controls.Add(this.BillType);
+            this.pay_panel.Controls.Add(this.label28);
+            this.pay_panel.Controls.Add(this.bill_dataGridView);
+            this.pay_panel.Controls.Add(this.Pid_bill_combo);
+            this.pay_panel.Controls.Add(this.bill_button);
+            this.pay_panel.Controls.Add(this.price_pay_textBox);
+            this.pay_panel.Controls.Add(this.label32);
+            this.pay_panel.Controls.Add(this.pay_dateTimePicker);
+            this.pay_panel.Controls.Add(this.label31);
+            this.pay_panel.Controls.Add(this.label29);
+            this.pay_panel.Controls.Add(this.label27);
+            this.pay_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pay_panel.Location = new System.Drawing.Point(0, 0);
+            this.pay_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pay_panel.Name = "pay_panel";
+            this.pay_panel.Size = new System.Drawing.Size(1234, 802);
+            this.pay_panel.TabIndex = 3;
+            // 
+            // totBill_btn
+            // 
+            this.totBill_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.totBill_btn.FlatAppearance.BorderSize = 0;
+            this.totBill_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.totBill_btn.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totBill_btn.ForeColor = System.Drawing.Color.White;
+            this.totBill_btn.Location = new System.Drawing.Point(832, 745);
+            this.totBill_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.totBill_btn.Name = "totBill_btn";
+            this.totBill_btn.Size = new System.Drawing.Size(243, 48);
+            this.totBill_btn.TabIndex = 57;
+            this.totBill_btn.Text = "Get Total";
+            this.totBill_btn.UseVisualStyleBackColor = false;
+            this.totBill_btn.Click += new System.EventHandler(this.totBill_btn_Click);
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label46.ForeColor = System.Drawing.Color.Black;
+            this.label46.Location = new System.Drawing.Point(18, 101);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(251, 39);
+            this.label46.TabIndex = 56;
+            this.label46.Text = "Patient Name";
+            // 
+            // Pid_bill
+            // 
+            this.Pid_bill.Location = new System.Drawing.Point(612, 177);
+            this.Pid_bill.Name = "Pid_bill";
+            this.Pid_bill.ReadOnly = true;
+            this.Pid_bill.Size = new System.Drawing.Size(463, 22);
+            this.Pid_bill.TabIndex = 55;
+            // 
+            // BillType
+            // 
+            this.BillType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BillType.FormattingEnabled = true;
+            this.BillType.Items.AddRange(new object[] {
+            "Medical Test",
+            "Medicine",
+            "Surgery",
+            "Room",
+            "Appointment"});
+            this.BillType.Location = new System.Drawing.Point(612, 230);
+            this.BillType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BillType.Name = "BillType";
+            this.BillType.Size = new System.Drawing.Size(463, 24);
+            this.BillType.TabIndex = 54;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label28.ForeColor = System.Drawing.Color.Black;
+            this.label28.Location = new System.Drawing.Point(20, 215);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(172, 39);
+            this.label28.TabIndex = 53;
+            this.label28.Text = "Bill Type";
+            // 
+            // bill_dataGridView
+            // 
+            this.bill_dataGridView.AllowUserToAddRows = false;
+            this.bill_dataGridView.AllowUserToDeleteRows = false;
+            this.bill_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.bill_dataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.bill_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bill_dataGridView.GridColor = System.Drawing.Color.White;
+            this.bill_dataGridView.Location = new System.Drawing.Point(27, 347);
+            this.bill_dataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bill_dataGridView.Name = "bill_dataGridView";
+            this.bill_dataGridView.ReadOnly = true;
+            this.bill_dataGridView.RowHeadersWidth = 51;
+            this.bill_dataGridView.RowTemplate.Height = 24;
+            this.bill_dataGridView.Size = new System.Drawing.Size(1165, 373);
+            this.bill_dataGridView.TabIndex = 52;
+            // 
+            // Pid_bill_combo
+            // 
+            this.Pid_bill_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Pid_bill_combo.FormattingEnabled = true;
+            this.Pid_bill_combo.Location = new System.Drawing.Point(612, 120);
+            this.Pid_bill_combo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Pid_bill_combo.Name = "Pid_bill_combo";
+            this.Pid_bill_combo.Size = new System.Drawing.Size(463, 24);
+            this.Pid_bill_combo.TabIndex = 51;
+            this.Pid_bill_combo.SelectedIndexChanged += new System.EventHandler(this.Pid_bill_combo_SelectedIndexChanged);
+            // 
+            // bill_button
+            // 
+            this.bill_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.bill_button.FlatAppearance.BorderSize = 0;
+            this.bill_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bill_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bill_button.ForeColor = System.Drawing.Color.White;
+            this.bill_button.Location = new System.Drawing.Point(1198, 460);
+            this.bill_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bill_button.Name = "bill_button";
+            this.bill_button.Size = new System.Drawing.Size(109, 76);
+            this.bill_button.TabIndex = 50;
+            this.bill_button.Text = "Get Bill";
+            this.bill_button.UseVisualStyleBackColor = false;
+            this.bill_button.Click += new System.EventHandler(this.bill_button_Click);
+            // 
+            // price_pay_textBox
+            // 
+            this.price_pay_textBox.Location = new System.Drawing.Point(339, 760);
+            this.price_pay_textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.price_pay_textBox.Name = "price_pay_textBox";
+            this.price_pay_textBox.ReadOnly = true;
+            this.price_pay_textBox.Size = new System.Drawing.Size(353, 22);
+            this.price_pay_textBox.TabIndex = 49;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label32.ForeColor = System.Drawing.Color.Black;
+            this.label32.Location = new System.Drawing.Point(67, 748);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(206, 39);
+            this.label32.TabIndex = 48;
+            this.label32.Text = "Total Price";
+            // 
+            // pay_dateTimePicker
+            // 
+            this.pay_dateTimePicker.Location = new System.Drawing.Point(612, 285);
+            this.pay_dateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pay_dateTimePicker.Name = "pay_dateTimePicker";
+            this.pay_dateTimePicker.Size = new System.Drawing.Size(463, 22);
+            this.pay_dateTimePicker.TabIndex = 47;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label31.ForeColor = System.Drawing.Color.Black;
+            this.label31.Location = new System.Drawing.Point(29, 279);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(97, 39);
+            this.label31.TabIndex = 46;
+            this.label31.Text = "Date";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Cooper Black", 20F);
+            this.label29.ForeColor = System.Drawing.Color.Black;
+            this.label29.Location = new System.Drawing.Point(20, 164);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(194, 39);
+            this.label29.TabIndex = 42;
+            this.label29.Text = "Patient ID";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label27.Font = new System.Drawing.Font("Verdana", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.label27.Location = new System.Drawing.Point(0, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(367, 80);
+            this.label27.TabIndex = 28;
+            this.label27.Text = "Payment";
+            // 
+            // settings_panel
+            // 
+            this.settings_panel.AutoScroll = true;
+            this.settings_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.settings_panel.Controls.Add(this.label49);
+            this.settings_panel.Controls.Add(this.groupBox1);
+            this.settings_panel.Controls.Add(this.ChangePassword);
+            this.settings_panel.Controls.Add(this.button3);
+            this.settings_panel.Location = new System.Drawing.Point(390, 318);
+            this.settings_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.settings_panel.Name = "settings_panel";
+            this.settings_panel.Size = new System.Drawing.Size(433, 275);
+            this.settings_panel.TabIndex = 41;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label49.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label49.Font = new System.Drawing.Font("Verdana", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.label49.Location = new System.Drawing.Point(0, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(347, 80);
+            this.label49.TabIndex = 30;
+            this.label49.Text = "Settings";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label67);
+            this.groupBox1.Controls.Add(this.label66);
+            this.groupBox1.Controls.Add(this.label65);
+            this.groupBox1.Controls.Add(this.label64);
+            this.groupBox1.Controls.Add(this.OldPass);
+            this.groupBox1.Controls.Add(this.NewPass);
+            this.groupBox1.Controls.Add(this.Change_Passwrod);
+            this.groupBox1.Location = new System.Drawing.Point(202, 218);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(772, 305);
+            this.groupBox1.TabIndex = 29;
+            this.groupBox1.TabStop = false;
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label67.ForeColor = System.Drawing.Color.Red;
+            this.label67.Location = new System.Drawing.Point(325, 180);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(0, 20);
+            this.label67.TabIndex = 31;
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label66.ForeColor = System.Drawing.Color.Red;
+            this.label66.Location = new System.Drawing.Point(322, 88);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(0, 20);
+            this.label66.TabIndex = 30;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.Location = new System.Drawing.Point(27, 140);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(176, 29);
+            this.label65.TabIndex = 28;
+            this.label65.Text = "New Password";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.Location = new System.Drawing.Point(23, 51);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(165, 29);
+            this.label64.TabIndex = 27;
+            this.label64.Text = "Old Password";
+            // 
+            // OldPass
+            // 
+            this.OldPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OldPass.Location = new System.Drawing.Point(321, 45);
+            this.OldPass.Name = "OldPass";
+            this.OldPass.Size = new System.Drawing.Size(373, 38);
+            this.OldPass.TabIndex = 26;
+            // 
+            // NewPass
+            // 
+            this.NewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewPass.Location = new System.Drawing.Point(321, 134);
+            this.NewPass.Name = "NewPass";
+            this.NewPass.Size = new System.Drawing.Size(373, 38);
+            this.NewPass.TabIndex = 25;
+            // 
+            // Change_Passwrod
+            // 
+            this.Change_Passwrod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.Change_Passwrod.FlatAppearance.BorderSize = 0;
+            this.Change_Passwrod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Change_Passwrod.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Change_Passwrod.ForeColor = System.Drawing.Color.White;
+            this.Change_Passwrod.Location = new System.Drawing.Point(235, 233);
+            this.Change_Passwrod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Change_Passwrod.Name = "Change_Passwrod";
+            this.Change_Passwrod.Size = new System.Drawing.Size(226, 53);
+            this.Change_Passwrod.TabIndex = 24;
+            this.Change_Passwrod.Text = "Confirm";
+            this.Change_Passwrod.UseVisualStyleBackColor = false;
+            this.Change_Passwrod.Click += new System.EventHandler(this.Change_Passwrod_Click);
+            // 
+            // ChangePassword
+            // 
+            this.ChangePassword.AutoSize = true;
+            this.ChangePassword.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChangePassword.Location = new System.Drawing.Point(197, 162);
+            this.ChangePassword.Name = "ChangePassword";
+            this.ChangePassword.Size = new System.Drawing.Size(227, 27);
+            this.ChangePassword.TabIndex = 27;
+            this.ChangePassword.Text = "Change Password";
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(17654, 12889);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(139, 39);
+            this.button3.TabIndex = 26;
+            this.button3.Text = "Refresh";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // reserve_panel
             // 
@@ -1185,10 +1559,10 @@ namespace Hospital
             this.reserve_panel.Controls.Add(this.label22);
             this.reserve_panel.Controls.Add(this.rooms_reserve_comboBox);
             this.reserve_panel.Controls.Add(this.deptname_reserve_comboBox);
-            this.reserve_panel.Location = new System.Drawing.Point(675, 421);
+            this.reserve_panel.Location = new System.Drawing.Point(890, 387);
             this.reserve_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reserve_panel.Name = "reserve_panel";
-            this.reserve_panel.Size = new System.Drawing.Size(462, 266);
+            this.reserve_panel.Size = new System.Drawing.Size(308, 214);
             this.reserve_panel.TabIndex = 4;
             // 
             // Pid_res_textBox
@@ -1350,198 +1724,6 @@ namespace Hospital
             this.deptname_reserve_comboBox.TabIndex = 1;
             this.deptname_reserve_comboBox.SelectedIndexChanged += new System.EventHandler(this.deptname_reserve_comboBox_SelectedIndexChanged);
             // 
-            // pay_panel
-            // 
-            this.pay_panel.AutoScroll = true;
-            this.pay_panel.BackColor = System.Drawing.Color.White;
-            this.pay_panel.Controls.Add(this.totBill_btn);
-            this.pay_panel.Controls.Add(this.label46);
-            this.pay_panel.Controls.Add(this.Pid_bill);
-            this.pay_panel.Controls.Add(this.BillType);
-            this.pay_panel.Controls.Add(this.label28);
-            this.pay_panel.Controls.Add(this.bill_dataGridView);
-            this.pay_panel.Controls.Add(this.Pid_bill_combo);
-            this.pay_panel.Controls.Add(this.bill_button);
-            this.pay_panel.Controls.Add(this.price_pay_textBox);
-            this.pay_panel.Controls.Add(this.label32);
-            this.pay_panel.Controls.Add(this.pay_dateTimePicker);
-            this.pay_panel.Controls.Add(this.label31);
-            this.pay_panel.Controls.Add(this.label29);
-            this.pay_panel.Controls.Add(this.label27);
-            this.pay_panel.Location = new System.Drawing.Point(358, 416);
-            this.pay_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pay_panel.Name = "pay_panel";
-            this.pay_panel.Size = new System.Drawing.Size(237, 181);
-            this.pay_panel.TabIndex = 3;
-            // 
-            // totBill_btn
-            // 
-            this.totBill_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.totBill_btn.FlatAppearance.BorderSize = 0;
-            this.totBill_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.totBill_btn.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totBill_btn.ForeColor = System.Drawing.Color.White;
-            this.totBill_btn.Location = new System.Drawing.Point(832, 745);
-            this.totBill_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.totBill_btn.Name = "totBill_btn";
-            this.totBill_btn.Size = new System.Drawing.Size(243, 48);
-            this.totBill_btn.TabIndex = 57;
-            this.totBill_btn.Text = "Get Total";
-            this.totBill_btn.UseVisualStyleBackColor = false;
-            this.totBill_btn.Click += new System.EventHandler(this.totBill_btn_Click);
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label46.ForeColor = System.Drawing.Color.Black;
-            this.label46.Location = new System.Drawing.Point(18, 101);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(251, 39);
-            this.label46.TabIndex = 56;
-            this.label46.Text = "Patient Name";
-            // 
-            // Pid_bill
-            // 
-            this.Pid_bill.Location = new System.Drawing.Point(612, 177);
-            this.Pid_bill.Name = "Pid_bill";
-            this.Pid_bill.ReadOnly = true;
-            this.Pid_bill.Size = new System.Drawing.Size(463, 22);
-            this.Pid_bill.TabIndex = 55;
-            // 
-            // BillType
-            // 
-            this.BillType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.BillType.FormattingEnabled = true;
-            this.BillType.Items.AddRange(new object[] {
-            "Medical Test",
-            "Medicine",
-            "Surgery",
-            "Room"});
-            this.BillType.Location = new System.Drawing.Point(612, 230);
-            this.BillType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BillType.Name = "BillType";
-            this.BillType.Size = new System.Drawing.Size(463, 24);
-            this.BillType.TabIndex = 54;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label28.ForeColor = System.Drawing.Color.Black;
-            this.label28.Location = new System.Drawing.Point(20, 215);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(172, 39);
-            this.label28.TabIndex = 53;
-            this.label28.Text = "Bill Type";
-            // 
-            // bill_dataGridView
-            // 
-            this.bill_dataGridView.AllowUserToAddRows = false;
-            this.bill_dataGridView.AllowUserToDeleteRows = false;
-            this.bill_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.bill_dataGridView.BackgroundColor = System.Drawing.Color.White;
-            this.bill_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bill_dataGridView.GridColor = System.Drawing.Color.White;
-            this.bill_dataGridView.Location = new System.Drawing.Point(27, 347);
-            this.bill_dataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bill_dataGridView.Name = "bill_dataGridView";
-            this.bill_dataGridView.ReadOnly = true;
-            this.bill_dataGridView.RowHeadersWidth = 51;
-            this.bill_dataGridView.RowTemplate.Height = 24;
-            this.bill_dataGridView.Size = new System.Drawing.Size(1165, 373);
-            this.bill_dataGridView.TabIndex = 52;
-            // 
-            // Pid_bill_combo
-            // 
-            this.Pid_bill_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Pid_bill_combo.FormattingEnabled = true;
-            this.Pid_bill_combo.Location = new System.Drawing.Point(612, 120);
-            this.Pid_bill_combo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Pid_bill_combo.Name = "Pid_bill_combo";
-            this.Pid_bill_combo.Size = new System.Drawing.Size(463, 24);
-            this.Pid_bill_combo.TabIndex = 51;
-            this.Pid_bill_combo.SelectedIndexChanged += new System.EventHandler(this.Pid_bill_combo_SelectedIndexChanged);
-            // 
-            // bill_button
-            // 
-            this.bill_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.bill_button.FlatAppearance.BorderSize = 0;
-            this.bill_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bill_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bill_button.ForeColor = System.Drawing.Color.White;
-            this.bill_button.Location = new System.Drawing.Point(1198, 460);
-            this.bill_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bill_button.Name = "bill_button";
-            this.bill_button.Size = new System.Drawing.Size(109, 76);
-            this.bill_button.TabIndex = 50;
-            this.bill_button.Text = "Get Bill";
-            this.bill_button.UseVisualStyleBackColor = false;
-            this.bill_button.Click += new System.EventHandler(this.bill_button_Click);
-            // 
-            // price_pay_textBox
-            // 
-            this.price_pay_textBox.Location = new System.Drawing.Point(339, 760);
-            this.price_pay_textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.price_pay_textBox.Name = "price_pay_textBox";
-            this.price_pay_textBox.ReadOnly = true;
-            this.price_pay_textBox.Size = new System.Drawing.Size(353, 22);
-            this.price_pay_textBox.TabIndex = 49;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label32.ForeColor = System.Drawing.Color.Black;
-            this.label32.Location = new System.Drawing.Point(67, 748);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(206, 39);
-            this.label32.TabIndex = 48;
-            this.label32.Text = "Total Price";
-            // 
-            // pay_dateTimePicker
-            // 
-            this.pay_dateTimePicker.Location = new System.Drawing.Point(612, 285);
-            this.pay_dateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pay_dateTimePicker.Name = "pay_dateTimePicker";
-            this.pay_dateTimePicker.Size = new System.Drawing.Size(463, 22);
-            this.pay_dateTimePicker.TabIndex = 47;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label31.ForeColor = System.Drawing.Color.Black;
-            this.label31.Location = new System.Drawing.Point(29, 279);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(97, 39);
-            this.label31.TabIndex = 46;
-            this.label31.Text = "Date";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Cooper Black", 20F);
-            this.label29.ForeColor = System.Drawing.Color.Black;
-            this.label29.Location = new System.Drawing.Point(20, 164);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(194, 39);
-            this.label29.TabIndex = 42;
-            this.label29.Text = "Patient ID";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label27.Font = new System.Drawing.Font("Verdana", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.label27.Location = new System.Drawing.Point(0, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(367, 80);
-            this.label27.TabIndex = 28;
-            this.label27.Text = "Payment";
-            // 
             // cancelApp_panel
             // 
             this.cancelApp_panel.BackColor = System.Drawing.Color.White;
@@ -1560,7 +1742,7 @@ namespace Hospital
             this.cancelApp_panel.Location = new System.Drawing.Point(307, 126);
             this.cancelApp_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelApp_panel.Name = "cancelApp_panel";
-            this.cancelApp_panel.Size = new System.Drawing.Size(330, 114);
+            this.cancelApp_panel.Size = new System.Drawing.Size(383, 114);
             this.cancelApp_panel.TabIndex = 3;
             // 
             // appTimeDelete
@@ -1699,7 +1881,7 @@ namespace Hospital
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1535, 783);
+            this.ClientSize = new System.Drawing.Size(1563, 802);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelMenu);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1717,12 +1899,16 @@ namespace Hospital
             this.editApp_panel.ResumeLayout(false);
             this.editApp_panel.PerformLayout();
             this.panelDesktop.ResumeLayout(false);
-            this.reserve_panel.ResumeLayout(false);
-            this.reserve_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Nonights)).EndInit();
             this.pay_panel.ResumeLayout(false);
             this.pay_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bill_dataGridView)).EndInit();
+            this.settings_panel.ResumeLayout(false);
+            this.settings_panel.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.reserve_panel.ResumeLayout(false);
+            this.reserve_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Nonights)).EndInit();
             this.cancelApp_panel.ResumeLayout(false);
             this.cancelApp_panel.PerformLayout();
             this.ResumeLayout(false);
@@ -1850,5 +2036,18 @@ namespace Hospital
         private System.Windows.Forms.TextBox Pid_edit_textBox;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label18;
+        private FontAwesome.Sharp.IconButton Settings_iconButton;
+        private System.Windows.Forms.Panel settings_panel;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.TextBox OldPass;
+        private System.Windows.Forms.TextBox NewPass;
+        private System.Windows.Forms.Button Change_Passwrod;
+        private System.Windows.Forms.Label ChangePassword;
+        private System.Windows.Forms.Button button3;
     }
 }

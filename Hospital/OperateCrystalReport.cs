@@ -16,14 +16,14 @@ namespace Hospital {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport1 : ReportClass {
+    public class OperateCrystalReport : ReportClass {
         
-        public CrystalReport1() {
+        public OperateCrystalReport() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport1.rpt";
+                return "OperateCrystalReport.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Hospital {
         
         public override string FullResourceName {
             get {
-                return "Hospital.CrystalReport1.rpt";
+                return "Hospital.OperateCrystalReport.rpt";
             }
             set {
                 // Do nothing
@@ -106,9 +106,9 @@ namespace Hospital {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport1 : Component, ICachedReport {
+    public class CachedOperateCrystalReport : Component, ICachedReport {
         
-        public CachedCrystalReport1() {
+        public CachedOperateCrystalReport() {
         }
         
         [Browsable(false)]
@@ -145,7 +145,7 @@ namespace Hospital {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport1 rpt = new CrystalReport1();
+            OperateCrystalReport rpt = new OperateCrystalReport();
             rpt.Site = this.Site;
             return rpt;
         }

@@ -578,6 +578,22 @@ namespace Hospital
             return dbMan.ExecuteReader(StoredProcedureName, null);
         }
         //-------------------------- ----Receptionist------------------------
+        public DataTable appBill(int pid,string date)
+        {
+            String StoredProcedureName = StoredProcedures.appBill;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@pat_id", pid);
+            Parameters.Add("@Date", date);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public int AppSum(int pid, string date)
+        {
+            string StoredProcedureName = StoredProcedures.AppSum;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@pat_id", pid);
+            Parameters.Add("@Date", date);
+            return (int)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+        }
         public int InsertPatient(int patient_id, string Fname, char Minit, string Lname,
                                 string Bdate, string address, int phone_number, string gender)
         {
@@ -592,6 +608,13 @@ namespace Hospital
             Parameters.Add("@phone_number", phone_number);
             Parameters.Add("@gender", gender[0]);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public int isPatientExist(int patient_id)
+        {
+            string StoredProcedureName = StoredProcedures.isPatientExist;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Pid", patient_id);
+            return (int)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
         }
         public DataTable SelectPatientsID_name()
         {
@@ -912,7 +935,7 @@ namespace Hospital
         {
             String StoredProcedureName = StoredProcedures.DontServe;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
-            Parameters.Add("@Nurse_ID", Nurse_ID);
+            Parameters.Add("@NurseID", Nurse_ID);
             Parameters.Add("@RoomNumber", RoomNumber);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }

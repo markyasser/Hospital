@@ -422,11 +422,13 @@ namespace Hospital
             {
                 return;
             }
-            int result = controllerObj.CancelSurgery(int.Parse(PatID_Surg_comboBox.Text), CurrentDoctorID, SurgName_Cancel_comboBox.Text.ToString(), SurgDate_Cancel_comboBox.Text.ToString());
+            int pID;
+            bool valid= int.TryParse(PatID_Surg_comboBox.SelectedValue.ToString(),out pID);
+            if (!valid) return;
+            int result = controllerObj.CancelSurgery(pID, CurrentDoctorID, SurgName_Cancel_comboBox.Text.ToString(), SurgDate_Cancel_comboBox.Text.ToString());
             if (result == 0)
-            {
                 MessageBox.Show("Cancelation failed");
-            }
+            
             else
             {
                 MessageBox.Show("Cancelation successful!");
@@ -901,7 +903,7 @@ namespace Hospital
             if (!flag) return;
             object oldpassword = controllerObj.GetOldPassword(USERNAME);
 
-            if (oldpassword != null && OldPass.Text == oldpassword.ToString())
+            if (oldpassword != null && Validation.hashpassword(OldPass.Text) == oldpassword.ToString())
             {
                 if (OldPass.Text == NewPass.Text)
                 {

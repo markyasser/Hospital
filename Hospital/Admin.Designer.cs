@@ -105,9 +105,6 @@ namespace Hospital
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label68 = new System.Windows.Forms.Label();
             this.Employee_panel = new System.Windows.Forms.Panel();
-            this.Search_iconButton = new FontAwesome.Sharp.IconButton();
-            this.List_iconButton = new FontAwesome.Sharp.IconButton();
-            this.Create_Account_iconButton = new FontAwesome.Sharp.IconButton();
             this.CreateAccount_panel = new System.Windows.Forms.Panel();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -138,7 +135,6 @@ namespace Hospital
             this.label11 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.Show_Hide_Password = new FontAwesome.Sharp.IconButton();
             this.username = new System.Windows.Forms.TextBox();
             this.pos = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -153,16 +149,7 @@ namespace Hospital
             this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.Logo_panel = new System.Windows.Forms.Panel();
-            this.SideBar_iconButton = new FontAwesome.Sharp.IconButton();
             this.SideMenu_panel = new System.Windows.Forms.Panel();
-            this.Rooms = new FontAwesome.Sharp.IconButton();
-            this.MedicalTests = new FontAwesome.Sharp.IconButton();
-            this.surgeries = new FontAwesome.Sharp.IconButton();
-            this.Departments = new FontAwesome.Sharp.IconButton();
-            this.Settings_iconButton = new FontAwesome.Sharp.IconButton();
-            this.Logout_iconButton = new FontAwesome.Sharp.IconButton();
-            this.Earnings_iconButton = new FontAwesome.Sharp.IconButton();
-            this.Employee_Button = new FontAwesome.Sharp.IconButton();
             this.Refresh_Medicines_button = new System.Windows.Forms.Button();
             this.List_panel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -242,6 +229,24 @@ namespace Hospital
             this.label81 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.Report_MedicalTest = new System.Windows.Forms.Button();
+            this.Report_Medicines = new System.Windows.Forms.Button();
+            this.Report_Reserve = new System.Windows.Forms.Button();
+            this.Report_Operation = new System.Windows.Forms.Button();
+            this.Report_Appoint = new System.Windows.Forms.Button();
+            this.Show_Hide_Password = new FontAwesome.Sharp.IconButton();
+            this.Rooms = new FontAwesome.Sharp.IconButton();
+            this.MedicalTests = new FontAwesome.Sharp.IconButton();
+            this.surgeries = new FontAwesome.Sharp.IconButton();
+            this.Departments = new FontAwesome.Sharp.IconButton();
+            this.Settings_iconButton = new FontAwesome.Sharp.IconButton();
+            this.Logout_iconButton = new FontAwesome.Sharp.IconButton();
+            this.Earnings_iconButton = new FontAwesome.Sharp.IconButton();
+            this.Search_iconButton = new FontAwesome.Sharp.IconButton();
+            this.List_iconButton = new FontAwesome.Sharp.IconButton();
+            this.Create_Account_iconButton = new FontAwesome.Sharp.IconButton();
+            this.Employee_Button = new FontAwesome.Sharp.IconButton();
+            this.SideBar_iconButton = new FontAwesome.Sharp.IconButton();
             this.Search_panel.SuspendLayout();
             this.Earnings_panel.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -507,7 +512,7 @@ namespace Hospital
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(12878, 13050);
+            this.button1.Location = new System.Drawing.Point(13208, 13747);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 39);
@@ -559,7 +564,7 @@ namespace Hospital
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(12867, 10390);
+            this.button2.Location = new System.Drawing.Point(12867, 10527);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(139, 39);
@@ -581,6 +586,11 @@ namespace Hospital
             // 
             this.Earnings_panel.AutoScroll = true;
             this.Earnings_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.Earnings_panel.Controls.Add(this.Report_Appoint);
+            this.Earnings_panel.Controls.Add(this.Report_Reserve);
+            this.Earnings_panel.Controls.Add(this.Report_Operation);
+            this.Earnings_panel.Controls.Add(this.Report_Medicines);
+            this.Earnings_panel.Controls.Add(this.Report_MedicalTest);
             this.Earnings_panel.Controls.Add(this.Show_Statistics_btn);
             this.Earnings_panel.Controls.Add(this.label73);
             this.Earnings_panel.Controls.Add(this.groupBox7);
@@ -608,7 +618,7 @@ namespace Hospital
             this.Show_Statistics_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
             this.Show_Statistics_btn.Font = new System.Drawing.Font("Cooper Black", 15F);
             this.Show_Statistics_btn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Show_Statistics_btn.Location = new System.Drawing.Point(792, 187);
+            this.Show_Statistics_btn.Location = new System.Drawing.Point(624, 186);
             this.Show_Statistics_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Show_Statistics_btn.Name = "Show_Statistics_btn";
             this.Show_Statistics_btn.Size = new System.Drawing.Size(386, 52);
@@ -620,10 +630,10 @@ namespace Hospital
             // label73
             // 
             this.label73.AutoSize = true;
-            this.label73.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label73.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label73.Location = new System.Drawing.Point(57, 693);
             this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(111, 32);
+            this.label73.Size = new System.Drawing.Size(79, 23);
             this.label73.TabIndex = 146;
             this.label73.Text = "Rooms";
             // 
@@ -688,10 +698,10 @@ namespace Hospital
             // label72
             // 
             this.label72.AutoSize = true;
-            this.label72.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label72.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label72.Location = new System.Drawing.Point(449, 698);
             this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(174, 32);
+            this.label72.Size = new System.Drawing.Size(123, 23);
             this.label72.TabIndex = 144;
             this.label72.Text = "Operations";
             // 
@@ -756,10 +766,10 @@ namespace Hospital
             // label71
             // 
             this.label71.AutoSize = true;
-            this.label71.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label71.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label71.Location = new System.Drawing.Point(839, 282);
             this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(222, 32);
+            this.label71.Size = new System.Drawing.Size(156, 23);
             this.label71.TabIndex = 142;
             this.label71.Text = "Appointments";
             // 
@@ -824,10 +834,10 @@ namespace Hospital
             // label70
             // 
             this.label70.AutoSize = true;
-            this.label70.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label70.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label70.Location = new System.Drawing.Point(452, 281);
             this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(205, 32);
+            this.label70.Size = new System.Drawing.Size(147, 23);
             this.label70.TabIndex = 140;
             this.label70.Text = "Medical Tests";
             // 
@@ -892,10 +902,10 @@ namespace Hospital
             // label69
             // 
             this.label69.AutoSize = true;
-            this.label69.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label69.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label69.Location = new System.Drawing.Point(60, 284);
             this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(155, 32);
+            this.label69.Size = new System.Drawing.Size(111, 23);
             this.label69.TabIndex = 138;
             this.label69.Text = "Medicines";
             // 
@@ -904,7 +914,7 @@ namespace Hospital
             this.groupBox2.Controls.Add(this.dataGridView3);
             this.groupBox2.Location = new System.Drawing.Point(65, 326);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(367, 352);
+            this.groupBox2.Size = new System.Drawing.Size(367, 351);
             this.groupBox2.TabIndex = 137;
             this.groupBox2.TabStop = false;
             // 
@@ -954,7 +964,7 @@ namespace Hospital
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Red;
             this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(361, 331);
+            this.dataGridView3.Size = new System.Drawing.Size(361, 330);
             this.dataGridView3.TabIndex = 30;
             // 
             // dateTimePicker1
@@ -990,81 +1000,6 @@ namespace Hospital
             this.Employee_panel.Name = "Employee_panel";
             this.Employee_panel.Size = new System.Drawing.Size(429, 266);
             this.Employee_panel.TabIndex = 1;
-            // 
-            // Search_iconButton
-            // 
-            this.Search_iconButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
-            this.Search_iconButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Search_iconButton.FlatAppearance.BorderSize = 0;
-            this.Search_iconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Search_iconButton.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Search_iconButton.ForeColor = System.Drawing.Color.White;
-            this.Search_iconButton.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.Search_iconButton.IconColor = System.Drawing.Color.White;
-            this.Search_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Search_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Search_iconButton.Location = new System.Drawing.Point(0, 180);
-            this.Search_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Search_iconButton.Name = "Search_iconButton";
-            this.Search_iconButton.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.Search_iconButton.Size = new System.Drawing.Size(429, 86);
-            this.Search_iconButton.TabIndex = 34;
-            this.Search_iconButton.Tag = "Search";
-            this.Search_iconButton.Text = "Search";
-            this.Search_iconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Search_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Search_iconButton.UseVisualStyleBackColor = false;
-            this.Search_iconButton.Click += new System.EventHandler(this.Search_iconButton_Click);
-            // 
-            // List_iconButton
-            // 
-            this.List_iconButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
-            this.List_iconButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.List_iconButton.FlatAppearance.BorderSize = 0;
-            this.List_iconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.List_iconButton.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.List_iconButton.ForeColor = System.Drawing.Color.White;
-            this.List_iconButton.IconChar = FontAwesome.Sharp.IconChar.List;
-            this.List_iconButton.IconColor = System.Drawing.Color.White;
-            this.List_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.List_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.List_iconButton.Location = new System.Drawing.Point(0, 94);
-            this.List_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.List_iconButton.Name = "List_iconButton";
-            this.List_iconButton.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.List_iconButton.Size = new System.Drawing.Size(429, 86);
-            this.List_iconButton.TabIndex = 33;
-            this.List_iconButton.Tag = "List Employees";
-            this.List_iconButton.Text = "List Employees";
-            this.List_iconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.List_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.List_iconButton.UseVisualStyleBackColor = false;
-            this.List_iconButton.Click += new System.EventHandler(this.List_iconButton_Click);
-            // 
-            // Create_Account_iconButton
-            // 
-            this.Create_Account_iconButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
-            this.Create_Account_iconButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Create_Account_iconButton.FlatAppearance.BorderSize = 0;
-            this.Create_Account_iconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Create_Account_iconButton.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Create_Account_iconButton.ForeColor = System.Drawing.Color.White;
-            this.Create_Account_iconButton.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
-            this.Create_Account_iconButton.IconColor = System.Drawing.Color.White;
-            this.Create_Account_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Create_Account_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Create_Account_iconButton.Location = new System.Drawing.Point(0, 0);
-            this.Create_Account_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Create_Account_iconButton.Name = "Create_Account_iconButton";
-            this.Create_Account_iconButton.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.Create_Account_iconButton.Size = new System.Drawing.Size(429, 94);
-            this.Create_Account_iconButton.TabIndex = 32;
-            this.Create_Account_iconButton.Tag = "Create Account";
-            this.Create_Account_iconButton.Text = "Create Account";
-            this.Create_Account_iconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Create_Account_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Create_Account_iconButton.UseVisualStyleBackColor = false;
-            this.Create_Account_iconButton.Click += new System.EventHandler(this.Create_Account_iconButton_Click);
             // 
             // CreateAccount_panel
             // 
@@ -1400,22 +1335,6 @@ namespace Hospital
             this.label23.TabIndex = 132;
             this.label23.Text = "Username";
             // 
-            // Show_Hide_Password
-            // 
-            this.Show_Hide_Password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.Show_Hide_Password.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Show_Hide_Password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.Show_Hide_Password.IconChar = FontAwesome.Sharp.IconChar.Eye;
-            this.Show_Hide_Password.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.Show_Hide_Password.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Show_Hide_Password.IconSize = 39;
-            this.Show_Hide_Password.Location = new System.Drawing.Point(896, 284);
-            this.Show_Hide_Password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Show_Hide_Password.Name = "Show_Hide_Password";
-            this.Show_Hide_Password.Size = new System.Drawing.Size(45, 39);
-            this.Show_Hide_Password.TabIndex = 149;
-            this.Show_Hide_Password.UseVisualStyleBackColor = false;
-            // 
             // username
             // 
             this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -1574,27 +1493,6 @@ namespace Hospital
             this.Logo_panel.Size = new System.Drawing.Size(429, 100);
             this.Logo_panel.TabIndex = 2;
             // 
-            // SideBar_iconButton
-            // 
-            this.SideBar_iconButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.SideBar_iconButton.FlatAppearance.BorderSize = 0;
-            this.SideBar_iconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SideBar_iconButton.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SideBar_iconButton.ForeColor = System.Drawing.Color.White;
-            this.SideBar_iconButton.IconChar = FontAwesome.Sharp.IconChar.Bars;
-            this.SideBar_iconButton.IconColor = System.Drawing.Color.White;
-            this.SideBar_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SideBar_iconButton.Location = new System.Drawing.Point(0, 0);
-            this.SideBar_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.SideBar_iconButton.Name = "SideBar_iconButton";
-            this.SideBar_iconButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.SideBar_iconButton.Size = new System.Drawing.Size(133, 100);
-            this.SideBar_iconButton.TabIndex = 36;
-            this.SideBar_iconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SideBar_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SideBar_iconButton.UseVisualStyleBackColor = true;
-            this.SideBar_iconButton.Click += new System.EventHandler(this.SideBar_iconButton_Click);
-            // 
             // SideMenu_panel
             // 
             this.SideMenu_panel.AutoScroll = true;
@@ -1616,206 +1514,6 @@ namespace Hospital
             this.SideMenu_panel.Size = new System.Drawing.Size(429, 1055);
             this.SideMenu_panel.TabIndex = 31;
             // 
-            // Rooms
-            // 
-            this.Rooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.Rooms.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Rooms.FlatAppearance.BorderSize = 0;
-            this.Rooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Rooms.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rooms.ForeColor = System.Drawing.Color.White;
-            this.Rooms.IconChar = FontAwesome.Sharp.IconChar.Bed;
-            this.Rooms.IconColor = System.Drawing.Color.White;
-            this.Rooms.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Rooms.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Rooms.Location = new System.Drawing.Point(0, 765);
-            this.Rooms.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Rooms.Name = "Rooms";
-            this.Rooms.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.Rooms.Size = new System.Drawing.Size(429, 80);
-            this.Rooms.TabIndex = 38;
-            this.Rooms.Tag = "Rooms";
-            this.Rooms.Text = "Rooms";
-            this.Rooms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Rooms.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Rooms.UseVisualStyleBackColor = false;
-            this.Rooms.Click += new System.EventHandler(this.Rooms_Click);
-            // 
-            // MedicalTests
-            // 
-            this.MedicalTests.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.MedicalTests.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MedicalTests.FlatAppearance.BorderSize = 0;
-            this.MedicalTests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MedicalTests.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MedicalTests.ForeColor = System.Drawing.Color.White;
-            this.MedicalTests.IconChar = FontAwesome.Sharp.IconChar.Medkit;
-            this.MedicalTests.IconColor = System.Drawing.Color.White;
-            this.MedicalTests.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.MedicalTests.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MedicalTests.Location = new System.Drawing.Point(0, 685);
-            this.MedicalTests.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MedicalTests.Name = "MedicalTests";
-            this.MedicalTests.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.MedicalTests.Size = new System.Drawing.Size(429, 80);
-            this.MedicalTests.TabIndex = 37;
-            this.MedicalTests.Tag = "MedicalTests";
-            this.MedicalTests.Text = "Medical Tests";
-            this.MedicalTests.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MedicalTests.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.MedicalTests.UseVisualStyleBackColor = false;
-            this.MedicalTests.Click += new System.EventHandler(this.MedicalTests_Click);
-            // 
-            // surgeries
-            // 
-            this.surgeries.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.surgeries.Dock = System.Windows.Forms.DockStyle.Top;
-            this.surgeries.FlatAppearance.BorderSize = 0;
-            this.surgeries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.surgeries.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.surgeries.ForeColor = System.Drawing.Color.White;
-            this.surgeries.IconChar = FontAwesome.Sharp.IconChar.Diagnoses;
-            this.surgeries.IconColor = System.Drawing.Color.White;
-            this.surgeries.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.surgeries.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.surgeries.Location = new System.Drawing.Point(0, 605);
-            this.surgeries.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.surgeries.Name = "surgeries";
-            this.surgeries.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.surgeries.Size = new System.Drawing.Size(429, 80);
-            this.surgeries.TabIndex = 36;
-            this.surgeries.Tag = "Surgeries";
-            this.surgeries.Text = "Surgeries";
-            this.surgeries.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.surgeries.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.surgeries.UseVisualStyleBackColor = false;
-            this.surgeries.Click += new System.EventHandler(this.surgeries_Click);
-            // 
-            // Departments
-            // 
-            this.Departments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.Departments.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Departments.FlatAppearance.BorderSize = 0;
-            this.Departments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Departments.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Departments.ForeColor = System.Drawing.Color.White;
-            this.Departments.IconChar = FontAwesome.Sharp.IconChar.Hospital;
-            this.Departments.IconColor = System.Drawing.Color.White;
-            this.Departments.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Departments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Departments.Location = new System.Drawing.Point(0, 525);
-            this.Departments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Departments.Name = "Departments";
-            this.Departments.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.Departments.Size = new System.Drawing.Size(429, 80);
-            this.Departments.TabIndex = 35;
-            this.Departments.Tag = "Departments";
-            this.Departments.Text = "Departments";
-            this.Departments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Departments.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Departments.UseVisualStyleBackColor = false;
-            this.Departments.Click += new System.EventHandler(this.Departments_Click);
-            // 
-            // Settings_iconButton
-            // 
-            this.Settings_iconButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.Settings_iconButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Settings_iconButton.FlatAppearance.BorderSize = 0;
-            this.Settings_iconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Settings_iconButton.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Settings_iconButton.ForeColor = System.Drawing.Color.White;
-            this.Settings_iconButton.IconChar = FontAwesome.Sharp.IconChar.Cog;
-            this.Settings_iconButton.IconColor = System.Drawing.Color.White;
-            this.Settings_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Settings_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Settings_iconButton.Location = new System.Drawing.Point(0, 851);
-            this.Settings_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Settings_iconButton.Name = "Settings_iconButton";
-            this.Settings_iconButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.Settings_iconButton.Size = new System.Drawing.Size(429, 108);
-            this.Settings_iconButton.TabIndex = 34;
-            this.Settings_iconButton.Tag = "Settings";
-            this.Settings_iconButton.Text = "Settings";
-            this.Settings_iconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Settings_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Settings_iconButton.UseVisualStyleBackColor = false;
-            this.Settings_iconButton.Click += new System.EventHandler(this.Settings_iconButton_Click);
-            // 
-            // Logout_iconButton
-            // 
-            this.Logout_iconButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.Logout_iconButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Logout_iconButton.FlatAppearance.BorderSize = 0;
-            this.Logout_iconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Logout_iconButton.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Logout_iconButton.ForeColor = System.Drawing.Color.White;
-            this.Logout_iconButton.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.Logout_iconButton.IconColor = System.Drawing.Color.White;
-            this.Logout_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Logout_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Logout_iconButton.Location = new System.Drawing.Point(0, 959);
-            this.Logout_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Logout_iconButton.Name = "Logout_iconButton";
-            this.Logout_iconButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.Logout_iconButton.Size = new System.Drawing.Size(429, 96);
-            this.Logout_iconButton.TabIndex = 33;
-            this.Logout_iconButton.Tag = "Log Out";
-            this.Logout_iconButton.Text = "Log Out";
-            this.Logout_iconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Logout_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Logout_iconButton.UseVisualStyleBackColor = false;
-            this.Logout_iconButton.Click += new System.EventHandler(this.Logout_iconButton_Click);
-            // 
-            // Earnings_iconButton
-            // 
-            this.Earnings_iconButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.Earnings_iconButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Earnings_iconButton.FlatAppearance.BorderSize = 0;
-            this.Earnings_iconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Earnings_iconButton.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Earnings_iconButton.ForeColor = System.Drawing.Color.White;
-            this.Earnings_iconButton.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
-            this.Earnings_iconButton.IconColor = System.Drawing.Color.White;
-            this.Earnings_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Earnings_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Earnings_iconButton.Location = new System.Drawing.Point(0, 446);
-            this.Earnings_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Earnings_iconButton.Name = "Earnings_iconButton";
-            this.Earnings_iconButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.Earnings_iconButton.Size = new System.Drawing.Size(429, 79);
-            this.Earnings_iconButton.TabIndex = 32;
-            this.Earnings_iconButton.Tag = "Earnings";
-            this.Earnings_iconButton.Text = "Earnings";
-            this.Earnings_iconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Earnings_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Earnings_iconButton.UseVisualStyleBackColor = false;
-            this.Earnings_iconButton.Click += new System.EventHandler(this.Earnings_iconButton_Click);
-            // 
-            // Employee_Button
-            // 
-            this.Employee_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.Employee_Button.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Employee_Button.FlatAppearance.BorderSize = 0;
-            this.Employee_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Employee_Button.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Employee_Button.ForeColor = System.Drawing.Color.White;
-            this.Employee_Button.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.Employee_Button.IconColor = System.Drawing.Color.White;
-            this.Employee_Button.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Employee_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Employee_Button.Location = new System.Drawing.Point(0, 100);
-            this.Employee_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Employee_Button.Name = "Employee_Button";
-            this.Employee_Button.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.Employee_Button.Size = new System.Drawing.Size(429, 80);
-            this.Employee_Button.TabIndex = 31;
-            this.Employee_Button.Tag = "Employee";
-            this.Employee_Button.Text = "Employee";
-            this.Employee_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Employee_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Employee_Button.UseVisualStyleBackColor = false;
-            this.Employee_Button.Click += new System.EventHandler(this.Employee_Button_Click);
-            // 
             // Refresh_Medicines_button
             // 
             this.Refresh_Medicines_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -1824,7 +1522,7 @@ namespace Hospital
             this.Refresh_Medicines_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_Medicines_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Refresh_Medicines_button.ForeColor = System.Drawing.Color.White;
-            this.Refresh_Medicines_button.Location = new System.Drawing.Point(32294, 24526);
+            this.Refresh_Medicines_button.Location = new System.Drawing.Point(32294, 25277);
             this.Refresh_Medicines_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Refresh_Medicines_button.Name = "Refresh_Medicines_button";
             this.Refresh_Medicines_button.Size = new System.Drawing.Size(139, 39);
@@ -2631,7 +2329,7 @@ namespace Hospital
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(14445, 10575);
+            this.button3.Location = new System.Drawing.Point(14930, 10944);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(139, 39);
@@ -2899,6 +2597,388 @@ namespace Hospital
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // Report_MedicalTest
+            // 
+            this.Report_MedicalTest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.Report_MedicalTest.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Report_MedicalTest.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Report_MedicalTest.Location = new System.Drawing.Point(693, 272);
+            this.Report_MedicalTest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Report_MedicalTest.Name = "Report_MedicalTest";
+            this.Report_MedicalTest.Size = new System.Drawing.Size(131, 42);
+            this.Report_MedicalTest.TabIndex = 148;
+            this.Report_MedicalTest.Text = "Report";
+            this.Report_MedicalTest.UseVisualStyleBackColor = false;
+            this.Report_MedicalTest.Click += new System.EventHandler(this.Report_MedicalTest_Click);
+            // 
+            // Report_Medicines
+            // 
+            this.Report_Medicines.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.Report_Medicines.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Report_Medicines.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Report_Medicines.Location = new System.Drawing.Point(301, 275);
+            this.Report_Medicines.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Report_Medicines.Name = "Report_Medicines";
+            this.Report_Medicines.Size = new System.Drawing.Size(131, 42);
+            this.Report_Medicines.TabIndex = 149;
+            this.Report_Medicines.Text = "Report";
+            this.Report_Medicines.UseVisualStyleBackColor = false;
+            this.Report_Medicines.Click += new System.EventHandler(this.Report_Medicines_Click);
+            // 
+            // Report_Reserve
+            // 
+            this.Report_Reserve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.Report_Reserve.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Report_Reserve.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Report_Reserve.Location = new System.Drawing.Point(298, 693);
+            this.Report_Reserve.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Report_Reserve.Name = "Report_Reserve";
+            this.Report_Reserve.Size = new System.Drawing.Size(131, 42);
+            this.Report_Reserve.TabIndex = 151;
+            this.Report_Reserve.Text = "Report";
+            this.Report_Reserve.UseVisualStyleBackColor = false;
+            this.Report_Reserve.Click += new System.EventHandler(this.Report_Reserve_Click);
+            // 
+            // Report_Operation
+            // 
+            this.Report_Operation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.Report_Operation.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Report_Operation.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Report_Operation.Location = new System.Drawing.Point(690, 690);
+            this.Report_Operation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Report_Operation.Name = "Report_Operation";
+            this.Report_Operation.Size = new System.Drawing.Size(131, 42);
+            this.Report_Operation.TabIndex = 150;
+            this.Report_Operation.Text = "Report";
+            this.Report_Operation.UseVisualStyleBackColor = false;
+            this.Report_Operation.Click += new System.EventHandler(this.Report_Operation_Click);
+            // 
+            // Report_Appoint
+            // 
+            this.Report_Appoint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.Report_Appoint.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Report_Appoint.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Report_Appoint.Location = new System.Drawing.Point(1077, 274);
+            this.Report_Appoint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Report_Appoint.Name = "Report_Appoint";
+            this.Report_Appoint.Size = new System.Drawing.Size(131, 42);
+            this.Report_Appoint.TabIndex = 152;
+            this.Report_Appoint.Text = "Report";
+            this.Report_Appoint.UseVisualStyleBackColor = false;
+            this.Report_Appoint.Click += new System.EventHandler(this.Report_Appoint_Click);
+            // 
+            // Show_Hide_Password
+            // 
+            this.Show_Hide_Password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.Show_Hide_Password.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Show_Hide_Password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.Show_Hide_Password.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.Show_Hide_Password.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.Show_Hide_Password.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Show_Hide_Password.IconSize = 39;
+            this.Show_Hide_Password.Location = new System.Drawing.Point(896, 284);
+            this.Show_Hide_Password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Show_Hide_Password.Name = "Show_Hide_Password";
+            this.Show_Hide_Password.Size = new System.Drawing.Size(45, 39);
+            this.Show_Hide_Password.TabIndex = 149;
+            this.Show_Hide_Password.UseVisualStyleBackColor = false;
+            // 
+            // Rooms
+            // 
+            this.Rooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.Rooms.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Rooms.FlatAppearance.BorderSize = 0;
+            this.Rooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Rooms.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Rooms.ForeColor = System.Drawing.Color.White;
+            this.Rooms.IconChar = FontAwesome.Sharp.IconChar.Bed;
+            this.Rooms.IconColor = System.Drawing.Color.White;
+            this.Rooms.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Rooms.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Rooms.Location = new System.Drawing.Point(0, 765);
+            this.Rooms.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Rooms.Name = "Rooms";
+            this.Rooms.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.Rooms.Size = new System.Drawing.Size(429, 80);
+            this.Rooms.TabIndex = 38;
+            this.Rooms.Tag = "Rooms";
+            this.Rooms.Text = "Rooms";
+            this.Rooms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Rooms.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Rooms.UseVisualStyleBackColor = false;
+            this.Rooms.Click += new System.EventHandler(this.Rooms_Click);
+            // 
+            // MedicalTests
+            // 
+            this.MedicalTests.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.MedicalTests.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MedicalTests.FlatAppearance.BorderSize = 0;
+            this.MedicalTests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MedicalTests.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MedicalTests.ForeColor = System.Drawing.Color.White;
+            this.MedicalTests.IconChar = FontAwesome.Sharp.IconChar.Medkit;
+            this.MedicalTests.IconColor = System.Drawing.Color.White;
+            this.MedicalTests.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.MedicalTests.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MedicalTests.Location = new System.Drawing.Point(0, 685);
+            this.MedicalTests.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MedicalTests.Name = "MedicalTests";
+            this.MedicalTests.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.MedicalTests.Size = new System.Drawing.Size(429, 80);
+            this.MedicalTests.TabIndex = 37;
+            this.MedicalTests.Tag = "MedicalTests";
+            this.MedicalTests.Text = "Medical Tests";
+            this.MedicalTests.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MedicalTests.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.MedicalTests.UseVisualStyleBackColor = false;
+            this.MedicalTests.Click += new System.EventHandler(this.MedicalTests_Click);
+            // 
+            // surgeries
+            // 
+            this.surgeries.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.surgeries.Dock = System.Windows.Forms.DockStyle.Top;
+            this.surgeries.FlatAppearance.BorderSize = 0;
+            this.surgeries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.surgeries.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.surgeries.ForeColor = System.Drawing.Color.White;
+            this.surgeries.IconChar = FontAwesome.Sharp.IconChar.Diagnoses;
+            this.surgeries.IconColor = System.Drawing.Color.White;
+            this.surgeries.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.surgeries.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.surgeries.Location = new System.Drawing.Point(0, 605);
+            this.surgeries.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.surgeries.Name = "surgeries";
+            this.surgeries.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.surgeries.Size = new System.Drawing.Size(429, 80);
+            this.surgeries.TabIndex = 36;
+            this.surgeries.Tag = "Surgeries";
+            this.surgeries.Text = "Surgeries";
+            this.surgeries.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.surgeries.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.surgeries.UseVisualStyleBackColor = false;
+            this.surgeries.Click += new System.EventHandler(this.surgeries_Click);
+            // 
+            // Departments
+            // 
+            this.Departments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.Departments.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Departments.FlatAppearance.BorderSize = 0;
+            this.Departments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Departments.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Departments.ForeColor = System.Drawing.Color.White;
+            this.Departments.IconChar = FontAwesome.Sharp.IconChar.Hospital;
+            this.Departments.IconColor = System.Drawing.Color.White;
+            this.Departments.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Departments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Departments.Location = new System.Drawing.Point(0, 525);
+            this.Departments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Departments.Name = "Departments";
+            this.Departments.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.Departments.Size = new System.Drawing.Size(429, 80);
+            this.Departments.TabIndex = 35;
+            this.Departments.Tag = "Departments";
+            this.Departments.Text = "Departments";
+            this.Departments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Departments.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Departments.UseVisualStyleBackColor = false;
+            this.Departments.Click += new System.EventHandler(this.Departments_Click);
+            // 
+            // Settings_iconButton
+            // 
+            this.Settings_iconButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.Settings_iconButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Settings_iconButton.FlatAppearance.BorderSize = 0;
+            this.Settings_iconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Settings_iconButton.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Settings_iconButton.ForeColor = System.Drawing.Color.White;
+            this.Settings_iconButton.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.Settings_iconButton.IconColor = System.Drawing.Color.White;
+            this.Settings_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Settings_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Settings_iconButton.Location = new System.Drawing.Point(0, 851);
+            this.Settings_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Settings_iconButton.Name = "Settings_iconButton";
+            this.Settings_iconButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.Settings_iconButton.Size = new System.Drawing.Size(429, 108);
+            this.Settings_iconButton.TabIndex = 34;
+            this.Settings_iconButton.Tag = "Settings";
+            this.Settings_iconButton.Text = "Settings";
+            this.Settings_iconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Settings_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Settings_iconButton.UseVisualStyleBackColor = false;
+            this.Settings_iconButton.Click += new System.EventHandler(this.Settings_iconButton_Click);
+            // 
+            // Logout_iconButton
+            // 
+            this.Logout_iconButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.Logout_iconButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Logout_iconButton.FlatAppearance.BorderSize = 0;
+            this.Logout_iconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Logout_iconButton.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Logout_iconButton.ForeColor = System.Drawing.Color.White;
+            this.Logout_iconButton.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.Logout_iconButton.IconColor = System.Drawing.Color.White;
+            this.Logout_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Logout_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Logout_iconButton.Location = new System.Drawing.Point(0, 959);
+            this.Logout_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Logout_iconButton.Name = "Logout_iconButton";
+            this.Logout_iconButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.Logout_iconButton.Size = new System.Drawing.Size(429, 96);
+            this.Logout_iconButton.TabIndex = 33;
+            this.Logout_iconButton.Tag = "Log Out";
+            this.Logout_iconButton.Text = "Log Out";
+            this.Logout_iconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Logout_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Logout_iconButton.UseVisualStyleBackColor = false;
+            this.Logout_iconButton.Click += new System.EventHandler(this.Logout_iconButton_Click);
+            // 
+            // Earnings_iconButton
+            // 
+            this.Earnings_iconButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.Earnings_iconButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Earnings_iconButton.FlatAppearance.BorderSize = 0;
+            this.Earnings_iconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Earnings_iconButton.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Earnings_iconButton.ForeColor = System.Drawing.Color.White;
+            this.Earnings_iconButton.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
+            this.Earnings_iconButton.IconColor = System.Drawing.Color.White;
+            this.Earnings_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Earnings_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Earnings_iconButton.Location = new System.Drawing.Point(0, 446);
+            this.Earnings_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Earnings_iconButton.Name = "Earnings_iconButton";
+            this.Earnings_iconButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.Earnings_iconButton.Size = new System.Drawing.Size(429, 79);
+            this.Earnings_iconButton.TabIndex = 32;
+            this.Earnings_iconButton.Tag = "Earnings";
+            this.Earnings_iconButton.Text = "Earnings";
+            this.Earnings_iconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Earnings_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Earnings_iconButton.UseVisualStyleBackColor = false;
+            this.Earnings_iconButton.Click += new System.EventHandler(this.Earnings_iconButton_Click);
+            // 
+            // Search_iconButton
+            // 
+            this.Search_iconButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
+            this.Search_iconButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Search_iconButton.FlatAppearance.BorderSize = 0;
+            this.Search_iconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Search_iconButton.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Search_iconButton.ForeColor = System.Drawing.Color.White;
+            this.Search_iconButton.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.Search_iconButton.IconColor = System.Drawing.Color.White;
+            this.Search_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Search_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Search_iconButton.Location = new System.Drawing.Point(0, 180);
+            this.Search_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Search_iconButton.Name = "Search_iconButton";
+            this.Search_iconButton.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
+            this.Search_iconButton.Size = new System.Drawing.Size(429, 86);
+            this.Search_iconButton.TabIndex = 34;
+            this.Search_iconButton.Tag = "Search";
+            this.Search_iconButton.Text = "Search";
+            this.Search_iconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Search_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Search_iconButton.UseVisualStyleBackColor = false;
+            this.Search_iconButton.Click += new System.EventHandler(this.Search_iconButton_Click);
+            // 
+            // List_iconButton
+            // 
+            this.List_iconButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
+            this.List_iconButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.List_iconButton.FlatAppearance.BorderSize = 0;
+            this.List_iconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.List_iconButton.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.List_iconButton.ForeColor = System.Drawing.Color.White;
+            this.List_iconButton.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.List_iconButton.IconColor = System.Drawing.Color.White;
+            this.List_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.List_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.List_iconButton.Location = new System.Drawing.Point(0, 94);
+            this.List_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.List_iconButton.Name = "List_iconButton";
+            this.List_iconButton.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
+            this.List_iconButton.Size = new System.Drawing.Size(429, 86);
+            this.List_iconButton.TabIndex = 33;
+            this.List_iconButton.Tag = "List Employees";
+            this.List_iconButton.Text = "List Employees";
+            this.List_iconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.List_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.List_iconButton.UseVisualStyleBackColor = false;
+            this.List_iconButton.Click += new System.EventHandler(this.List_iconButton_Click);
+            // 
+            // Create_Account_iconButton
+            // 
+            this.Create_Account_iconButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
+            this.Create_Account_iconButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Create_Account_iconButton.FlatAppearance.BorderSize = 0;
+            this.Create_Account_iconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Create_Account_iconButton.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Create_Account_iconButton.ForeColor = System.Drawing.Color.White;
+            this.Create_Account_iconButton.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            this.Create_Account_iconButton.IconColor = System.Drawing.Color.White;
+            this.Create_Account_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Create_Account_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Create_Account_iconButton.Location = new System.Drawing.Point(0, 0);
+            this.Create_Account_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Create_Account_iconButton.Name = "Create_Account_iconButton";
+            this.Create_Account_iconButton.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
+            this.Create_Account_iconButton.Size = new System.Drawing.Size(429, 94);
+            this.Create_Account_iconButton.TabIndex = 32;
+            this.Create_Account_iconButton.Tag = "Create Account";
+            this.Create_Account_iconButton.Text = "Create Account";
+            this.Create_Account_iconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Create_Account_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Create_Account_iconButton.UseVisualStyleBackColor = false;
+            this.Create_Account_iconButton.Click += new System.EventHandler(this.Create_Account_iconButton_Click);
+            // 
+            // Employee_Button
+            // 
+            this.Employee_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.Employee_Button.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Employee_Button.FlatAppearance.BorderSize = 0;
+            this.Employee_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Employee_Button.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Employee_Button.ForeColor = System.Drawing.Color.White;
+            this.Employee_Button.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.Employee_Button.IconColor = System.Drawing.Color.White;
+            this.Employee_Button.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Employee_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Employee_Button.Location = new System.Drawing.Point(0, 100);
+            this.Employee_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Employee_Button.Name = "Employee_Button";
+            this.Employee_Button.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.Employee_Button.Size = new System.Drawing.Size(429, 80);
+            this.Employee_Button.TabIndex = 31;
+            this.Employee_Button.Tag = "Employee";
+            this.Employee_Button.Text = "Employee";
+            this.Employee_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Employee_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Employee_Button.UseVisualStyleBackColor = false;
+            this.Employee_Button.Click += new System.EventHandler(this.Employee_Button_Click);
+            // 
+            // SideBar_iconButton
+            // 
+            this.SideBar_iconButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SideBar_iconButton.FlatAppearance.BorderSize = 0;
+            this.SideBar_iconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SideBar_iconButton.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SideBar_iconButton.ForeColor = System.Drawing.Color.White;
+            this.SideBar_iconButton.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            this.SideBar_iconButton.IconColor = System.Drawing.Color.White;
+            this.SideBar_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SideBar_iconButton.Location = new System.Drawing.Point(0, 0);
+            this.SideBar_iconButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SideBar_iconButton.Name = "SideBar_iconButton";
+            this.SideBar_iconButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.SideBar_iconButton.Size = new System.Drawing.Size(133, 100);
+            this.SideBar_iconButton.TabIndex = 36;
+            this.SideBar_iconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SideBar_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SideBar_iconButton.UseVisualStyleBackColor = true;
+            this.SideBar_iconButton.Click += new System.EventHandler(this.SideBar_iconButton_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -3154,5 +3234,10 @@ namespace Hospital
         private System.Windows.Forms.ComboBox Room_Type;
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.Button Show_Statistics_btn;
+        private System.Windows.Forms.Button Report_MedicalTest;
+        private System.Windows.Forms.Button Report_Appoint;
+        private System.Windows.Forms.Button Report_Reserve;
+        private System.Windows.Forms.Button Report_Operation;
+        private System.Windows.Forms.Button Report_Medicines;
     }
 }
