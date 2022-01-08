@@ -44,6 +44,8 @@
             this.DontServe_btn = new System.Windows.Forms.Button();
             this.DontID_lbl = new System.Windows.Forms.Label();
             this.DontRoomNumber_lbl = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.Serve_gb.SuspendLayout();
             this.DontServe_gb.SuspendLayout();
             this.SuspendLayout();
@@ -226,11 +228,35 @@
             this.DontRoomNumber_lbl.TabIndex = 29;
             this.DontRoomNumber_lbl.Text = "Room#";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(147, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 25);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Serve";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(436, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 25);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Do not serve";
+            // 
             // Serve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.DontServe_gb);
             this.Controls.Add(this.Serve_gb);
             this.Name = "Serve";
@@ -241,6 +267,7 @@
             this.DontServe_gb.ResumeLayout(false);
             this.DontServe_gb.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -262,5 +289,7 @@
         private System.Windows.Forms.Label Name_lbl;
         private System.Windows.Forms.ComboBox DontName_cmb;
         private System.Windows.Forms.Label DontName_lbl;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

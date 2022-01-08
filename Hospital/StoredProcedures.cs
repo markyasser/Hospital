@@ -138,6 +138,8 @@ namespace Hospital
         //--------------------------------Pharmacist-------------------------------------
         public static string InsertMedicine = "InsertMedicine";
         public static string GetAllMedicine = "GetAllMedicine";
+        public static string GetAllNeededMedicine = "GetAllNeededMedicine";
+        public static string InsertMedicineQuantity = "InsertMedicineQuantity";
         public static string GetMedPrice = "GetMedPrice";
         public static string SetMedPrice = "SetMedPrice";
         public static string GetPatientName = "GetPatientName";

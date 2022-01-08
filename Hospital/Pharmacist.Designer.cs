@@ -69,7 +69,7 @@ namespace Hospital
             this.Statistics_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Statistics_btn.IconSize = 30;
             this.Statistics_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Statistics_btn.Location = new System.Drawing.Point(0, 233);
+            this.Statistics_btn.Location = new System.Drawing.Point(0, 247);
             this.Statistics_btn.Name = "Statistics_btn";
             this.Statistics_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.Statistics_btn.Size = new System.Drawing.Size(145, 56);
@@ -92,7 +92,7 @@ namespace Hospital
             this.Sell_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Sell_btn.IconSize = 30;
             this.Sell_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Sell_btn.Location = new System.Drawing.Point(0, 177);
+            this.Sell_btn.Location = new System.Drawing.Point(0, 191);
             this.Sell_btn.Name = "Sell_btn";
             this.Sell_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.Sell_btn.Size = new System.Drawing.Size(145, 56);
@@ -109,7 +109,7 @@ namespace Hospital
             this.SetPrice_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SetPrice_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SetPrice_btn.ForeColor = System.Drawing.Color.White;
-            this.SetPrice_btn.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
+            this.SetPrice_btn.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.SetPrice_btn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(204)))), ((int)(((byte)(23)))));
             this.SetPrice_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SetPrice_btn.IconSize = 30;
@@ -117,13 +117,13 @@ namespace Hospital
             this.SetPrice_btn.Location = new System.Drawing.Point(0, 121);
             this.SetPrice_btn.Name = "SetPrice_btn";
             this.SetPrice_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.SetPrice_btn.Size = new System.Drawing.Size(145, 56);
+            this.SetPrice_btn.Size = new System.Drawing.Size(145, 70);
             this.SetPrice_btn.TabIndex = 2;
-            this.SetPrice_btn.Text = "Set Price";
+            this.SetPrice_btn.Text = "Edit Medicine Info";
             this.SetPrice_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SetPrice_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SetPrice_btn.UseVisualStyleBackColor = true;
-            this.SetPrice_btn.Click += new System.EventHandler(this.SetPrice_btn_Click);
+            this.SetPrice_btn.Click += new System.EventHandler(this.EditMedicineInfo_btn_Click);
             // 
             // AddMedicine_btn
             // 
