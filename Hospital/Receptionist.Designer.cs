@@ -686,7 +686,7 @@ namespace Hospital
             this.makeApp_panel.Controls.Add(this.label11);
             this.makeApp_panel.Controls.Add(this.label9);
             this.makeApp_panel.Controls.Add(this.docName_comboBox);
-            this.makeApp_panel.Location = new System.Drawing.Point(0, 0);
+            this.makeApp_panel.Location = new System.Drawing.Point(13, 25);
             this.makeApp_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.makeApp_panel.Name = "makeApp_panel";
             this.makeApp_panel.Size = new System.Drawing.Size(230, 262);
@@ -1188,7 +1188,7 @@ namespace Hospital
             this.reserve_panel.Location = new System.Drawing.Point(675, 421);
             this.reserve_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reserve_panel.Name = "reserve_panel";
-            this.reserve_panel.Size = new System.Drawing.Size(335, 242);
+            this.reserve_panel.Size = new System.Drawing.Size(462, 266);
             this.reserve_panel.TabIndex = 4;
             // 
             // Pid_res_textBox
