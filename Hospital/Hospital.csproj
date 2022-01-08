@@ -136,12 +136,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Patient_DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Payment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Payment.Designer.cs">
-      <DependentUpon>Payment.cs</DependentUpon>
-    </Compile>
     <Compile Include="PrescCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
