@@ -17,7 +17,8 @@ namespace Hospital
         Controller c;
         Validation v;
         private string USERNAME; //sent from login screen
-        public Receptionist()
+        LoginPage l;
+        public Receptionist(string user, LoginPage log)
         {
             InitializeComponent();
             c = new Controller();
@@ -28,6 +29,8 @@ namespace Hospital
             HidePanels();
             this.Padding = new Padding(borderSize);
             this.BackColor = Color.FromArgb(98, 102, 244);
+            USERNAME = user;
+            l = log;
 
         }
         //Drag Form
@@ -893,7 +896,7 @@ namespace Hospital
                     MessageBox.Show("Password is very weak, insert more than 4 characters");
                     return;
                 }
-                int result = c.ChangePassword(USERNAME, NewPass.Text);
+                int result = c.ChangePassword(USERNAME, Validation.hashpassword(NewPass.Text));
                 if (result > 0)
                 {
                     MessageBox.Show("Password changed successfully");
@@ -909,6 +912,11 @@ namespace Hospital
         {
             ShowPanel(settings_panel);
             //ActivateButton(Settings_iconButton);
+        }
+
+        private void Receptionist_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            l.Close();
         }
     }
 }

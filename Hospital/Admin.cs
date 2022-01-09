@@ -20,13 +20,14 @@ namespace Hospital
         private Panel leftBtnBorder;
         private Color PrevColorOfActiveButton;
         string USERNAME;
-        public Admin(string user) 
+        LoginPage l;
+        public Admin(string user, LoginPage log) 
         {
             USERNAME = user;
             InitializeComponent();
             controllerObj = new Controller();
             Fill_ComboBox();
-
+            label87.Text = USERNAME;
             WindowState = FormWindowState.Maximized;
             HideSubmenus();
             HidePanels();
@@ -43,6 +44,7 @@ namespace Hospital
 
             Dep_textBox.Visible = false;
             label62.Visible = false;
+            l = log;
         }
         private void Fill_ComboBox()
         {
@@ -678,12 +680,15 @@ namespace Hospital
         {
             if (ID_textBox.Text != "")
             {
-                DialogResult choice = MessageBox.Show("Are you sure you want to delete "+ search_position.Text + " " + ID_textBox.Text, " Delete Employee", MessageBoxButtons.YesNo);
+                DialogResult choice = MessageBox.Show("Are you sure you want to delete "+ search_position.Text + " " + select_name.Text, " Delete Employee", MessageBoxButtons.YesNo);
                 if (choice == DialogResult.Yes)
                 {
-                    int result = controllerObj.DeleteEmployee(search_position.Text, Int32.Parse(select_name.Text));
+                    int result = controllerObj.DeleteEmployee(search_position.Text, Int32.Parse(ID_textBox.Text));
                     if (result > 0)
-                        MessageBox.Show(search_position.Text + " " + ID_textBox.Text + " is Delete from the database");
+                    {
+                        MessageBox.Show(search_position.Text + " " + select_name.Text + " is Delete from the database");
+                        search_position_SelectedIndexChanged(null, null);
+                    }
                     else
                         MessageBox.Show("Deletetion Failed");
                 }
@@ -996,6 +1001,25 @@ namespace Hospital
         {
             ReportEarnings f = new ReportEarnings("Reserve", dateTimePicker1.Text);
             f.Show();
+        }
+
+        private void Show_Hide_Password_Click_1(object sender, EventArgs e)
+        {
+            if (Show_Hide_Password.IconChar == FontAwesome.Sharp.IconChar.Eye)
+            {
+                Show_Hide_Password.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+                password.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                Show_Hide_Password.IconChar = FontAwesome.Sharp.IconChar.Eye;
+                password.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void Admin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            l.Close();
         }
     }
 }

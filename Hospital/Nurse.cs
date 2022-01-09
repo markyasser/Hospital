@@ -13,12 +13,16 @@ namespace Hospital
     public partial class Nurse : Form
     {
         Controller ControllerObj;
+        LoginPage l;
         private Form CurrentChildForm;
         private IconButton CurrentBtn;
-        public Nurse()
+        private string USERNAME;
+        public Nurse(string user, LoginPage log)
         {
             ControllerObj = new Controller();
             InitializeComponent();
+            USERNAME = user;
+            l = log;
         }
 
         private void Nurse_Load(object sender, EventArgs e)
@@ -98,6 +102,17 @@ namespace Hospital
         private void SideMenu_Click(object sender, EventArgs e)
         {
             DisabeButton();
+        }
+
+        private void Settings_iconButton_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.White);
+            OpenChildForm(new PharmaSettings(ControllerObj, USERNAME));
+        }
+
+        private void Nurse_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            l.Close();
         }
     }
 }

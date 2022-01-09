@@ -32,6 +32,7 @@ namespace Hospital
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pharmacist));
             this.SideMenu = new System.Windows.Forms.Panel();
+            this.Settings_iconButton = new FontAwesome.Sharp.IconButton();
             this.Statistics_btn = new FontAwesome.Sharp.IconButton();
             this.Sell_btn = new FontAwesome.Sharp.IconButton();
             this.SetPrice_btn = new FontAwesome.Sharp.IconButton();
@@ -44,6 +45,7 @@ namespace Hospital
             // SideMenu
             // 
             this.SideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.SideMenu.Controls.Add(this.Settings_iconButton);
             this.SideMenu.Controls.Add(this.Statistics_btn);
             this.SideMenu.Controls.Add(this.Sell_btn);
             this.SideMenu.Controls.Add(this.SetPrice_btn);
@@ -52,10 +54,35 @@ namespace Hospital
             this.SideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.SideMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.SideMenu.Location = new System.Drawing.Point(0, 0);
+            this.SideMenu.Margin = new System.Windows.Forms.Padding(4);
             this.SideMenu.Name = "SideMenu";
-            this.SideMenu.Size = new System.Drawing.Size(145, 450);
+            this.SideMenu.Size = new System.Drawing.Size(193, 554);
             this.SideMenu.TabIndex = 0;
             this.SideMenu.Click += new System.EventHandler(this.SideMenu_Click);
+            // 
+            // Settings_iconButton
+            // 
+            this.Settings_iconButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.Settings_iconButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Settings_iconButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Settings_iconButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Settings_iconButton.ForeColor = System.Drawing.Color.White;
+            this.Settings_iconButton.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.Settings_iconButton.IconColor = System.Drawing.Color.Black;
+            this.Settings_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Settings_iconButton.IconSize = 30;
+            this.Settings_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Settings_iconButton.Location = new System.Drawing.Point(0, 485);
+            this.Settings_iconButton.Margin = new System.Windows.Forms.Padding(4);
+            this.Settings_iconButton.Name = "Settings_iconButton";
+            this.Settings_iconButton.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.Settings_iconButton.Size = new System.Drawing.Size(193, 69);
+            this.Settings_iconButton.TabIndex = 5;
+            this.Settings_iconButton.Text = "Settings";
+            this.Settings_iconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Settings_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Settings_iconButton.UseVisualStyleBackColor = false;
+            this.Settings_iconButton.Click += new System.EventHandler(this.Settings_iconButton_Click);
             // 
             // Statistics_btn
             // 
@@ -69,10 +96,11 @@ namespace Hospital
             this.Statistics_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Statistics_btn.IconSize = 30;
             this.Statistics_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Statistics_btn.Location = new System.Drawing.Point(0, 247);
+            this.Statistics_btn.Location = new System.Drawing.Point(0, 304);
+            this.Statistics_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Statistics_btn.Name = "Statistics_btn";
-            this.Statistics_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.Statistics_btn.Size = new System.Drawing.Size(145, 56);
+            this.Statistics_btn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.Statistics_btn.Size = new System.Drawing.Size(193, 69);
             this.Statistics_btn.TabIndex = 4;
             this.Statistics_btn.Text = "Statistics";
             this.Statistics_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -92,10 +120,11 @@ namespace Hospital
             this.Sell_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Sell_btn.IconSize = 30;
             this.Sell_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Sell_btn.Location = new System.Drawing.Point(0, 191);
+            this.Sell_btn.Location = new System.Drawing.Point(0, 235);
+            this.Sell_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Sell_btn.Name = "Sell_btn";
-            this.Sell_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.Sell_btn.Size = new System.Drawing.Size(145, 56);
+            this.Sell_btn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.Sell_btn.Size = new System.Drawing.Size(193, 69);
             this.Sell_btn.TabIndex = 3;
             this.Sell_btn.Text = "Sell";
             this.Sell_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -114,10 +143,11 @@ namespace Hospital
             this.SetPrice_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SetPrice_btn.IconSize = 30;
             this.SetPrice_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SetPrice_btn.Location = new System.Drawing.Point(0, 121);
+            this.SetPrice_btn.Location = new System.Drawing.Point(0, 149);
+            this.SetPrice_btn.Margin = new System.Windows.Forms.Padding(4);
             this.SetPrice_btn.Name = "SetPrice_btn";
-            this.SetPrice_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.SetPrice_btn.Size = new System.Drawing.Size(145, 70);
+            this.SetPrice_btn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.SetPrice_btn.Size = new System.Drawing.Size(193, 86);
             this.SetPrice_btn.TabIndex = 2;
             this.SetPrice_btn.Text = "Edit Medicine Info";
             this.SetPrice_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -136,10 +166,11 @@ namespace Hospital
             this.AddMedicine_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.AddMedicine_btn.IconSize = 30;
             this.AddMedicine_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddMedicine_btn.Location = new System.Drawing.Point(0, 65);
+            this.AddMedicine_btn.Location = new System.Drawing.Point(0, 80);
+            this.AddMedicine_btn.Margin = new System.Windows.Forms.Padding(4);
             this.AddMedicine_btn.Name = "AddMedicine_btn";
-            this.AddMedicine_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.AddMedicine_btn.Size = new System.Drawing.Size(145, 56);
+            this.AddMedicine_btn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.AddMedicine_btn.Size = new System.Drawing.Size(193, 69);
             this.AddMedicine_btn.TabIndex = 1;
             this.AddMedicine_btn.Text = "Add medicine";
             this.AddMedicine_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -154,8 +185,9 @@ namespace Hospital
             this.Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Logo.Dock = System.Windows.Forms.DockStyle.Top;
             this.Logo.Location = new System.Drawing.Point(0, 0);
+            this.Logo.Margin = new System.Windows.Forms.Padding(4);
             this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(145, 65);
+            this.Logo.Size = new System.Drawing.Size(193, 80);
             this.Logo.TabIndex = 0;
             this.Logo.Click += new System.EventHandler(this.Logo_Click);
             // 
@@ -164,20 +196,23 @@ namespace Hospital
             this.ChildPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ChildPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ChildPanel.ForeColor = System.Drawing.SystemColors.Control;
-            this.ChildPanel.Location = new System.Drawing.Point(145, 0);
+            this.ChildPanel.Location = new System.Drawing.Point(193, 0);
+            this.ChildPanel.Margin = new System.Windows.Forms.Padding(4);
             this.ChildPanel.Name = "ChildPanel";
-            this.ChildPanel.Size = new System.Drawing.Size(655, 450);
+            this.ChildPanel.Size = new System.Drawing.Size(874, 554);
             this.ChildPanel.TabIndex = 1;
             // 
             // Pharmacist
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.ChildPanel);
             this.Controls.Add(this.SideMenu);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Pharmacist";
             this.Text = "Pharmacist";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Pharmacist_FormClosing);
             this.SideMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -191,5 +226,6 @@ namespace Hospital
         private System.Windows.Forms.Panel Logo;
         private System.Windows.Forms.Panel ChildPanel;
         private FontAwesome.Sharp.IconButton Statistics_btn;
+        private FontAwesome.Sharp.IconButton Settings_iconButton;
     }
 }

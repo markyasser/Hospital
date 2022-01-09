@@ -20,7 +20,8 @@ namespace Hospital
         private const int OpenSideMenuWidth = 330;
         private const int ClosedSideMenuWidth = 100;
         private string USERNAME; //sent from login screen
-        public Doctor(string user)
+        LoginPage l;
+        public Doctor(string user, LoginPage log)
         {
             InitializeComponent();
             controllerObj = new Controller();
@@ -39,6 +40,7 @@ namespace Hospital
             InitializePanels();
             SidePanel_IsOpen = true;
             Open_Close_SideMenu();
+            l = log;
         }
         #region SelectPatientPanel
         private void MedTestReport_button_Click(object sender, EventArgs e)
@@ -775,7 +777,7 @@ namespace Hospital
                     MessageBox.Show("Password is very weak, insert more than 4 characters");
                     return;
                 }
-                int result = controllerObj.ChangePassword(USERNAME, NewPass.Text);
+                int result = controllerObj.ChangePassword(USERNAME, Validation.hashpassword(NewPass.Text));
                 if (result > 0)
                 {
                     MessageBox.Show("Password changed successfully");
@@ -803,7 +805,7 @@ namespace Hospital
         }
         private void Doctor_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //controllerObj.TerminateConnection();
+            l.Close();
         }
 
         private void PatIDinTest_comboBox_SelectedIndexChanged(object sender, EventArgs e)

@@ -268,6 +268,7 @@ namespace Hospital
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "LoginPage";
             this.Text = "Log in";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginPage_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();

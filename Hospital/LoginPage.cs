@@ -37,27 +37,27 @@ namespace Hospital
                     Hide();
                     if (user == "Doctor")
                     {
-                        Doctor dr = new Doctor(id.Text);
+                        Doctor dr = new Doctor(id.Text, this);
                         dr.Show();
                     }
                     else if (user == "Pharmacist")
                     {
-                        Pharmacist p = new Pharmacist();
+                        Pharmacist p = new Pharmacist(id.Text, this);
                         p.Show();
                     }
                     else if (user == "Receptionist")
                     {
-                        Receptionist r = new Receptionist();
+                        Receptionist r = new Receptionist(id.Text, this);
                         r.Show();
                     }
                     else if (user == "Nurse")
                     {
-                        Nurse n = new Nurse();
+                        Nurse n = new Nurse(id.Text,this);
                         n.Show();
                     }
                     else
                     {
-                        Admin admin = new Admin(id.Text);
+                        Admin admin = new Admin(id.Text, this);
                         admin.Show();
                     }
                 }
@@ -118,6 +118,11 @@ namespace Hospital
                 Show_Hide_Password.IconChar = FontAwesome.Sharp.IconChar.Eye;
                 password.UseSystemPasswordChar = true;
             }
+        }
+
+        private void LoginPage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            obj.TerminateConnection();
         }
     }
 }

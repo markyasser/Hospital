@@ -125,6 +125,12 @@
       <DependentUpon>OperateCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="PharmaSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PharmaSettings.Designer.cs">
+      <DependentUpon>PharmaSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrescMedReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pharmacist.resx">
       <DependentUpon>Pharmacist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PharmaSettings.resx">
+      <DependentUpon>PharmaSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrescCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

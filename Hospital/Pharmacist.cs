@@ -15,10 +15,14 @@ namespace Hospital
         Controller ControllerObj;
         private Form CurrentChildForm;
         private IconButton CurrentBtn;
-        public Pharmacist()
+        private string USERNAME;
+        LoginPage l;
+        public Pharmacist(string user, LoginPage log)
         {
             ControllerObj = new Controller();
             InitializeComponent();
+            USERNAME = user;
+            l = log;
         }
 
         private void OpenChildForm(Form ChildForm)
@@ -103,6 +107,17 @@ namespace Hospital
         {
             ActivateButton(sender, Color.White);
             OpenChildForm(new Statistics(ControllerObj));
+        }
+
+        private void Settings_iconButton_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.White);
+            OpenChildForm(new PharmaSettings(ControllerObj, USERNAME));
+        }
+
+        private void Pharmacist_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            l.Close();
         }
     }
 }
