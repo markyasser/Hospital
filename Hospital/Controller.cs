@@ -636,9 +636,18 @@ namespace Hospital
             Parameters.Add("@Doctor_ID", id);
             return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
-        public int appReserved(int docID, string date, string time)
+        public int appReserved(int docID, string date, string time)//after
         {
             String StoredProcedureName = StoredProcedures.appReserved;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Doctor_ID", docID);
+            Parameters.Add("@Date", date);
+            Parameters.Add("@Time", time);
+            return (int)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+        }
+        public int appReservedBefore(int docID, string date, string time)
+        {
+            String StoredProcedureName = StoredProcedures.appReservedBefore;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@Doctor_ID", docID);
             Parameters.Add("@Date", date);
@@ -808,21 +817,40 @@ namespace Hospital
             Parameters.Add("@Date", date);
             return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
         }
-        public int ValidDateReserve(string date,int nights)
+        public int ValidDateReserve(int Rid ,string date,int nights)
         {
             String StoredProcedureName = StoredProcedures.ValidDateReserve;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@Date", date);
             Parameters.Add("@nights", nights);
+            Parameters.Add("@Rid", Rid);
             return (int)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
         }
-        public int VaidAppEdit(string date, string time)
+        public object VaidAppEdit(int Did,string date, string time)//after
         {
             String StoredProcedureName = StoredProcedures.VaidAppEdit;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Did", Did);
             Parameters.Add("@Date", date);
             Parameters.Add("@Time", time);
-            return (int)dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+            return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+        }
+        public object VaidAppEditBefore(int Did, string date, string time)
+        {
+            String StoredProcedureName = StoredProcedures.VaidAppEditBefore;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Did", Did);
+            Parameters.Add("@Date", date);
+            Parameters.Add("@Time", time);
+            return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+        }
+        public object DateCheckEdit(int Did, string date)
+        {
+            String StoredProcedureName = StoredProcedures.DateCheckEdit;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Did", Did);
+            Parameters.Add("@Date", date);
+            return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
         }
         //-------------------------------Pharmacist--------------------------
         public int InsertMedicine(int MedicineID, string MedicineName,int Price,int Quantity ,string ExpiryDate )

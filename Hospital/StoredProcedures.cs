@@ -135,6 +135,9 @@ namespace Hospital
         public static string isPatientExist = "isPatientExist";
         public static string appBill = "appBill";
         public static string AppSum = "AppSum";
+        public static string appReservedBefore = "appReservedBefore";
+        public static string VaidAppEditBefore = "VaidAppEditBefore";
+        public static string DateCheckEdit = "DateCheckEdit";
         //--------------------------------Pharmacist-------------------------------------
         public static string InsertMedicine = "InsertMedicine";
         public static string GetAllMedicine = "GetAllMedicine";
