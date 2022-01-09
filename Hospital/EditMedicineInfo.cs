@@ -54,20 +54,38 @@ namespace Hospital
 
         private void UpdatePrice_btn_Click(object sender, EventArgs e)
         {
-            int result = ControllerObj.SetMedPrice(UPName_cmb.Text, Convert.ToInt32(UpdatedPrice_txt.Text));
-            if (result == 0)
-                MessageBox.Show("Updating price failed");
-            else
-                MessageBox.Show("Updating price succeed");
+            if (UPName_cmb.Text != "")
+            {
+                int result = ControllerObj.SetMedPrice(UPName_cmb.Text, Convert.ToInt32(UpdatedPrice_txt.Text));
+                if (result == 0)
+                    MessageBox.Show("Updating price failed");
+                else
+                {
+                    MessageBox.Show("Updating price succeed");
+                    object ob = ControllerObj.GetMedPrice(UPName_cmb.Text);
+                    if (ob != null)
+                    {
+                        PreviousPrice_txt.Text = ob.ToString();
+                    }
+                }
+                    
+            }
+            
         }
 
         private void UpdateQuantity_btn_Click(object sender, EventArgs e)
         {
             int result = ControllerObj.InsertMedicineQuantity(UQName_cmb.Text, Convert.ToInt32(UpdatedQuantity_NUD.Value));
             if (result == 0)
-                MessageBox.Show("Updating price failed");
+                MessageBox.Show("Updating Quantity failed");
             else
-                MessageBox.Show("Updating price succeed");
+            {
+                MessageBox.Show("Updating Quantity succeed");
+                DataTable dt1 = ControllerObj.GetAllMedicine();
+                UPName_cmb.DataSource = dt1;
+                UPName_cmb.DisplayMember = "Name";
+            }
+                
         }
     }
 }

@@ -32,13 +32,26 @@ namespace Hospital
         private void UpdateMedname1_cmb()
         {
             DataTable dt1 = ControllerObj.GetAllMedicine();
+            if (dt1 == null)
+            {
+                Price1_txt.Text = "";
+                Amount1_NUD.Text = "";
+                AvailQuantity1_txt.Text = "";
+            }
             Medname1_cmb.DisplayMember = "Name";
             Medname1_cmb.DataSource = dt1;
+
         }
 
         private void UpdateMedname2_cmb()
         {
             DataTable dt1 = ControllerObj.GetAllMedicine();
+            if (dt1 == null)
+            {
+                Price2_txt.Text = "";
+                Amount2_NUD.Text = "";
+                AvailQuantity2_txt.Text = "";
+            }
             Medname2_cmb.DisplayMember = "Name";
             Medname2_cmb.DataSource = dt1;
         }
@@ -46,6 +59,12 @@ namespace Hospital
         private void UpdateMedname3_cmb()
         {
             DataTable dt1 = ControllerObj.GetAllMedicine();
+            if (dt1 == null)
+            {
+                Price3_txt.Text = "";
+                Amount3_NUD.Text = "";
+                AvailQuantity3_txt.Text = "";
+            }
             Medname3_cmb.DisplayMember = "Name";
             Medname3_cmb.DataSource = dt1;
         }
@@ -53,6 +72,12 @@ namespace Hospital
         private void UpdateMedname4_cmb()
         {
             DataTable dt1 = ControllerObj.GetAllMedicine();
+            if (dt1 == null)
+            {
+                Price4_txt.Text = "";
+                Amount4_NUD.Text = "";
+                AvailQuantity4_txt.Text = "";
+            }
             Medname4_cmb.DisplayMember = "Name";
             Medname4_cmb.DataSource = dt1;
         }
@@ -60,6 +85,12 @@ namespace Hospital
         private void UpdateMedname5_cmb()
         {
             DataTable dt1 = ControllerObj.GetAllMedicine();
+            if (dt1 == null)
+            {
+                Price5_txt.Text = "";
+                Amount5_NUD.Text = "";
+                AvailQuantity5_txt.Text = "";
+            }
             Medname5_cmb.DisplayMember = "Name";
             Medname5_cmb.DataSource = dt1;
         }
@@ -397,5 +428,9 @@ namespace Hospital
             PatientID_cmb.DataSource = dt;
         }
 
+        private void Medname3_cmb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

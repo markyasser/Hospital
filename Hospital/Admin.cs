@@ -657,24 +657,28 @@ namespace Hospital
 
             if (!flag) return;
             DataTable table =  controllerObj.GetEmployeeByName(search_position.Text, fname,minit,lname);
-            object[] arrray = table.Rows[0].ItemArray;
-            ID_textBox.Text = arrray[0].ToString();
-            BD_textBox.Text = arrray[1].ToString();
-            Gender_textBox.Text = arrray[2].ToString();
-            Address_textBox.Text= arrray[3].ToString();
-            PhoneNo_textBox.Text = "0" + arrray[4].ToString();
+            if (table != null)
+            {
+                object[] arrray = table.Rows[0].ItemArray;
+                ID_textBox.Text = arrray[0].ToString();
+                BD_textBox.Text = arrray[1].ToString();
+                Gender_textBox.Text = arrray[2].ToString();
+                Address_textBox.Text = arrray[3].ToString();
+                PhoneNo_textBox.Text = "0" + arrray[4].ToString();
 
-            if (search_position.Text=="Doctor")
-            {
-                Dep_textBox.Visible = true;
-                label62.Visible = true;
-                Dep_textBox.Text = arrray[5].ToString();
+                if (search_position.Text == "Doctor")
+                {
+                    Dep_textBox.Visible = true;
+                    label62.Visible = true;
+                    Dep_textBox.Text = arrray[5].ToString();
+                }
+                else
+                {
+                    Dep_textBox.Visible = false;
+                    label62.Visible = false;
+                }
             }
-            else
-            {
-                Dep_textBox.Visible = false;
-                label62.Visible = false;
-            }
+            
         }
         private void Search_By_ID_button_Click(object sender, EventArgs e)
         {

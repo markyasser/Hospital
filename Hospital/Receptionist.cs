@@ -154,6 +154,7 @@ namespace Hospital
         {
             ShowPanel(makeApp_panel);
             HideSubmenus();
+            Receptionist_Load(null, null);
         }
 
         private void EditApp_iconButton_Click(object sender, EventArgs e)
@@ -616,7 +617,7 @@ namespace Hospital
                     MessageBox.Show("Please Enter All the Required Data for Reservation");
                     return;
                 }
-                if (c.ValidDateReserve(Resrve_date.Text, (int)Nonights.Value) == 0)
+                if (c.ValidDateReserve(Resrve_date.Text, (int)Nonights.Value) != 0)
                 {
                     int result = c.ReserveRoom(int.Parse(PID_reserve_comboBox.SelectedValue.ToString()), int.Parse(rooms_reserve_comboBox.SelectedValue.ToString()), Resrve_date.Text, (int)Nonights.Value);
                     if (result == 0)
