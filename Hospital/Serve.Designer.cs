@@ -86,6 +86,7 @@
             // 
             // ID_cmb
             // 
+            this.ID_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ID_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.ID_cmb.FormattingEnabled = true;
             this.ID_cmb.Location = new System.Drawing.Point(83, 73);
@@ -95,6 +96,7 @@
             // 
             // RoomNumber_cmb
             // 
+            this.RoomNumber_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RoomNumber_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.RoomNumber_cmb.FormattingEnabled = true;
             this.RoomNumber_cmb.Location = new System.Drawing.Point(83, 129);
@@ -120,6 +122,7 @@
             // 
             // Name_cmb
             // 
+            this.Name_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Name_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.Name_cmb.FormattingEnabled = true;
             this.Name_cmb.Location = new System.Drawing.Point(83, 25);
@@ -157,6 +160,7 @@
             // 
             // DontName_cmb
             // 
+            this.DontName_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DontName_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.DontName_cmb.FormattingEnabled = true;
             this.DontName_cmb.Location = new System.Drawing.Point(82, 25);
@@ -178,6 +182,7 @@
             // 
             // DontRoomNumber_cmb
             // 
+            this.DontRoomNumber_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DontRoomNumber_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.DontRoomNumber_cmb.FormattingEnabled = true;
             this.DontRoomNumber_cmb.Location = new System.Drawing.Point(82, 133);
@@ -187,6 +192,7 @@
             // 
             // DontID_cmb
             // 
+            this.DontID_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DontID_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.DontID_cmb.FormattingEnabled = true;
             this.DontID_cmb.Location = new System.Drawing.Point(82, 73);

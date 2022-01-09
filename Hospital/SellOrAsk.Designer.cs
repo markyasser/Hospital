@@ -31,12 +31,16 @@
             this.Medname1_lbl = new System.Windows.Forms.Label();
             this.Get_btn = new System.Windows.Forms.Button();
             this.Med1_gb = new System.Windows.Forms.GroupBox();
+            this.AvailQuantity1_lbl = new System.Windows.Forms.Label();
+            this.AvailQuantity1_txt = new System.Windows.Forms.TextBox();
             this.Amount1_NUD = new System.Windows.Forms.NumericUpDown();
             this.Medname1_cmb = new System.Windows.Forms.ComboBox();
             this.Amount1_lbl = new System.Windows.Forms.Label();
             this.Price1_lbl = new System.Windows.Forms.Label();
             this.Price1_txt = new System.Windows.Forms.TextBox();
             this.Med2_gb = new System.Windows.Forms.GroupBox();
+            this.AvailQuantity2_lbl = new System.Windows.Forms.Label();
+            this.AvailQuantity2_txt = new System.Windows.Forms.TextBox();
             this.Amount2_NUD = new System.Windows.Forms.NumericUpDown();
             this.Amount2_lbl = new System.Windows.Forms.Label();
             this.Price2_lbl = new System.Windows.Forms.Label();
@@ -44,13 +48,17 @@
             this.Medname2_lbl = new System.Windows.Forms.Label();
             this.Medname2_cmb = new System.Windows.Forms.ComboBox();
             this.Med3_gb = new System.Windows.Forms.GroupBox();
+            this.AvailQuantity3_lbl = new System.Windows.Forms.Label();
             this.Amount3_NUD = new System.Windows.Forms.NumericUpDown();
+            this.AvailQuantity3_txt = new System.Windows.Forms.TextBox();
             this.Amount3_lbl = new System.Windows.Forms.Label();
             this.price3_lbl = new System.Windows.Forms.Label();
             this.Price3_txt = new System.Windows.Forms.TextBox();
             this.Medname3_lbl = new System.Windows.Forms.Label();
             this.Medname3_cmb = new System.Windows.Forms.ComboBox();
             this.Med4_gb = new System.Windows.Forms.GroupBox();
+            this.AvailQuantity4_lbl = new System.Windows.Forms.Label();
+            this.AvailQuantity4_txt = new System.Windows.Forms.TextBox();
             this.Amount4_NUD = new System.Windows.Forms.NumericUpDown();
             this.Amount4_lbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,7 +66,9 @@
             this.Medname4_lbl = new System.Windows.Forms.Label();
             this.Medname4_cmb = new System.Windows.Forms.ComboBox();
             this.Med5_gb = new System.Windows.Forms.GroupBox();
+            this.AvailQuantity5_lbl = new System.Windows.Forms.Label();
             this.Amount5_NUD = new System.Windows.Forms.NumericUpDown();
+            this.AvailQuantity5_txt = new System.Windows.Forms.TextBox();
             this.Amount5_lbl = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Price5_txt = new System.Windows.Forms.TextBox();
@@ -72,16 +82,6 @@
             this.PatientID_lbl = new System.Windows.Forms.Label();
             this.PatientID_cmb = new System.Windows.Forms.ComboBox();
             this.RemoveMed_btn = new System.Windows.Forms.Button();
-            this.AvailQuantity1_lbl = new System.Windows.Forms.Label();
-            this.AvailQuantity1_txt = new System.Windows.Forms.TextBox();
-            this.AvailQuantity2_lbl = new System.Windows.Forms.Label();
-            this.AvailQuantity2_txt = new System.Windows.Forms.TextBox();
-            this.AvailQuantity3_lbl = new System.Windows.Forms.Label();
-            this.AvailQuantity3_txt = new System.Windows.Forms.TextBox();
-            this.AvailQuantity4_lbl = new System.Windows.Forms.Label();
-            this.AvailQuantity4_txt = new System.Windows.Forms.TextBox();
-            this.AvailQuantity5_lbl = new System.Windows.Forms.Label();
-            this.AvailQuantity5_txt = new System.Windows.Forms.TextBox();
             this.Med1_gb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Amount1_NUD)).BeginInit();
             this.Med2_gb.SuspendLayout();
@@ -134,6 +134,25 @@
             this.Med1_gb.TabStop = false;
             this.Med1_gb.Text = "Med1";
             // 
+            // AvailQuantity1_lbl
+            // 
+            this.AvailQuantity1_lbl.AutoSize = true;
+            this.AvailQuantity1_lbl.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.AvailQuantity1_lbl.ForeColor = System.Drawing.Color.Black;
+            this.AvailQuantity1_lbl.Location = new System.Drawing.Point(431, 19);
+            this.AvailQuantity1_lbl.Name = "AvailQuantity1_lbl";
+            this.AvailQuantity1_lbl.Size = new System.Drawing.Size(116, 17);
+            this.AvailQuantity1_lbl.TabIndex = 58;
+            this.AvailQuantity1_lbl.Text = "Avail Quantity";
+            // 
+            // AvailQuantity1_txt
+            // 
+            this.AvailQuantity1_txt.Location = new System.Drawing.Point(549, 17);
+            this.AvailQuantity1_txt.Name = "AvailQuantity1_txt";
+            this.AvailQuantity1_txt.ReadOnly = true;
+            this.AvailQuantity1_txt.Size = new System.Drawing.Size(60, 20);
+            this.AvailQuantity1_txt.TabIndex = 57;
+            // 
             // Amount1_NUD
             // 
             this.Amount1_NUD.Location = new System.Drawing.Point(690, 15);
@@ -155,6 +174,7 @@
             // 
             // Medname1_cmb
             // 
+            this.Medname1_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Medname1_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.Medname1_cmb.FormattingEnabled = true;
             this.Medname1_cmb.Location = new System.Drawing.Point(117, 16);
@@ -210,6 +230,25 @@
             this.Med2_gb.TabStop = false;
             this.Med2_gb.Text = "Med2";
             this.Med2_gb.Visible = false;
+            // 
+            // AvailQuantity2_lbl
+            // 
+            this.AvailQuantity2_lbl.AutoSize = true;
+            this.AvailQuantity2_lbl.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.AvailQuantity2_lbl.ForeColor = System.Drawing.Color.Black;
+            this.AvailQuantity2_lbl.Location = new System.Drawing.Point(431, 15);
+            this.AvailQuantity2_lbl.Name = "AvailQuantity2_lbl";
+            this.AvailQuantity2_lbl.Size = new System.Drawing.Size(116, 17);
+            this.AvailQuantity2_lbl.TabIndex = 60;
+            this.AvailQuantity2_lbl.Text = "Avail Quantity";
+            // 
+            // AvailQuantity2_txt
+            // 
+            this.AvailQuantity2_txt.Location = new System.Drawing.Point(549, 13);
+            this.AvailQuantity2_txt.Name = "AvailQuantity2_txt";
+            this.AvailQuantity2_txt.ReadOnly = true;
+            this.AvailQuantity2_txt.Size = new System.Drawing.Size(60, 20);
+            this.AvailQuantity2_txt.TabIndex = 59;
             // 
             // Amount2_NUD
             // 
@@ -273,6 +312,7 @@
             // 
             // Medname2_cmb
             // 
+            this.Medname2_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Medname2_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.Medname2_cmb.FormattingEnabled = true;
             this.Medname2_cmb.Location = new System.Drawing.Point(117, 15);
@@ -299,6 +339,17 @@
             this.Med3_gb.Text = "Med3";
             this.Med3_gb.Visible = false;
             // 
+            // AvailQuantity3_lbl
+            // 
+            this.AvailQuantity3_lbl.AutoSize = true;
+            this.AvailQuantity3_lbl.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.AvailQuantity3_lbl.ForeColor = System.Drawing.Color.Black;
+            this.AvailQuantity3_lbl.Location = new System.Drawing.Point(431, 17);
+            this.AvailQuantity3_lbl.Name = "AvailQuantity3_lbl";
+            this.AvailQuantity3_lbl.Size = new System.Drawing.Size(116, 17);
+            this.AvailQuantity3_lbl.TabIndex = 60;
+            this.AvailQuantity3_lbl.Text = "Avail Quantity";
+            // 
             // Amount3_NUD
             // 
             this.Amount3_NUD.Location = new System.Drawing.Point(690, 16);
@@ -317,6 +368,14 @@
             0,
             0});
             this.Amount3_NUD.ValueChanged += new System.EventHandler(this.Amount3_NUD_ValueChanged);
+            // 
+            // AvailQuantity3_txt
+            // 
+            this.AvailQuantity3_txt.Location = new System.Drawing.Point(549, 15);
+            this.AvailQuantity3_txt.Name = "AvailQuantity3_txt";
+            this.AvailQuantity3_txt.ReadOnly = true;
+            this.AvailQuantity3_txt.Size = new System.Drawing.Size(60, 20);
+            this.AvailQuantity3_txt.TabIndex = 59;
             // 
             // Amount3_lbl
             // 
@@ -361,6 +420,7 @@
             // 
             // Medname3_cmb
             // 
+            this.Medname3_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Medname3_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.Medname3_cmb.FormattingEnabled = true;
             this.Medname3_cmb.Location = new System.Drawing.Point(117, 15);
@@ -386,6 +446,25 @@
             this.Med4_gb.TabStop = false;
             this.Med4_gb.Text = "Med4";
             this.Med4_gb.Visible = false;
+            // 
+            // AvailQuantity4_lbl
+            // 
+            this.AvailQuantity4_lbl.AutoSize = true;
+            this.AvailQuantity4_lbl.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.AvailQuantity4_lbl.ForeColor = System.Drawing.Color.Black;
+            this.AvailQuantity4_lbl.Location = new System.Drawing.Point(431, 19);
+            this.AvailQuantity4_lbl.Name = "AvailQuantity4_lbl";
+            this.AvailQuantity4_lbl.Size = new System.Drawing.Size(116, 17);
+            this.AvailQuantity4_lbl.TabIndex = 60;
+            this.AvailQuantity4_lbl.Text = "Avail Quantity";
+            // 
+            // AvailQuantity4_txt
+            // 
+            this.AvailQuantity4_txt.Location = new System.Drawing.Point(549, 17);
+            this.AvailQuantity4_txt.Name = "AvailQuantity4_txt";
+            this.AvailQuantity4_txt.ReadOnly = true;
+            this.AvailQuantity4_txt.Size = new System.Drawing.Size(60, 20);
+            this.AvailQuantity4_txt.TabIndex = 59;
             // 
             // Amount4_NUD
             // 
@@ -449,6 +528,7 @@
             // 
             // Medname4_cmb
             // 
+            this.Medname4_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Medname4_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.Medname4_cmb.FormattingEnabled = true;
             this.Medname4_cmb.Location = new System.Drawing.Point(117, 15);
@@ -475,6 +555,17 @@
             this.Med5_gb.Text = "Med5";
             this.Med5_gb.Visible = false;
             // 
+            // AvailQuantity5_lbl
+            // 
+            this.AvailQuantity5_lbl.AutoSize = true;
+            this.AvailQuantity5_lbl.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.AvailQuantity5_lbl.ForeColor = System.Drawing.Color.Black;
+            this.AvailQuantity5_lbl.Location = new System.Drawing.Point(432, 19);
+            this.AvailQuantity5_lbl.Name = "AvailQuantity5_lbl";
+            this.AvailQuantity5_lbl.Size = new System.Drawing.Size(116, 17);
+            this.AvailQuantity5_lbl.TabIndex = 62;
+            this.AvailQuantity5_lbl.Text = "Avail Quantity";
+            // 
             // Amount5_NUD
             // 
             this.Amount5_NUD.Location = new System.Drawing.Point(690, 15);
@@ -493,6 +584,14 @@
             0,
             0});
             this.Amount5_NUD.ValueChanged += new System.EventHandler(this.Amount5_NUD_ValueChanged);
+            // 
+            // AvailQuantity5_txt
+            // 
+            this.AvailQuantity5_txt.Location = new System.Drawing.Point(550, 17);
+            this.AvailQuantity5_txt.Name = "AvailQuantity5_txt";
+            this.AvailQuantity5_txt.ReadOnly = true;
+            this.AvailQuantity5_txt.Size = new System.Drawing.Size(60, 20);
+            this.AvailQuantity5_txt.TabIndex = 61;
             // 
             // Amount5_lbl
             // 
@@ -537,6 +636,7 @@
             // 
             // Medname5_cmb
             // 
+            this.Medname5_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Medname5_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.Medname5_cmb.FormattingEnabled = true;
             this.Medname5_cmb.Location = new System.Drawing.Point(117, 15);
@@ -577,6 +677,7 @@
             // 
             // PatientName_cmb
             // 
+            this.PatientName_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PatientName_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.PatientName_cmb.FormattingEnabled = true;
             this.PatientName_cmb.Location = new System.Drawing.Point(129, 12);
@@ -610,6 +711,7 @@
             // 
             // PatientID_cmb
             // 
+            this.PatientID_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PatientID_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.PatientID_cmb.FormattingEnabled = true;
             this.PatientID_cmb.Location = new System.Drawing.Point(129, 43);
@@ -628,101 +730,6 @@
             this.RemoveMed_btn.Text = "remove medicine";
             this.RemoveMed_btn.UseVisualStyleBackColor = true;
             this.RemoveMed_btn.Click += new System.EventHandler(this.RemoveMed_btn_Click);
-            // 
-            // AvailQuantity1_lbl
-            // 
-            this.AvailQuantity1_lbl.AutoSize = true;
-            this.AvailQuantity1_lbl.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.AvailQuantity1_lbl.ForeColor = System.Drawing.Color.Black;
-            this.AvailQuantity1_lbl.Location = new System.Drawing.Point(431, 19);
-            this.AvailQuantity1_lbl.Name = "AvailQuantity1_lbl";
-            this.AvailQuantity1_lbl.Size = new System.Drawing.Size(116, 17);
-            this.AvailQuantity1_lbl.TabIndex = 58;
-            this.AvailQuantity1_lbl.Text = "Avail Quantity";
-            // 
-            // AvailQuantity1_txt
-            // 
-            this.AvailQuantity1_txt.Location = new System.Drawing.Point(549, 17);
-            this.AvailQuantity1_txt.Name = "AvailQuantity1_txt";
-            this.AvailQuantity1_txt.ReadOnly = true;
-            this.AvailQuantity1_txt.Size = new System.Drawing.Size(60, 20);
-            this.AvailQuantity1_txt.TabIndex = 57;
-            // 
-            // AvailQuantity2_lbl
-            // 
-            this.AvailQuantity2_lbl.AutoSize = true;
-            this.AvailQuantity2_lbl.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.AvailQuantity2_lbl.ForeColor = System.Drawing.Color.Black;
-            this.AvailQuantity2_lbl.Location = new System.Drawing.Point(431, 15);
-            this.AvailQuantity2_lbl.Name = "AvailQuantity2_lbl";
-            this.AvailQuantity2_lbl.Size = new System.Drawing.Size(116, 17);
-            this.AvailQuantity2_lbl.TabIndex = 60;
-            this.AvailQuantity2_lbl.Text = "Avail Quantity";
-            // 
-            // AvailQuantity2_txt
-            // 
-            this.AvailQuantity2_txt.Location = new System.Drawing.Point(549, 13);
-            this.AvailQuantity2_txt.Name = "AvailQuantity2_txt";
-            this.AvailQuantity2_txt.ReadOnly = true;
-            this.AvailQuantity2_txt.Size = new System.Drawing.Size(60, 20);
-            this.AvailQuantity2_txt.TabIndex = 59;
-            // 
-            // AvailQuantity3_lbl
-            // 
-            this.AvailQuantity3_lbl.AutoSize = true;
-            this.AvailQuantity3_lbl.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.AvailQuantity3_lbl.ForeColor = System.Drawing.Color.Black;
-            this.AvailQuantity3_lbl.Location = new System.Drawing.Point(431, 17);
-            this.AvailQuantity3_lbl.Name = "AvailQuantity3_lbl";
-            this.AvailQuantity3_lbl.Size = new System.Drawing.Size(116, 17);
-            this.AvailQuantity3_lbl.TabIndex = 60;
-            this.AvailQuantity3_lbl.Text = "Avail Quantity";
-            // 
-            // AvailQuantity3_txt
-            // 
-            this.AvailQuantity3_txt.Location = new System.Drawing.Point(549, 15);
-            this.AvailQuantity3_txt.Name = "AvailQuantity3_txt";
-            this.AvailQuantity3_txt.ReadOnly = true;
-            this.AvailQuantity3_txt.Size = new System.Drawing.Size(60, 20);
-            this.AvailQuantity3_txt.TabIndex = 59;
-            // 
-            // AvailQuantity4_lbl
-            // 
-            this.AvailQuantity4_lbl.AutoSize = true;
-            this.AvailQuantity4_lbl.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.AvailQuantity4_lbl.ForeColor = System.Drawing.Color.Black;
-            this.AvailQuantity4_lbl.Location = new System.Drawing.Point(431, 19);
-            this.AvailQuantity4_lbl.Name = "AvailQuantity4_lbl";
-            this.AvailQuantity4_lbl.Size = new System.Drawing.Size(116, 17);
-            this.AvailQuantity4_lbl.TabIndex = 60;
-            this.AvailQuantity4_lbl.Text = "Avail Quantity";
-            // 
-            // AvailQuantity4_txt
-            // 
-            this.AvailQuantity4_txt.Location = new System.Drawing.Point(549, 17);
-            this.AvailQuantity4_txt.Name = "AvailQuantity4_txt";
-            this.AvailQuantity4_txt.ReadOnly = true;
-            this.AvailQuantity4_txt.Size = new System.Drawing.Size(60, 20);
-            this.AvailQuantity4_txt.TabIndex = 59;
-            // 
-            // AvailQuantity5_lbl
-            // 
-            this.AvailQuantity5_lbl.AutoSize = true;
-            this.AvailQuantity5_lbl.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.AvailQuantity5_lbl.ForeColor = System.Drawing.Color.Black;
-            this.AvailQuantity5_lbl.Location = new System.Drawing.Point(432, 19);
-            this.AvailQuantity5_lbl.Name = "AvailQuantity5_lbl";
-            this.AvailQuantity5_lbl.Size = new System.Drawing.Size(116, 17);
-            this.AvailQuantity5_lbl.TabIndex = 62;
-            this.AvailQuantity5_lbl.Text = "Avail Quantity";
-            // 
-            // AvailQuantity5_txt
-            // 
-            this.AvailQuantity5_txt.Location = new System.Drawing.Point(550, 17);
-            this.AvailQuantity5_txt.Name = "AvailQuantity5_txt";
-            this.AvailQuantity5_txt.ReadOnly = true;
-            this.AvailQuantity5_txt.Size = new System.Drawing.Size(60, 20);
-            this.AvailQuantity5_txt.TabIndex = 61;
             // 
             // SellOrAsk
             // 
