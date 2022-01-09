@@ -21,9 +21,7 @@ namespace Hospital
 
         private void SellOrAsk_Load(object sender, EventArgs e)
         {
-            DataTable dt1 = ControllerObj.GetAllMedicine();
-            Medname1_cmb.DisplayMember = "Name";
-            Medname1_cmb.DataSource = dt1;
+            UpdateMedname1_cmb();
 
             DataTable dt2 = ControllerObj.GetAllPatientName();
             PatientName_cmb.DisplayMember = "Full name";
@@ -31,42 +29,79 @@ namespace Hospital
 
         }
 
+        private void UpdateMedname1_cmb()
+        {
+            DataTable dt1 = ControllerObj.GetAllMedicine();
+            Medname1_cmb.DisplayMember = "Name";
+            Medname1_cmb.DataSource = dt1;
+        }
+
+        private void UpdateMedname2_cmb()
+        {
+            DataTable dt1 = ControllerObj.GetAllMedicine();
+            Medname2_cmb.DisplayMember = "Name";
+            Medname2_cmb.DataSource = dt1;
+        }
+
+        private void UpdateMedname3_cmb()
+        {
+            DataTable dt1 = ControllerObj.GetAllMedicine();
+            Medname3_cmb.DisplayMember = "Name";
+            Medname3_cmb.DataSource = dt1;
+        }
+
+        private void UpdateMedname4_cmb()
+        {
+            DataTable dt1 = ControllerObj.GetAllMedicine();
+            Medname4_cmb.DisplayMember = "Name";
+            Medname4_cmb.DataSource = dt1;
+        }
+
+        private void UpdateMedname5_cmb()
+        {
+            DataTable dt1 = ControllerObj.GetAllMedicine();
+            Medname5_cmb.DisplayMember = "Name";
+            Medname5_cmb.DataSource = dt1;
+        }
+
         private void Show_btn_Click(object sender, EventArgs e)
         {
             if (!Med2_gb.Visible)
             {
                 Med2_gb.Visible = true;
-                DataTable dt2 = ControllerObj.GetAllMedicine();
-                Medname2_cmb.DataSource = dt2;
-                Medname2_cmb.DisplayMember = "Name";
+                UpdateMedname2_cmb();
             }
             else if (!Med3_gb.Visible)
             {
                 Med3_gb.Visible = true;
-                DataTable dt3 = ControllerObj.GetAllMedicine();
-                Medname3_cmb.DataSource = dt3;
-                Medname3_cmb.DisplayMember = "Name";
+                UpdateMedname3_cmb();
             }
             else if (!Med4_gb.Visible)
             {
                 Med4_gb.Visible = true;
-                DataTable dt4 = ControllerObj.GetAllMedicine();
-                Medname4_cmb.DataSource = dt4;
-                Medname4_cmb.DisplayMember = "Name";
+                UpdateMedname4_cmb();
             }
             else
             {
                 Med5_gb.Visible = true;
-                DataTable dt5 = ControllerObj.GetAllMedicine();
-                Medname5_cmb.DataSource = dt5;
-                Medname5_cmb.DisplayMember = "Name";
+                UpdateMedname5_cmb();
             }
         }
 
         private void Medname1_cmb_TextChanged(object sender, EventArgs e)
         {
-            Price1_txt.Text = ControllerObj.GetMedPrice(Medname1_cmb.Text).ToString();
-            TotalPrice_txt.Text = CalculateTotalPrice();
+            object ob = ControllerObj.GetMedPrice(Medname1_cmb.Text);
+            if (ob != null)
+            {
+                Price1_txt.Text = ob.ToString();
+                TotalPrice_txt.Text = CalculateTotalPrice();
+            }
+            object ob1 = ControllerObj.GetMedAvailQuantity(Medname1_cmb.Text);
+            if (ob1 != null)
+            {
+                AvailQuantity1_txt.Text = ob1.ToString();
+                Amount1_NUD.Maximum = Convert.ToDecimal(ob1);
+            }
         }
 
         private void Medname2_cmb_TextChanged(object sender, EventArgs e)
@@ -77,8 +112,13 @@ namespace Hospital
                 Price2_txt.Text = ob.ToString();
                 TotalPrice_txt.Text = CalculateTotalPrice();
             }
-            
-           
+            object ob1 = ControllerObj.GetMedAvailQuantity(Medname2_cmb.Text);
+            if (ob1!=null)
+            {
+                AvailQuantity2_txt.Text = ob1.ToString();
+                Amount2_NUD.Maximum = Convert.ToDecimal(ob1);
+            }
+
         }
 
         private void Medname3_cmb_TextChanged(object sender, EventArgs e)
@@ -88,6 +128,12 @@ namespace Hospital
             {
                 Price3_txt.Text = ob.ToString();
                 TotalPrice_txt.Text = CalculateTotalPrice();
+            }
+            object ob1 = ControllerObj.GetMedAvailQuantity(Medname3_cmb.Text);
+            if (ob1 != null)
+            {
+                AvailQuantity3_txt.Text = ob1.ToString();
+                Amount3_NUD.Maximum = Convert.ToDecimal(ob1);
             }
         }
 
@@ -99,6 +145,12 @@ namespace Hospital
                 Price4_txt.Text = ob.ToString();
                 TotalPrice_txt.Text = CalculateTotalPrice();
             }
+            object ob1 = ControllerObj.GetMedAvailQuantity(Medname4_cmb.Text);
+            if (ob1 != null)
+            {
+                AvailQuantity4_txt.Text = ob1.ToString();
+                Amount4_NUD.Maximum = Convert.ToDecimal(ob1);
+            }
         }
 
         private void Medname5_cmb_TextChanged(object sender, EventArgs e)
@@ -108,6 +160,12 @@ namespace Hospital
             {
                 Price5_txt.Text = ob.ToString();
                 TotalPrice_txt.Text = CalculateTotalPrice();
+            }
+            object ob1 = ControllerObj.GetMedAvailQuantity(Medname5_cmb.Text);
+            if (ob1 != null)
+            {
+                AvailQuantity5_txt.Text = ob1.ToString();
+                Amount5_NUD.Maximum = Convert.ToDecimal(ob1);
             }
         }
 
@@ -223,35 +281,50 @@ namespace Hospital
             {
                 int result1 = PerformMed1();
                 if (result1 != 0)
+                {
                     MessageBox.Show("Buying first medicine succes");
+                    UpdateMedname1_cmb();
+                }
                 else
                     MessageBox.Show("Buying first medicine failed");
                 if (Med2_gb.Visible == true)
                 {
                     int result2 = PerformMed2();
                     if (result2 != 0)
+                    {
                         MessageBox.Show("Buying second medicine succes");
+                        UpdateMedname2_cmb();
+                    }
                     else
                         MessageBox.Show("Buying second medicine failed");
                     if (Med3_gb.Visible == true)
                     {
                         int result3 = PerformMed3();
                         if (result3 != 0)
+                        {
                             MessageBox.Show("Buying third medicine succes");
+                            UpdateMedname3_cmb();
+                        }
                         else
                             MessageBox.Show("Buying third medicine failed");
                         if (Med4_gb.Visible == true)
                         {
                             int result4 = PerformMed4();
                             if (result4 != 0)
+                            {
                                 MessageBox.Show("Buying fourth medicine succes");
+                                UpdateMedname4_cmb();
+                            }
                             else
                                 MessageBox.Show("Buying fourth medicine failed");
                             if (Med5_gb.Visible == true)
                             {
                                 int result5 = PerformMed5();
                                 if (result5 != 0)
+                                {
                                     MessageBox.Show("Buying fifth medicine succes");
+                                    UpdateMedname5_cmb();
+                                }
                                 else
                                     MessageBox.Show("Buying fifth medicine failed");
                             }
@@ -324,9 +397,5 @@ namespace Hospital
             PatientID_cmb.DataSource = dt;
         }
 
-        private void PatientName_cmb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

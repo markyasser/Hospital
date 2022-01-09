@@ -127,6 +127,7 @@
             // 
             // UPName_cmb
             // 
+            this.UPName_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.UPName_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.UPName_cmb.FormattingEnabled = true;
             this.UPName_cmb.Location = new System.Drawing.Point(178, 14);
@@ -186,6 +187,7 @@
             // 
             // UQName_cmb
             // 
+            this.UQName_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.UQName_cmb.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
             this.UQName_cmb.FormattingEnabled = true;
             this.UQName_cmb.Location = new System.Drawing.Point(178, 38);

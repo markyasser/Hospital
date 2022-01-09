@@ -857,6 +857,14 @@ namespace Hospital
             return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
         }
 
+        public object GetMedAvailQuantity(string MedicineName)
+        {
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@MedicineName", MedicineName);
+            string StoredProcedureName = StoredProcedures.GetMedAvailQuantity;
+            return dbMan.ExecuteScalar(StoredProcedureName, Parameters);
+        }
+
         public int SetMedPrice(string MedicineName, int UpdatedPrice)
         {
             string StoredProcedureName = StoredProcedures.SetMedPrice;

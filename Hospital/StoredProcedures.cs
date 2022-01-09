@@ -151,6 +151,7 @@ namespace Hospital
         public static string GetEmptyMedicines = "GetEmptyMedicines";
         public static string GetMedID = "GetMedID";
         public static string GetAllPatientName = "GetAllPatientName";
+        public static string GetMedAvailQuantity = "GetMedAvailQuantity";
         //-----------------------------------Nurse--------------------------------------
         public static string GetAllMedicalTest = "GetAllMedicalTest";
         public static string GetMedicalTestPrice = "GetMedicalTestPrice";
