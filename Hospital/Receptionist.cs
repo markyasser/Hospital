@@ -260,6 +260,7 @@ namespace Hospital
             make_Dept_name.DataSource = c.getDepartmentData();
             make_Dept_name.DisplayMember = "specialization";
             make_Dept_name.ValueMember = "Dnumber";
+
             if (make_Dept_name.SelectedIndex.ToString() != "-1")
             {
                 int x;
@@ -344,9 +345,14 @@ namespace Hospital
             PID_reserve_comboBox.DataSource = c.PatientsHasNoRoom(Resrve_date.Text);
             PID_reserve_comboBox.DisplayMember = "full_name";
             PID_reserve_comboBox.ValueMember = "patient_id";
-            deptname_reserve_comboBox.DataSource = c.getDepartmentData();
-            deptname_reserve_comboBox.DisplayMember = "specialization";
-            deptname_reserve_comboBox.ValueMember = "Dnumber";
+            if (c.getDepartmentData() != null)
+            {
+                deptname_reserve_comboBox.DataSource = c.getDepartmentData();
+
+                deptname_reserve_comboBox.DisplayMember = "specialization";
+                deptname_reserve_comboBox.ValueMember = "Dnumber";
+            }
+           
             if (deptname_reserve_comboBox.SelectedIndex.ToString() != "-1")
             {
                 rooms_reserve_comboBox.DataSource = c.Avail_Rooms(int.Parse(deptname_reserve_comboBox.SelectedValue.ToString()), Resrve_date.Text);
@@ -408,26 +414,30 @@ namespace Hospital
             try
             {
                 int x;
-                if (docName_comboBox.SelectedIndex.ToString() == "-1")
+                if (docName_comboBox.SelectedIndex == -1)
                 {
                     return;
                 }
-                if (int.TryParse(docName_comboBox.SelectedValue.ToString(), out x))
+                bool valid = int.TryParse(docName_comboBox.SelectedValue.ToString(), out x);
+                if (!valid)
                 {
-
-                    DataTable dt = c.SelectDoc_srt_end(x);
-                    //srtTime_txt.Text = dt.Rows[0].Field<string>("Start_Time");
-                    srtTime_txt.Text = dt.Rows[0][0].ToString();
-                    endTime_txt.Text = dt.Rows[0][1].ToString();
-                    //endTime_txt.Text = dt.Rows[1].Field<string>("Finish_Time");
-
-
-                    appTime.MinDate = DateTimePicker.MinimumDateTime;
-
-                    appTime.MaxDate = DateTime.Parse(endTime_txt.Text);
-                    appTime.MinDate = DateTime.Parse(srtTime_txt.Text);
-                    
+                    return;
                 }
+               
+
+                DataTable dt = c.SelectDoc_srt_end(x);
+                //srtTime_txt.Text = dt.Rows[0].Field<string>("Start_Time");
+                srtTime_txt.Text = dt.Rows[0][0].ToString();
+                endTime_txt.Text = dt.Rows[0][1].ToString();
+                //endTime_txt.Text = dt.Rows[1].Field<string>("Finish_Time");
+
+
+                appTime.MinDate = DateTimePicker.MinimumDateTime;
+
+                appTime.MaxDate = DateTime.Parse(endTime_txt.Text);
+                appTime.MinDate = DateTime.Parse(srtTime_txt.Text);
+                    
+                
             }
             catch (Exception ex)
             {
@@ -574,7 +584,17 @@ namespace Hospital
         {
             try
             {
-                rooms_reserve_comboBox.DataSource = c.Avail_Rooms(int.Parse(deptname_reserve_comboBox.SelectedValue.ToString()), Resrve_date.Text);
+                if (rooms_reserve_comboBox.SelectedIndex == -1)
+                {
+                    return;
+                }
+                int x;
+                bool valid = int.TryParse(deptname_reserve_comboBox.SelectedValue.ToString(), out x);
+                if (!valid)
+                {
+                    return;
+                }
+                rooms_reserve_comboBox.DataSource = c.Avail_Rooms(x, Resrve_date.Text);
                 rooms_reserve_comboBox.DisplayMember = "RoomNumber";
                 rooms_reserve_comboBox.ValueMember = "RoomNumber";
             }
@@ -626,15 +646,18 @@ namespace Hospital
             try
             {
                 int x;
-                if (make_Dept_name.SelectedIndex.ToString() != "-1")
+                if (make_Dept_name.SelectedIndex == -1)
                 {
-                    if (int.TryParse(make_Dept_name.SelectedValue.ToString(), out x))
-                    {
-                        docName_comboBox.DataSource = c.SelectDocID_name(x);
-                        docName_comboBox.DisplayMember = "full_name";
-                        docName_comboBox.ValueMember = "Doctor_id";
-                    }
+                    return; 
                 }
+                bool valid = int.TryParse(make_Dept_name.SelectedValue.ToString(), out x);
+                if (!valid)
+                {
+                    return;
+                }
+                docName_comboBox.DataSource = c.SelectDocID_name(x);
+                docName_comboBox.DisplayMember = "full_name";
+                docName_comboBox.ValueMember = "Doctor_id";
             }
             catch (Exception ex)
             {
@@ -799,12 +822,34 @@ namespace Hospital
                 {
                     int x = int.Parse( Pid_bill_combo.SelectedValue.ToString());
                     string d = pay_dateTimePicker.Text;
-                    //int s1 = Convert.ToInt32(c.sumSurgery(x, d));
-                    //int s2  = Convert.ToInt32(c.MedicalTestSum(x, d));
-                    //int s3 = Convert.ToInt32(c.MedicineSum(x, d));
-                    //int s4 = Convert.ToInt32(c.ReserveSum(x, d));
-                    //int sum = s1+s2+s3+s4;
-                    //price_pay_textBox.Text = sum.ToString(); bygib exception ???????????
+                    int s1, s2, s3, s4, s5;
+                    bool valid1 = int.TryParse(c.sumSurgery(x, d).ToString(), out s1);
+                    if (!valid1)
+                    {
+                        s1 = 0;
+                    }
+                    bool valid2 = int.TryParse(c.MedicalTestSum(x, d).ToString(), out s2);
+                    if (!valid2)
+                    {
+                        s2 = 0;
+                    }
+                    bool valid3 = int.TryParse(c.MedicineSum(x, d).ToString(), out s3);
+                    if (!valid3)
+                    {
+                        s3 = 0;
+                    }
+                    bool valid4 = int.TryParse(c.ReserveSum(x, d).ToString(), out s4);
+                    if (!valid4)
+                    {
+                        s4 = 0;
+                    }
+                    bool valid5 = int.TryParse(c.AppSum(x, d).ToString(), out s5);
+                    if (!valid5)
+                    {
+                        s5 = 0;
+                    }
+                    int sum = s1+s2+s3+s4+s5;
+                    price_pay_textBox.Text = sum.ToString();// bygib exception ???????????
                 }
             }
             catch(Exception ex)

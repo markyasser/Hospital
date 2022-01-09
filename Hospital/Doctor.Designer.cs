@@ -38,15 +38,11 @@ namespace Hospital
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.SideMenu_panel = new System.Windows.Forms.Panel();
             this.Price_iconButton = new FontAwesome.Sharp.IconButton();
             this.WorkHours_iconButton = new FontAwesome.Sharp.IconButton();
             this.Settings_iconButton = new FontAwesome.Sharp.IconButton();
             this.Logout_iconButton = new FontAwesome.Sharp.IconButton();
-            this.Nurses_iconButton = new FontAwesome.Sharp.IconButton();
             this.Patient_panel = new System.Windows.Forms.Panel();
             this.Surgery_iconButton = new FontAwesome.Sharp.IconButton();
             this.MedicalTests_iconButton = new FontAwesome.Sharp.IconButton();
@@ -134,22 +130,6 @@ namespace Hospital
             this.label18 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.Nurses_panel = new System.Windows.Forms.Panel();
-            this.RoomNo_Assign_comboBox = new System.Windows.Forms.ComboBox();
-            this.NurseID_Assign_comboBox = new System.Windows.Forms.ComboBox();
-            this.RoomNo_Delete_textBox = new System.Windows.Forms.TextBox();
-            this.NurseID_Delete_comboBox = new System.Windows.Forms.ComboBox();
-            this.Rooms_Nurses_dataGridView = new System.Windows.Forms.DataGridView();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.DeleteNurse_button = new System.Windows.Forms.Button();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.AssignNurse_button = new System.Windows.Forms.Button();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
             this.Price_panel = new System.Windows.Forms.Panel();
             this.SetAppointPrice_textBox = new System.Windows.Forms.TextBox();
             this.SetApppointPrice_button = new System.Windows.Forms.Button();
@@ -178,8 +158,6 @@ namespace Hospital
             this.Prescription_panel.SuspendLayout();
             this.MedTest_panel.SuspendLayout();
             this.Surgery_panel.SuspendLayout();
-            this.Nurses_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Rooms_Nurses_dataGridView)).BeginInit();
             this.Price_panel.SuspendLayout();
             this.settings_panel.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -193,7 +171,6 @@ namespace Hospital
             this.SideMenu_panel.Controls.Add(this.WorkHours_iconButton);
             this.SideMenu_panel.Controls.Add(this.Settings_iconButton);
             this.SideMenu_panel.Controls.Add(this.Logout_iconButton);
-            this.SideMenu_panel.Controls.Add(this.Nurses_iconButton);
             this.SideMenu_panel.Controls.Add(this.Patient_panel);
             this.SideMenu_panel.Controls.Add(this.Patient_iconButton);
             this.SideMenu_panel.Controls.Add(this.Logo_panel);
@@ -215,7 +192,7 @@ namespace Hospital
             this.Price_iconButton.IconColor = System.Drawing.Color.White;
             this.Price_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Price_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Price_iconButton.Location = new System.Drawing.Point(0, 546);
+            this.Price_iconButton.Location = new System.Drawing.Point(0, 486);
             this.Price_iconButton.Name = "Price_iconButton";
             this.Price_iconButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.Price_iconButton.Size = new System.Drawing.Size(330, 60);
@@ -239,7 +216,7 @@ namespace Hospital
             this.WorkHours_iconButton.IconColor = System.Drawing.Color.White;
             this.WorkHours_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.WorkHours_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.WorkHours_iconButton.Location = new System.Drawing.Point(0, 486);
+            this.WorkHours_iconButton.Location = new System.Drawing.Point(0, 426);
             this.WorkHours_iconButton.Name = "WorkHours_iconButton";
             this.WorkHours_iconButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.WorkHours_iconButton.Size = new System.Drawing.Size(330, 60);
@@ -296,29 +273,6 @@ namespace Hospital
             this.Logout_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Logout_iconButton.UseVisualStyleBackColor = true;
             this.Logout_iconButton.Click += new System.EventHandler(this.Logout_iconButton_Click);
-            // 
-            // Nurses_iconButton
-            // 
-            this.Nurses_iconButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Nurses_iconButton.FlatAppearance.BorderSize = 0;
-            this.Nurses_iconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Nurses_iconButton.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nurses_iconButton.ForeColor = System.Drawing.Color.White;
-            this.Nurses_iconButton.IconChar = FontAwesome.Sharp.IconChar.UserNurse;
-            this.Nurses_iconButton.IconColor = System.Drawing.Color.White;
-            this.Nurses_iconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Nurses_iconButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nurses_iconButton.Location = new System.Drawing.Point(0, 426);
-            this.Nurses_iconButton.Name = "Nurses_iconButton";
-            this.Nurses_iconButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Nurses_iconButton.Size = new System.Drawing.Size(330, 60);
-            this.Nurses_iconButton.TabIndex = 32;
-            this.Nurses_iconButton.Tag = "Nurses";
-            this.Nurses_iconButton.Text = "Nurses";
-            this.Nurses_iconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nurses_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Nurses_iconButton.UseVisualStyleBackColor = true;
-            this.Nurses_iconButton.Click += new System.EventHandler(this.Nurses_iconButton_Click);
             // 
             // Patient_panel
             // 
@@ -396,7 +350,7 @@ namespace Hospital
             this.Prescription_iconButton.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.Prescription_iconButton.Size = new System.Drawing.Size(330, 60);
             this.Prescription_iconButton.TabIndex = 33;
-            this.Prescription_iconButton.Tag = "Medicines";
+            this.Prescription_iconButton.Tag = "Prescription";
             this.Prescription_iconButton.Text = "Prescription";
             this.Prescription_iconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Prescription_iconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1126,7 +1080,7 @@ namespace Hospital
             this.Refresh_Medicines_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_Medicines_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Refresh_Medicines_button.ForeColor = System.Drawing.Color.White;
-            this.Refresh_Medicines_button.Location = new System.Drawing.Point(9486, 9653);
+            this.Refresh_Medicines_button.Location = new System.Drawing.Point(10305, 9985);
             this.Refresh_Medicines_button.Name = "Refresh_Medicines_button";
             this.Refresh_Medicines_button.Size = new System.Drawing.Size(138, 40);
             this.Refresh_Medicines_button.TabIndex = 26;
@@ -1312,7 +1266,7 @@ namespace Hospital
             this.Refresh_MedTest_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_MedTest_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Refresh_MedTest_button.ForeColor = System.Drawing.Color.White;
-            this.Refresh_MedTest_button.Location = new System.Drawing.Point(10087, 9356);
+            this.Refresh_MedTest_button.Location = new System.Drawing.Point(10656, 9824);
             this.Refresh_MedTest_button.Name = "Refresh_MedTest_button";
             this.Refresh_MedTest_button.Size = new System.Drawing.Size(144, 46);
             this.Refresh_MedTest_button.TabIndex = 25;
@@ -1338,10 +1292,9 @@ namespace Hospital
             this.Surgery_panel.Controls.Add(this.label18);
             this.Surgery_panel.Controls.Add(this.label22);
             this.Surgery_panel.Controls.Add(this.label24);
-            this.Surgery_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Surgery_panel.Location = new System.Drawing.Point(330, 100);
+            this.Surgery_panel.Location = new System.Drawing.Point(360, 363);
             this.Surgery_panel.Name = "Surgery_panel";
-            this.Surgery_panel.Size = new System.Drawing.Size(994, 657);
+            this.Surgery_panel.Size = new System.Drawing.Size(381, 134);
             this.Surgery_panel.TabIndex = 27;
             // 
             // PatID_Surg_comboBox
@@ -1513,230 +1466,6 @@ namespace Hospital
             this.label24.TabIndex = 15;
             this.label24.Text = "Reserve Surgery";
             // 
-            // Nurses_panel
-            // 
-            this.Nurses_panel.AutoScroll = true;
-            this.Nurses_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.Nurses_panel.Controls.Add(this.RoomNo_Assign_comboBox);
-            this.Nurses_panel.Controls.Add(this.NurseID_Assign_comboBox);
-            this.Nurses_panel.Controls.Add(this.RoomNo_Delete_textBox);
-            this.Nurses_panel.Controls.Add(this.NurseID_Delete_comboBox);
-            this.Nurses_panel.Controls.Add(this.Rooms_Nurses_dataGridView);
-            this.Nurses_panel.Controls.Add(this.label33);
-            this.Nurses_panel.Controls.Add(this.label34);
-            this.Nurses_panel.Controls.Add(this.DeleteNurse_button);
-            this.Nurses_panel.Controls.Add(this.label35);
-            this.Nurses_panel.Controls.Add(this.label26);
-            this.Nurses_panel.Controls.Add(this.button2);
-            this.Nurses_panel.Controls.Add(this.AssignNurse_button);
-            this.Nurses_panel.Controls.Add(this.label29);
-            this.Nurses_panel.Controls.Add(this.label30);
-            this.Nurses_panel.Controls.Add(this.label31);
-            this.Nurses_panel.Location = new System.Drawing.Point(765, 369);
-            this.Nurses_panel.Name = "Nurses_panel";
-            this.Nurses_panel.Size = new System.Drawing.Size(383, 126);
-            this.Nurses_panel.TabIndex = 30;
-            // 
-            // RoomNo_Assign_comboBox
-            // 
-            this.RoomNo_Assign_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.RoomNo_Assign_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RoomNo_Assign_comboBox.FormattingEnabled = true;
-            this.RoomNo_Assign_comboBox.Location = new System.Drawing.Point(326, 112);
-            this.RoomNo_Assign_comboBox.Name = "RoomNo_Assign_comboBox";
-            this.RoomNo_Assign_comboBox.Size = new System.Drawing.Size(231, 37);
-            this.RoomNo_Assign_comboBox.TabIndex = 47;
-            // 
-            // NurseID_Assign_comboBox
-            // 
-            this.NurseID_Assign_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.NurseID_Assign_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NurseID_Assign_comboBox.FormattingEnabled = true;
-            this.NurseID_Assign_comboBox.Location = new System.Drawing.Point(66, 111);
-            this.NurseID_Assign_comboBox.Name = "NurseID_Assign_comboBox";
-            this.NurseID_Assign_comboBox.Size = new System.Drawing.Size(231, 37);
-            this.NurseID_Assign_comboBox.TabIndex = 46;
-            // 
-            // RoomNo_Delete_textBox
-            // 
-            this.RoomNo_Delete_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RoomNo_Delete_textBox.Location = new System.Drawing.Point(329, 292);
-            this.RoomNo_Delete_textBox.Name = "RoomNo_Delete_textBox";
-            this.RoomNo_Delete_textBox.ReadOnly = true;
-            this.RoomNo_Delete_textBox.Size = new System.Drawing.Size(228, 36);
-            this.RoomNo_Delete_textBox.TabIndex = 45;
-            // 
-            // NurseID_Delete_comboBox
-            // 
-            this.NurseID_Delete_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.NurseID_Delete_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NurseID_Delete_comboBox.FormattingEnabled = true;
-            this.NurseID_Delete_comboBox.Location = new System.Drawing.Point(66, 292);
-            this.NurseID_Delete_comboBox.Name = "NurseID_Delete_comboBox";
-            this.NurseID_Delete_comboBox.Size = new System.Drawing.Size(231, 37);
-            this.NurseID_Delete_comboBox.TabIndex = 43;
-            this.NurseID_Delete_comboBox.SelectedIndexChanged += new System.EventHandler(this.NurseID_Delete_comboBox_SelectedIndexChanged);
-            // 
-            // Rooms_Nurses_dataGridView
-            // 
-            this.Rooms_Nurses_dataGridView.AllowUserToAddRows = false;
-            this.Rooms_Nurses_dataGridView.AllowUserToResizeColumns = false;
-            this.Rooms_Nurses_dataGridView.AllowUserToResizeRows = false;
-            this.Rooms_Nurses_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.Rooms_Nurses_dataGridView.BackgroundColor = System.Drawing.Color.White;
-            this.Rooms_Nurses_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Rooms_Nurses_dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.Rooms_Nurses_dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Rooms_Nurses_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.Rooms_Nurses_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Rooms_Nurses_dataGridView.GridColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Rooms_Nurses_dataGridView.Location = new System.Drawing.Point(60, 440);
-            this.Rooms_Nurses_dataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Rooms_Nurses_dataGridView.Name = "Rooms_Nurses_dataGridView";
-            this.Rooms_Nurses_dataGridView.ReadOnly = true;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Rooms_Nurses_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.Rooms_Nurses_dataGridView.RowHeadersVisible = false;
-            this.Rooms_Nurses_dataGridView.RowHeadersWidth = 51;
-            this.Rooms_Nurses_dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Red;
-            this.Rooms_Nurses_dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.Rooms_Nurses_dataGridView.RowTemplate.Height = 24;
-            this.Rooms_Nurses_dataGridView.Size = new System.Drawing.Size(952, 270);
-            this.Rooms_Nurses_dataGridView.TabIndex = 40;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(321, 258);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(268, 29);
-            this.label33.TabIndex = 38;
-            this.label33.Text = "Current Room Number";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(61, 254);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(111, 29);
-            this.label34.TabIndex = 36;
-            this.label34.Text = "Nurse ID";
-            // 
-            // DeleteNurse_button
-            // 
-            this.DeleteNurse_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.DeleteNurse_button.FlatAppearance.BorderSize = 0;
-            this.DeleteNurse_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteNurse_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteNurse_button.ForeColor = System.Drawing.Color.White;
-            this.DeleteNurse_button.Location = new System.Drawing.Point(879, 293);
-            this.DeleteNurse_button.Name = "DeleteNurse_button";
-            this.DeleteNurse_button.Size = new System.Drawing.Size(133, 36);
-            this.DeleteNurse_button.TabIndex = 35;
-            this.DeleteNurse_button.Text = "Delete";
-            this.DeleteNurse_button.UseVisualStyleBackColor = false;
-            this.DeleteNurse_button.Click += new System.EventHandler(this.DeleteNurse_button_Click);
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(59, 198);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(238, 39);
-            this.label35.TabIndex = 34;
-            this.label35.Text = "Delete Nurse";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(324, 77);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(178, 29);
-            this.label26.TabIndex = 28;
-            this.label26.Text = "Room Number";
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(15285, 17139);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 40);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "Refresh";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // AssignNurse_button
-            // 
-            this.AssignNurse_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.AssignNurse_button.FlatAppearance.BorderSize = 0;
-            this.AssignNurse_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AssignNurse_button.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AssignNurse_button.ForeColor = System.Drawing.Color.White;
-            this.AssignNurse_button.Location = new System.Drawing.Point(879, 112);
-            this.AssignNurse_button.Name = "AssignNurse_button";
-            this.AssignNurse_button.Size = new System.Drawing.Size(133, 36);
-            this.AssignNurse_button.TabIndex = 24;
-            this.AssignNurse_button.Text = "Assign";
-            this.AssignNurse_button.UseVisualStyleBackColor = false;
-            this.AssignNurse_button.Click += new System.EventHandler(this.AssignNurse_button_Click);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(61, 75);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(155, 29);
-            this.label29.TabIndex = 18;
-            this.label29.Text = "Nurse Name";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(59, 366);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(491, 39);
-            this.label30.TabIndex = 17;
-            this.label30.Text = "Current Rooms And Nurses";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(59, 21);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(244, 39);
-            this.label31.TabIndex = 15;
-            this.label31.Text = "Assign Nurse";
-            // 
             // Price_panel
             // 
             this.Price_panel.AutoScroll = true;
@@ -1901,7 +1630,7 @@ namespace Hospital
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(16025, 11997);
+            this.button3.Location = new System.Drawing.Point(16450, 12357);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(139, 39);
@@ -1930,7 +1659,6 @@ namespace Hospital
             this.Controls.Add(this.SelectPatient_panel);
             this.Controls.Add(this.Prescription_panel);
             this.Controls.Add(this.WorkingHours_panel);
-            this.Controls.Add(this.Nurses_panel);
             this.Controls.Add(this.MedTest_panel);
             this.Controls.Add(this.settings_panel);
             this.Controls.Add(this.Price_panel);
@@ -1958,9 +1686,6 @@ namespace Hospital
             this.MedTest_panel.PerformLayout();
             this.Surgery_panel.ResumeLayout(false);
             this.Surgery_panel.PerformLayout();
-            this.Nurses_panel.ResumeLayout(false);
-            this.Nurses_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Rooms_Nurses_dataGridView)).EndInit();
             this.Price_panel.ResumeLayout(false);
             this.Price_panel.PerformLayout();
             this.settings_panel.ResumeLayout(false);
@@ -2018,22 +1743,10 @@ namespace Hospital
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Panel Nurses_panel;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Button DeleteNurse_button;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button AssignNurse_button;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label36;
         private FontAwesome.Sharp.IconButton Patient_iconButton;
         private FontAwesome.Sharp.IconButton Logout_iconButton;
-        private FontAwesome.Sharp.IconButton Nurses_iconButton;
         private FontAwesome.Sharp.IconButton Surgery_iconButton;
         private FontAwesome.Sharp.IconButton MedicalTests_iconButton;
         private FontAwesome.Sharp.IconButton Prescription_iconButton;
@@ -2043,11 +1756,6 @@ namespace Hospital
         private FontAwesome.Sharp.IconButton SideBar_iconButton;
         private System.Windows.Forms.ComboBox SurgName_Reserve_comboBox;
         private System.Windows.Forms.ComboBox SurgDate_Cancel_comboBox;
-        private System.Windows.Forms.TextBox RoomNo_Delete_textBox;
-        private System.Windows.Forms.ComboBox NurseID_Delete_comboBox;
-        private System.Windows.Forms.DataGridView Rooms_Nurses_dataGridView;
-        private System.Windows.Forms.ComboBox RoomNo_Assign_comboBox;
-        private System.Windows.Forms.ComboBox NurseID_Assign_comboBox;
         private System.Windows.Forms.Button WrkHrs_button;
         private System.Windows.Forms.Label UserName_label;
         private FontAwesome.Sharp.IconButton Price_iconButton;
