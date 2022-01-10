@@ -18,7 +18,7 @@ namespace Hospital
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginPage());
             //Application.Run(new Admin("Admin"));
-            //Application.Run(new Receptionist());
+            //Application.Run(new Receptionist("",null));
             //Application.Run(new Doctor("sarah1"));
             //Application.Run(new Pharmacist("piro"));
             //Application.Run(new Nurse());

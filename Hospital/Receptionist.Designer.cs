@@ -161,6 +161,7 @@ namespace Hospital
             this.DrnameDelete = new System.Windows.Forms.ComboBox();
             this.cancel_btn = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.App_panel.SuspendLayout();
             this.Logo_panel.SuspendLayout();
@@ -509,7 +510,7 @@ namespace Hospital
             this.addPatient_panel.Controls.Add(this.Fname_textBox);
             this.addPatient_panel.Controls.Add(this.label1);
             this.addPatient_panel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPatient_panel.Location = new System.Drawing.Point(18, 272);
+            this.addPatient_panel.Location = new System.Drawing.Point(50, 377);
             this.addPatient_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addPatient_panel.Name = "addPatient_panel";
             this.addPatient_panel.Size = new System.Drawing.Size(332, 216);
@@ -944,11 +945,10 @@ namespace Hospital
             this.editApp_panel.Controls.Add(this.label17);
             this.editApp_panel.Controls.Add(this.EditType_combo);
             this.editApp_panel.Controls.Add(this.label14);
-            this.editApp_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.editApp_panel.Location = new System.Drawing.Point(0, 0);
+            this.editApp_panel.Location = new System.Drawing.Point(826, 59);
             this.editApp_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.editApp_panel.Name = "editApp_panel";
-            this.editApp_panel.Size = new System.Drawing.Size(1474, 803);
+            this.editApp_panel.Size = new System.Drawing.Size(517, 211);
             this.editApp_panel.TabIndex = 2;
             // 
             // label18
@@ -1221,12 +1221,13 @@ namespace Hospital
             // 
             this.panelDesktop.AutoScroll = true;
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.panelDesktop.Controls.Add(this.label50);
+            this.panelDesktop.Controls.Add(this.settings_panel);
             this.panelDesktop.Controls.Add(this.editApp_panel);
             this.panelDesktop.Controls.Add(this.reserve_panel);
             this.panelDesktop.Controls.Add(this.addPatient_panel);
             this.panelDesktop.Controls.Add(this.makeApp_panel);
             this.panelDesktop.Controls.Add(this.pay_panel);
-            this.panelDesktop.Controls.Add(this.settings_panel);
             this.panelDesktop.Controls.Add(this.cancelApp_panel);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(352, 0);
@@ -1253,7 +1254,7 @@ namespace Hospital
             this.reserve_panel.Controls.Add(this.label22);
             this.reserve_panel.Controls.Add(this.rooms_reserve_comboBox);
             this.reserve_panel.Controls.Add(this.deptname_reserve_comboBox);
-            this.reserve_panel.Location = new System.Drawing.Point(1126, 293);
+            this.reserve_panel.Location = new System.Drawing.Point(1130, 409);
             this.reserve_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reserve_panel.Name = "reserve_panel";
             this.reserve_panel.Size = new System.Drawing.Size(190, 369);
@@ -1625,10 +1626,10 @@ namespace Hospital
             this.settings_panel.Controls.Add(this.groupBox1);
             this.settings_panel.Controls.Add(this.ChangePassword);
             this.settings_panel.Controls.Add(this.button3);
-            this.settings_panel.Location = new System.Drawing.Point(573, 332);
+            this.settings_panel.Location = new System.Drawing.Point(716, 420);
             this.settings_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.settings_panel.Name = "settings_panel";
-            this.settings_panel.Size = new System.Drawing.Size(433, 275);
+            this.settings_panel.Size = new System.Drawing.Size(385, 230);
             this.settings_panel.TabIndex = 41;
             // 
             // label49
@@ -1749,7 +1750,7 @@ namespace Hospital
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(20359, 14129);
+            this.button3.Location = new System.Drawing.Point(20900, 14377);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(139, 39);
@@ -1910,6 +1911,18 @@ namespace Hospital
             this.label21.TabIndex = 30;
             this.label21.Text = "Cancel Appointment";
             // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label50.Font = new System.Drawing.Font("Verdana", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.label50.Location = new System.Drawing.Point(224, 287);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(958, 80);
+            this.label50.TabIndex = 42;
+            this.label50.Text = "Welcome To The System";
+            // 
             // Receptionist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1933,6 +1946,7 @@ namespace Hospital
             this.editApp_panel.ResumeLayout(false);
             this.editApp_panel.PerformLayout();
             this.panelDesktop.ResumeLayout(false);
+            this.panelDesktop.PerformLayout();
             this.reserve_panel.ResumeLayout(false);
             this.reserve_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Nonights)).EndInit();
@@ -2083,5 +2097,6 @@ namespace Hospital
         private System.Windows.Forms.Button Change_Passwrod;
         private System.Windows.Forms.Label ChangePassword;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label50;
     }
 }

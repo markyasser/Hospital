@@ -31,7 +31,7 @@ namespace Hospital
             this.BackColor = Color.FromArgb(98, 102, 244);
             USERNAME = user;
             l = log;
-
+            WindowState = FormWindowState.Maximized;
         }
         //Drag Form
         //[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -146,12 +146,14 @@ namespace Hospital
 
         private void addPatiendt_btn_Click(object sender, EventArgs e)
         {
+            label50.Visible = false;
             ShowPanel(addPatient_panel);
             HideSubmenus();
         }
 
         private void MakeAPP_iconButton_Click(object sender, EventArgs e)
         {
+            label50.Visible = false;
             ShowPanel(makeApp_panel);
             HideSubmenus();
             Receptionist_Load(null, null);
@@ -159,6 +161,7 @@ namespace Hospital
 
         private void EditApp_iconButton_Click(object sender, EventArgs e)
         {
+            label50.Visible = false;
             ShowPanel(editApp_panel);
 
             HideSubmenus();
@@ -166,24 +169,28 @@ namespace Hospital
 
         private void cancelApp_iconButton_Click(object sender, EventArgs e)
         {
+            label50.Visible = false;
             ShowPanel(cancelApp_panel);
             HideSubmenus();
         }
 
         private void reserve_btn_Click(object sender, EventArgs e)
         {
+            label50.Visible = false;
             ShowPanel(reserve_panel);
             HideSubmenus();
         }
 
         private void Pay_btn_Click(object sender, EventArgs e)
         {
+            label50.Visible = false;
             ShowPanel(pay_panel);
             HideSubmenus();
         }
 
         private void logoyt_btn_Click(object sender, EventArgs e)
         {
+            label50.Visible = false;
             DialogResult choice = MessageBox.Show("Are you sure you want to Log out?", "Log out", MessageBoxButtons.YesNo);
             if (choice == DialogResult.Yes)
             {
@@ -948,8 +955,9 @@ namespace Hospital
 
         private void Settings_iconButton_Click(object sender, EventArgs e)
         {
+            label50.Visible = false;
             ShowPanel(settings_panel);
-            //ActivateButton(Settings_iconButton);
+            HideSubmenus();
         }
 
         private void Receptionist_FormClosing(object sender, FormClosingEventArgs e)
