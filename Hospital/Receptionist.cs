@@ -542,21 +542,38 @@ namespace Hospital
                             }
                         }
                     }
-                    
-
-                }
-                else if (EditType_combo.SelectedItem.ToString() == "Edit Appointment Time" && oldAppDate.SelectedIndex.ToString() != "-1")
-                {
-                    int x, y;
-                    if (int.TryParse(PnameEdit_combo.SelectedValue.ToString(), out x) && int.TryParse(DrNameEdit.SelectedValue.ToString(), out y))
+                    else if (EditType_combo.SelectedItem.ToString() == "Edit Appointment Time" && oldAppDate.SelectedIndex.ToString() != "-1")
                     {
+
                         int temp;
-                        bool valid = int.TryParse(c.VaidAppEdit(y, oldAppDate.SelectedValue.ToString(), appTimeEdit.Text).ToString(), out temp);
-                        if (valid)
+                        if (int.TryParse(c.DateCheckEdit(int.Parse(DrNameEdit.SelectedValue.ToString()), oldAppDate.SelectedValue.ToString()).ToString(), out temp))
                         {
-                            if (temp != 0)// ||c.VaidAppEditBefore(y, oldAppDate.SelectedValue.ToString(), appTimeEdit.Text) != 0)
+                            if (temp != 0)
                             {
-                                int result = c.updateAppTime(y, x, oldAppDate.SelectedValue.ToString(), oldAppTime.SelectedValue.ToString(), appTimeEdit.Text);
+                                bool valid = int.TryParse(c.VaidAppEdit(int.Parse(DrNameEdit.SelectedValue.ToString()), oldAppDate.SelectedValue.ToString(), appTimeEdit.Text).ToString(), out temp);
+                                if (valid)
+                                {
+                                    if (temp != 0)// ||c.VaidAppEditBefore(y, oldAppDate.SelectedValue.ToString(), appTimeEdit.Text) != 0)
+                                    {
+                                        int result = c.updateAppTime(int.Parse(DrNameEdit.SelectedValue.ToString()), int.Parse(PnameEdit_combo.SelectedValue.ToString()), oldAppDate.SelectedValue.ToString(), oldAppTime.SelectedValue.ToString(), appTimeEdit.Text);
+                                        if (result == 0)
+                                        {
+                                            MessageBox.Show("Upadate Failed");
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Update Successfully");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("This Appointment is reserved");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                int result = c.updateAppTime(int.Parse(DrNameEdit.SelectedValue.ToString()), int.Parse(PnameEdit_combo.SelectedValue.ToString()), oldAppDate.SelectedValue.ToString(), oldAppTime.SelectedValue.ToString(), appTimeEdit.Text);
                                 if (result == 0)
                                 {
                                     MessageBox.Show("Upadate Failed");
@@ -566,19 +583,17 @@ namespace Hospital
                                     MessageBox.Show("Update Successfully");
                                 }
                             }
-                            else
-                            {
-                                MessageBox.Show("This Appointment is reserved");
-                            }
                         }
-                    }
-                   
-                }
 
-                else
-                {
-                    MessageBox.Show("Please Enter All The Required Data");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Enter All The Required Data");
+                    }
+
                 }
+                
                 appDateEdit.Enabled = false;
                 appTimeEdit.Enabled = false;
 

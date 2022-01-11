@@ -106,6 +106,19 @@ namespace Hospital
             this.EditType_combo = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.label50 = new System.Windows.Forms.Label();
+            this.settings_panel = new System.Windows.Forms.Panel();
+            this.label49 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.OldPass = new System.Windows.Forms.TextBox();
+            this.NewPass = new System.Windows.Forms.TextBox();
+            this.Change_Passwrod = new System.Windows.Forms.Button();
+            this.ChangePassword = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.reserve_panel = new System.Windows.Forms.Panel();
             this.Pid_res_textBox = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
@@ -136,18 +149,6 @@ namespace Hospital
             this.label31 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.settings_panel = new System.Windows.Forms.Panel();
-            this.label49 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label67 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
-            this.OldPass = new System.Windows.Forms.TextBox();
-            this.NewPass = new System.Windows.Forms.TextBox();
-            this.Change_Passwrod = new System.Windows.Forms.Button();
-            this.ChangePassword = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.cancelApp_panel = new System.Windows.Forms.Panel();
             this.appTimeDelete = new System.Windows.Forms.ComboBox();
             this.label44 = new System.Windows.Forms.Label();
@@ -161,7 +162,6 @@ namespace Hospital
             this.DrnameDelete = new System.Windows.Forms.ComboBox();
             this.cancel_btn = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.App_panel.SuspendLayout();
             this.Logo_panel.SuspendLayout();
@@ -169,12 +169,12 @@ namespace Hospital
             this.makeApp_panel.SuspendLayout();
             this.editApp_panel.SuspendLayout();
             this.panelDesktop.SuspendLayout();
+            this.settings_panel.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.reserve_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Nonights)).BeginInit();
             this.pay_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bill_dataGridView)).BeginInit();
-            this.settings_panel.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.cancelApp_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -945,10 +945,11 @@ namespace Hospital
             this.editApp_panel.Controls.Add(this.label17);
             this.editApp_panel.Controls.Add(this.EditType_combo);
             this.editApp_panel.Controls.Add(this.label14);
-            this.editApp_panel.Location = new System.Drawing.Point(826, 59);
+            this.editApp_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.editApp_panel.Location = new System.Drawing.Point(0, 0);
             this.editApp_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.editApp_panel.Name = "editApp_panel";
-            this.editApp_panel.Size = new System.Drawing.Size(517, 211);
+            this.editApp_panel.Size = new System.Drawing.Size(1474, 803);
             this.editApp_panel.TabIndex = 2;
             // 
             // label18
@@ -1221,9 +1222,9 @@ namespace Hospital
             // 
             this.panelDesktop.AutoScroll = true;
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.panelDesktop.Controls.Add(this.editApp_panel);
             this.panelDesktop.Controls.Add(this.label50);
             this.panelDesktop.Controls.Add(this.settings_panel);
-            this.panelDesktop.Controls.Add(this.editApp_panel);
             this.panelDesktop.Controls.Add(this.reserve_panel);
             this.panelDesktop.Controls.Add(this.addPatient_panel);
             this.panelDesktop.Controls.Add(this.makeApp_panel);
@@ -1235,6 +1236,158 @@ namespace Hospital
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1474, 803);
             this.panelDesktop.TabIndex = 2;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label50.Font = new System.Drawing.Font("Verdana", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.label50.Location = new System.Drawing.Point(224, 287);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(958, 80);
+            this.label50.TabIndex = 42;
+            this.label50.Text = "Welcome To The System";
+            // 
+            // settings_panel
+            // 
+            this.settings_panel.AutoScroll = true;
+            this.settings_panel.BackColor = System.Drawing.Color.White;
+            this.settings_panel.Controls.Add(this.label49);
+            this.settings_panel.Controls.Add(this.groupBox1);
+            this.settings_panel.Controls.Add(this.ChangePassword);
+            this.settings_panel.Controls.Add(this.button3);
+            this.settings_panel.Location = new System.Drawing.Point(716, 420);
+            this.settings_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.settings_panel.Name = "settings_panel";
+            this.settings_panel.Size = new System.Drawing.Size(385, 230);
+            this.settings_panel.TabIndex = 41;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label49.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label49.Font = new System.Drawing.Font("Verdana", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
+            this.label49.Location = new System.Drawing.Point(0, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(347, 80);
+            this.label49.TabIndex = 30;
+            this.label49.Text = "Settings";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label67);
+            this.groupBox1.Controls.Add(this.label66);
+            this.groupBox1.Controls.Add(this.label65);
+            this.groupBox1.Controls.Add(this.label64);
+            this.groupBox1.Controls.Add(this.OldPass);
+            this.groupBox1.Controls.Add(this.NewPass);
+            this.groupBox1.Controls.Add(this.Change_Passwrod);
+            this.groupBox1.Location = new System.Drawing.Point(202, 218);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(772, 305);
+            this.groupBox1.TabIndex = 29;
+            this.groupBox1.TabStop = false;
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label67.ForeColor = System.Drawing.Color.Red;
+            this.label67.Location = new System.Drawing.Point(325, 180);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(0, 20);
+            this.label67.TabIndex = 31;
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label66.ForeColor = System.Drawing.Color.Red;
+            this.label66.Location = new System.Drawing.Point(322, 88);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(0, 20);
+            this.label66.TabIndex = 30;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.Location = new System.Drawing.Point(27, 140);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(176, 29);
+            this.label65.TabIndex = 28;
+            this.label65.Text = "New Password";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.Location = new System.Drawing.Point(23, 51);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(165, 29);
+            this.label64.TabIndex = 27;
+            this.label64.Text = "Old Password";
+            // 
+            // OldPass
+            // 
+            this.OldPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OldPass.Location = new System.Drawing.Point(321, 45);
+            this.OldPass.Name = "OldPass";
+            this.OldPass.Size = new System.Drawing.Size(373, 38);
+            this.OldPass.TabIndex = 26;
+            // 
+            // NewPass
+            // 
+            this.NewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewPass.Location = new System.Drawing.Point(321, 134);
+            this.NewPass.Name = "NewPass";
+            this.NewPass.Size = new System.Drawing.Size(373, 38);
+            this.NewPass.TabIndex = 25;
+            // 
+            // Change_Passwrod
+            // 
+            this.Change_Passwrod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.Change_Passwrod.FlatAppearance.BorderSize = 0;
+            this.Change_Passwrod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Change_Passwrod.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Change_Passwrod.ForeColor = System.Drawing.Color.White;
+            this.Change_Passwrod.Location = new System.Drawing.Point(235, 233);
+            this.Change_Passwrod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Change_Passwrod.Name = "Change_Passwrod";
+            this.Change_Passwrod.Size = new System.Drawing.Size(226, 53);
+            this.Change_Passwrod.TabIndex = 24;
+            this.Change_Passwrod.Text = "Confirm";
+            this.Change_Passwrod.UseVisualStyleBackColor = false;
+            this.Change_Passwrod.Click += new System.EventHandler(this.Change_Passwrod_Click);
+            // 
+            // ChangePassword
+            // 
+            this.ChangePassword.AutoSize = true;
+            this.ChangePassword.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChangePassword.Location = new System.Drawing.Point(197, 162);
+            this.ChangePassword.Name = "ChangePassword";
+            this.ChangePassword.Size = new System.Drawing.Size(227, 27);
+            this.ChangePassword.TabIndex = 27;
+            this.ChangePassword.Text = "Change Password";
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(22078, 14963);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(139, 39);
+            this.button3.TabIndex = 26;
+            this.button3.Text = "Refresh";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // reserve_panel
             // 
@@ -1618,146 +1771,6 @@ namespace Hospital
             this.label27.TabIndex = 28;
             this.label27.Text = "Payment";
             // 
-            // settings_panel
-            // 
-            this.settings_panel.AutoScroll = true;
-            this.settings_panel.BackColor = System.Drawing.Color.White;
-            this.settings_panel.Controls.Add(this.label49);
-            this.settings_panel.Controls.Add(this.groupBox1);
-            this.settings_panel.Controls.Add(this.ChangePassword);
-            this.settings_panel.Controls.Add(this.button3);
-            this.settings_panel.Location = new System.Drawing.Point(716, 420);
-            this.settings_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.settings_panel.Name = "settings_panel";
-            this.settings_panel.Size = new System.Drawing.Size(385, 230);
-            this.settings_panel.TabIndex = 41;
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label49.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label49.Font = new System.Drawing.Font("Verdana", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.label49.Location = new System.Drawing.Point(0, 0);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(347, 80);
-            this.label49.TabIndex = 30;
-            this.label49.Text = "Settings";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label67);
-            this.groupBox1.Controls.Add(this.label66);
-            this.groupBox1.Controls.Add(this.label65);
-            this.groupBox1.Controls.Add(this.label64);
-            this.groupBox1.Controls.Add(this.OldPass);
-            this.groupBox1.Controls.Add(this.NewPass);
-            this.groupBox1.Controls.Add(this.Change_Passwrod);
-            this.groupBox1.Location = new System.Drawing.Point(202, 218);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(772, 305);
-            this.groupBox1.TabIndex = 29;
-            this.groupBox1.TabStop = false;
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label67.ForeColor = System.Drawing.Color.Red;
-            this.label67.Location = new System.Drawing.Point(325, 180);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(0, 20);
-            this.label67.TabIndex = 31;
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label66.ForeColor = System.Drawing.Color.Red;
-            this.label66.Location = new System.Drawing.Point(322, 88);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(0, 20);
-            this.label66.TabIndex = 30;
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.Location = new System.Drawing.Point(27, 140);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(176, 29);
-            this.label65.TabIndex = 28;
-            this.label65.Text = "New Password";
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.Location = new System.Drawing.Point(23, 51);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(165, 29);
-            this.label64.TabIndex = 27;
-            this.label64.Text = "Old Password";
-            // 
-            // OldPass
-            // 
-            this.OldPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OldPass.Location = new System.Drawing.Point(321, 45);
-            this.OldPass.Name = "OldPass";
-            this.OldPass.Size = new System.Drawing.Size(373, 38);
-            this.OldPass.TabIndex = 26;
-            // 
-            // NewPass
-            // 
-            this.NewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewPass.Location = new System.Drawing.Point(321, 134);
-            this.NewPass.Name = "NewPass";
-            this.NewPass.Size = new System.Drawing.Size(373, 38);
-            this.NewPass.TabIndex = 25;
-            // 
-            // Change_Passwrod
-            // 
-            this.Change_Passwrod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.Change_Passwrod.FlatAppearance.BorderSize = 0;
-            this.Change_Passwrod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Change_Passwrod.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Change_Passwrod.ForeColor = System.Drawing.Color.White;
-            this.Change_Passwrod.Location = new System.Drawing.Point(235, 233);
-            this.Change_Passwrod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Change_Passwrod.Name = "Change_Passwrod";
-            this.Change_Passwrod.Size = new System.Drawing.Size(226, 53);
-            this.Change_Passwrod.TabIndex = 24;
-            this.Change_Passwrod.Text = "Confirm";
-            this.Change_Passwrod.UseVisualStyleBackColor = false;
-            this.Change_Passwrod.Click += new System.EventHandler(this.Change_Passwrod_Click);
-            // 
-            // ChangePassword
-            // 
-            this.ChangePassword.AutoSize = true;
-            this.ChangePassword.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChangePassword.Location = new System.Drawing.Point(197, 162);
-            this.ChangePassword.Name = "ChangePassword";
-            this.ChangePassword.Size = new System.Drawing.Size(227, 27);
-            this.ChangePassword.TabIndex = 27;
-            this.ChangePassword.Text = "Change Password";
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Cooper Black", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(20900, 14377);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(139, 39);
-            this.button3.TabIndex = 26;
-            this.button3.Text = "Refresh";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // cancelApp_panel
             // 
             this.cancelApp_panel.BackColor = System.Drawing.Color.White;
@@ -1911,18 +1924,6 @@ namespace Hospital
             this.label21.TabIndex = 30;
             this.label21.Text = "Cancel Appointment";
             // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label50.Font = new System.Drawing.Font("Verdana", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(244)))));
-            this.label50.Location = new System.Drawing.Point(224, 287);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(958, 80);
-            this.label50.TabIndex = 42;
-            this.label50.Text = "Welcome To The System";
-            // 
             // Receptionist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1947,16 +1948,16 @@ namespace Hospital
             this.editApp_panel.PerformLayout();
             this.panelDesktop.ResumeLayout(false);
             this.panelDesktop.PerformLayout();
+            this.settings_panel.ResumeLayout(false);
+            this.settings_panel.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.reserve_panel.ResumeLayout(false);
             this.reserve_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Nonights)).EndInit();
             this.pay_panel.ResumeLayout(false);
             this.pay_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bill_dataGridView)).EndInit();
-            this.settings_panel.ResumeLayout(false);
-            this.settings_panel.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.cancelApp_panel.ResumeLayout(false);
             this.cancelApp_panel.PerformLayout();
             this.ResumeLayout(false);
