@@ -41,6 +41,7 @@ namespace Hospital
             SidePanel_IsOpen = true;
             Open_Close_SideMenu();
             l = log;
+            WindowState = FormWindowState.Maximized;
         }
         #region SelectPatientPanel
         private void MedTestReport_button_Click(object sender, EventArgs e)

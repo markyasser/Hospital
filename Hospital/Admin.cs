@@ -1025,5 +1025,10 @@ namespace Hospital
         {
             l.Close();
         }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
